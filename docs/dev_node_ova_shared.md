@@ -7,7 +7,14 @@ directly however the focus will be on SeqWare workflow development. In this SOP 
 [VirtualBox](https://www.virtualbox.org/) to run a local VM which has a shared
 folder with your desktop. This lets you develop in an IDE on your host
 operating system and then compile and debug the workflow on the virtual
-machine.
+machine.  This is extemely helpful since it greatly shortens the turnaround time
+between making changes in the workflow and trying it out in a VM.
+
+NOTE: if you have problems getting this to work I would recommend using one of
+our pre-created VMs by following either the [Launch a Test/Dev Node via Amazon](dev_node_ami.md)
+guide or the [Launch a Test/Dev Node Locally via VirtualBox](dev_node_ova.md) guide.  Either
+of these environments will let you create, test, and package workflows and can be
+setup much more quickly than what is described here.
 
 ## Use Cases
 

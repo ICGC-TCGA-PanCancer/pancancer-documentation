@@ -20,7 +20,7 @@ These guides are geared towards a developer wanting to create a new workflow for
     * [Launch a Test/Dev Node via Amazon](dev_node_ami.md): a fast way to get a working development environment in the cloud
     * [Launch a Test/Dev Node Locally via VirtualBox](dev_node_ova.md): a fast way to get a working development environment running on your local machine, it is a great way to develop workflows and test locally before scaling up
     * [Create a New Test/Dev Node with Bindle and VirtualBox](dev_node_ova_shared.md): allows you to create a dev/testing node from scratch with our latest provisioning tool, includes a shared folder so you can edit workflows in an IDE and test the workflow in the VM
-    * [Create a New Test/Dev Node/Cluster with Bindle](dev_node_with_bindle.md): allows you to create virtual clusters of machines from scratch with our latest provisioning tool, useful for scaling up your tests
+    * [Create a New Test/Dev Node/Cluster with Bindle](dev_node_with_bindle.md): allows you to create virtual clusters of machines from scratch on a cloud with our latest provisioning tool, useful for scaling up your tests
 * [Test Run the Production BWA Workflow](run_bwa.md): ensure your development environment works by running the BWA workfow
 * [Create, Test, and Package a New Workflow](create_workflow.md): basic overview of creatinga  new workflow
 * [Advanced Workflow Creation Topics](advanced_workflows.md): some more advanced concepts for workflow development
