@@ -1,27 +1,27 @@
 # TCGA/ICGC PanCancer - BWA-Mem Workflow SOP
 
 This is the SOP for running the latest version of the PanCancer BWA-Mem
-Workflow version 2.1.
+Workflow version. It will show you how to get the workflow and run it both
+with its own test settings and also a "real" run of the workflow.
 
 ## Overview
 
 This document tells you how to get and run the PanCancer BWA-Mem Workflow built
 using SeqWare.  It is used in Phase II of the project to download unaligned
-data from GNOS, align the ~2,500 samples worth of whole genome data, and upload
+data from GNOS, align the ~5,000 specimens worth of whole genome data, and upload
 the result back to GNOS.
 
 ## Requirements
 
-We assume you have a functioning SeqWare VM or cluster of VMs to successfully
-run the BWA-Mem workflow.  If you do not, please see the [TCGA/ICGC PanCancer -
-Computational Node/Cluster Launch
-SOP](https://github.com/SeqWare/vagrant/blob/feature/brian_pancan_fixes/PANCAN_CLUSTER_LAUNCH_README.md)
-which will tell you how to launch a SeqWare node or cluster of nodes.
+We assume you have already setup a SeqWare node or cluster
+to run the workflow in.  If not, see one of our guides:
 
-To complete this SOP you need:
+* [Launch a Test/Dev Node via Amazon](dev_node_ami.md)
+* [Launch a Test/Dev Node Locally via VirtualBox](dev_node_ova.md)
+* [Create a New Test/Dev Node with Bindle and VirtualBox](dev_node_ova_shared.md)
+* [Create a New Test/Dev Node/Cluster with Bindle and a Cloud](prod_cluster_with_bindle.md).
 
-* a SeqWare node or cluster launched with SeqWare-Vagrant 1.1 or later (https://github.com/SeqWare/vagrant)
-* a GNOS key for PanCancer ICGC data access, see https://pancancer-token.annailabs.com/
+To complete this SOP you need you also need a GNOS key for PanCancer ICGC data access, see https://pancancer-token.annailabs.com/
 
 You must have a GNOS key for the workflow below to work.  Its test data is
 hosted on the EBI GNOS repository and, while synthetic data, it is protected
@@ -30,7 +30,7 @@ protected.
 
 ## Log Into SeqWare Host
 
-At this point you want to log in to you SeqWare host.  See the cluster launch SOP for details on this.
+At this point you want to log in to you SeqWare host.  See the environment launch SOPs for details on this.
 
 ## Building the Workflow from Source
 
@@ -39,10 +39,13 @@ You can choose to build the BWA workflow and this might be extremely nice if 1) 
     # checkout the code
     $ git clone git@github.com:SeqWare/public-workflows.git
     $ cd public-workflows
-    $ git checkout feature/brian_bwa_pancan_gnos_download
+    $ git checkout 2.0.4 <CORRECT!?!?>
     # build the workflow
     $ cd workflow-bwa-pancancer
     $ mvn clean install
+
+This command checks out the 2.4.0 workflow, a more recent one might be available by the time
+you read this guide.
 
 You should now have a target/Workflow* directory, this is the workflow compiled into runnable form.
 
@@ -50,14 +53,14 @@ You should now have a target/Workflow* directory, this is the workflow compiled 
 
 You can download a pre-created Zip file, keep in mind it take a long time to process a 4G zip file:
 
-    $ wget https://s3.amazonaws.com/oicr.workflow.bundles/released-bundles/Workflow_Bundle_BWA_2.1_SeqWare_1.0.11.zip
-    $ seqware bundle install --zip Workflow_Bundle_BWA_2.1_SeqWare_1.0.11.zip
+    $ wget https://s3.amazonaws.com/oicr.workflow.bundles/released-bundles/Workflow_Bundle_BWA_2.4.0_SeqWare_1.0.13.zip
+    $ seqware bundle install --zip Workflow_Bundle_BWA_2.4.0_SeqWare_1.0.13.zip
 
 ## Running the Workflow with Sample Data
 
-You can run the workflow with integrated sample data.  Before you run it, please locate the GNOS test key and replace it with your own.
+You can run the workflow with integrated sample test data.  Before you run it, please locate the GNOS test key and replace it with your own as described above.
 
-    $ seqware bundle launch --dir ~/provisioned_bundles/Workflow_Bundle_BWA_2.1_SeqWare_1.0.11
+    $ seqware bundle launch --dir ~/provisioned_bundles/Workflow_Bundle_BWA_2.4.0_SeqWare_1.0.13
 
 ## Running the Workflow with Real Data
 
@@ -136,7 +139,8 @@ This will launch the workflow with your custom settings.
 
 ## Next Steps
 
-Take a look at the "BWA-Mem Automated Workflow Running SOP", that will give you
+Take a look at [Automatically Running Workflows in a Cloud with a Decider](run_bwa_with_decider.md), that will give you
 information on using the decider which is a script that queries GNOS and
 prepares the workflow.ini.  This makes the whole process of parameterizing the
-workflow way easier than manually parameterizing the above.
+workflow way easier than manually parameterizing the above.  For information on making your own
+workflows see [Create, Test, and Package a New Workflow](create_workflow.md).

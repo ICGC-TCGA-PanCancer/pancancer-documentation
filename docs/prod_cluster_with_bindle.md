@@ -4,20 +4,29 @@ This is our SOP for how to launch clusters/nodes using Bindle
 specifically for use by the TCGA/ICGC PanCancer project.  In addition to
 providing production cluster environments for analyzing samples on the clouds
 used by the PanCancer project, the Bindle process can also be used to
-create workflow development environments.
+create workflow development environments.  Unlike AMI or OVA VM snapshots
+the Bindle process builds an environment (whether cluster or single node)
+up from a base Ubuntu 12.04 box, installing and configuring software as
+it goes.  Any cloud-specific considerations are documented at the end of this guide.
 
 ## Use Cases
 
 There are really two use cases for this technology by the PanCancer project.
 First, to create a production environment for running analytical workflows for
-PanCancer.  Second, to create a workflow development environment for creating
-new workflows for the project. For this guide we will focus on the first.
+PanCancer.  These are employed by "cloud shepherds" in "Phase II" to
+analyze donors with standardized alignment and variant calling workflows.
+This environment could also by "Phase III" researchers that need a virtual
+cluster running Hadoop or SGE for their research.
+The second use case is to create a workflow development environment for making and testing
+new workflows for the project, especially if scaled-up testing across
+a virtual cluster is required. Regardless, the directions for creating a node or
+cluster with Bindle is the same.
 
 ### Build a PanCancer Workflow Running Environment
 
 Bindle for PanCancer is intended to be used to create clusters of
 virtual machines running in one of several cloud environments used by the
-PanCancer project.  These clusters are used to process approximately 2,500
+PanCancer project.  These clusters are used to process approximately 5,000
 whole human genomes using standardized workflows: BWA and variant calling. This
 constitutes "Phase II" of the project. "Phase III" will see the use of this
 technology stack by a variety of researchers across the cloud environments
@@ -32,7 +41,7 @@ larger-scale computation.
 
 #### Steps
 
-* decide on cloud environment and request an account, when you sign up you should get the Bindle settings you need
+* decide on cloud environment and request an account, when you sign up you should get the Bindle settings you need. Pancancer has 6 cloud environments, a "cloud shepherd" is typically assigned one or two
 * download and install (our use our pre-created "launcher" VM images if available on this cloud):
     * Bindle
     * Vagrant
@@ -52,7 +61,7 @@ larger-scale computation.
 Here I will show you how to create a single compute node running on AWS and
 capable or executing the HelloWorld workflow to ensure your environment is
 working.  Another tutotrial will show you how to install the PanCancer BWA-Mem
-Workflow 2.1. I chose AWS for its ease of access however please keep in mind
+Workflow. I chose AWS for its ease of access however please keep in mind
 the AWS cloud is not a PanCancer participating cloud. This information is
 provided for illustration purposes only. You can use AWS to work with
 synthetic/non-controlled access data but please use a PanCancer approved cloud
@@ -85,13 +94,10 @@ For our purposes we use an Ubuntu 12.04 AMI provided by Amazon.  See the
 documentation on http://aws.amazon.com for information about programmatic,
 command line, and web GUI tools for starting this launcher host.  For the
 purposes of this tutorial we assume you have successfully started the launcher
-host using the web GUI at http://aws.amazon.com.  The screen shot below shows
-the selection of the AMI from the list provided by Amazon.
-
-    SCREENSHOT
+host using the web GUI at http://aws.amazon.com.  
 
 Next, we recommend you use an "t1.micro" instance type as this is inexpensive
-($14/month) to keep running constantly. 
+($14/month) to keep running constantly.
 
 We also assume that you have setup your firewall (security group) and have
 produced a .pem SSH key file for use to login to this host.  In my case my key
@@ -123,14 +129,14 @@ Note the "$" is the Bash shell prompt in these examples and "#" is a comment:
     $ wget http://s3.amazonaws.com/oicr.workflow.bundles/released-bundles/bindle_1.2.tar.gz
     $ tar zxf bindle_1.2.tar.gz
     $ cd bindle_1.2
-    
+
     # install bindle dependencies, again see README for Bindle
     $ sudo apt-get update
     $ sudo apt-get install libjson-perl libtemplate-perl make gcc
-    
+
     # make sure you have all the dependencies needed for Bindle, this should not produce an error
     $ perl -c vagrant_cluster_launch.pl
-    
+
     # now install the Vagrant tool which is used by Bindle
     $ wget https://dl.bintray.com/mitchellh/vagrant/vagrant_1.4.3_x86_64.deb
     $ sudo dpkg -i vagrant_1.4.3_x86_64.deb
@@ -149,14 +155,14 @@ Now that you have Bindle and dependencies installed the next step is
 to launch computational nodes or clusters that will run workflows via SeqWare,
 launch cluster jobs via GridEngine, or perform MapReduce jobs.  In this step we
 will launch a standalone node and in the next command block I will show you how to
-launch a whole cluster of nodes that are suitable for larger-scale analysis. 
+launch a whole cluster of nodes that are suitable for larger-scale analysis.
 
 Assuming you are still logged into you launcher node above you will do the
 following to setup a computational node.  The steps below assume you are
 working in the bindle_1.2 directory:
 
     # copy the template used to setup a SeqWare single compute node for PanCancer
-    $ cp templates/sample_configs/vagrant_cluster_launch.pancancer.seqware.install.sge_node.json.template vagrant_cluster_launch.json 
+    $ cp templates/sample_configs/vagrant_cluster_launch.pancancer.seqware.install.sge_node.json.template vagrant_cluster_launch.json
     # modify the .json template to include your settings, for AWS you need to make sure you fill in the "AWS_*" settings
     $ vim vagrant_cluster_launch.json
     # paste your key pem file, whatever you call it
@@ -174,7 +180,7 @@ file.  We typically use between 3 and 6 worker nodes which, depending on the
 cloud, would align a 60x coverage genome in between 10 and 5 hours respectiely.
 
     # copy the template used to setup a SeqWare compute cluster for PanCancer
-    $ cp templates/sample_configs/vagrant_cluster_launch.pancancer.seqware.install.sge_cluster.json.template vagrant_cluster_launch.json 
+    $ cp templates/sample_configs/vagrant_cluster_launch.pancancer.seqware.install.sge_cluster.json.template vagrant_cluster_launch.json
     # modify the .json template to include your settings, for AWS you need to make sure you fill in the "AWS_*" settings, also customize number of workers
     $ vim vagrant_cluster_launch.json
 
@@ -186,7 +192,7 @@ node/cluster gets its own "--working-dir", you cannot resuse these.  Within the
 working dir you will find a log for each node (simply master.log for a
 single-node launch) and a directory for each node that is used by the vagrant
 command line tool (the "master" directory for a single-node launch). The latter
-is important for controlling your node/cluster once launched. 
+is important for controlling your node/cluster once launched.
 
     # now launch the compute node
     $ perl vagrant_cluster_launch.pl --use-aws --working-dir target-aws-1 --config-file vagrant_cluster_launch.json
@@ -195,7 +201,7 @@ You can follow the progress of this cluster launch in another terminal with.
 Use multiple terminals to watch logs for multiple-node clusters if you desire:
 
     # watch the log
-    $ tail -f target-aws-1/master.log 
+    $ tail -f target-aws-1/master.log
 
 Once this process complete you should see no error messages from
 "vagrant_cluster_launch.pl". If so, you are ready to use your cluster/node.
@@ -233,7 +239,7 @@ provisioned-bundles/Workflow_Bundle_HelloWorld_1.0-SNAPSHOT_SeqWare_1.0.13.
     $ ls provisioned-bundles/
     Workflow_Bundle_HelloWorld_1.0-SNAPSHOT_SeqWare_1.0.13
     # now run the workflow
-    $ seqware bundle launch --dir provisioned-bundles/Workflow_Bundle_HelloWorld_1.0-SNAPSHOT_SeqWare_1.0.13 
+    $ seqware bundle launch --dir provisioned-bundles/Workflow_Bundle_HelloWorld_1.0-SNAPSHOT_SeqWare_1.0.13
 
 This command should finish without errors.  If there are problems please report
 the errors to the SeqWare user group, see http://seqware.io/community/ for
@@ -346,19 +352,19 @@ When you launch the cluster you need to do the following differently from the ex
     $ vagrant plugin install vagrant-openstack-plugin
     # make sure you apply the rsync fix described in the README.md
 
-    # example launching a host 
+    # example launching a host
     $ perl vagrant_cluster_launch.pl --use-openstack --working-dir target-os-1 --config-file vagrant_cluster_launch.json
 
 There are several items you need to take care of post-provisioning to ensure you have a working cluster:
 
-* generate your keypair using the web conole (or add the public key using command line tools: "nova keypair-add brian-pdc-3 > brian-pdc-3.pem; chmod 600 brian-pdc-3.pem; ssh-keygen -f brian-pdc-3.pem -y >> ~/.ssh/authorized_keys"). 
+* generate your keypair using the web conole (or add the public key using command line tools: "nova keypair-add brian-pdc-3 > brian-pdc-3.pem; chmod 600 brian-pdc-3.pem; ssh-keygen -f brian-pdc-3.pem -y >> ~/.ssh/authorized_keys").
 * make sure you patch the rsync issue, see README.md for this project
 * you need to run SeqWare workflows as your own user not seqware. This has several side effects:
     * when you launch your cluster, login to the master node
     * "sudo su - seqware" and disable the seqware cronjob
     * make the following directories in your home directory: provisioned-bundles, released-bundles, crons, logs, jars, workflow-dev, and .seqware
     * copy the seqware binary to somewhere on your user path
-    * copy the .bash_profile contents from the seqware account to your account 
+    * copy the .bash_profile contents from the seqware account to your account
     * copy the .seqware/settings file from the seqware account to your account, modify paths
     * change the OOZIE_WORK_DIR variable to a shared gluster directory such as /glusterfs/data/ICGC1/scratch, BioNimbus will tell you where this should be
     * create a directory on HDFS in /user/$USERNAME, chown this directory to your usesrname
@@ -375,7 +381,7 @@ After these changes you should have a working SeqWare environment set to run wor
 OICR uses OpenStack internally for testing and the Vagrant OpenStack plugin is
 quite stable.  The cluster is not available to the general PanCancer group.
 
-* generate your keypair using the web conole 
+* generate your keypair using the web conole
 * make sure you patch the rsync issue, see README.md for this project
 
 Here are some difference from the docs above:
@@ -383,7 +389,7 @@ Here are some difference from the docs above:
     # install the open stack vagrant plugin
     $ vagrant plugin install vagrant-openstack-plugin
 
-    # example launching a host 
+    # example launching a host
     $ perl vagrant_cluster_launch.pl --use-openstack --working-dir target-os-1 --config-file vagrant_cluster_launch.json
 
 Also note, here are the additional things I had to do to get this to work:
@@ -407,7 +413,7 @@ part of the Phase II activities.
 
 Some issues I had to address on Amazon:
 
-* some AMIs will automount the first ephemeral disk on /mnt, others will not. This causes issues with the provisioning process. We need to improve our support of these various configurations. Use m1.xlarge for the time being.
+* some AMIs will automount the first ephemeral disk on /mnt, others will not. This causes issues with the provisioning process. We need to improve our support of these various configurations. With the current code, any device on /dev/sdf or above will automatically be formated, mounted, and added to gluster
 * the network security group you launch master and workers in must allow incoming connections from itself otherwise the nodes will not be able to communicate with each other
 
 ### Notes for Barcelona (VirtualBox)
@@ -416,4 +422,3 @@ Cloud are not available for both of these environments.  Instead, please use
 VirtualBox to launch a single node and then use the "Export Appliance..."
 command to create an OVA file.  This OVA can be converted into a KVM/Xen VM and
 deployed as many times as needed to process production data.
-

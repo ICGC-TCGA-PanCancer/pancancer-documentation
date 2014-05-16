@@ -58,8 +58,6 @@ When complete, launch the virtual machine in the GUI.
 
 ## Next Steps
 
-## Next Steps
-
 For workflow development using SeqWare we encourage you look at our extensive
 documentation on http://seqware.io and post to the user list if you run into
 problems.  If you are new to SeqWare I would recommend you follow our three
