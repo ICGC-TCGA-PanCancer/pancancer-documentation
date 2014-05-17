@@ -1,4 +1,4 @@
-# TCGA/ICGC PanCancer - Workflow Development Node Launch SOP
+# TCGA/ICGC PanCancer - Workflow Development Node on VirtualBox
 
 This is our SOP for how to create a SeqWare workflow development environment
 for use with the PanCancer project. Since the environment also contains

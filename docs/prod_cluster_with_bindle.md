@@ -1,4 +1,4 @@
-# TCGA/ICGC PanCancer - Computational Node/Cluster Launch SOP
+# TCGA/ICGC PanCancer - Computational Node/Cluster from Scratch with Bindle
 
 This is our SOP for how to launch clusters/nodes using Bindle
 specifically for use by the TCGA/ICGC PanCancer project.  In addition to

@@ -1,4 +1,4 @@
-# TCGA/ICGC PanCancer - BWA-Mem Workflow SOP
+# TCGA/ICGC PanCancer - Run the BWA-Mem Workflow
 
 This is the SOP for running the latest version of the PanCancer BWA-Mem
 Workflow version. It will show you how to get the workflow and run it both
