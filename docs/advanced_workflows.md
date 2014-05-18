@@ -219,13 +219,31 @@ This is pretty cool!  Docker is a new-ish semi-virtualization technology that is
 
 We are using Docker to build workflows with complex steps encapsulated in distinct Docker images.  This means we can have individual steps of a workflow that have different software/library requirements yet we can run these on the same VM-based virtual clusters.  This is extremely powerful because it leverages cloud technology to build virtual clusters that are homogenious while, at the same time, having a variety of tools/libraries/software available from workflow authors running on top of this virtual environment.
 
-NOTE: this work is bleeding edge and is not considered a feature of the released version of SeqWare. This will change over time but keep this in mind as you build your workflows.
+Here is an example of a docker step within the workflow Java object.
 
-FILL ME IN
+    // a Docker job, for the current prototype it's just a standard bash job
+    Job dockerJob2 = this.getWorkflow().createBashJob("dockerJob2");
+    // use the "docker load" command to load a Docker image from within the workflow bundle directory
+    dockerJob2.getCommand().addArgument("docker load -i " + this.getWorkflowBaseDir() + "/workflows/postgres_image.tar; ");
+    // now run a given command within this Docker VM, capture the output to a file
+    dockerJob2.getCommand().addArgument("docker run --rm eg_postgresql ps aux | grep postgres").addArgument(" > ").addArgument("dir1/ps_out");
+
+NOTE: this work is bleeding edge and is not considered a feature of the released version of SeqWare & Bindle. This will change over time but keep this in mind as you build your workflows.
 
 ## Variable Step Workflows
+
+This is tough for the SeqWare workflow system but not insurmountable. The issue is, for a given workflow, we may want to have a given step that produces n output files, where n is an unknown number when we launch the workflow.  Typically, this is a step that divides output by a fixed size, making it difficult to predict how many output files will be created. We have found a large number of workflows actually do not need to do this, the split number, for example, can often times simply be specified ahead of time.
+
+What makes this difficult for SeqWare is the workflow Java definition is used to create a workflow plan which is then fixed and sent to be executed on the cluster.  This makes it very difficult to have variable numbers of subsequent steps based on the output size for a previous step within the workflow.  
+There are a few ways to deal with this. First, work around it by parameterizing the split based on a variable you pass in via the workflow.ini.  For example, you might pass in splits=5 and therefore you scatter step in the workflow would know it should divide into 5 equal size inputs and the gather step right after knows there will be 5, consistently named input files that can be looped over in the workflow Java code.
+
+Another approach would be to loop over the maximum number of steps you would need.  If the input for that step was not created then the job would simply exit without error.
+
+NOTE: Neither of these approaches is very satisfying but they represent compromises. In the long term we anticipate using workflows inside of workflows to solve this problem robustly. Since the inner workflow is scheduled when the previous variable-output step has completed, the inner workflow is able to know the number of input files. This will require a new version of SeqWare but the approach is being prototyped now.
 
 ## Next Steps
 
 For workflow development using SeqWare we encourage you look at our extensive
 documentation on http://seqware.io and post to the user list if you run into problems.
+
+Also, make sure you email the mailing list if you have questions about advanced workflow techniques so we can document best practices here.
