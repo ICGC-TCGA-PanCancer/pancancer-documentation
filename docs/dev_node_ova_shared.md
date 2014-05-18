@@ -14,7 +14,7 @@ NOTE: if you have problems getting this to work I would recommend using one of
 our pre-created VMs by following either the [Launch a Test/Dev Node via Amazon](dev_node_ami.md)
 guide or the [Launch a Test/Dev Node Locally via VirtualBox](dev_node_ova.md) guide.  Either
 of these environments will let you create, test, and package workflows and can be
-setup much more quickly than what is described here.
+setup much more quickly than what is described here. The advantage of this guide is you can create a shared working environment which allows you to use your native OS's IDE and the VM for running/testing/compiling workflows.
 
 ## Use Cases
 
@@ -41,7 +41,7 @@ in cloud environments.
 * create new SeqWare workflows in this "working_dir/master" directory, please see the Developer Getting Started Guide at http://seqware.io
 * you can compile SeqWare workflows on your local computer or on the VM
 * launch SeqWare workflow(s) on your VM to test them and monitor their results
-* package your workflow as a zip bundle (see Developer guide) once your testing is complete, this can be distributed to other clouds for installation and execution in Phase II or Phase III
+* package your workflow as a zip bundle once your testing is complete, this can be distributed to other clouds for installation and execution in Phase II or Phase III.  See [Test Run the Production BWA Workflow](run_bwa.md) and [Create, Test, and Package a New Workflow](create_workflow.md).
 
 ## Detailed Steps Using VirtualBox Locally
 
@@ -172,9 +172,11 @@ information about posting to our mailing list.
 
 ## Next Steps
 
-Much more information can be found in the README for the Bindle
+Take a look at the [Test Run the Production BWA Workflow](run_bwa.md) to see how to install and run the BWA workflow and [Create, Test, and Package a New Workflow](create_workflow.md) for information on creating your own workflows.
+
+Much more information about building nodes/clusters in the cloud can be found in the README for the Bindle
 project, see https://github.com/SeqWare/vagrant
 
-For workflow development using SeqWare we encourage you look at our extensive
+For general workflow development using SeqWare we encourage you look at our extensive
 documentation on http://seqware.io and post to the user list if you run into
 problems.

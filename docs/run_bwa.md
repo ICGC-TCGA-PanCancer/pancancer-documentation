@@ -49,7 +49,7 @@ you read this guide.
 
 You should now have a target/Workflow* directory, this is the workflow compiled into runnable form.
 
-## Installing the Workflow from a Package
+## Or... Installing the Workflow from a Package
 
 You can download a pre-created Zip file, keep in mind it take a long time to process a 4G zip file:
 
@@ -142,5 +142,5 @@ This will launch the workflow with your custom settings.
 Take a look at [Automatically Running Workflows in a Cloud with a Decider](run_bwa_with_decider.md), that will give you
 information on using the decider which is a script that queries GNOS and
 prepares the workflow.ini.  This makes the whole process of parameterizing the
-workflow way easier than manually parameterizing the above.  For information on making your own
+workflow way easier than manually parameterizing the above.  It is intended primarily for cloud shepherds that are responsible for running these workflows in Phase II but could be useful for workflow developers as well.  For information on making your own
 workflows see [Create, Test, and Package a New Workflow](create_workflow.md).

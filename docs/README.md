@@ -41,4 +41,13 @@ These guides focus on researchers in "Phase III" who are accessing the cloud env
 
 # Testing Matrix
 
-Who has tested what and where.
+What profiles from Bindle have been tested in which cloud environments.
+
+| *Configuration name*                                              | OpenStack (OICR) | AWS      | vCloud (EBI Embassy) | VirtualBox | OpenStack (BioNimbus PDC) |
+|-------------------------------------------------------------------|:----------------:|:--------:|:--------------------:|:----------:|:-----------:|
+|*vagrant_cluster_launch.seqware.install.sge_cluster.json.template* | &#x2713;         | &#x2713; |                      |            | |
+|*vagrant_cluster_launch.seqware.install.sge_node.json.template*    | &#x2713;         | &#x2713; | &#x2713;             | &#x2713;   | |
+|*vagrant_cluster_launch.seqware.sge_cluster.json.template*         | &#x2713;         | &#x2713; |                      |            | |
+|*vagrant_cluster_launch.seqware.sge_node.json.template*            | &#x2713;         | &#x2713; | &#x2713;             | &#x2713;   | |
+|*vagrant_cluster_launch.pancancer.seqware.install.sge_cluster.json.template*   | &#x2713; | &#x2713; | &#x2717; | NA | &#x2713; |
+|*vagrant_cluster_launch.pancancer.seqware.install.sge_node.json.template*      | &#x2713; | &#x2713; |  | &#x2713; | &#x2713; |

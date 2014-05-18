@@ -1,4 +1,4 @@
-# TCGA/ICGC PanCancer - Creating a Workflow
+# TCGA/ICGC PanCancer - Creating a SeqWare Workflow
 
 This guide assumes you have a SeqWare VM setup either as
 an AMI on AWS, VM in VirtualBox, or a node/cluster
@@ -7,7 +7,7 @@ running on OpenStack using Bindle.
 ## Use Cases
 
 This guide is targeted at developers creating workflows with SeqWare
-intended to run across the various PanCancer cloud environments.
+intended to run across the various PanCancer cloud environments.  Typically, this is being done for "Phase II" where cloud shepherds pick up these workflows and automate their running across the cloud environments.
 
 ## Steps
 
@@ -25,6 +25,8 @@ environment:
 * [Launch a Test/Dev Node Locally via VirtualBox](dev_node_ova.md)
 * [Create a New Test/Dev Node with Bindle and VirtualBox](dev_node_ova_shared.md)
 * [Create a New Test/Dev Node/Cluster with Bindle and a Cloud](prod_cluster_with_bindle.md)
+
+This guide picks up specifically where the [Create a New Test/Dev Node with Bindle and VirtualBox](dev_node_ova_shared.md) guide leaves off.  It assumes your using a shared development environment where you are working in the "/vagrant" directory.  The approach described here will work regardless of how you launch your VM.
 
 ### Step - Create a New Workflow
 
@@ -114,5 +116,5 @@ Guide.
 
 For workflow development using SeqWare we encourage you look at our extensive
 documentation on http://seqware.io and post to the user list if you run into
-problems.  In particular, we recommend the Developer Getting Started guide
+problems.  In particular, we recommend the Developer Getting Started Guide
 which is focused on workflow development.
