@@ -9,7 +9,7 @@ The last section focuses on "Phase III", the moment in the project where analysi
 These IT guides give an overview of our thoughts on the cloud-nature of this project as well as concrete recommendations for how to optimally setup OpenStack, our recommended cloud technology for this project.
 
 * [VM Infrastructure Overview](https://wiki.oicr.on.ca/display/PANCANCER/PanCancer+VM+Deployment+Guide): Over of the cloud architecture envisioned by the project.
-* [OpenStack Installation Guide](openstack_install.md): Specific recommendations on how to install and configure OpenStack for use with PanCancer.
+* [OpenStack Installation Guide](openstack_install.md): Specific recommendations on how to install and configure OpenStack for use with PanCancer. TODO
 
 # Developer-Focused
 
@@ -36,18 +36,15 @@ These guides are geared towards our "Cloud Shepherds".  For each cloud environme
 
 These guides focus on researchers in "Phase III" who are accessing the cloud environments, analyzing data produced in "Phase II" with the standardized workflows, and creating their own novel algoirthms/protocols for analyzing data.
 
-* [Accessing Clouds](researchers_accessing_clouds.md)
-* [Accessing Phase II Data within the Clouds](researching_accessing_data.md)
+* [Accessing Clouds for Phase III](researchers_accessing_clouds.md)
 
 # Testing Matrix
 
 What profiles from Bindle have been tested in which cloud environments.
 
-| *Configuration name*                                              | OpenStack (OICR) | AWS      | vCloud (EBI Embassy) | VirtualBox | OpenStack (BioNimbus PDC) |
-|-------------------------------------------------------------------|:----------------:|:--------:|:--------------------:|:----------:|:-----------:|
-|*vagrant_cluster_launch.seqware.install.sge_cluster.json.template* | &#x2713;         | &#x2713; |                      |            | |
-|*vagrant_cluster_launch.seqware.install.sge_node.json.template*    | &#x2713;         | &#x2713; | &#x2713;             | &#x2713;   | |
-|*vagrant_cluster_launch.seqware.sge_cluster.json.template*         | &#x2713;         | &#x2713; |                      |            | |
-|*vagrant_cluster_launch.seqware.sge_node.json.template*            | &#x2713;         | &#x2713; | &#x2713;             | &#x2713;   | |
-|*vagrant_cluster_launch.pancancer.seqware.install.sge_cluster.json.template*   | &#x2713; | &#x2713; | &#x2717; | NA | &#x2713; |
-|*vagrant_cluster_launch.pancancer.seqware.install.sge_node.json.template*      | &#x2713; | &#x2713; |  | &#x2713; | &#x2713; |
+| *Configuration name*  | VirtualBox | AWS      | vCloud (London) | OpenStack (Toronto)  | OpenStack (Chicago) | OpenStack (Heidelberg) | OpenStack (Seoul) | Tokyo | Barcelona |
+|-----|:----------:|:--------:|:---------:|:------:|:--------:|:--:|:--:|:--:|:--:|
+|*vagrant_cluster_launch.pancancer.bwa_workflow.seqware.install.sge_cluster.json.template* | &#x2713; &#x2717;   |  |    |  | | | | | |
+|*vagrant_cluster_launch.pancancer.bwa_workflow.seqware.install.sge_node.json.template*    |  |  | |  | | | | | |
+|*vagrant_cluster_launch.pancancer.seqware.install.sge_cluster.json.template*         |     |  |                      |            | | | | | |
+|*vagrant_cluster_launch.pancancer.seqware.install.sge_node.json.template*            |    |  |   |    | | | | |  | |
