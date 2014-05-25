@@ -44,7 +44,7 @@ What profiles from Bindle have been tested in which cloud environments.
 
 | *Configuration name*  | VirtualBox | AWS      | vCloud (London) | OpenStack (Toronto)  | OpenStack (Chicago) | OpenStack (Heidelberg) | OpenStack (Seoul) | Tokyo | Barcelona |
 |-----|:----------:|:--------:|:---------:|:------:|:--------:|:--:|:--:|:--:|:--:|
-|*vagrant_cluster_launch.pancancer.bwa_workflow.seqware.install.sge_cluster.json.template* | NA | ?? | | | | | | | |
+|*vagrant_cluster_launch.pancancer.bwa_workflow.seqware.install.sge_cluster.json.template* | NA | &#x2713; | | | | | | | |
 |*vagrant_cluster_launch.pancancer.bwa_workflow.seqware.install.sge_node.json.template* | | &#x2713; | | | | | | | |
 |*vagrant_cluster_launch.pancancer.seqware.install.sge_cluster.json.template* | NA | | | | | | | | |
 |*vagrant_cluster_launch.pancancer.seqware.install.sge_node.json.template* | | | | | | | | | | |
