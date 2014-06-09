@@ -47,7 +47,7 @@ What profiles from Bindle have been tested in which cloud environments.
 |*vagrant_cluster_launch.pancancer.bwa_workflow.seqware.install.sge_cluster.json.template* | NA | &#x2713; | | | | | | | |
 |*vagrant_cluster_launch.pancancer.bwa_workflow.seqware.install.sge_node.json.template* | | &#x2713; | | | | | | | |
 |*vagrant_cluster_launch.pancancer.seqware.install.sge_cluster.json.template* | NA | | | | | | | | |
-|*vagrant_cluster_launch.pancancer.seqware.install.sge_node.json.template* | | | | | | | | | | |
+|*vagrant_cluster_launch.pancancer.seqware.install.sge_node.json.template* | | &#x2713; | | | | | | | | |
 
 passed: &#x2713; not passed: &#x2717;
 
