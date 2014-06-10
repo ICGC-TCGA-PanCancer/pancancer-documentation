@@ -14,7 +14,7 @@ my @dest;
 my @dest1;
 
 #opens the file containing upload info 
-open(FH,"/home/jlugo/Documents/perl-stuff/out.csv") or &dienice("Can't open guestbook.txt: $!");
+open(FH,"~/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/out.csv") or &dienice("Can't open guestbook.txt: $!");
 while (my $line = <FH>) {
   chomp $line;
   my $count = 0;
@@ -53,7 +53,7 @@ foreach my $elem (@dest){
 #creating bubble json files for every location 
 #appends all the output to different files for each location
 foreach my $thing ('Heidelberg','Cambridge','Hinxton','Toronto','Barcelona','Singapore','Tokyo'){
-               open(my $file, '>', "/home/jlugo/Desktop/d3js_projects/${thing}_bub.json"); 
+               open(my $file, '>', "~/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/${thing}_bub.json"); 
                my $l = 0;
                my @elems;
                my $count_elem;
@@ -70,7 +70,7 @@ foreach my $thing ('Heidelberg','Cambridge','Hinxton','Toronto','Barcelona','Sin
                print $file "[\n";
                
                #gathers the destination json data
-               open(FH,"/home/jlugo/Desktop/d3js_projects/location.json") or &dienice("Can't open guestbook.txt: $!");
+               open(FH,"~/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/location.json") or &dienice("Can't open guestbook.txt: $!");
                while (my $line = <FH>) {
                               foreach my $items (@elems){
                                              my $result = index($line, $dest1[$items]);
@@ -82,7 +82,7 @@ foreach my $thing ('Heidelberg','Cambridge','Hinxton','Toronto','Barcelona','Sin
                close(FH);
                
                my $count_bub = 0;
-               open(FH,"/home/jlugo/Desktop/d3js_projects/bubble_data.json") or &dienice("Can't open guestbook.txt: $!");
+               open(FH,"~/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/bubble_data.json") or &dienice("Can't open guestbook.txt: $!");
                while (my $line = <FH>) {
                               my $result = index($line, $origins1[$elems[0]]);
                               if ($result != -1){
