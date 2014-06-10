@@ -1,14 +1,14 @@
 # PANCAN.INFO
 
 ## About
-The files in this directory are all the ones being used on pancan.info . Everything needed is contained here except for the script workflow_decider.pl which is in 
+The files in this directory are all the ones being used on pancan.info . Everything needed is contained here except for the script workflow_decider.pl which is in:
     
     https://github.com/SeqWare/public-workflows/tree/feature/brian_workflow_2.5/decider-bwa-pancancer
 
 
 
 ## Sample Usage
-
+Preview of how workflow_decider.pl is used.
 Run the program without arguments to see the latest options. For example:
 
     $ perl decider-bwa-pancancer/workflow_decider.pl
