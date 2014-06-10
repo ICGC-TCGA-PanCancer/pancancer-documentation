@@ -36,7 +36,7 @@ my %data = ( 'Heidelberg' => { 'latitude' => 49.403159,
 			    'longitude' => 127.024612});
 			    
 #opens the file containing upload info
-open(FH,"/home/jlugo/Documents/perl-stuff/out.csv") or &dienice("Can't open guestbook.txt: $!");
+open(FH,"~/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/out.csv") or &dienice("Can't open guestbook.txt: $!");
 while (my $line = <FH>) {
   chomp $line;
   my $count = 0;
@@ -50,7 +50,7 @@ while (my $line = <FH>) {
 }
 
 #reading from the bubble json data to find the totals for each location and puts it in @totals
-open(FH,"/home/jlugo/Desktop/d3js_projects/bubble_data.json") or &dienice("Can't open guestbook.txt: $!");
+open(FH,"~/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/bubble_data.json") or &dienice("Can't open guestbook.txt: $!");
 while (my $line = <FH>) {
 	chomp $line;
 	my @fields2 = split "," , $line;
@@ -94,7 +94,7 @@ foreach my $elem (@dest){
 
 #creating the json files for the arc data for every location
 foreach my $thing ('Heidelberg','Cambridge','Hinxton','Toronto','Barcelona','Singapore','Tokyo'){
-	       open(my $file, '>', "/home/jlugo/Desktop/d3js_projects/${thing}.json"); 
+	       open(my $file, '>', "~/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/${thing}.json"); 
 	       my @elems;
 	       my $l = 0;
 	       my $count_elem = 0;
