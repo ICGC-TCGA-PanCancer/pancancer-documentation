@@ -37,10 +37,10 @@ This step assumes that the workflow is installed already on the cluster.  If not
 ### Step - Run the BWA Workflow in local test mode if you have installed bindle using the BWA template
 
     # assumes you have logged into your master node and switched to the seqware user
-    $ ls provisioned-bundles/
+    $ ls provisioned-bundles/Workflow_Bundle_BWA_2.5.0_SeqWare_1.0.13
     # now run the workflow
-    $ seqware bundle launch --dir provisioned-bundles/<BWA_workflow_bundle location>
+    $ seqware bundle launch --dir provisioned-bundles/Workflow_Bundle_BWA_2.5.0_SeqWare_1.0.13/
 
 ## Next Steps
 
-Update the [testing matrix](https://github.com/SeqWare/pancancer-info/blob/develop/docs/README.md)
+Update the [testing matrix](https://github.com/SeqWare/pancancer-info/blob/develop/docs/README.md#testing-matrix)
