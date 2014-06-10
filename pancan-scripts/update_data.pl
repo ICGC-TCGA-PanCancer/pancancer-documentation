@@ -162,7 +162,7 @@ for ($h = 0; $h < scalar @totals; $h++){
 }
 
 #writes to bubble_data.json 
-open(my $file,'>', "bubble_data.json");
+open(my $file,'>', "~/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/bubble_data.json");
 print $file qq([
           {"name": "Heidelberg", "total": $totals[0], "uploaded": $uploads[0], "latitude": 49.403159, "longitude": 8.676061, "radius": $rad[0], "fillKey": "orange"},
           {"name": "Heidelberg", "total": $totals[0], "uploaded": $uploads[0], "latitude": 49.403159, "longitude": 8.676061, "radius": $size[0], "fillKey": "$col[0]"},
@@ -194,7 +194,7 @@ my $date = strftime "%m/%d/%Y - %R", localtime;
 
 #updates the average data for the chart
 #appending to file with all average data
-open(my $f, '>>', "ave_data_archive.csv") or die "Could not open file '/home/jlugo/Desktop/d3js_projects/crunchbase-quarters.csv' $!";
+open(my $f, '>>', "~/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/ave_data_archive.csv") or die "Could not open file '/home/jlugo/Desktop/d3js_projects/crunchbase-quarters.csv' $!";
 print $f "$date,";
 my $k = 0;
 my $count1 = 0;
@@ -207,7 +207,7 @@ close $f;
 
 #updates the total uploads for the chart
 #appending to file with all upload data
-open(my $f1, '>>', "up_data_archive.csv") or die "Could not open file '/home/jlugo/Desktop/d3js_projects/crunchbase-quarters.csv' $!";
+open(my $f1, '>>', "~/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/up_data_archive.csv") or die "Could not open file '/home/jlugo/Desktop/d3js_projects/crunchbase-quarters.csv' $!";
 print $f1 "$date,";
 my $r = 0;
 my $count2 = 0;
@@ -224,7 +224,7 @@ my @ary1 = [];
 my $count_up = 0;
 
 #finding number of rows in the archived data
-open(FH,"ave_data_archive.csv") or &dienice("Can't open guestbook.txt: $!");
+open(FH,"~/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/ave_data_archive.csv") or &dienice("Can't open guestbook.txt: $!");
 while (my $line = <FH>) {
     $count_ave += 1;
     push (@ary,"$line");
@@ -232,7 +232,7 @@ while (my $line = <FH>) {
 close(FH);
 
 #only displaying 20 lines on the chart
-open(my $file_ave, '>',"ave_data.csv") or &dienice("Can't open guestbook.txt: $!");
+open(my $file_ave, '>',"~/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/ave_data.csv") or &dienice("Can't open guestbook.txt: $!");
 if ($count_ave > 20){
         my $h = 0;
         print $file_ave $ary[1];
@@ -249,7 +249,7 @@ else {
 close $file_ave;
 
 #only displaying 20 lines for daily
-open(my $file_ave2, '>',"ave_daily.csv") or &dienice("Can't open guestbook.txt: $!");
+open(my $file_ave2, '>',"~/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/ave_daily.csv") or &dienice("Can't open guestbook.txt: $!");
 if ($count_ave > 20){
         my $h = 0;
         print $file_ave2 $ary[1];
@@ -272,7 +272,7 @@ else {
 close $file_ave2;
 
 #finding number of rows in the archived data
-open(FH,"up_data_archive.csv") or &dienice("Can't open guestbook.txt: $!");
+open(FH,"~/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/up_data_archive.csv") or &dienice("Can't open guestbook.txt: $!");
 while (my $line = <FH>) {
     $count_up += 1;
     push (@ary1,"$line");
@@ -280,7 +280,7 @@ while (my $line = <FH>) {
 close(FH);
 
 #only displaying 20 lines on the chart for hourly 
-open(my $file_up, '>',"up_data.csv") or &dienice("Can't open guestbook.txt: $!");
+open(my $file_up, '>',"~/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/up_data.csv") or &dienice("Can't open guestbook.txt: $!");
 if ($count_up > 20){
         my $h = 0;
         print $file_up $ary1[1];
@@ -297,7 +297,7 @@ else {
 close $file_up;
 
 #only displaying 20 lines for daily
-open(my $file_up2, '>',"up_daily.csv") or &dienice("Can't open guestbook.txt: $!");
+open(my $file_up2, '>',"~/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/up_daily.csv") or &dienice("Can't open guestbook.txt: $!");
 if ($count_up > 20){
         my $h = 0;
         print $file_up2 $ary1[1];
