@@ -49,7 +49,7 @@ foreach my $a ("defiles.txt","brcaukfiles.txt","esadukfiles.txt","cafiles.txt","
   my $total_files = 0;
 
   # checking if specimen_id is in any GNOS repo log file
-  open (FILE, "${a}");
+  open (FILE, "~/ubuntu/gitroot/pancan-info/pancan-scripts/results/${a}");
   while (<FILE>) {
   chomp;
   ($Study, $dcc_project_code, $Accession_Identifier, $submitter_donor_id, $submitter_specimen_id, $submitter_sample_id, $Readgroup, $dcc_specimen_type, $Normal_Tumor_Designation,$ICGC_Sample_Identifier,$Sequencing_Strategy,$Number_of_BAM,$Target,$Actual) = split("\t");
