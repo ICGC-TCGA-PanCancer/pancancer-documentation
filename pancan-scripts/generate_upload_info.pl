@@ -21,7 +21,7 @@ foreach my $a ("defiles.txt","brcaukfiles.txt","esadukfiles.txt","cafiles.txt","
   # Print the content of the URL
   # gets the content of the webpage which is the GNOS repo
   my @content = [];
-  open(my $fh, '>', "/home/jlugo/Documents/Pancan-files/${i}.log"); 
+  open(my $fh, '>', "${i}.log"); 
   print $fh $mech->content;
   close $fh;
   my @line;
@@ -34,7 +34,7 @@ foreach my $a ("defiles.txt","brcaukfiles.txt","esadukfiles.txt","cafiles.txt","
   }
 
   # creates log files for the GNOS repos to read from later
-  open(FH,"/home/jlugo/Documents/Pancan-files/${i}.log") or &dienice("Can't open guestbook.txt: $!");
+  open(FH,"${i}.log") or &dienice("Can't open guestbook.txt: $!");
   while (my $line = <FH>) {
    my $result = index($line, "SPECIMEN/SAMPLE:");
    if ($result == 1){
@@ -49,7 +49,7 @@ foreach my $a ("defiles.txt","brcaukfiles.txt","esadukfiles.txt","cafiles.txt","
   my $total_files = 0;
 
   # checking if specimen_id is in any GNOS repo log file
-  open (FILE, "/home/jlugo/git/public-workflows/decider-bwa-pancancer/results/${a}");
+  open (FILE, "${a}");
   while (<FILE>) {
   chomp;
   ($Study, $dcc_project_code, $Accession_Identifier, $submitter_donor_id, $submitter_specimen_id, $submitter_sample_id, $Readgroup, $dcc_specimen_type, $Normal_Tumor_Designation,$ICGC_Sample_Identifier,$Sequencing_Strategy,$Number_of_BAM,$Target,$Actual) = split("\t");
