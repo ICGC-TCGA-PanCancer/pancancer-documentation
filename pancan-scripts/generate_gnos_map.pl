@@ -12,7 +12,7 @@ my $cluster_json = "cluster.json";
 my $template = "template/map.html";
 my $decider = "";
 
-if (scalar(@ARGV) != 6) { die "USAGE: generate_gnos_map.pl --output index.html --cluster-json cluster.json --template template/map.html --decider workflow_decider.pl"; }
+if (scalar(@ARGV) != 8) { die "USAGE: generate_gnos_map.pl --output index.html --cluster-json cluster.json --template template/map.html --decider workflow_decider.pl"; }
 
 GetOptions("output=s" => \$output, "cluster-json=s" => \$cluster_json, "template=s" => \$template, "decider=s" => \$decider);
 
