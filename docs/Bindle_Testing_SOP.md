@@ -7,6 +7,13 @@ Note that this guide does not explain you how to set up bindle for the
 particular environment you are going to be testing. For that, please 
 refer to CloudBindle/Bindle repository.
 
+## The Template files to test with:
+
+* vagrant_cluster_launch.pancancer.bwa_workflow.seqware.install.sge_cluster.json.template
+* vagrant_cluster_launch.pancancer.bwa_workflow.seqware.install.sge_node.json.template
+* vagrant_cluster_launch.pancancer.seqware.install.sge_cluster.json.template
+* vagrant_cluster_launch.pancancer.seqware.install.sge_node.json.template
+
 ## Testing Process
 
 The following is a detailed example of the testing process once you have launched
