@@ -1,0 +1,4 @@
+[
+          {"name": "Tokyo", "latitude": 35.684219, "longitude": 139.755020, "radius": 30, "fillKey": "blue"},
+          {"name": "Singapore", "total": 8, "uploaded": 7, "latitude": 1.2896700, "longitude": 103.8500700, "radius": 15, "fillKey": "orange"},
+          {"name": "Singapore", "total": 8, "uploaded": 7, "latitude": 1.2896700, "longitude": 103.8500700, "radius": 13.125, "fillKey": "green"}]

@@ -1,0 +1,23 @@
+[
+          {"name": "Heidelberg", "total": 490, "uploaded": 281, "latitude": 49.403159, "longitude": 8.676061, "radius": 30, "fillKey": "orange"},
+          {"name": "Heidelberg", "total": 490, "uploaded": 281, "latitude": 49.403159, "longitude": 8.676061, "radius": 17.2040816326531, "fillKey": "yellow"},
+
+          {"name": "Cambridge", "total": 84, "uploaded": 0, "latitude": 51.507919, "longitude": -0.123571 , "radius": 15, "fillKey": "orange"},
+          {"name": "Cambridge", "total": 84, "uploaded": 0, "latitude": 51.507919, "longitude": -0.123571 , "radius": 3, "fillKey": "red"},
+          
+	  {"name": "Hinxton", "total": 40, "uploaded": 0, "latitude": 52.082869, "longitude": 0.18269 , "radius": 15, "fillKey": "orange"},
+          {"name": "Hinxton", "total": 40, "uploaded": 0, "latitude": 52.082869, "longitude": 0.18269 , "radius": 3, "fillKey": "red"},
+          
+          {"name": "Toronto", "total": 123, "uploaded": 62, "latitude": 43.7000, "longitude": -79.4000, "radius": 20, "fillKey": "orange"},
+          {"name": "Toronto", "total": 123, "uploaded": 62, "latitude": 43.7000, "longitude": -79.4000, "radius": 10.0813008130081, "fillKey": "yellow"},
+     
+          {"name": "Barcelona", "total": 200, "uploaded": 154, "latitude": 41.378691, "longitude": 2.175547, "radius": 20, "fillKey": "orange"},
+          {"name": "Barcelona", "total": 200, "uploaded": 154, "latitude": 41.378691, "longitude": 2.175547, "radius": 15.4, "fillKey": "yellow"},
+
+          {"name": "Singapore", "total": 8, "uploaded": 7, "latitude": 1.2896700, "longitude": 103.8500700, "radius": 15, "fillKey": "orange"},
+          {"name": "Singapore", "total": 8, "uploaded": 7, "latitude": 1.2896700, "longitude": 103.8500700, "radius": 13.125, "fillKey": "green"},
+
+          {"name": "Tokyo", "total": 527, "uploaded": 209, "latitude": 35.684219, "longitude": 139.755020, "radius": 30, "fillKey": "orange"},
+          {"name": "Tokyo", "total": 527, "uploaded": 209, "latitude": 35.684219, "longitude": 139.755020, "radius": 11.8975332068311, "fillKey": "yellow"}
+
+]

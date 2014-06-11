@@ -1,0 +1,493 @@
+Study	dcc_project_code	Accession Identifier	submitter_donor_id	submitter_specimen_id	submitter_sample_id	Readgroup SM UUID	dcc_specimen_type	Normal/Tumor Designation	Matching Normal or Tumour ICGC Sample Identifier	Sequencing Strategy	Number of BAM files/sample	Target Upload Date (DD/MM/YYYY)	Actual Upload Date (DD/MM/YYYY)
+Prostate Cancer - Early Onset	EOPC-DE	EGAN00001085905	EOPC-010	EOPC-010_normal	EOPC-010_normal	a83f74cb-5973-43ae-8138-3415a66f5ba2	Normal - blood derived	normal		WGS	4	08.05.2014	
+Prostate Cancer - Early Onset	EOPC-DE	EGAN00001085906	EOPC-010	EOPC-010_tumor	EOPC-010_tumor	6fe135ef-54b4-4941-9bb9-872dc4d18d9f	Primary tumour - solid tissue	tumour	EOPC-010_normal	WGS	4	08.05.2014	
+Prostate Cancer - Early Onset	EOPC-DE	EGAN00001089460	EOPC-011	EOPC-011_normal	EOPC-011_normal	f28be2ef-e1f6-4c79-9f13-e83efe83e2b9	Normal - blood derived	normal		WGS	3	08.05.2014	
+Prostate Cancer - Early Onset	EOPC-DE	EGAN00001089461	EOPC-011	EOPC-011_tumor	EOPC-011_tumor	1f04210a-0c2e-4bb8-ac8e-86198e5f1d34	Primary tumour - solid tissue	tumour	EOPC-011_normal	WGS	3	08.05.2014	
+Prostate Cancer - Early Onset	EOPC-DE	EGAN00001085909	EOPC-01	EOPC-01_normal	EOPC-01_normal	7f70faa5-d3c0-4606-8882-0f0ffcef9a10	Normal - blood derived	normal		WGS	8	08.05.2014	
+Prostate Cancer - Early Onset	EOPC-DE	EGAN00001085910	EOPC-01	EOPC-01_tumor	EOPC-01_tumor	f601cf2f-081f-484d-ab0e-21a8ec8d3770	Primary tumour - solid tissue	tumour	EOPC-01_normal	WGS	8	08.05.2014	
+Prostate Cancer - Early Onset	EOPC-DE	EGAN00001089448	EOPC-02	EOPC-02_normal	EOPC-02_normal	c295d8b2-a625-4d0c-98d0-b6ee19316e97	Normal - blood derived	normal		WGS	6	08.05.2014	
+Prostate Cancer - Early Onset	EOPC-DE	EGAN00001089449	EOPC-02	EOPC-02_tumor	EOPC-02_tumor	33de44a2-bec1-402d-872c-d78c1f2d52b3	Primary tumour - solid tissue	tumour	EOPC-02_normal	WGS	8	08.05.2014	
+Prostate Cancer - Early Onset	EOPC-DE	EGAN00001089450	EOPC-03	EOPC-03_normal	EOPC-03_normal	6cb0b4df-4885-4caa-8d61-c3d06867f316	Normal - blood derived	normal		WGS	5	08.05.2014	
+Prostate Cancer - Early Onset	EOPC-DE	EGAN00001089451	EOPC-03	EOPC-03_tumor	EOPC-03_tumor	ad007b59-46f6-48b9-958a-2b9d28cca3b7	Primary tumour - solid tissue	tumour	EOPC-03_normal	WGS	10	08.05.2014	
+Prostate Cancer - Early Onset	EOPC-DE	EGAN00001089452	EOPC-04	EOPC-04_normal	EOPC-04_normal	a5cf8bcc-2935-498d-9087-4a4bbfc59149	Normal - blood derived	normal		WGS	8	08.05.2014	
+Prostate Cancer - Early Onset	EOPC-DE	EGAN00001089453	EOPC-04	EOPC-04_tumor	EOPC-04_tumor	4b44b313-6f74-4233-bec4-7e41c91c77f1	Primary tumour - solid tissue	tumour	EOPC-04_normal	WGS	6	08.05.2014	
+Prostate Cancer - Early Onset	EOPC-DE	EGAN00001089454	EOPC-05	EOPC-05_normal	EOPC-05_normal	f1fc9192-422a-4808-b2dd-aedfca23f728	Normal - blood derived	normal		WGS	4	08.05.2014	
+Prostate Cancer - Early Onset	EOPC-DE	EGAN00001089455	EOPC-05	EOPC-05_tumor	EOPC-05_tumor	39e32615-0160-4f13-b330-50748f5d87ed	Primary tumour - solid tissue	tumour	EOPC-05_normal	WGS	5	08.05.2014	
+Prostate Cancer - Early Onset	EOPC-DE	EGAN00001085919	EOPC-06	EOPC-06_normal	EOPC-06_normal	e319a42b-c79e-4fa9-bf33-8d268b357371	Normal - blood derived	normal		WGS	5	08.05.2014	
+Prostate Cancer - Early Onset	EOPC-DE	EGAN00001085920	EOPC-06	EOPC-06_tumor	EOPC-06_tumor	bd3028c7-1fde-401d-a6b2-5f8e61eb4aa1	Primary tumour - solid tissue	tumour	EOPC-06_normal	WGS	5	08.05.2014	
+Prostate Cancer - Early Onset	EOPC-DE	EGAN00001089456	EOPC-07	EOPC-07_normal	EOPC-07_normal	355dab4b-a59c-4d6f-9165-d5871a3881ae	Normal - blood derived	normal		WGS	5	08.05.2014	
+Prostate Cancer - Early Onset	EOPC-DE	EGAN00001089457	EOPC-07	EOPC-07_tumor	EOPC-07_tumor	3c92c0e9-68e0-4354-8ed1-b6506878145d	Primary tumour - solid tissue	tumour	EOPC-07_normal	WGS	5	08.05.2014	
+Prostate Cancer - Early Onset	EOPC-DE	EGAN00001085921	EOPC-08	EOPC-08_normal	EOPC-08_normal	b686b67b-c45d-42c0-9f24-1e3559b1f27a	Normal - blood derived	normal		WGS	5	08.05.2014	
+Prostate Cancer - Early Onset	EOPC-DE	EGAN00001085922	EOPC-08	EOPC-08_tumor	EOPC-08_tumor	dd5ed858-0623-4387-b1bf-109175c32ef4	Primary tumour - solid tissue	tumour	EOPC-08_normal	WGS	6	08.05.2014	
+Prostate Cancer - Early Onset	EOPC-DE	EGAN00001089458	EOPC-09	EOPC-09_normal	EOPC-09_normal	a4d3a3a3-4046-4cc4-a1ed-5ba47634360a	Normal - blood derived	normal		WGS	6	08.05.2014	
+Prostate Cancer - Early Onset	EOPC-DE	EGAN00001089459	EOPC-09	EOPC-09_tumor	EOPC-09_tumor	1be81ade-7ad6-4e7e-90d0-f986b3fb0a25	Primary tumour - solid tissue	tumour	EOPC-09_normal	WGS	6	08.05.2014	
+Study	dcc_project_code	Accession Identifier	submitter_donor_id	submitter_specimen_id	submitter_sample_id	Readgroup SM UUID	dcc_specimen_type	Normal/Tumor Designation	Matching Normal or Tumour ICGC Sample Identifier	Sequencing Strategy	Number of BAM files/sample	Target Upload Date (DD/MM/YYYY)	Actual Upload Date (DD/MM/YYYY)
+Malignant Lymphoma	MALY-DE	EGAN00001096143	4101316	control_4101316	control_4101316	c56b295d-8426-460b-8ba1-72c0b3de0cb1	Normal - blood derived	normal		WGS	8	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001170477	4102009	control_4102009	control_4102009	df088722-4cc7-4f03-88cd-d86ed07e4653	Normal - blood derived	normal		WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001170478	4104893	control_4104893	control_4104893	275ca747-c7d1-4658-843b-e95d897aa4d4	Normal - bone marrow	normal		WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001096144	4105105	control_4105105	control_4105105	2198b4bb-bc19-4abf-b003-306102751c88	Normal - blood derived	normal		WGS	8	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001170479	4107137	control_4107137	control_4107137	167f7581-3477-4af6-aa3b-bb0a18e9b821	Normal - blood derived	normal		WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001096145	4108101	control_4108101	control_4108101	ef2d0db2-4275-4bb7-b117-4950c7ede842	Normal - blood derived	normal		WGS	8	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001096146	4112512	control_4112512	control_4112512	48f2b204-f56d-47c6-933f-8d7b4ef3fbe5	Normal - blood derived	normal		WGS	8	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001087520	4116738	control_4116738	control_4116738	3ff70b4e-8cb4-4341-9be4-3a3598ff8306	Normal - blood derived	normal		WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001067808	4119027	control_4119027	control_4119027	ffba1a9a-da2b-4e57-9409-3f280038f20d	Normal - bone marrow	normal		WGS	5	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001170480	4120193	control_4120193	control_4120193	b390a82f-9143-474e-ab83-aa1b9ffc861d	Normal - blood derived	normal		WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001096147	4121361	control_4121361	control_4121361	6fb5f6ce-e6e2-4e3a-a732-c0442f5c44b9	Normal - blood derived	normal		WGS	8	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001067810	4125240	control_4125240	control_4125240	76b1c444-9265-43b4-9a4f-2d211116edfd	Normal - bone marrow	normal		WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001170481	4127766	control_4127766	control_4127766	587ef89a-1245-40ff-8f9f-6266f40b7c23	Normal - bone marrow	normal		WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001096148	4133511	control_4133511	control_4133511	db8d5510-c902-4c72-a456-97207abebf9d	Normal - blood derived	normal		WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001170482	4134005	control_4134005	control_4134005	7a51380c-523c-4a3e-b8f5-ab34f5253b6a	Normal - blood derived	normal		WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001170483	4135099	control_4135099	control_4135099	71d905b7-9070-47f0-a869-6589826b9431	Normal - blood derived	normal		WGS	7	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001087521	4135350	control_4135350	control_4135350	d3c40434-222a-4dea-a6c9-3ddbd45c9211	Normal - blood derived	normal		WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001170484	4139696	control_4139696	control_4139696	111c2ee1-f3e3-4548-b532-bf6909bd7d19	Normal - blood derived	normal		WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001096149	4142267	control_4142267	control_4142267	a1f9c6ee-0703-4ca9-88c0-2431d8a6db06	Normal - bone marrow	normal		WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001170485	4146289	control_4146289	control_4146289	276d4760-e009-44b1-be13-d0cc1e7deb24	Normal - bone marrow	normal		WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001096150	4158726	control_4158726	control_4158726	42f3f954-a896-4747-8a5e-2d40ea64f7db	Normal - blood derived	normal		WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001087522	4159170	control_4159170	control_4159170	cbde2bf0-f78d-41de-987c-17d9a7d61351	Normal - blood derived	normal		WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001170486	4160468	control_4160468	control_4160468	ce71eb1c-0380-46fe-97b1-a651d7bfcc7f	Normal - blood derived	normal		WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001087523	4163639	control_4163639	control_4163639	e0560f0e-0aa8-4300-ab52-0d2465dee82f	Normal - blood derived	normal		WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001170487	4166706	control_4166706	control_4166706	69412609-de18-4c6c-b800-89b2af07c794	Normal - blood derived	normal		WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001170488	4170686	control_4170686	control_4170686	3be66a2a-10f2-477d-a118-75135b46c5b6	Normal - blood derived	normal		WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001170489	4174905	control_4174905	control_4174905	2cdcddac-d3d0-4e30-944e-1af61accdc93	Normal - blood derived	normal		WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001096151	4175837	control_4175837	control_4175837	46d6533e-fe3e-4854-9026-2b95d020e340	Normal - blood derived	normal		WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001170490	4176133	control_4176133	control_4176133	e48f6ef4-6ead-4529-9529-6e043b83d2f9	Normal - blood derived	normal		WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001170491	4177376	control_4177376	control_4177376	1ae0766c-3d84-4403-a637-b8ae7b449559	Normal - blood derived	normal		WGS	7	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001170492	4177434	control_4177434	control_4177434	31a33489-fa96-49eb-bede-477fcca4dd4e	Normal - blood derived	normal		WGS	4	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001170493	4177601	control_4177601	control_4177601	2641a453-fb5c-45fa-afb8-b69c135adf9a	Normal - blood derived	normal		WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001096152	4177856	control_4177856	control_4177856	26fbf089-ef27-4cfc-9838-b2cafbb85d87	Normal - bone marrow	normal		WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001170494	4177987	control_4177987	control_4177987	a950f8bf-98cc-4481-8e8a-e210346e132a	Normal - blood derived	normal		WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001067812	4182393	control_4182393	control_4182393	dea407f3-a902-44f9-aa3a-a60d678780d2	Normal - bone marrow	normal		WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001170495	4184094	control_4184094	control_4184094	ed7825bb-2692-4f9b-b402-03c9b9e3da93	Normal - blood derived	normal		WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001170496	4188900	control_4188900	control_4188900	b937e1d1-a52f-4e26-ab83-1c4dee50ee46	Normal - blood derived	normal		WGS	7	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001096153	4189200	control_4189200	control_4189200	0875cdc2-f846-4fec-9358-13ad4900d59c	Normal - blood derived	normal		WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001087524	4189998	control_4189998	control_4189998	822ef670-6032-4026-b7bc-61e85c519a10	Normal - bone marrow	normal		WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001067814	4190495	control_4190495	control_4190495	01c45646-7c41-4304-8017-c737c95b1034	Normal - bone marrow	normal		WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001170497	4191799	control_4191799	control_4191799	b804ed82-c254-4a89-a1dd-217c59cec540	Normal - bone marrow	normal		WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001096154	4193278	control_4193278	control_4193278	5e8783d6-b32f-495a-854f-71d131f018b4	Normal - bone marrow	normal		WGS	8	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001087525	4194218	control_4194218	control_4194218	5c73da2f-b433-4199-9166-f3b8810d1206	Normal - bone marrow	normal		WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001096155	4194891	control_4194891	control_4194891	71b57144-32c2-4547-89da-591ba5830ea2	Normal - bone marrow	normal		WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001096156	4101316	tumor_4101316	tumor_4101316	82b8cda8-fbff-455e-b0db-7ff6528bd6c8	Primary tumour - solid tissue	tumour	control_4101316	WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001170498	4102009	tumor_4102009	tumor_4102009	140d5fa9-afbe-444e-a7e7-6a4cb4ab2923	Primary tumour - solid tissue	tumour	control_4102009	WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001170499	4104893	tumor_4104893	tumor_4104893	dc4bc4c4-2cc1-4a2e-a9f2-613088af17bf	Primary tumour - solid tissue	tumour	control_4104893	WGS	7	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001096157	4105105	tumor_4105105	tumor_4105105	f04aecf0-eb12-4ab9-928e-7bcf201b0b40	Primary tumour - solid tissue	tumour	control_4105105	WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001170500	4107137	tumor_4107137	tumor_4107137	ce85ccf3-6621-4976-b187-2f28d45dd4d9	Primary tumour - solid tissue	tumour	control_4107137	WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001096158	4108101	tumor_4108101	tumor_4108101	f9837a56-7244-4846-a63d-266e6a92f168	Primary tumour - solid tissue	tumour	control_4108101	WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001096159	4112512	tumor_4112512	tumor_4112512	874f64e9-8a0d-4f88-92c4-7e831842b1d1	Primary tumour - solid tissue	tumour	control_4112512	WGS	8	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001087526	4116738	tumor_4116738	tumor_4116738	bc1d5327-2e76-4e0e-b749-72a559469d0d	Primary tumour - solid tissue	tumour	control_4116738	WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001067809	4119027	tumor_4119027	tumor_4119027	aa20b9ab-dba9-4002-ad45-cafa2f85cef7	Primary tumour - solid tissue	tumour	control_4119027	WGS	5	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001170501	4120193	tumor_4120193	tumor_4120193	3e012b50-06d1-4120-971b-5e54139b00ee	Primary tumour - solid tissue	tumour	control_4120193	WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001096160	4121361	tumor_4121361	tumor_4121361	baa02e74-9cae-4996-858e-17d9f52d924b	Primary tumour - solid tissue	tumour	control_4121361	WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001067811	4125240	tumor_4125240	tumor_4125240	22578b9f-78dc-464c-9bb9-382f033283d0	Primary tumour - solid tissue	tumour	control_4125240	WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001170502	4127766	tumor_4127766	tumor_4127766	2f0a660c-ba3c-49bb-90f7-39b0034cea82	Primary tumour - solid tissue	tumour	control_4127766	WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001096161	4133511	tumor_4133511	tumor_4133511	dd8f3e1c-6ed6-41c2-957d-6f679a3cb3ca	Primary tumour - solid tissue	tumour	control_4133511	WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001170503	4134005	tumor_4134005	tumor_4134005	4d72d06d-b6af-4294-9eef-6e61e067761f	Primary tumour - solid tissue	tumour	control_4134005	WGS	12	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001170504	4135099	tumor_4135099	tumor_4135099	e6168db0-d12f-4218-8ab9-bd704201cb2b	Primary tumour - solid tissue	tumour	control_4135099	WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001087527	4135350	tumor_4135350	tumor_4135350	f075dcdb-4b6a-4186-bfc5-c1787c4a14ac	Primary tumour - solid tissue	tumour	control_4135350	WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001170505	4139696	tumor_4139696	tumor_4139696	4a4309b0-2aca-4d6a-ac50-039b28406bba	Primary tumour - solid tissue	tumour	control_4139696	WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001096162	4142267	tumor_4142267	tumor_4142267	b330c50b-c45f-413d-918f-33275d0d8f91	Primary tumour - blood derived (bone marrow)	tumour	control_4142267	WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001170506	4146289	tumor_4146289	tumor_4146289	df814571-57f1-4e55-bc1a-c892c568c4ba	Primary tumour - solid tissue	tumour	control_4146289	WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001096163	4158726	tumor_4158726	tumor_4158726	bd6bd940-ef06-433a-80d9-dca5683e9cd2	Primary tumour - solid tissue	tumour	control_4158726	WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001087528	4159170	tumor_4159170	tumor_4159170	81b4dd02-34ec-4ddc-8818-ed888a60ad88	Primary tumour - solid tissue	tumour	control_4159170	WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001170507	4160468	tumor_4160468	tumor_4160468	03ad38a6-0902-4aaa-84a3-91ea88fa9883	Primary tumour - solid tissue	tumour	control_4160468	WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001087529	4163639	tumor_4163639	tumor_4163639	fce8d8c6-f2a0-43a8-9a7a-b9c519a6686c	Primary tumour - solid tissue	tumour	control_4163639	WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001170508	4166706	tumor_4166706	tumor_4166706	d733cf1a-4c42-4def-b6cb-5ef2c6a27fcd	Primary tumour - solid tissue	tumour	control_4166706	WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001170509	4170686	tumor_4170686	tumor_4170686	e98e4e23-a139-4fff-b017-35f3f976eddd	Primary tumour - solid tissue	tumour	control_4170686	WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001170510	4174905	tumor_4174905	tumor_4174905	d6ee68e5-ceb3-4a63-b3bd-e64fe5398102	Primary tumour - solid tissue	tumour	control_4174905	WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001096164	4175837	tumor_4175837	tumor_4175837	650fe009-da01-4717-89df-9c95fafe3d7e	Primary tumour - solid tissue	tumour	control_4175837	WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001170511	4176133	tumor_4176133	tumor_4176133	b9dbc78e-44ce-427c-bbeb-de8d097bde2c	Primary tumour - solid tissue	tumour	control_4176133	WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001170512	4177376	tumor_4177376	tumor_4177376	41dba8d1-8aad-474c-a82b-20b28ab818bd	Primary tumour - solid tissue	tumour	control_4177376	WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001170513	4177434	tumor_4177434	tumor_4177434	a31b6123-c1b7-4cd0-86d8-b2e640cce9da	Primary tumour - solid tissue	tumour	control_4177434	WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001170514	4177601	tumor_4177601	tumor_4177601	5f18b334-6616-406f-8f33-0592b56c14e6	Primary tumour - solid tissue	tumour	control_4177601	WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001096165	4177856	tumor_4177856	tumor_4177856	00b9d0e6-69dc-4345-bffd-ce32880c8eef	Primary tumour - solid tissue	tumour	control_4177856	WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001170515	4177987	tumor_4177987	tumor_4177987	bdbcffb0-c7da-4e7d-8002-9feffe48533c	Primary tumour - solid tissue	tumour	control_4177987	WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001067813	4182393	tumor_4182393	tumor_4182393	4d1a4587-adb4-4a65-943e-f19efe8de142	Primary tumour - solid tissue	tumour	control_4182393	WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001170516	4184094	tumor_4184094	tumor_4184094	2c3ada8b-9650-4859-9857-43209c0f7cea	Primary tumour - solid tissue	tumour	control_4184094	WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001170517	4188900	tumor_4188900	tumor_4188900	068f4f69-d2fe-4f25-912e-ca7d4623efb6	Primary tumour - solid tissue	tumour	control_4188900	WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001096166	4189200	tumor_4189200	tumor_4189200	f60007b3-0603-4ad1-8b47-d2d4c4c621e4	Primary tumour - solid tissue	tumour	control_4189200	WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001087530	4189998	tumor_4189998	tumor_4189998	578ba169-1d2f-4187-b174-082bbc6a5bd2	Primary tumour - solid tissue	tumour	control_4189998	WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001067815	4190495	tumor_4190495	tumor_4190495	2b02e3ad-4423-491e-993a-561e80dc7bcf	Primary tumour - solid tissue	tumour	control_4190495	WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001170518	4191799	tumor_4191799	tumor_4191799	c66926a8-474d-482c-bfb7-043029c8b737	Primary tumour - solid tissue	tumour	control_4191799	WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001096167	4193278	tumor_4193278	tumor_4193278	2b36ac4b-eed3-4591-8b4f-b44049dfc5ed	Primary tumour - solid tissue	tumour	control_4193278	WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001087531	4194218	tumor_4194218	tumor_4194218	28f8d45f-4763-472e-9c4d-6787ba00164b	Primary tumour - solid tissue	tumour	control_4194218	WGS	3	08.05.2014	
+Malignant Lymphoma	MALY-DE	EGAN00001096168	4194891	tumor_4194891	tumor_4194891	ad0700e2-048a-4856-a77a-bc0b6f25f0e2	Primary tumour - solid tissue	tumour	control_4194891	WGS	3	08.05.2014	
+Study	dcc_project_code	Accession Identifier	submitter_donor_id	submitter_specimen_id	submitter_sample_id	Readgroup SM UUID	dcc_specimen_type	Normal/Tumor Designation	Matching Normal or Tumour ICGC Sample Identifier	Sequencing Strategy	Number of BAM files/sample	Target Upload Date (DD/MM/YYYY)	Actual Upload Date (DD/MM/YYYY)
+Pediatric Brain Tumors	PBCA-DE	EGAN00001041602	ICGC_MB1	ICGC_BL1	ICGC_BL1	36c03c8a-354d-4c6f-b7a7-fb9aeb860725	Normal - blood derived	normal		WGS	13	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001179128	ICGC_MB101	ICGC_BL101	ICGC_BL101	c8455d22-9500-4ff0-8355-5104677d0966	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001179129	ICGC_MB102	ICGC_BL102	ICGC_BL102	1261a5b6-89ce-45f8-b8db-3ce62771b87c	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001179130	ICGC_MB104	ICGC_BL104	ICGC_BL104	c50b2ba5-74ca-441b-85b3-c96c158766d9	Normal - blood derived	normal		WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001194586	ICGC_MB106	ICGC_BL106	ICGC_BL106	8c9b9c27-c5e7-4b3e-b03e-ff908a4ae49e	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001194587	ICGC_MB108	ICGC_BL108	ICGC_BL108	9945fc4f-1ec1-4561-b243-fd26f725a7f8	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001194588	ICGC_MB110	ICGC_BL110	ICGC_BL110	4be4b70c-3572-432b-8e20-64af795e2c80	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001194589	ICGC_MB111	ICGC_BL111	ICGC_BL111	1ea4c7e6-56ea-4209-bbc0-c674eb5d6ce7	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001194590	ICGC_MB114	ICGC_BL114	ICGC_BL114	aecff229-9ef5-42d9-8785-49df102dae1f	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001194591	ICGC_MB115	ICGC_BL115	ICGC_BL115	6b82dd71-6a42-4063-abd1-b27a59c09993	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001194592	ICGC_MB118	ICGC_BL118	ICGC_BL118	ae41b9cc-d925-4938-a0ee-ab6b7bd81297	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001194593	ICGC_MB119	ICGC_BL119	ICGC_BL119	33a96dde-8cf0-4240-9fd1-cf0807151649	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001041595	ICGC_MB12	ICGC_BL12	ICGC_BL12	52c198b4-7bda-4f81-8101-a322787a10a6	Normal - blood derived	normal		WGS	15	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001194594	ICGC_MB121	ICGC_BL121	ICGC_BL121	1b5d754c-f75b-490f-a73d-d9a12ad52400	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001179131	ICGC_MB125	ICGC_BL125	ICGC_BL125	d7de3316-df9e-4558-a22a-e603e948a5bd	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001179132	ICGC_MB126	ICGC_BL126	ICGC_BL126	2c4f2a34-9aec-4e85-9881-7c489df2b388	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001179133	ICGC_MB127	ICGC_BL127	ICGC_BL127	f53db75d-43cc-44b9-aaa4-20b45f95b6bf	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001194595	ICGC_MB129	ICGC_BL129	ICGC_BL129	cd446d23-28d3-4a2c-a6f3-4daee0109a7e	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001194596	ICGC_MB131	ICGC_BL131	ICGC_BL131	00699e9f-9056-4718-999d-dc18805f321c	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001179134	ICGC_MB132	ICGC_BL132	ICGC_BL132	7abcbe1f-eb5c-45df-a951-a51bdcd09e9e	Normal - blood derived	normal		WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001194597	ICGC_MB134	ICGC_BL134	ICGC_BL134	e3f3ce7e-2f0b-450f-8f39-2fb420df17af	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001179135	ICGC_MB137	ICGC_BL137	ICGC_BL137	f4056ec5-d8ee-4cdf-8563-fc8021617ab2	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001194598	ICGC_MB139	ICGC_BL139	ICGC_BL139	6f896198-f66a-477b-94fc-0e5c72d11806	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001041596	ICGC_MB14	ICGC_BL14	ICGC_BL14	1cddcc14-a514-40d9-8924-9c11d341b8cd	Normal - blood derived	normal		WGS	9	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001179136	ICGC_MB143	ICGC_BL143	ICGC_BL143	782abc2a-a726-429d-971c-8811e1026e0b	Normal - blood derived	normal		WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001194599	ICGC_MB144	ICGC_BL144	ICGC_BL144	a7bbd77b-340c-4121-a26c-b99a0c025bda	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001179137	ICGC_MB145	ICGC_BL145	ICGC_BL145	262151ee-608f-4443-a093-68c4c48e8047	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001194600	ICGC_MB146	ICGC_BL146	ICGC_BL146	4aa29407-3160-412b-a9dc-bcd4710da037	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001194601	ICGC_MB147	ICGC_BL147	ICGC_BL147	bdec24c3-54b9-49b6-9ec7-73740a60f5a7	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001041597	ICGC_MB15	ICGC_BL15	ICGC_BL15	c56f45e7-a6a8-422c-bff8-539f82a570e6	Normal - blood derived	normal		WGS	14	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001194602	ICGC_MB151	ICGC_BL151	ICGC_BL151	12e843d6-468b-45c7-84f1-b4a94d1c5283	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001194603	ICGC_MB152	ICGC_BL152	ICGC_BL152	7aa04cf3-c2b8-46d6-b5f8-dc9e955d670c	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001194604	ICGC_MB153	ICGC_BL153	ICGC_BL153	1dc17d0f-c906-46e0-b600-a158520de3e4	Normal - blood derived	normal		WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001194605	ICGC_MB154	ICGC_BL154	ICGC_BL154	c422a915-f280-4592-b138-86e8682f30a0	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001179138	ICGC_MB155	ICGC_BL155	ICGC_BL155	c0a01d52-e580-4986-98b4-c42fa39bfc57	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001194606	ICGC_MB157	ICGC_BL157	ICGC_BL157	906c1870-b600-4f1e-bc0d-db9d04ba399e	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001041598	ICGC_MB16	ICGC_BL16	ICGC_BL16	adf60349-6761-4053-a888-0f9aa1e32d4d	Normal - blood derived	normal		WGS	13	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001194607	ICGC_MB160	ICGC_BL160	ICGC_BL160	616b1d3d-9ba5-4d9b-a06d-e28e8711db05	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001041599	ICGC_MB17	ICGC_BL17	ICGC_BL17	6fcfeab7-52cb-40f1-9441-9cda0678fa06	Normal - blood derived	normal		WGS	12	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001179139	ICGC_MB171	ICGC_BL171	ICGC_BL171	819d392d-857b-41f3-a3c8-b2618c00d78b	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001179140	ICGC_MB178	ICGC_BL178	ICGC_BL178	863bd98c-47ea-4714-bf7c-3d6f64edd039	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001041600	ICGC_MB18	ICGC_BL18	ICGC_BL18	63ba69e2-7862-4827-a191-0a33bd716b1d	Normal - blood derived	normal		WGS	13	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001179141	ICGC_MB180	ICGC_BL180	ICGC_BL180	850a01d9-5fb4-4b4f-802e-c5295f813a85	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001179142	ICGC_MB181	ICGC_BL181	ICGC_BL181	ed7044aa-df0d-428e-8aa4-f5cf57d0f174	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001041601	ICGC_MB19	ICGC_BL19	ICGC_BL19	efdc0ab1-9192-41f4-8425-3fdc75e00e1c	Normal - blood derived	normal		WGS	15	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001041609	ICGC_MB2	ICGC_BL2	ICGC_BL2	b46e1828-cb6a-40a6-a52d-095037e4bf31	Normal - blood derived	normal		WGS	13	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001041603	ICGC_MB20	ICGC_BL20	ICGC_BL20	33b8d705-fc41-4c1c-89ae-95e35a6187c4	Normal - blood derived	normal		WGS	15	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001041604	ICGC_MB21	ICGC_BL21	ICGC_BL21	cd6cd466-ef6b-479b-aac7-3f3a7bc01427	Normal - blood derived	normal		WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001041605	ICGC_MB23	ICGC_BL23	ICGC_BL23	8db16c7d-025a-4214-aacf-f55cd0ee0259	Normal - blood derived	normal		WGS	15	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001041606	ICGC_MB24	ICGC_BL24	ICGC_BL24	ae42e865-6be5-4e4e-bcd9-dbcdd95be272	Normal - blood derived	normal		WGS	20	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001041607	ICGC_MB26	ICGC_BL26	ICGC_BL26	78563937-2e88-4fcc-9a9f-6f9484f72ed2	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001041608	ICGC_MB28	ICGC_BL28	ICGC_BL28	c8de80fc-91d3-4905-a584-3e9921b1f81b	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001179110	ICGC_MB3	ICGC_BL3	ICGC_BL3	4da58fda-80f9-488e-a6bd-c19d5371eab8	Normal - blood derived	normal		WGS	5	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001041610	ICGC_MB31	ICGC_BL31	ICGC_BL31	6c34309e-6d3b-4bdc-b7b8-6343b361c357	Normal - blood derived	normal		WGS	6	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001041611	ICGC_MB32	ICGC_BL32	ICGC_BL32	3100243f-ebff-4fa5-8e50-05174fcd4e70	Normal - blood derived	normal		WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001041612	ICGC_MB34	ICGC_BL34	ICGC_BL34	cc40104c-4702-4db5-89fc-5812f603d1d9	Normal - blood derived	normal		WGS	6	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001041613	ICGC_MB35	ICGC_BL35	ICGC_BL35	35c27b5a-8c57-43be-ab95-67c2cb1965db	Normal - blood derived	normal		WGS	6	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001041614	ICGC_MB36	ICGC_BL36	ICGC_BL36	97ddef03-0a56-4e3e-ac70-323843330180	Normal - blood derived	normal		WGS	8	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001041615	ICGC_MB37	ICGC_BL37	ICGC_BL37	da3c47b3-c5ee-4f3e-9106-22ea14bbf0b5	Normal - blood derived	normal		WGS	7	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001041616	ICGC_MB38	ICGC_BL38	ICGC_BL38	7d6c9a2b-0c0f-45ee-8d59-77ac65c80049	Normal - blood derived	normal		WGS	10	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001041617	ICGC_MB39	ICGC_BL39	ICGC_BL39	da6c8593-d4a1-4e08-913b-cd9ffdb72230	Normal - blood derived	normal		WGS	9	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001041618	ICGC_MB40	ICGC_BL40	ICGC_BL40	a2c905e7-6d3e-4898-a26e-21d8df047f9f	Normal - blood derived	normal		WGS	10	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001041619	ICGC_MB45	ICGC_BL45	ICGC_BL45	3129001a-d3ac-4657-b45d-cc2ee9a76f79	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001041620	ICGC_MB46	ICGC_BL46	ICGC_BL46	e4aa421a-3317-4371-a100-7aa1766157b7	Normal - blood derived	normal		WGS	9	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001041621	ICGC_MB49	ICGC_BL49	ICGC_BL49	b5514f64-58c8-4980-a1ce-40dcb5144334	Normal - blood derived	normal		WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001041624	ICGC_MB5	ICGC_BL5	ICGC_BL5	c2c2ea85-775b-4292-a7a8-b627687f5351	Normal - blood derived	normal		WGS	12	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001041622	ICGC_MB50	ICGC_BL50	ICGC_BL50	27f13698-b100-4f36-9cef-235e134718a9	Normal - blood derived	normal		WGS	12	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001041623	ICGC_MB51	ICGC_BL51	ICGC_BL51	5458ac43-4640-4b74-b119-d960d08abc80	Normal - blood derived	normal		WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001179111	ICGC_MB53	ICGC_BL53	ICGC_BL53	32e5c891-26b4-42ad-bdbb-578a3bf1d03b	Normal - blood derived	normal		WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001179112	ICGC_MB56	ICGC_BL56	ICGC_BL56	ee519ce3-2dc5-43d4-a09f-0c4269ac8e04	Normal - blood derived	normal		WGS	6	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001087510	ICGC_MB58	ICGC_BL58	ICGC_BL58	0e2d6137-2164-45a4-9662-4762c0695b40	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001171834	ICGC_MB59	ICGC_BL59	ICGC_BL59	57bf12a6-d766-4185-bd62-8917d290d96e	Normal - blood derived	normal		WGS	5	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001041625	ICGC_MB6	ICGC_BL6	ICGC_BL6	13d1528d-1341-4d1c-9231-40d2f345f317	Normal - blood derived	normal		WGS	12	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001179113	ICGC_MB60	ICGC_BL60	ICGC_BL60	942e629c-4090-4a48-9728-fd74cd440bf3	Normal - blood derived	normal		WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001179114	ICGC_MB61	ICGC_BL61	ICGC_BL61	8d9b89b4-de36-445a-9634-866717f9d141	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001179115	ICGC_MB63	ICGC_BL63	ICGC_BL63	93ce4b80-8057-45cd-aff0-bc0e9276f252	Normal - blood derived	normal		WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001087511	ICGC_MB64	ICGC_BL64	ICGC_BL64	324ebcec-8e91-40c3-9248-723b4ba08eb3	Normal - blood derived	normal		WGS	9	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001087512	ICGC_MB65	ICGC_BL65	ICGC_BL65	521e2f1b-8ef5-44dc-b4e8-613736b3e4ec	Normal - blood derived	normal		WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001179116	ICGC_MB66	ICGC_BL66	ICGC_BL66	b395d394-e6f0-45f8-944e-89e887bdfedb	Normal - blood derived	normal		WGS	6	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001179117	ICGC_MB67	ICGC_BL67	ICGC_BL67	3d435100-a895-4449-a02f-d6a82296c129	Normal - blood derived	normal		WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001179118	ICGC_MB68	ICGC_BL68	ICGC_BL68	a7b0e192-0770-46b4-80d3-1206a7fce6d8	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001179119	ICGC_MB69	ICGC_BL69	ICGC_BL69	876eba5f-9239-4187-9591-aa14cab92d02	Normal - blood derived	normal		WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001041626	ICGC_MB7	ICGC_BL7	ICGC_BL7	f4d371bc-f5be-4f59-aeb3-efc76bd75d69	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001087513	ICGC_MB70	ICGC_BL70	ICGC_BL70	29e6d556-7a08-4dda-9831-7f159e4205da	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001087514	ICGC_MB71	ICGC_BL71	ICGC_BL71	5dc023dc-f0f3-40c1-8718-3a63479e0dfb	Normal - blood derived	normal		WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001179120	ICGC_MB74	ICGC_BL74	ICGC_BL74	28883df9-3190-4888-8edc-273d3f3380da	Normal - blood derived	normal		WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001179121	ICGC_MB75	ICGC_BL75	ICGC_BL75	7e74ad54-cb85-4f4d-9f93-521cbf15082b	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001179122	ICGC_MB77	ICGC_BL77	ICGC_BL77	167162f5-f9e6-4081-971f-7ed36c5e2d8e	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001179123	ICGC_MB78	ICGC_BL78	ICGC_BL78	a66d0029-8734-4c9a-b402-cc8dfd0151ac	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001179124	ICGC_MB79	ICGC_BL79	ICGC_BL79	416f971f-60e4-4f6b-8962-441aa9b464cb	Normal - blood derived	normal		WGS	6	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001179125	ICGC_MB81	ICGC_BL81	ICGC_BL81	b19b8b4a-5fa6-4a3a-b211-679ac9a83ed1	Normal - blood derived	normal		WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001179126	ICGC_MB82	ICGC_BL82	ICGC_BL82	365aab62-3fb6-4abc-8041-dc235b1ffe80	Normal - blood derived	normal		WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001179127	ICGC_MB88	ICGC_BL88	ICGC_BL88	85e6218a-2cb9-41f8-ba91-12fab26592b3	Normal - blood derived	normal		WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001041627	ICGC_MB9	ICGC_BL9	ICGC_BL9	7371d02d-0d43-4101-82d1-8bd68b8448c0	Normal - blood derived	normal		WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001041643	ICGC_MB1	ICGC_MB1	ICGC_MB1	4daa2708-d0db-40fe-a07a-763f003adcae	Primary tumour - solid tissue	tumour	ICGC_BL1	WGS	12	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001179161	ICGC_MB101	ICGC_MB101	ICGC_MB101	97f451e5-a1cc-4f29-8318-0e6ae74efe2f	Primary tumour - solid tissue	tumour	ICGC_BL101	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001179162	ICGC_MB102	ICGC_MB102	ICGC_MB102	35b951c0-edb0-47c4-9076-ede346ea7cb1	Primary tumour - solid tissue	tumour	ICGC_BL102	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001179163	ICGC_MB104	ICGC_MB104	ICGC_MB104	5cbd429f-ffab-41ad-8016-422f1c922e99	Primary tumour - solid tissue	tumour	ICGC_BL104	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001170305	ICGC_MB106	ICGC_MB106	ICGC_MB106	436af904-65b2-4196-ad8c-a4e98081ee41	Primary tumour - solid tissue	tumour	ICGC_BL106	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001170307	ICGC_MB108	ICGC_MB108	ICGC_MB108	8404ef5b-7a64-47fe-98f9-3f63619d2d99	Primary tumour - solid tissue	tumour	ICGC_BL108	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001170308	ICGC_MB110	ICGC_MB110	ICGC_MB110	8bda75a6-86b9-458e-948b-05049b4c52ce	Primary tumour - solid tissue	tumour	ICGC_BL110	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001170309	ICGC_MB111	ICGC_MB111	ICGC_MB111	cc39b534-5ba1-4ea0-956b-676f6732beec	Primary tumour - solid tissue	tumour	ICGC_BL111	WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001170312	ICGC_MB114	ICGC_MB114	ICGC_MB114	68956108-2606-4696-b038-462b6c432398	Primary tumour - solid tissue	tumour	ICGC_BL114	WGS	7	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001170313	ICGC_MB115	ICGC_MB115	ICGC_MB115	d17c2123-d262-43f4-9d06-3547f991cde7	Primary tumour - solid tissue	tumour	ICGC_BL115	WGS	5	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001170315	ICGC_MB118	ICGC_MB118	ICGC_MB118	0624eb1d-3aff-4037-a3c5-fc363a9edd02	Primary tumour - solid tissue	tumour	ICGC_BL118	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001170316	ICGC_MB119	ICGC_MB119	ICGC_MB119	51dd1a39-7349-442c-b7e1-7850fb800569	Primary tumour - solid tissue	tumour	ICGC_BL119	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001041636	ICGC_MB12	ICGC_MB12	ICGC_MB12	d8e2af63-afe0-4f15-88b4-78118cf68160	Primary tumour - solid tissue	tumour	ICGC_BL12	WGS	19	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001170317	ICGC_MB121	ICGC_MB121	ICGC_MB121	9beb4126-0112-4c06-80a3-e5dd1c2b88d5	Primary tumour - solid tissue	tumour	ICGC_BL121	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001179164	ICGC_MB125	ICGC_MB125	ICGC_MB125	93be2990-bceb-45fd-aca5-3358d96e9d5a	Primary tumour - solid tissue	tumour	ICGC_BL125	WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001179165	ICGC_MB126	ICGC_MB126	ICGC_MB126	d609ce92-9edd-4286-bd5f-b93304cae9a2	Primary tumour - solid tissue	tumour	ICGC_BL126	WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001179166	ICGC_MB127	ICGC_MB127	ICGC_MB127	86ae34f9-e16a-4593-8e55-b1296782bc1f	Primary tumour - solid tissue	tumour	ICGC_BL127	WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001170320	ICGC_MB129	ICGC_MB129	ICGC_MB129	906f6f1e-569d-4ce2-9273-1f305782f77f	Primary tumour - solid tissue	tumour	ICGC_BL129	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001170322	ICGC_MB131	ICGC_MB131	ICGC_MB131	e23462f2-cb86-4a3e-8521-221f4bec247c	Primary tumour - solid tissue	tumour	ICGC_BL131	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001170323	ICGC_MB132	ICGC_MB132	ICGC_MB132	706a1085-5994-4d04-b56b-d301c9ed5afa	Primary tumour - solid tissue	tumour	ICGC_BL132	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001170325	ICGC_MB134	ICGC_MB134	ICGC_MB134	ed46bb2e-97e3-4914-a086-de80e00d6ee8	Primary tumour - solid tissue	tumour	ICGC_BL134	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001170326	ICGC_MB137	ICGC_MB137	ICGC_MB137	ef6c8783-fdf1-4014-9fbc-faa0dd7ea463	Primary tumour - solid tissue	tumour	ICGC_BL137	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001170328	ICGC_MB139	ICGC_MB139	ICGC_MB139	880e6970-0131-4966-b13e-8614d33f0df7	Primary tumour - solid tissue	tumour	ICGC_BL139	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001041637	ICGC_MB14	ICGC_MB14	ICGC_MB14	3d24f4b5-2415-4ddd-9fdf-b455e0954ddd	Primary tumour - solid tissue	tumour	ICGC_BL14	WGS	10	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001179167	ICGC_MB143	ICGC_MB143	ICGC_MB143	0ba8f2e2-935a-4123-86aa-6e7f5de85bf4	Primary tumour - solid tissue	tumour	ICGC_BL143	WGS	8	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001194608	ICGC_MB144	ICGC_MB144	ICGC_MB144	6d3d5531-16b4-46ec-bd7e-394946855d62	Primary tumour - solid tissue	tumour	ICGC_BL144	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001179168	ICGC_MB145	ICGC_MB145	ICGC_MB145	5f00a760-fbc0-41f0-b92b-b3c553eac0e5	Primary tumour - solid tissue	tumour	ICGC_BL145	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001194609	ICGC_MB146	ICGC_MB146	ICGC_MB146	b64173fc-abac-4695-902b-f0acf9444e9f	Primary tumour - solid tissue	tumour	ICGC_BL146	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001194610	ICGC_MB147	ICGC_MB147	ICGC_MB147	924bcc4a-c982-43bf-8bbb-641dc983d65e	Primary tumour - solid tissue	tumour	ICGC_BL147	WGS	5	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001041638	ICGC_MB15	ICGC_MB15	ICGC_MB15	c4c776f8-ee3f-4cce-beb9-8dcf262cdcdf	Primary tumour - solid tissue	tumour	ICGC_BL15	WGS	11	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001194611	ICGC_MB151	ICGC_MB151	ICGC_MB151	ed1f5a41-921f-469a-bc04-306a5435e067	Primary tumour - solid tissue	tumour	ICGC_BL151	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001194612	ICGC_MB152	ICGC_MB152	ICGC_MB152	f8d89ae2-2c7d-40ae-8d40-34b93b16efc9	Primary tumour - solid tissue	tumour	ICGC_BL152	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001194613	ICGC_MB153	ICGC_MB153	ICGC_MB153	bd1ce02b-bfaf-4cde-aaac-06097a12e248	Primary tumour - solid tissue	tumour	ICGC_BL153	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001194614	ICGC_MB154	ICGC_MB154	ICGC_MB154	8efb116f-4ecf-4191-8ebf-90a94c1880cf	Primary tumour - solid tissue	tumour	ICGC_BL154	WGS	7	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001179169	ICGC_MB155	ICGC_MB155	ICGC_MB155	cf7f2542-3484-419c-8804-674b23af311a	Primary tumour - solid tissue	tumour	ICGC_BL155	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001194615	ICGC_MB157	ICGC_MB157	ICGC_MB157	cdc672cc-35df-4f10-88f1-d3e40dabf601	Primary tumour - solid tissue	tumour	ICGC_BL157	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001041639	ICGC_MB16	ICGC_MB16	ICGC_MB16	4d121008-0987-4142-a2b8-7dac58f3110a	Primary tumour - solid tissue	tumour	ICGC_BL16	WGS	12	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001194616	ICGC_MB160	ICGC_MB160	ICGC_MB160	6d2a5ee7-9e46-4c09-a982-7b61b5d9bdea	Primary tumour - solid tissue	tumour	ICGC_BL160	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001041640	ICGC_MB17	ICGC_MB17	ICGC_MB17	14f41457-25c3-4979-8515-4f33322039a5	Primary tumour - solid tissue	tumour	ICGC_BL17	WGS	13	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001179170	ICGC_MB171	ICGC_MB171	ICGC_MB171	72b62805-76f9-476a-b876-a781e69a2c90	Primary tumour - solid tissue	tumour	ICGC_BL171	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001179171	ICGC_MB178	ICGC_MB178	ICGC_MB178	c955387a-16e5-447c-8e69-e4c04a9861d5	Primary tumour - solid tissue	tumour	ICGC_BL178	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001041641	ICGC_MB18	ICGC_MB18	ICGC_MB18	cc69fe94-0ecf-45ad-a03f-8fb7198e8657	Primary tumour - solid tissue	tumour	ICGC_BL18	WGS	15	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001179172	ICGC_MB180	ICGC_MB180	ICGC_MB180	bf24366f-fd91-4d84-8b3d-eed80064250d	Primary tumour - solid tissue	tumour	ICGC_BL180	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001179173	ICGC_MB181	ICGC_MB181	ICGC_MB181	48fadd0f-6561-4294-bff4-d5e4f7dfe79f	Primary tumour - solid tissue	tumour	ICGC_BL181	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001041642	ICGC_MB19	ICGC_MB19	ICGC_MB19	5f096d7b-a1ea-4cc2-af73-10108089ae84	Primary tumour - solid tissue	tumour	ICGC_BL19	WGS	15	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001041650	ICGC_MB2	ICGC_MB2	ICGC_MB2	4d6bb438-86f0-4414-962f-2b1cebee4524	Primary tumour - solid tissue	tumour	ICGC_BL2	WGS	11	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001041644	ICGC_MB20	ICGC_MB20	ICGC_MB20	ba5667da-7688-4931-bdb7-d65f391caf60	Primary tumour - solid tissue	tumour	ICGC_BL20	WGS	15	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001041645	ICGC_MB21	ICGC_MB21	ICGC_MB21	a65bcd07-c47d-4bda-a2bf-21f68cef2f3b	Primary tumour - solid tissue	tumour	ICGC_BL21	WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001041646	ICGC_MB23	ICGC_MB23	ICGC_MB23	0db9309e-7b95-4ae3-b0ed-dfd4f38d11b0	Primary tumour - solid tissue	tumour	ICGC_BL23	WGS	21	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001041647	ICGC_MB24	ICGC_MB24	ICGC_MB24	4c3f733d-5fd5-4f67-af5f-8c36c5b37be2	Primary tumour - solid tissue	tumour	ICGC_BL24	WGS	15	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001041648	ICGC_MB26	ICGC_MB26	ICGC_MB26	04b9837e-9ab5-4eb9-9a9c-ef49e3a62662	Primary tumour - solid tissue	tumour	ICGC_BL26	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001041649	ICGC_MB28	ICGC_MB28	ICGC_MB28	a2a4021e-1273-4c18-907c-d20454ab898c	Primary tumour - solid tissue	tumour	ICGC_BL28	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001170331	ICGC_MB3	ICGC_MB3	ICGC_MB3	cb89cea8-f78e-4024-97c2-8f24debee1bc	Primary tumour - solid tissue	tumour	ICGC_BL3	WGS	5	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001041651	ICGC_MB31	ICGC_MB31	ICGC_MB31	ce6154e9-3f3a-442f-a608-35e1bab66927	Primary tumour - solid tissue	tumour	ICGC_BL31	WGS	6	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001041652	ICGC_MB32	ICGC_MB32	ICGC_MB32	37c913e6-9ce5-4338-8849-b5bf7862d36a	Primary tumour - solid tissue	tumour	ICGC_BL32	WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001041653	ICGC_MB34	ICGC_MB34	ICGC_MB34	b86678f3-c9cf-4ba4-8248-3efb2a7c4884	Primary tumour - solid tissue	tumour	ICGC_BL34	WGS	6	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001041654	ICGC_MB35	ICGC_MB35	ICGC_MB35	c20cb5c8-a6d0-4150-b72b-3f7e8909d72b	Primary tumour - solid tissue	tumour	ICGC_BL35	WGS	6	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001041655	ICGC_MB36	ICGC_MB36	ICGC_MB36	19b6b9d6-6912-4b85-a4bf-52014bcb170b	Primary tumour - solid tissue	tumour	ICGC_BL36	WGS	6	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001041656	ICGC_MB37	ICGC_MB37	ICGC_MB37	324adcfa-3fba-45b9-99f0-9d41c0c54d79	Primary tumour - solid tissue	tumour	ICGC_BL37	WGS	6	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001041657	ICGC_MB38	ICGC_MB38	ICGC_MB38	d0161ca7-3c33-4fe5-80df-0cc4b3c4e8ee	Primary tumour - solid tissue	tumour	ICGC_BL38	WGS	10	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001041658	ICGC_MB39	ICGC_MB39	ICGC_MB39	7dddd413-d2c6-4f75-bbf6-3b202877546e	Primary tumour - solid tissue	tumour	ICGC_BL39	WGS	9	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001041659	ICGC_MB40	ICGC_MB40	ICGC_MB40	f2d18ad2-2f18-4c1d-8b35-46f999a82f30	Primary tumour - solid tissue	tumour	ICGC_BL40	WGS	10	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001041660	ICGC_MB45	ICGC_MB45	ICGC_MB45	b061cb06-e927-4f24-82bb-9e651f7ae0e3	Primary tumour - solid tissue	tumour	ICGC_BL45	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001041661	ICGC_MB46	ICGC_MB46	ICGC_MB46	59bfcb53-91c1-4dce-856a-f4afc8fa6224	Primary tumour - solid tissue	tumour	ICGC_BL46	WGS	9	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001041662	ICGC_MB49	ICGC_MB49	ICGC_MB49	f663ff15-c8d3-4bff-8bf9-bf8e983579e0	Primary tumour - solid tissue	tumour	ICGC_BL49	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001041666	ICGC_MB5	ICGC_MB5	ICGC_MB5	32a63b4f-3baa-4987-ad30-5bd0c0548088	Primary tumour - solid tissue	tumour	ICGC_BL5	WGS	11	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001041663	ICGC_MB50	ICGC_MB50	ICGC_MB50	589daa3f-0b76-4c9c-b494-048955e36052	Primary tumour - solid tissue	tumour	ICGC_BL50	WGS	11	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001041665	ICGC_MB51	ICGC_MB51	ICGC_MB51	2009e5e7-1796-445b-8677-46b3804fe0bf	Primary tumour - solid tissue	tumour	ICGC_BL51	WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001179145	ICGC_MB53	ICGC_MB53	ICGC_MB53	ac1bd179-8285-468c-ab9f-7f91151ca0f2	Primary tumour - solid tissue	tumour	ICGC_BL53	WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001179146	ICGC_MB56	ICGC_MB56	ICGC_MB56	2abe2e53-ad9b-4fbc-b9a7-93444f1bea87	Primary tumour - solid tissue	tumour	ICGC_BL56	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001087515	ICGC_MB58	ICGC_MB58	ICGC_MB58	55c75a2a-f3d2-4469-9d23-604cf539d548	Primary tumour - solid tissue	tumour	ICGC_BL58	WGS	6	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001171833	ICGC_MB59	ICGC_MB59	ICGC_MB59	3e1180a5-149c-4e6c-9a29-696e3ba567e3	Primary tumour - solid tissue	tumour	ICGC_BL59	WGS	5	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001041668	ICGC_MB6	ICGC_MB6	ICGC_MB6	03b5268e-881e-49e7-824f-170c3fc8b11b	Primary tumour - solid tissue	tumour	ICGC_BL6	WGS	12	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001179147	ICGC_MB60	ICGC_MB60	ICGC_MB60	0e1e628b-823a-4861-aa95-bed2fada7349	Primary tumour - solid tissue	tumour	ICGC_BL60	WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001179148	ICGC_MB61	ICGC_MB61	ICGC_MB61	bdc039d6-4817-4e6f-b8c6-a40b1e8e1a06	Primary tumour - solid tissue	tumour	ICGC_BL61	WGS	6	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001179149	ICGC_MB63	ICGC_MB63	ICGC_MB63	f15989a1-e820-4879-a535-438277acad49	Primary tumour - solid tissue	tumour	ICGC_BL63	WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001087516	ICGC_MB64	ICGC_MB64	ICGC_MB64	aa018d90-5250-4313-9f7c-a3f196765e07	Primary tumour - solid tissue	tumour	ICGC_BL64	WGS	8	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001087517	ICGC_MB65	ICGC_MB65	ICGC_MB65	6551ec26-4166-4d4f-bee2-444ea2466978	Primary tumour - solid tissue	tumour	ICGC_BL65	WGS	6	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001179150	ICGC_MB66	ICGC_MB66	ICGC_MB66	9be1246b-3dc1-4928-8b89-2d5ed0c866e8	Primary tumour - solid tissue	tumour	ICGC_BL66	WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001179151	ICGC_MB67	ICGC_MB67	ICGC_MB67	4d690424-b015-46ae-885d-aa6d9031f66f	Primary tumour - solid tissue	tumour	ICGC_BL67	WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001179152	ICGC_MB68	ICGC_MB68	ICGC_MB68	4aaae9d8-0693-4901-816e-aaeb8d3ecfaa	Primary tumour - solid tissue	tumour	ICGC_BL68	WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001179153	ICGC_MB69	ICGC_MB69	ICGC_MB69	96e62134-b8cc-4931-9c99-1193448c7c93	Primary tumour - solid tissue	tumour	ICGC_BL69	WGS	10	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001087518	ICGC_MB70	ICGC_MB70	ICGC_MB70	139c9b8c-3f0c-49fd-8b5a-c06d65aa02b6	Primary tumour - solid tissue	tumour	ICGC_BL70	WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001087519	ICGC_MB71	ICGC_MB71	ICGC_MB71	10bc2704-6cef-4d1b-83ac-4804544765ea	Primary tumour - solid tissue	tumour	ICGC_BL71	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001179154	ICGC_MB74	ICGC_MB74	ICGC_MB74	5fa88c3a-dbc1-43f2-82b2-e0592f35ce57	Primary tumour - solid tissue	tumour	ICGC_BL74	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001179155	ICGC_MB75	ICGC_MB75	ICGC_MB75	90ab64be-2229-4a8e-b864-4260b6cb39e9	Primary tumour - solid tissue	tumour	ICGC_BL75	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001179156	ICGC_MB77	ICGC_MB77	ICGC_MB77	8a8dd718-c46e-462a-9793-83d88f5caa7f	Primary tumour - solid tissue	tumour	ICGC_BL77	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001179157	ICGC_MB78	ICGC_MB78	ICGC_MB78	b0d1fde4-928f-4f4c-bff6-33b885582bb5	Primary tumour - solid tissue	tumour	ICGC_BL78	WGS	5	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001179158	ICGC_MB79	ICGC_MB79	ICGC_MB79	c6224ab0-74f5-4f0a-9fe0-c083f806c853	Primary tumour - solid tissue	tumour	ICGC_BL79	WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001041669	ICGC_MB7	ICGC_MB7	ICGC_MB7	3f3aff50-d71b-44af-85d4-f81e813ea420	Primary tumour - solid tissue	tumour	ICGC_BL7	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001179159	ICGC_MB81	ICGC_MB81	ICGC_MB81	49fa7e44-c86f-4b1f-8849-e5fe5b9de734	Primary tumour - solid tissue	tumour	ICGC_BL81	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001179160	ICGC_MB82	ICGC_MB82	ICGC_MB82	e76128b3-8629-4ffd-b02a-e3f0aae8b1a9	Primary tumour - solid tissue	tumour	ICGC_BL82	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001170337	ICGC_MB88	ICGC_MB88	ICGC_MB88	c59188a8-c6bb-433c-97fe-69f79a126d03	Primary tumour - solid tissue	tumour	ICGC_BL88	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001041671	ICGC_MB9	ICGC_MB9	ICGC_MB9	7bd4d5e2-69ee-4264-93e4-2ba01418c460	Primary tumour - solid tissue	tumour	ICGC_BL9	WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107869	ICGC_PA10	ICGC_PA10	ICGC_PA10	1358ff92-4db9-4e42-b63a-984a7bea425a	Primary tumour - solid tissue	tumour	ICGC_PABL10	WGS	6	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107871	ICGC_PA100	ICGC_PA100	ICGC_PA100	129d2c6c-6688-4b29-bfa7-8df3fe77b25a	Primary tumour - solid tissue	tumour	ICGC_PABL100	WGS	7	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107873	ICGC_PA102	ICGC_PA102	ICGC_PA102	d884d070-6077-4155-9978-76aca7ba1e76	Primary tumour - solid tissue	tumour	ICGC_PABL102	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107875	ICGC_PA103	ICGC_PA103	ICGC_PA103	69d6142c-3a16-46c9-8bed-1f4edc267c4d	Primary tumour - solid tissue	tumour	ICGC_PABL103	WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107877	ICGC_PA105	ICGC_PA105	ICGC_PA105	3e6f03d3-23f2-437e-a735-4a18f89ccfa0	Primary tumour - solid tissue	tumour	ICGC_PABL105	WGS	5	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107879	ICGC_PA107	ICGC_PA107	ICGC_PA107	003819bc-c415-4e76-887c-931d60ed39e7	Primary tumour - solid tissue	tumour	ICGC_PABL107	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107881	ICGC_PA108	ICGC_PA108	ICGC_PA108	52f2d49e-f24d-41d2-9f73-33bd1cc51bba	Primary tumour - solid tissue	tumour	ICGC_PABL108	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107883	ICGC_PA109	ICGC_PA109	ICGC_PA109	06018aae-1107-4899-bd24-14e6b1f94709	Primary tumour - solid tissue	tumour	ICGC_PABL109	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107885	ICGC_PA11	ICGC_PA11	ICGC_PA11	de92d076-24b7-46eb-8df6-56094d264f3b	Primary tumour - solid tissue	tumour	ICGC_PABL11	WGS	5	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107887	ICGC_PA110	ICGC_PA110	ICGC_PA110	aa2654f4-94f9-487a-b415-85df69261161	Primary tumour - solid tissue	tumour	ICGC_PABL110	WGS	5	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107889	ICGC_PA112	ICGC_PA112	ICGC_PA112	62ac7c91-da99-4144-b927-e90528dcd8d4	Primary tumour - solid tissue	tumour	ICGC_PABL112	WGS	6	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107891	ICGC_PA116	ICGC_PA116	ICGC_PA116	b61f7f76-f365-4071-a28d-bf354d5a670d	Primary tumour - solid tissue	tumour	ICGC_PABL116	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107893	ICGC_PA117	ICGC_PA117	ICGC_PA117	de55876b-5d7d-46e7-bf3e-35db7a155300	Primary tumour - solid tissue	tumour	ICGC_PABL117	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107895	ICGC_PA12	ICGC_PA12	ICGC_PA12	bc5160ae-d629-46c4-b068-7075876b9103	Primary tumour - solid tissue	tumour	ICGC_PABL12	WGS	7	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107897	ICGC_PA126	ICGC_PA126	ICGC_PA126	3baecfba-6977-4374-8bc9-22240abad9b5	Primary tumour - solid tissue	tumour	ICGC_PABL126	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107899	ICGC_PA129	ICGC_PA129	ICGC_PA129	6e516c4b-fee7-4336-8470-494588e645b3	Primary tumour - solid tissue	tumour	ICGC_PABL129	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107901	ICGC_PA131	ICGC_PA131	ICGC_PA131	7ac3e543-3bc2-4a59-84fc-b5aa0def592c	Primary tumour - solid tissue	tumour	ICGC_PABL131	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107903	ICGC_PA134	ICGC_PA134	ICGC_PA134	6f4d836f-e86f-4b12-9549-7117f59e3d4a	Primary tumour - solid tissue	tumour	ICGC_PABL134	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107905	ICGC_PA135	ICGC_PA135	ICGC_PA135	6239e340-d50c-45b1-a7ca-e1135671ae0f	Primary tumour - solid tissue	tumour	ICGC_PABL135	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107907	ICGC_PA136	ICGC_PA136	ICGC_PA136	a7fb0931-28df-46f4-bc0f-2011fc91f0e1	Primary tumour - solid tissue	tumour	ICGC_PABL136	WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107909	ICGC_PA138	ICGC_PA138	ICGC_PA138	ef76231d-5a21-4bbd-9847-c01be6fe8916	Primary tumour - solid tissue	tumour	ICGC_PABL138	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107911	ICGC_PA14	ICGC_PA14	ICGC_PA14	759d30b2-ddb8-49e2-a604-57ff9222d3a0	Primary tumour - solid tissue	tumour	ICGC_PABL14	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107913	ICGC_PA140	ICGC_PA140	ICGC_PA140	a742a46d-2594-4efe-a701-4a2737ffae81	Primary tumour - solid tissue	tumour	ICGC_PABL140	WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107915	ICGC_PA142	ICGC_PA142	ICGC_PA142	ea351a5c-2982-4499-b631-c003deff7d33	Primary tumour - solid tissue	tumour	ICGC_PABL142	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107917	ICGC_PA143	ICGC_PA143	ICGC_PA143	cb74d12c-eed1-4b14-8f93-d70e625eb65e	Primary tumour - solid tissue	tumour	ICGC_PABL143	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107919	ICGC_PA144	ICGC_PA144	ICGC_PA144	49b26ab5-2ca9-49b1-ae83-573fa41af2cd	Primary tumour - solid tissue	tumour	ICGC_PABL144	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107921	ICGC_PA145	ICGC_PA145	ICGC_PA145	924613ef-8732-4703-a387-136d37b2ba6b	Primary tumour - solid tissue	tumour	ICGC_PABL145	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107923	ICGC_PA147	ICGC_PA147	ICGC_PA147	5714b52d-7048-41b5-8141-bf42d960abe4	Primary tumour - solid tissue	tumour	ICGC_PABL147	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107925	ICGC_PA148	ICGC_PA148	ICGC_PA148	0c8f7e63-7a3e-42e8-9408-c5cbd2f52f9d	Primary tumour - solid tissue	tumour	ICGC_PABL148	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107927	ICGC_PA150	ICGC_PA150	ICGC_PA150	da10f77f-4414-4125-b359-de596421cca6	Primary tumour - solid tissue	tumour	ICGC_PABL150	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107929	ICGC_PA157	ICGC_PA157	ICGC_PA157	5fe83740-0688-46fe-97b4-4c7c8cfa206e	Primary tumour - solid tissue	tumour	ICGC_PABL157	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107931	ICGC_PA158	ICGC_PA158	ICGC_PA158	f21832da-df8b-43d4-9bf4-34ad72b1bcd9	Primary tumour - solid tissue	tumour	ICGC_PABL158	WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107933	ICGC_PA159	ICGC_PA159	ICGC_PA159	bb45c6f5-49cb-418d-85bb-3ded165e2d07	Primary tumour - solid tissue	tumour	ICGC_PABL159	WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107935	ICGC_PA161	ICGC_PA161	ICGC_PA161	36160be6-368f-4cdb-b1ee-9ed5b64462fa	Primary tumour - solid tissue	tumour	ICGC_PABL161	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107937	ICGC_PA162	ICGC_PA162	ICGC_PA162	02706819-bcab-4c49-a569-a4a8c60db1c0	Primary tumour - solid tissue	tumour	ICGC_PABL162	WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107939	ICGC_PA163	ICGC_PA163	ICGC_PA163	d4ecbf52-f6a9-4394-9d3b-8eb8eee1b17b	Primary tumour - solid tissue	tumour	ICGC_PABL163	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107941	ICGC_PA165	ICGC_PA165	ICGC_PA165	dccddb92-bb26-4dc9-a935-2320d089a54a	Primary tumour - solid tissue	tumour	ICGC_PABL165	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107943	ICGC_PA166	ICGC_PA166	ICGC_PA166	3b4ff158-c6d8-4a26-9568-0634ddb4a609	Primary tumour - solid tissue	tumour	ICGC_PABL166	WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107945	ICGC_PA17	ICGC_PA17	ICGC_PA17	7f9382a5-f6da-4fe8-93ad-6adc91f508fa	Primary tumour - solid tissue	tumour	ICGC_PABL17	WGS	5	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107947	ICGC_PA20	ICGC_PA20	ICGC_PA20	ea7d37ca-0dac-4ae6-ad03-97c6df3d116d	Primary tumour - solid tissue	tumour	ICGC_PABL20	WGS	2	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107949	ICGC_PA21	ICGC_PA21	ICGC_PA21	0292a46f-a282-4b7f-a7d6-ac55cc7324fb	Primary tumour - solid tissue	tumour	ICGC_PABL21	WGS	7	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107951	ICGC_PA22	ICGC_PA22	ICGC_PA22	e68bc7b4-b6b1-4807-b52c-7c7a19cdc373	Primary tumour - solid tissue	tumour	ICGC_PABL22	WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107953	ICGC_PA24	ICGC_PA24	ICGC_PA24	bb91765e-4c55-4e7d-93e8-77face8c91f4	Primary tumour - solid tissue	tumour	ICGC_PABL24	WGS	7	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107955	ICGC_PA25	ICGC_PA25	ICGC_PA25	49900a43-d42e-4052-a8cb-1563b82ad0a0	Primary tumour - solid tissue	tumour	ICGC_PABL25	WGS	9	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107957	ICGC_PA27	ICGC_PA27	ICGC_PA27	09666d5a-874c-432a-952e-76721a2af4be	Primary tumour - solid tissue	tumour	ICGC_PABL27	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107959	ICGC_PA28	ICGC_PA28	ICGC_PA28	c1f9d908-9b11-4700-a19b-73ca59c8017e	Primary tumour - solid tissue	tumour	ICGC_PABL28	WGS	6	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107961	ICGC_PA29	ICGC_PA29	ICGC_PA29	cdc2c513-590f-444b-9347-32ba365313a7	Primary tumour - solid tissue	tumour	ICGC_PABL29	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001087462	ICGC_PA3	ICGC_PA3	ICGC_PA3	f4651512-3700-4a89-854f-726ea53a2ea1	Primary tumour - solid tissue	tumour	ICGC_PABL3	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107963	ICGC_PA30	ICGC_PA30	ICGC_PA30	363d3a59-dce3-408d-a736-5c29ba9f9b6d	Primary tumour - solid tissue	tumour	ICGC_PABL30	WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107965	ICGC_PA33	ICGC_PA33	ICGC_PA33	f54d6b6f-3bc2-41dd-81d0-74cf9e1e90e9	Primary tumour - solid tissue	tumour	ICGC_PABL33	WGS	7	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107967	ICGC_PA34	ICGC_PA34	ICGC_PA34	8fa7549d-d0a6-4216-9763-74b0f21c0fd7	Primary tumour - solid tissue	tumour	ICGC_PABL34	WGS	9	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107969	ICGC_PA36	ICGC_PA36	ICGC_PA36	f4798483-9e32-4e6a-8bb5-6f45af2a8ac5	Primary tumour - solid tissue	tumour	ICGC_PABL36	WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107971	ICGC_PA37	ICGC_PA37	ICGC_PA37	955763f0-0735-418f-9ea4-3c980a966002	Primary tumour - solid tissue	tumour	ICGC_PABL37	WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107973	ICGC_PA39	ICGC_PA39	ICGC_PA39	02078f77-2b35-4fa3-ab02-2c017181295e	Primary tumour - solid tissue	tumour	ICGC_PABL39	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107975	ICGC_PA4	ICGC_PA4	ICGC_PA4	94cf1801-a720-4b2f-aab5-0b76c8ccb242	Primary tumour - solid tissue	tumour	ICGC_PABL4	WGS	7	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107977	ICGC_PA41	ICGC_PA41	ICGC_PA41	d00625b4-6e0e-4d96-8e4c-8f1ddcc7aded	Primary tumour - solid tissue	tumour	ICGC_PABL41	WGS	11	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107979	ICGC_PA42	ICGC_PA42	ICGC_PA42	718c5a31-6b19-4f68-9fb9-79b0c00d64a5	Primary tumour - solid tissue	tumour	ICGC_PABL42	WGS	7	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107981	ICGC_PA43	ICGC_PA43	ICGC_PA43	2c2e5f87-bd22-4a5e-be71-3bcc2aefaf74	Primary tumour - solid tissue	tumour	ICGC_PABL43	WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107983	ICGC_PA46	ICGC_PA46	ICGC_PA46	c8f61136-0bea-4fb4-bb63-699af7f22146	Primary tumour - solid tissue	tumour	ICGC_PABL46	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107985	ICGC_PA48	ICGC_PA48	ICGC_PA48	25e68b09-7d62-4449-a14a-8d09edd96db6	Primary tumour - solid tissue	tumour	ICGC_PABL48	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107987	ICGC_PA5	ICGC_PA5	ICGC_PA5	11ae45fb-05f6-425a-9295-d50d13407006	Primary tumour - solid tissue	tumour	ICGC_PABL5	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107989	ICGC_PA50	ICGC_PA50	ICGC_PA50	d1d2932b-f1c4-4080-9b75-dcf1ab0ab217	Primary tumour - solid tissue	tumour	ICGC_PABL50	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107991	ICGC_PA53	ICGC_PA53	ICGC_PA53	bea0e802-96d3-46e2-8030-17019a71e0bb	Primary tumour - solid tissue	tumour	ICGC_PABL53	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107993	ICGC_PA55	ICGC_PA55	ICGC_PA55	8ce95cae-6adb-4bac-b072-94e2d9b70017	Primary tumour - solid tissue	tumour	ICGC_PABL55	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001087463	ICGC_PA56	ICGC_PA56	ICGC_PA56	e592e8db-b3d1-4ab5-ae0d-de4b5b4c0f1a	Primary tumour - solid tissue	tumour	ICGC_PABL56	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107995	ICGC_PA58	ICGC_PA58	ICGC_PA58	fe4611c2-bd37-4605-adfe-60efe0392b03	Primary tumour - solid tissue	tumour	ICGC_PABL58	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107997	ICGC_PA59	ICGC_PA59	ICGC_PA59	46e503ae-461d-443a-869b-f261c5570de1	Primary tumour - solid tissue	tumour	ICGC_PABL59	WGS	6	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001087464	ICGC_PA62	ICGC_PA62	ICGC_PA62	6363fb0e-5f9e-4e46-8358-93806df99e78	Primary tumour - solid tissue	tumour	ICGC_PABL62	WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107999	ICGC_PA63	ICGC_PA63	ICGC_PA63	1b658e7e-ddf3-4d42-9bc6-b005ea0013e1	Primary tumour - solid tissue	tumour	ICGC_PABL63	WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001108001	ICGC_PA64	ICGC_PA64	ICGC_PA64	f0b46dcd-ce45-4405-8744-8f8b35606b75	Primary tumour - solid tissue	tumour	ICGC_PABL64	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001108003	ICGC_PA65	ICGC_PA65	ICGC_PA65	89f34810-19c6-47bc-981d-98498b013686	Primary tumour - solid tissue	tumour	ICGC_PABL65	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001108005	ICGC_PA69	ICGC_PA69	ICGC_PA69	db98d6d5-94a5-4559-8f29-49eb74f83ce3	Primary tumour - solid tissue	tumour	ICGC_PABL69	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001087465	ICGC_PA70	ICGC_PA70	ICGC_PA70	57947014-053e-4c34-b6a7-9e6f36f48010	Primary tumour - solid tissue	tumour	ICGC_PABL70	WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001108007	ICGC_PA71	ICGC_PA71	ICGC_PA71	afd1f2e0-343c-416d-8e8f-2177f312c2f0	Primary tumour - solid tissue	tumour	ICGC_PABL71	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001108009	ICGC_PA73	ICGC_PA73	ICGC_PA73	2a5a5840-a834-47a1-b1f4-dc8fed620f5c	Primary tumour - solid tissue	tumour	ICGC_PABL73	WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001108011	ICGC_PA75	ICGC_PA75	ICGC_PA75	4a35b01f-5e19-4673-abea-d87fd1d605d0	Primary tumour - solid tissue	tumour	ICGC_PABL75	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001087466	ICGC_PA79	ICGC_PA79	ICGC_PA79	53ac794d-1067-43e0-8dc0-43b131f43ec5	Primary tumour - solid tissue	tumour	ICGC_PABL79	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001108013	ICGC_PA8	ICGC_PA8	ICGC_PA8	3935af50-d992-4430-9909-e688347aead9	Primary tumour - solid tissue	tumour	ICGC_PABL8	WGS	11	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001108015	ICGC_PA81	ICGC_PA81	ICGC_PA81	bc69c97c-65c1-4e1c-a241-d17d3130e024	Primary tumour - solid tissue	tumour	ICGC_PABL81	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001108017	ICGC_PA82	ICGC_PA82	ICGC_PA82	43bf37e0-3dbc-4360-818c-fc1356d77495	Primary tumour - solid tissue	tumour	ICGC_PABL82	WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001108019	ICGC_PA83	ICGC_PA83	ICGC_PA83	ddb6c68e-0c90-4bde-a011-523600ce8b29	Primary tumour - solid tissue	tumour	ICGC_PABL83	WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001108021	ICGC_PA84	ICGC_PA84	ICGC_PA84	1a134c18-ced3-4bae-9f15-5f0f09526639	Primary tumour - solid tissue	tumour	ICGC_PABL84	WGS	6	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001108023	ICGC_PA85	ICGC_PA85	ICGC_PA85	df6b025e-ccb7-4f1a-ba22-1dcf76e6554c	Primary tumour - solid tissue	tumour	ICGC_PABL85	WGS	6	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001108025	ICGC_PA86	ICGC_PA86	ICGC_PA86	86cbb7ad-b22b-414f-a122-77d38c77207d	Primary tumour - solid tissue	tumour	ICGC_PABL86	WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001108027	ICGC_PA87	ICGC_PA87	ICGC_PA87	c9ca979d-b3ad-4ff0-92d0-140105413d28	Primary tumour - solid tissue	tumour	ICGC_PABL87	WGS	5	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001108029	ICGC_PA88	ICGC_PA88	ICGC_PA88	67a2e34f-454e-4253-8f22-262fc74d312c	Primary tumour - solid tissue	tumour	ICGC_PABL88	WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001108031	ICGC_PA89	ICGC_PA89	ICGC_PA89	64e5ee38-e5c6-4911-ad87-c50dd8e52f1b	Primary tumour - solid tissue	tumour	ICGC_PABL89	WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001108033	ICGC_PA9	ICGC_PA9	ICGC_PA9	bb66787e-e0b2-45b6-b452-98a6c32132e7	Primary tumour - solid tissue	tumour	ICGC_PABL9	WGS	10	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001108035	ICGC_PA91	ICGC_PA91	ICGC_PA91	6aba73ff-81e0-4f8d-ad12-e3136196e814	Primary tumour - solid tissue	tumour	ICGC_PABL91	WGS	5	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001108037	ICGC_PA92	ICGC_PA92	ICGC_PA92	e63fac5a-cc48-4ab4-b69d-3f0be6ad684d	Primary tumour - solid tissue	tumour	ICGC_PABL92	WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001108039	ICGC_PA93	ICGC_PA93	ICGC_PA93	b1d2457d-3267-46ba-9fdf-663985e60538	Primary tumour - solid tissue	tumour	ICGC_PABL93	WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001108041	ICGC_PA94	ICGC_PA94	ICGC_PA94	ea83f4e6-d2fa-481e-9e2f-e0489f3cbc93	Primary tumour - solid tissue	tumour	ICGC_PABL94	WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001108043	ICGC_PA95	ICGC_PA95	ICGC_PA95	a13ee768-1423-4fcc-b663-caaf6694acb3	Primary tumour - solid tissue	tumour	ICGC_PABL95	WGS	5	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001108045	ICGC_PA96	ICGC_PA96	ICGC_PA96	9c949c63-aa63-4a84-ac5a-b5260775cee6	Primary tumour - solid tissue	tumour	ICGC_PABL96	WGS	5	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001108047	ICGC_PA97	ICGC_PA97	ICGC_PA97	58891151-82b7-497c-aaaa-5707bfdf32b8	Primary tumour - solid tissue	tumour	ICGC_PABL97	WGS	5	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001108049	ICGC_PA99	ICGC_PA99	ICGC_PA99	534d941c-ec2d-47eb-b2dc-d3f856d0b151	Primary tumour - solid tissue	tumour	ICGC_PABL99	WGS	6	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107868	ICGC_PA10	ICGC_PABL10	ICGC_PABL10	ac300962-2e8d-452e-99cf-d2cdb2ae82f0	Normal - blood derived	normal		WGS	6	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107870	ICGC_PA100	ICGC_PABL100	ICGC_PABL100	f9dc46ab-5afc-42b1-9bcd-8e674f0be19a	Normal - blood derived	normal		WGS	5	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107872	ICGC_PA102	ICGC_PABL102	ICGC_PABL102	a795edaa-ae36-4e15-84e4-01fa98897504	Normal - blood derived	normal		WGS	5	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107874	ICGC_PA103	ICGC_PABL103	ICGC_PABL103	4108b5f2-285d-4730-b25f-9f9bde0738c9	Normal - blood derived	normal		WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107876	ICGC_PA105	ICGC_PABL105	ICGC_PABL105	a6f1822b-ab28-4c10-ae57-59d61cd39309	Normal - blood derived	normal		WGS	5	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107878	ICGC_PA107	ICGC_PABL107	ICGC_PABL107	9a1c7950-69c9-4f27-800c-8bd834bc3d08	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107880	ICGC_PA108	ICGC_PABL108	ICGC_PABL108	9a27e456-6bc1-43e6-85f1-f44360ad4598	Normal - blood derived	normal		WGS	11	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107882	ICGC_PA109	ICGC_PABL109	ICGC_PABL109	ed66c921-22e3-4a15-943f-d2e94b1f0db1	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107884	ICGC_PA11	ICGC_PABL11	ICGC_PABL11	a0d6bb1c-dbf5-409c-9766-fb090162d6f7	Normal - blood derived	normal		WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107886	ICGC_PA110	ICGC_PABL110	ICGC_PABL110	6e14ba8b-a346-4cdb-ba36-18d9fc72df1d	Normal - blood derived	normal		WGS	6	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107888	ICGC_PA112	ICGC_PABL112	ICGC_PABL112	fd728e08-61ec-4618-9a45-7ae0082777f2	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107890	ICGC_PA116	ICGC_PABL116	ICGC_PABL116	0bb3ccdb-1f8f-47fd-abb3-51664c9791fd	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107892	ICGC_PA117	ICGC_PABL117	ICGC_PABL117	a37065ae-5515-47f8-8ade-242911b22e83	Normal - blood derived	normal		WGS	5	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107894	ICGC_PA12	ICGC_PABL12	ICGC_PABL12	de056ea5-cdcf-4d2f-93a1-e9c4bb4afffc	Normal - blood derived	normal		WGS	6	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107896	ICGC_PA126	ICGC_PABL126	ICGC_PABL126	d29d3484-8eec-4bc6-b258-70beece61d55	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107898	ICGC_PA129	ICGC_PABL129	ICGC_PABL129	6d4da75c-cd62-4eab-941e-1542d8ecb46a	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107900	ICGC_PA131	ICGC_PABL131	ICGC_PABL131	7cfdc9cf-eadf-4793-aa36-e3a92ff4cd27	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107902	ICGC_PA134	ICGC_PABL134	ICGC_PABL134	595e253a-2381-4697-9872-f0dc191d9632	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107904	ICGC_PA135	ICGC_PABL135	ICGC_PABL135	c3c85c62-8208-403d-a50e-8c195bb7a8b9	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107906	ICGC_PA136	ICGC_PABL136	ICGC_PABL136	88fa13ac-f81f-4152-93ce-e924cb8bfedd	Normal - blood derived	normal		WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107908	ICGC_PA138	ICGC_PABL138	ICGC_PABL138	0b35447b-b4cc-42d1-a1ea-2e2b8eba8eab	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107910	ICGC_PA14	ICGC_PABL14	ICGC_PABL14	f863a152-fc10-4564-8be4-0399be64a6d5	Normal - blood derived	normal		WGS	10	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107912	ICGC_PA140	ICGC_PABL140	ICGC_PABL140	dc66a6da-b398-4dda-bc75-e7e7f8dc9e84	Normal - blood derived	normal		WGS	5	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107914	ICGC_PA142	ICGC_PABL142	ICGC_PABL142	6b846a2f-fee7-469a-8d84-7fe5fe13774d	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107916	ICGC_PA143	ICGC_PABL143	ICGC_PABL143	f0ed7fc2-6c97-4436-8fc6-b6cbd8e9b438	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107918	ICGC_PA144	ICGC_PABL144	ICGC_PABL144	d403ffdd-512b-4e27-a4e3-74f2400d1635	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107920	ICGC_PA145	ICGC_PABL145	ICGC_PABL145	a4ec1623-ea78-4988-8cb0-505036b0e5ac	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107922	ICGC_PA147	ICGC_PABL147	ICGC_PABL147	126a23b8-e8c9-42da-8365-70a97a0ebfe2	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107924	ICGC_PA148	ICGC_PABL148	ICGC_PABL148	a78eba53-6949-48fb-b822-609583334019	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107926	ICGC_PA150	ICGC_PABL150	ICGC_PABL150	66667262-a6c2-4335-afa5-b1d5910fde2b	Normal - blood derived	normal		WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107928	ICGC_PA157	ICGC_PABL157	ICGC_PABL157	d3291693-b954-42b8-891c-509c3f15c5e3	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107930	ICGC_PA158	ICGC_PABL158	ICGC_PABL158	cb787752-e643-411a-aa71-36c5a40d698e	Normal - blood derived	normal		WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107932	ICGC_PA159	ICGC_PABL159	ICGC_PABL159	e75f927a-b39e-4ccf-b4ee-f8305020b94f	Normal - blood derived	normal		WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107934	ICGC_PA161	ICGC_PABL161	ICGC_PABL161	32ffaf92-83d9-445d-988e-fa616cd52d7b	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107936	ICGC_PA162	ICGC_PABL162	ICGC_PABL162	fce2deeb-a236-4cf4-879d-fc2e2895e40d	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107938	ICGC_PA163	ICGC_PABL163	ICGC_PABL163	85a0691c-4457-4613-913e-30dc24c5b6b6	Normal - blood derived	normal		WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107940	ICGC_PA165	ICGC_PABL165	ICGC_PABL165	ec8d0ecc-c41a-4241-a769-3a38eeee58e5	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107942	ICGC_PA166	ICGC_PABL166	ICGC_PABL166	0c5cb16c-35cf-443d-9a45-8d8bd2933ba2	Normal - blood derived	normal		WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107944	ICGC_PA17	ICGC_PABL17	ICGC_PABL17	ce928be5-2b08-4a58-9134-79b6a2b61943	Normal - blood derived	normal		WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107946	ICGC_PA20	ICGC_PABL20	ICGC_PABL20	7c944630-1f35-47bd-b6c1-5afa6f63916d	Normal - blood derived	normal		WGS	10	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107948	ICGC_PA21	ICGC_PABL21	ICGC_PABL21	a98a906f-52bd-456f-b30e-9e2f50d08569	Normal - blood derived	normal		WGS	8	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107950	ICGC_PA22	ICGC_PABL22	ICGC_PABL22	75238901-26b8-44b0-ae33-26c6286e3d1f	Normal - blood derived	normal		WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107952	ICGC_PA24	ICGC_PABL24	ICGC_PABL24	c84020e5-5565-4ae8-991c-6641bbe2537a	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107954	ICGC_PA25	ICGC_PABL25	ICGC_PABL25	8d421774-0eab-4e8a-b7c0-37fb9fec3f33	Normal - blood derived	normal		WGS	7	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107956	ICGC_PA27	ICGC_PABL27	ICGC_PABL27	58727887-f158-44fd-99b7-b390c8c409c8	Normal - blood derived	normal		WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107958	ICGC_PA28	ICGC_PABL28	ICGC_PABL28	1c04886d-66bd-4f61-8250-a2e9cc7e6bdc	Normal - blood derived	normal		WGS	6	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107960	ICGC_PA29	ICGC_PABL29	ICGC_PABL29	f86f654e-d409-436f-84be-dedabf82495a	Normal - blood derived	normal		WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001087467	ICGC_PA3	ICGC_PABL3	ICGC_PABL3	a804b663-1068-4d9f-bca9-2389a0d12f45	Normal - blood derived	normal		WGS	6	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107962	ICGC_PA30	ICGC_PABL30	ICGC_PABL30	ec24b456-5cdd-48d0-9c9b-fab5c3ab103d	Normal - blood derived	normal		WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107964	ICGC_PA33	ICGC_PABL33	ICGC_PABL33	354a59b3-f9d5-462d-8599-99d5f9e394ae	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107966	ICGC_PA34	ICGC_PABL34	ICGC_PABL34	edb91dee-56b8-4807-8176-dc2f9fbcd625	Normal - blood derived	normal		WGS	10	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107968	ICGC_PA36	ICGC_PABL36	ICGC_PABL36	34a6443d-0e70-43b9-bc9c-15e13259eadc	Normal - blood derived	normal		WGS	5	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107970	ICGC_PA37	ICGC_PABL37	ICGC_PABL37	e80c26c3-4ea9-445d-b8b4-6c0eea1987d9	Normal - blood derived	normal		WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107972	ICGC_PA39	ICGC_PABL39	ICGC_PABL39	fd5cf101-efb5-43a1-bd36-78b5441a2ed7	Normal - blood derived	normal		WGS	5	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107974	ICGC_PA4	ICGC_PABL4	ICGC_PABL4	68cb880f-a6d7-4412-9ecf-a8fc1283718f	Normal - blood derived	normal		WGS	2	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107976	ICGC_PA41	ICGC_PABL41	ICGC_PABL41	aad84895-cd6e-4b96-95ff-d5bab1278d90	Normal - blood derived	normal		WGS	11	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107978	ICGC_PA42	ICGC_PABL42	ICGC_PABL42	3410e10f-c582-4032-a5e4-a807b06c34ad	Normal - blood derived	normal		WGS	7	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107980	ICGC_PA43	ICGC_PABL43	ICGC_PABL43	18cbfd97-64ec-4de4-85cd-a73e72f2f44e	Normal - blood derived	normal		WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107982	ICGC_PA46	ICGC_PABL46	ICGC_PABL46	2dfccfd7-0dd7-4e3e-850f-6d7d5c7abfaa	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107984	ICGC_PA48	ICGC_PABL48	ICGC_PABL48	ec89e96d-3503-46ae-b354-85657deb9384	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107986	ICGC_PA5	ICGC_PABL5	ICGC_PABL5	c8e480aa-02ff-4f4b-b44a-6e66f8ddaa1a	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107988	ICGC_PA50	ICGC_PABL50	ICGC_PABL50	00af7664-6746-4c5f-ad79-715227c7602f	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107990	ICGC_PA53	ICGC_PABL53	ICGC_PABL53	20bf8edf-c15f-44ee-92aa-4c7b1222fcf0	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107992	ICGC_PA55	ICGC_PABL55	ICGC_PABL55	088e7010-6588-415c-809f-1804b860e7d7	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001087468	ICGC_PA56	ICGC_PABL56	ICGC_PABL56	ca09a4a4-8309-4b5c-9f95-a682e3ee2675	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107994	ICGC_PA58	ICGC_PABL58	ICGC_PABL58	3ecf6ee6-aebe-4854-b9be-d02b0877d83e	Normal - blood derived	normal		WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107996	ICGC_PA59	ICGC_PABL59	ICGC_PABL59	fd59a13d-5d6e-4d15-bd91-285b7b110867	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001087469	ICGC_PA62	ICGC_PABL62	ICGC_PABL62	6e92db93-ff22-433c-b295-52c900c836f5	Normal - blood derived	normal		WGS	5	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001107998	ICGC_PA63	ICGC_PABL63	ICGC_PABL63	a4869e84-9afc-4a1c-a6e9-aabe654fbd15	Normal - blood derived	normal		WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001108000	ICGC_PA64	ICGC_PABL64	ICGC_PABL64	7c0edbcc-f647-4739-ad35-79e4f2fbcf67	Normal - blood derived	normal		WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001108002	ICGC_PA65	ICGC_PABL65	ICGC_PABL65	801bfca0-920b-4512-a532-393fe7f0db97	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001108004	ICGC_PA69	ICGC_PABL69	ICGC_PABL69	d74acd5a-b566-4b37-92a0-b2530ffa2c8d	Normal - blood derived	normal		WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001087470	ICGC_PA70	ICGC_PABL70	ICGC_PABL70	c57d38cd-f24b-4881-9419-f9c658d7afda	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001108006	ICGC_PA71	ICGC_PABL71	ICGC_PABL71	8341fa9e-cd9d-4b69-a48a-365f2265f6e5	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001108008	ICGC_PA73	ICGC_PABL73	ICGC_PABL73	5e91f79d-f481-4034-9a1e-d81cf6e5144a	Normal - blood derived	normal		WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001108010	ICGC_PA75	ICGC_PABL75	ICGC_PABL75	92a930d9-76bc-48bc-b07c-c508735f010e	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001087471	ICGC_PA79	ICGC_PABL79	ICGC_PABL79	0ead2daa-71e7-44fb-a674-c248386703c9	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001108012	ICGC_PA8	ICGC_PABL8	ICGC_PABL8	74984f76-5442-4579-aee7-d9a77ed7c13d	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001108014	ICGC_PA81	ICGC_PABL81	ICGC_PABL81	6321ec24-4d82-44a9-8810-0f95c6ee58c2	Normal - blood derived	normal		WGS	3	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001108016	ICGC_PA82	ICGC_PABL82	ICGC_PABL82	36a5c25c-b22d-4865-992e-44f075d8e5d0	Normal - blood derived	normal		WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001108018	ICGC_PA83	ICGC_PABL83	ICGC_PABL83	8d2752d7-e5d1-446b-b2c5-cbe2a05297e8	Normal - blood derived	normal		WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001108020	ICGC_PA84	ICGC_PABL84	ICGC_PABL84	64eb7c78-4d5d-4aee-b007-50c4a6ce8bc4	Normal - blood derived	normal		WGS	6	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001108022	ICGC_PA85	ICGC_PABL85	ICGC_PABL85	a9610c87-455e-490e-8c8c-71150b147b46	Normal - blood derived	normal		WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001108024	ICGC_PA86	ICGC_PABL86	ICGC_PABL86	f8aa95ed-5293-44ce-a588-c47579df9a47	Normal - blood derived	normal		WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001108026	ICGC_PA87	ICGC_PABL87	ICGC_PABL87	2ce2e9be-f0bd-4aea-af53-a8f620423525	Normal - blood derived	normal		WGS	5	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001108028	ICGC_PA88	ICGC_PABL88	ICGC_PABL88	6a5b8189-e8ae-44e3-9797-da5ad0210f35	Normal - blood derived	normal		WGS	5	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001108030	ICGC_PA89	ICGC_PABL89	ICGC_PABL89	f91f53bd-431b-46d3-b6b6-f2198bd3e9cb	Normal - blood derived	normal		WGS	4	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001108032	ICGC_PA9	ICGC_PABL9	ICGC_PABL9	293d3d22-2ffb-4140-b4d0-295f02043b3c	Normal - blood derived	normal		WGS	5	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001108034	ICGC_PA91	ICGC_PABL91	ICGC_PABL91	cdff0121-8d96-4f3e-b9b1-767d1d222fc5	Normal - blood derived	normal		WGS	8	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001108036	ICGC_PA92	ICGC_PABL92	ICGC_PABL92	90b83b52-de84-4f98-9086-6c59246bc6e1	Normal - blood derived	normal		WGS	6	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001108038	ICGC_PA93	ICGC_PABL93	ICGC_PABL93	39129834-c039-4761-ac91-b97ea5b7bee9	Normal - blood derived	normal		WGS	6	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001108040	ICGC_PA94	ICGC_PABL94	ICGC_PABL94	adc8c97a-c42d-4fcf-a3e0-afb0e6f8e826	Normal - blood derived	normal		WGS	5	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001108042	ICGC_PA95	ICGC_PABL95	ICGC_PABL95	a8957e9d-434b-4801-a723-0052384e49e2	Normal - blood derived	normal		WGS	6	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001108044	ICGC_PA96	ICGC_PABL96	ICGC_PABL96	32593197-a758-4ece-be91-af82a8c15529	Normal - blood derived	normal		WGS	6	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001108046	ICGC_PA97	ICGC_PABL97	ICGC_PABL97	e619e23b-4f4b-45fb-bfee-01b0e1095df1	Normal - blood derived	normal		WGS	8	08.05.2014	
+Pediatric Brain Tumors	PBCA-DE	EGAN00001108048	ICGC_PA99	ICGC_PABL99	ICGC_PABL99	1822b64d-779b-40b3-bcfb-ac68d8b2ed3f	Normal - blood derived	normal		WGS	5	08.05.2014	

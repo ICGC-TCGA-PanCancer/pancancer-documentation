@@ -1,0 +1,4 @@
+[
+	  {"name":"Hinxton","latitude": 52.082869, "longitude": 0.18269 , "radius": 15, "fillKey": "blue"},
+	  {"name": "Hinxton", "total": 40, "uploaded": 0, "latitude": 52.082869, "longitude": 0.18269 , "radius": 15, "fillKey": "orange"},
+          {"name": "Hinxton", "total": 40, "uploaded": 0, "latitude": 52.082869, "longitude": 0.18269 , "radius": 3, "fillKey": "red"}]

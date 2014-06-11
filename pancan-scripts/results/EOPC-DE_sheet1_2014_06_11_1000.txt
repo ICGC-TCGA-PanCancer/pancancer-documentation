@@ -1,0 +1,23 @@
+Study	dcc_project_code	Accession Identifier	submitter_donor_id	submitter_specimen_id	submitter_sample_id	Readgroup SM UUID	dcc_specimen_type	Normal/Tumor Designation	Matching Normal or Tumour ICGC Sample Identifier	Sequencing Strategy	Number of BAM files/sample	Target Upload Date (DD/MM/YYYY)	Actual Upload Date (DD/MM/YYYY)
+Prostate Cancer - Early Onset	EOPC-DE	EGAN00001085905	EOPC-010	EOPC-010_normal	EOPC-010_normal	a83f74cb-5973-43ae-8138-3415a66f5ba2	Normal - blood derived	normal		WGS	4	08.05.2014	
+Prostate Cancer - Early Onset	EOPC-DE	EGAN00001085906	EOPC-010	EOPC-010_tumor	EOPC-010_tumor	6fe135ef-54b4-4941-9bb9-872dc4d18d9f	Primary tumour - solid tissue	tumour	EOPC-010_normal	WGS	4	08.05.2014	
+Prostate Cancer - Early Onset	EOPC-DE	EGAN00001089460	EOPC-011	EOPC-011_normal	EOPC-011_normal	f28be2ef-e1f6-4c79-9f13-e83efe83e2b9	Normal - blood derived	normal		WGS	3	08.05.2014	
+Prostate Cancer - Early Onset	EOPC-DE	EGAN00001089461	EOPC-011	EOPC-011_tumor	EOPC-011_tumor	1f04210a-0c2e-4bb8-ac8e-86198e5f1d34	Primary tumour - solid tissue	tumour	EOPC-011_normal	WGS	3	08.05.2014	
+Prostate Cancer - Early Onset	EOPC-DE	EGAN00001085909	EOPC-01	EOPC-01_normal	EOPC-01_normal	7f70faa5-d3c0-4606-8882-0f0ffcef9a10	Normal - blood derived	normal		WGS	8	08.05.2014	
+Prostate Cancer - Early Onset	EOPC-DE	EGAN00001085910	EOPC-01	EOPC-01_tumor	EOPC-01_tumor	f601cf2f-081f-484d-ab0e-21a8ec8d3770	Primary tumour - solid tissue	tumour	EOPC-01_normal	WGS	8	08.05.2014	
+Prostate Cancer - Early Onset	EOPC-DE	EGAN00001089448	EOPC-02	EOPC-02_normal	EOPC-02_normal	c295d8b2-a625-4d0c-98d0-b6ee19316e97	Normal - blood derived	normal		WGS	6	08.05.2014	
+Prostate Cancer - Early Onset	EOPC-DE	EGAN00001089449	EOPC-02	EOPC-02_tumor	EOPC-02_tumor	33de44a2-bec1-402d-872c-d78c1f2d52b3	Primary tumour - solid tissue	tumour	EOPC-02_normal	WGS	8	08.05.2014	
+Prostate Cancer - Early Onset	EOPC-DE	EGAN00001089450	EOPC-03	EOPC-03_normal	EOPC-03_normal	6cb0b4df-4885-4caa-8d61-c3d06867f316	Normal - blood derived	normal		WGS	5	08.05.2014	
+Prostate Cancer - Early Onset	EOPC-DE	EGAN00001089451	EOPC-03	EOPC-03_tumor	EOPC-03_tumor	ad007b59-46f6-48b9-958a-2b9d28cca3b7	Primary tumour - solid tissue	tumour	EOPC-03_normal	WGS	10	08.05.2014	
+Prostate Cancer - Early Onset	EOPC-DE	EGAN00001089452	EOPC-04	EOPC-04_normal	EOPC-04_normal	a5cf8bcc-2935-498d-9087-4a4bbfc59149	Normal - blood derived	normal		WGS	8	08.05.2014	
+Prostate Cancer - Early Onset	EOPC-DE	EGAN00001089453	EOPC-04	EOPC-04_tumor	EOPC-04_tumor	4b44b313-6f74-4233-bec4-7e41c91c77f1	Primary tumour - solid tissue	tumour	EOPC-04_normal	WGS	6	08.05.2014	
+Prostate Cancer - Early Onset	EOPC-DE	EGAN00001089454	EOPC-05	EOPC-05_normal	EOPC-05_normal	f1fc9192-422a-4808-b2dd-aedfca23f728	Normal - blood derived	normal		WGS	4	08.05.2014	
+Prostate Cancer - Early Onset	EOPC-DE	EGAN00001089455	EOPC-05	EOPC-05_tumor	EOPC-05_tumor	39e32615-0160-4f13-b330-50748f5d87ed	Primary tumour - solid tissue	tumour	EOPC-05_normal	WGS	5	08.05.2014	
+Prostate Cancer - Early Onset	EOPC-DE	EGAN00001085919	EOPC-06	EOPC-06_normal	EOPC-06_normal	e319a42b-c79e-4fa9-bf33-8d268b357371	Normal - blood derived	normal		WGS	5	08.05.2014	
+Prostate Cancer - Early Onset	EOPC-DE	EGAN00001085920	EOPC-06	EOPC-06_tumor	EOPC-06_tumor	bd3028c7-1fde-401d-a6b2-5f8e61eb4aa1	Primary tumour - solid tissue	tumour	EOPC-06_normal	WGS	5	08.05.2014	
+Prostate Cancer - Early Onset	EOPC-DE	EGAN00001089456	EOPC-07	EOPC-07_normal	EOPC-07_normal	355dab4b-a59c-4d6f-9165-d5871a3881ae	Normal - blood derived	normal		WGS	5	08.05.2014	
+Prostate Cancer - Early Onset	EOPC-DE	EGAN00001089457	EOPC-07	EOPC-07_tumor	EOPC-07_tumor	3c92c0e9-68e0-4354-8ed1-b6506878145d	Primary tumour - solid tissue	tumour	EOPC-07_normal	WGS	5	08.05.2014	
+Prostate Cancer - Early Onset	EOPC-DE	EGAN00001085921	EOPC-08	EOPC-08_normal	EOPC-08_normal	b686b67b-c45d-42c0-9f24-1e3559b1f27a	Normal - blood derived	normal		WGS	5	08.05.2014	
+Prostate Cancer - Early Onset	EOPC-DE	EGAN00001085922	EOPC-08	EOPC-08_tumor	EOPC-08_tumor	dd5ed858-0623-4387-b1bf-109175c32ef4	Primary tumour - solid tissue	tumour	EOPC-08_normal	WGS	6	08.05.2014	
+Prostate Cancer - Early Onset	EOPC-DE	EGAN00001089458	EOPC-09	EOPC-09_normal	EOPC-09_normal	a4d3a3a3-4046-4cc4-a1ed-5ba47634360a	Normal - blood derived	normal		WGS	6	08.05.2014	
+Prostate Cancer - Early Onset	EOPC-DE	EGAN00001089459	EOPC-09	EOPC-09_tumor	EOPC-09_tumor	1be81ade-7ad6-4e7e-90d0-f986b3fb0a25	Primary tumour - solid tissue	tumour	EOPC-09_normal	WGS	6	08.05.2014	

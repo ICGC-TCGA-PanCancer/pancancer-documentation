@@ -1,0 +1,4 @@
+[
+          {"name":"Cambridge","latitude": 51.507919, "longitude": -0.123571 , "radius": 15, "fillKey": "blue"},
+          {"name": "Cambridge", "total": 84, "uploaded": 0, "latitude": 51.507919, "longitude": -0.123571 , "radius": 15, "fillKey": "orange"},
+          {"name": "Cambridge", "total": 84, "uploaded": 0, "latitude": 51.507919, "longitude": -0.123571 , "radius": 3, "fillKey": "red"}]
