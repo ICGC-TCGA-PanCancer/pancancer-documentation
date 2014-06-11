@@ -97,4 +97,32 @@ foreach my $thing ('Heidelberg','Cambridge','Hinxton','Toronto','Barcelona','Sin
                print $file "]\n";
                close $file;
 }
+
+my $count_front = 0;
+my @front = [];
+
+#making json for zoomed map, for cambridge and hinxton
+open(FH,"~/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/bubble_data.json") or &dienice("Can't open guestbook.txt: $!");
+while (my $line = <FH>) {
+my $result_cam = index($line, "Cambridge");
+my $result_hinx = index($line, "Hinxton");
+if ($result_cam != -1 || $result_hinx != -1){
+        $count_front += 1;
+        if($count_front == 4){
+                push(@front, substr($line,0,-2));}
+        else {
+        push (@front,$line);}
+}
+}
+close(FH);
+
+  open(my $fh, '>', "~/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/front_uk.json"); 
+  print $fh "[\n";
+  my $h = 0;
+  for($h=1; $h < scalar @front; $h++){
+          print $fh $front[$h];
+  }
+  print $fh "]";
+  close $fh;
+
 exit;
