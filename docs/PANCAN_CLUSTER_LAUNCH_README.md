@@ -128,10 +128,6 @@ Note the "$" is the Bash shell prompt in these examples and "#" is a comment:
     $ sudo apt-get update
     $ sudo apt-get install libjson-perl libtemplate-perl libconfig-simple-perl libcarp-always-perl libipc-system-simple-perl make gcc
  
-    # install the required perl modules
-    $ sudo apt-get install libconfig-simple-perl 
-    $ sudo apt-get install libcarp-always-perl
-    $ sudo apt-get install libipc-system-simple-perl
     # make sure you have all the dependencies needed for Bindle, this should not produce an error
     $ perl -c bin/launcher/launch_cluster.pl
     
@@ -159,7 +155,7 @@ Assuming you are still logged into you launcher node above you will do the
 following to setup a computational node.  The steps below assume you are
 working in the bindle_1.2 directory:
 
-    # copy the path of the template used to setup a SeqWare single compute node for PanCancer
+    # copy the path of the json template used to setup a SeqWare single compute node for PanCancer
     # you will need to paste this path in the .cfg file you will be modifying next: 
     # templates/sample_configs/vagrant_cluster_launch.pancancer.seqware.install.sge_node.json.template
 
@@ -180,7 +176,7 @@ worker nodes by increasing the number of nodes in the .cfg file.  We typically
 use between 3 and 6 worker nodes which, depending on the
 cloud, would align a 60x coverage genome in between 10 and 5 hours respectiely.
 
-    # copy the path of template used to setup a SeqWare compute cluster for PanCancer:
+    # copy the path of json template used to setup a SeqWare compute cluster for PanCancer:
     # templates/sample_configs/vagrant_cluster_launch.pancancer.seqware.install.sge_cluster.json.template 
     # modify the .cfg file to include your settings, for AWS you need to make sure you fill in "aws.cfg". 
     # For more help on filling the .cfg file, please refer to config/sample.cfg 
@@ -238,8 +234,7 @@ The commands below assume the workflow is installed into
 provisioned-bundles/Workflow_Bundle_HelloWorld_1.0-SNAPSHOT_SeqWare_1.0.13.
 
     # assumes you have logged into your master node and switched to the seqware user
-    $ ls provisioned-bundles/
-    Workflow_Bundle_HelloWorld_1.0-SNAPSHOT_SeqWare_1.0.13
+    $ ls provisioned-bundles/Workflow_Bundle_HelloWorld_1.0-SNAPSHOT_SeqWare_1.0.13
     # now run the workflow
     $ seqware bundle launch --dir provisioned-bundles/Workflow_Bundle_HelloWorld_1.0-SNAPSHOT_SeqWare_1.0.13 
 
@@ -296,7 +291,7 @@ PanCancer workflows pre-installed.  This saves provisioning runtime, which can
 be as short as 20 minutes, and gives you flexibility to install
 newer/alternative/custom workflows.
 
-    # copy-paste this template path in the .cfg:
+    # copy-paste this json template path in the appropriate .cfg file:
     # templates/sample_configs/vagrant_cluster_launch.pancancer.seqware.install.sge_cluster.json.template
     # launch, use the correct command line args for your cloud environment, see docs above and the README for Bindle
     perl bin/launcher/launch_cluster.pl --use-openstack --use-default-config --launch-cluster cluster1
@@ -307,7 +302,7 @@ In this environment we create a cluster of VMs with the PanCancer BWA Workflow
 2.0 installed. This process can take ~1.5 hours depending on your connection to
 the storage site for the workflow (it is a large workflow).
 
-    # copy-paste this template path in the appropriate .cfg file:
+    # copy-paste this json template path in the appropriate .cfg file:
     # templates/sample_configs/vagrant_cluster_launch.pancancer.bwa_workflow.seqware.install.sge_cluster.json.template 
     # launch, use the correct command line args for your cloud environment, see docs above and the README for Bindle
     perl bin/launcher/launch_cluster.pl --use-openstack --use-default-config --launch-cluster cluster1
