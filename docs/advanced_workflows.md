@@ -1,5 +1,9 @@
 # TCGA/ICGC PanCancer - Advanced Workflow Topics
 
+## TODO
+
+* add a section on storing reference/data/test files in GNOS when they are protected access
+
 ## Overview
 
 This guide includes information about several "advanced" workflow
