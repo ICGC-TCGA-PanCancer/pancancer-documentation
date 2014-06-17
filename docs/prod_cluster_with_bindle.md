@@ -367,7 +367,7 @@ There are several items you need to take care of post-provisioning to ensure you
     * copy the .bash_profile contents from the seqware account to your account
     * copy the .seqware/settings file from the seqware account to your account, modify paths
     * change the OOZIE_WORK_DIR variable to a shared gluster directory such as /glusterfs/data/ICGC1/scratch, BioNimbus will tell you where this should be
-    * create a directory on HDFS in /user/$USERNAME, chown this directory to your usesrname
+    * create a directory on HDFS in /user/$USERNAME, chown this directory to your usesrname.  For example: "sudo su - hdfs;  hadoop fs -mkdir /user/BOCONNOR; hadoop fs -chown BOCONNOR /user/BOCONNOR"
     * copy the seqware cronjob to your own user directory, modify the scripts to have your paths, install the cronjob
     * install the workflow(s) you want, these may already be in your released-bundles directory e.g. "seqware bundle install --zip Workflow_Bundle_BWA_2.2.0_SeqWare_1.0.13.zip"
     * probably want to manually install the BWA workflow rather than via the Bindle provisioning process. This lets you install as your own user in your own directory and not in the seqware directory (or you need to update the SeqWare metadb to point to the right place).  You can see below an example of changing the SeqWare MetaDB to point to your provisioned workflow bundle path:
