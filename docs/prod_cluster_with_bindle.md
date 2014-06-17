@@ -370,7 +370,7 @@ There are several items you need to take care of post-provisioning to ensure you
     * create a directory on HDFS in /user/$USERNAME, chown this directory to your usesrname
     * copy the seqware cronjob to your own user directory, modify the scripts to have your paths, install the cronjob
     * install the workflow(s) you want, these may already be in your released-bundles directory e.g. "seqware bundle install --zip Workflow_Bundle_BWA_2.2.0_SeqWare_1.0.13.zip"
-    * probably want to manually install the BWA workflow rather than via provisioning so can install as your user (or you need to update the SeqWare metadb to point to the right place).
+    * probably want to manually install the BWA workflow rather than via the Bindle provisioning process. This lets you install as your own user in your own directory and not in the seqware directory (or you need to update the SeqWare metadb to point to the right place).  You can see below an example of changing the SeqWare MetaDB to point to your provisioned workflow bundle path:
 
     update workflow set current_working_dir =  '/glusterfs/netapp/homes1/BOCONNOR/provisioned-bundles/Workflow_Bundle_BWA_2.2.0_SeqWare_1.0.13' where workflow_id = 50;
 
