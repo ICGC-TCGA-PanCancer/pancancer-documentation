@@ -40,14 +40,14 @@ These guides focus on researchers in "Phase III" who are accessing the cloud env
 
 # Testing Matrix
 
-What profiles from Bindle have been tested in which cloud environments.
+What profiles from Bindle 1.2 have been tested in which cloud environments.
 
 | *Configuration name*  | VirtualBox | AWS      | vCloud (London) | OpenStack (Toronto)  | OpenStack (Chicago) | OpenStack (Heidelberg) | OpenStack (Seoul) | Tokyo | Barcelona |
 |-----|:----------:|:--------:|:---------:|:------:|:--------:|:--:|:--:|:--:|:--:|
-|*vagrant_cluster_launch.pancancer.bwa_workflow.seqware.install.sge_cluster.json.template* | NA | &#x2713; | | &#x2713; | | &#x2713; | &#x2717; | | |
-|*vagrant_cluster_launch.pancancer.bwa_workflow.seqware.install.sge_node.json.template* | | &#x2713; | | &#x2713; | | &#x2713; | &#x2717; | | |
-|*vagrant_cluster_launch.pancancer.seqware.install.sge_cluster.json.template* | NA | &#x2713;| | &#x2713; | |  | | | |
-|*vagrant_cluster_launch.pancancer.seqware.install.sge_node.json.template* | | &#x2713; | | &#x2713; | | |  | | | |
+|*vagrant_cluster_launch.pancancer.bwa_workflow.seqware.install.sge_cluster.json.template* | NA | &#x2713; | | &#x2713; | &#x2713; Vagrant 1.6.3, vagrant-openstack-plugin (0.7.0), Ubuntu 12.04 | &#x2713; | &#x2717; | | |
+|*vagrant_cluster_launch.pancancer.bwa_workflow.seqware.install.sge_node.json.template* | &#x2713; Vagrant 1.3.5, MacOSX | &#x2713; | | &#x2713; | &#x2713; Vagrant 1.6.3, vagrant-openstack-plugin (0.7.0), Ubuntu 12.04 | &#x2713; | &#x2717; | | |
+|*vagrant_cluster_launch.pancancer.seqware.install.sge_cluster.json.template* | NA | &#x2713;| | &#x2713; | &#x2713; Vagrant 1.6.3, vagrant-openstack-plugin (0.7.0), Ubuntu 12.04 |  | | | |
+|*vagrant_cluster_launch.pancancer.seqware.install.sge_node.json.template* | &#x2713; Vagrant 1.3.5, MacOSX | &#x2713; | | &#x2713; | &#x2713; Vagrant 1.6.3, vagrant-openstack-plugin (0.7.0), Ubuntu 12.04 | |  | | | |
 
 passed: &#x2713; not passed: &#x2717;
 
