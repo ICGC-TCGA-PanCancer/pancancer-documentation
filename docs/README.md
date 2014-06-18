@@ -43,7 +43,7 @@ These guides focus on researchers in "Phase III" who are accessing the cloud env
 What profiles from Bindle 1.2 have been tested in which cloud environments.
 
 | *Configuration name*  | VirtualBox | AWS      | vCloud (London) | OpenStack (Toronto)  | OpenStack (Icehouse-Toronto) | OpenStack (Chicago) | OpenStack (Heidelberg) | OpenStack (Seoul) | Tokyo | Barcelona |
-|-----|:----------:|:--------:|:---------:|:------:|:--------:|:--:|:--:|:--:|:--:|
+|-----|:----------:|:--------:|:---------:|:------:|:--------:|:--:|:--:|:--:|:--:|:--:|
 |*vagrant_cluster_launch.pancancer.bwa_workflow.seqware.install.sge_cluster.json.template* | NA |  | | &#x2713; Vagrant 1.6.3, vagrant-openstack-plugin (0.7.0), Ubuntu 12.04, Amish | &#x2713; Vagrant 1.6.3, vagrant-openstack-plugin (0.7.0), Ubuntu 12.04, Amish | &#x2713; Vagrant 1.6.3, vagrant-openstack-plugin (0.7.0), Ubuntu 12.04, Brian | &#x2713; | &#x2717; | | |
 |*vagrant_cluster_launch.pancancer.bwa_workflow.seqware.install.sge_node.json.template* | &#x2713; Vagrant 1.3.5, MacOSX, Brian | | | &#x2713; Vagrant 1.6.3, vagrant-openstack-plugin (0.7.0), Ubuntu 12.04, Amish | &#x2713; Vagrant 1.6.3, vagrant-openstack-plugin (0.7.0), Ubuntu 12.04, Amish | &#x2713; Vagrant 1.6.3, vagrant-openstack-plugin (0.7.0), Ubuntu 12.04, Brian | &#x2713; | &#x2717; | | |
 |*vagrant_cluster_launch.pancancer.seqware.install.sge_cluster.json.template* | NA | | | &#x2713; Vagrant 1.6.3, vagrant-openstack-plugin (0.7.0), Ubuntu 12.04, Amish| &#x2713; Vagrant 1.6.3, vagrant-openstack-plugin (0.7.0), Ubuntu 12.04, Amish | &#x2713; Vagrant 1.6.3, vagrant-openstack-plugin (0.7.0), Ubuntu 12.04, Brian |  | | | |
