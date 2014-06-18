@@ -11,32 +11,34 @@ use IO::Handle;
 
 my @origins;
 my @origins1;
+my @origins2;
+my @origins3;
 my @dest;
 my @dest1;
 my @uploads;
 my @totals;
 
 my %data = ( 'Heidelberg' => { 'latitude' => 49.403159,
-			    'longitude' => 8.676061,},
-	     'Cambridge' => { 'latitude' => 51.507919,
-			    'longitude' => -0.123571,},
-	     'Hinxton' => { 'latitude' => 52.082869,
-			    'longitude' => 0.18269,},
-	     'Toronto' => { 'latitude' => 43.7000,
-			    'longitude' => -79.4000,},
-	     'Barcelona' => { 'latitude' => 41.378691,
-			    'longitude' => 2.175547,},
-	     'Singapore' => { 'latitude' => 1.2896700,
-			    'longitude' => 103.8500700,},
-	     'Tokyo' => { 'latitude' => 35.684219,
-			    'longitude' => 139.755020,},
-	     'Chicago' => { 'latitude' => 41.8500300,
-			    'longitude' => -87.6500500,},
-	     'Seoul' => { 'latitude' => 37.532600,
-			    'longitude' => 127.024612});
+                            'longitude' => 8.676061,},
+             'Cambridge' => { 'latitude' => 52.202544,
+                            'longitude' => 0.131237,},
+             'Hinxton' => { 'latitude' => 52.082869,
+                            'longitude' => 0.18269,},
+             'Toronto' => { 'latitude' => 43.7000,
+                            'longitude' => -79.4000,},
+             'Barcelona' => { 'latitude' => 41.378691,
+                            'longitude' => 2.175547,},
+             'Singapore' => { 'latitude' => 1.2896700,
+                            'longitude' => 103.8500700,},
+             'Tokyo' => { 'latitude' => 35.684219,
+                            'longitude' => 139.755020,},
+             'Chicago' => { 'latitude' => 41.8500300,
+                            'longitude' => -87.6500500,},
+             'Seoul' => { 'latitude' => 37.532600,
+                            'longitude' => 127.024612});
 			    
 #opens the file containing upload info
-open(FH,"~/gitroot/pancancer-info/pancan-scripts/map-data/out.csv") or &dienice("Can't open guestbook.txt: $!");
+open(FH,"/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/out.csv") or &dienice("Can't open guestbook.txt: $!");
 while (my $line = <FH>) {
   chomp $line;
   my $count = 0;
@@ -50,7 +52,7 @@ while (my $line = <FH>) {
 }
 
 #reading from the bubble json data to find the totals for each location and puts it in @totals
-open(FH,"~/gitroot/pancancer-info/pancan-scripts/map-data/bubble_data.json") or &dienice("Can't open guestbook.txt: $!");
+open(FH,"/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/bubble_data.json") or &dienice("Can't open guestbook.txt: $!");
 while (my $line = <FH>) {
 	chomp $line;
 	my @fields2 = split "," , $line;
@@ -71,15 +73,23 @@ close(FH);
 
 #pushing origins for the arcs to @origins1
 foreach my $item (@origins){
-		if ($item eq 'defiles.txt'){push (@origins1, 'Heidelberg');}
-		elsif ($item eq 'brcaukfiles.txt'){push (@origins1, 'Cambridge');}
-		elsif ($item eq 'esadukfiles.txt'){push (@origins1, 'Hinxton');}
-		elsif ($item eq 'cafiles.txt'){push (@origins1, 'Toronto');}
-		elsif ($item eq 'esfiles.txt'){push (@origins1, 'Barcelona');}
-		elsif ($item eq 'sgfiles.txt'){push (@origins1, 'Singapore');}
-		elsif ($item eq 'jpfiles.txt'){push (@origins1, 'Tokyo');}
-		else {push (@origins1, '');};
-	}
+        if ($item eq 'defiles.txt'){push (@origins1, 'Heidelberg');push (@origins2, 'Heidelberg');push (@origins3, 'Heidelberg');}
+                elsif ($item eq 'pbcadefiles.txt'){push (@origins1, 'Heidelberg');push (@origins2, 'PBCA-DE');push (@origins3, 'PBCA-DE');}
+                elsif ($item eq 'malydefiles.txt'){push (@origins1, 'Heidelberg');push (@origins2, 'MALY-DE');push (@origins3, 'MALY-DE');}
+                elsif ($item eq 'eopcdefiles.txt'){push (@origins1, 'Heidelberg');push (@origins2, 'EOPC-DE');push (@origins3, 'EOPC-DE');}
+                elsif ($item eq 'brcaukfiles.txt'){push (@origins1, 'Hinxton');push (@origins2, 'BRCA-UK');push (@origins3, 'BRCA-UK');}
+                elsif ($item eq 'cmdiukfiles.txt'){push (@origins1, 'Hinxton');push (@origins2, 'CMDI-UK');push (@origins3, 'CMDI-UK');}
+                elsif ($item eq 'bocaukfiles.txt'){push (@origins1, 'Hinxton');push (@origins2, 'BOCA-UK');push (@origins3, 'BOCA-UK');}
+                elsif ($item eq 'pradukfiles.txt'){push (@origins1, 'Hinxton');push (@origins2, 'PRAD-UK');push (@origins3, 'PRAD-UK');}
+                elsif ($item eq 'esadukfiles.txt'){push (@origins1, 'Cambridge');push (@origins2, 'ESAD-UK');push (@origins3, 'ESAD-UK');}
+                elsif ($item eq 'brcaeufiles.txt'){push (@origins1, 'Cambridge');push (@origins2, 'BRCA-EU');push (@origins3, 'BRCA-EU');}
+                elsif ($item eq 'cafiles.txt'){push (@origins1, 'Toronto');push (@origins2, 'PACA-CA');push (@origins3, 'Toronto');}
+                elsif ($item eq 'esfiles.txt'){push (@origins1, 'Barcelona');push (@origins2, 'CLLE-ES');push (@origins3, 'Barcelona');}
+                elsif ($item eq 'sgfiles.txt'){push (@origins1, 'Singapore');push (@origins2, 'BTCA-SG');push (@origins3, 'Singapore');}
+                elsif ($item eq 'jpfiles.txt'){push (@origins1, 'Tokyo');push (@origins2, 'LIRI-JP');push (@origins3, 'Tokyo');}
+                elsif ($item eq 'krfiles.txt'){push (@origins1, 'Seoul');push (@origins2, 'LAML-KR');push (@origins3, 'Seoul');}
+                else {push (@origins1, '');};
+        }
 	
 #pushing destinations for the arcs to @dest1
 foreach my $elem (@dest){
@@ -93,8 +103,8 @@ foreach my $elem (@dest){
 	}
 
 #creating the json files for the arc data for every location
-foreach my $thing ('Heidelberg','Cambridge','Hinxton','Toronto','Barcelona','Singapore','Tokyo'){
-	       open(my $file, '>', "~/gitroot/pancancer-info/pancan-scripts/map-data/${thing}.json"); 
+foreach my $thing ('Heidelberg','PBCA-DE','MALY-DE','EOPC-DE','BRCA-UK','CMDI-UK','BOCA-UK','PRAD-UK','ESAD-UK','BRCA-EU','Toronto','Barcelona','Singapore','Tokyo','Seoul'){
+               open(my $file, '>', "/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/${thing}.json");
 	       my @elems;
 	       my $l = 0;
 	       my $count_elem = 0;
@@ -103,11 +113,11 @@ foreach my $thing ('Heidelberg','Cambridge','Hinxton','Toronto','Barcelona','Sin
 		       $count_elem = 0;
 		       
 	       for ($l = 0; $l < scalar @origins1; $l++){
-		       if($dest1[$l] eq ''){$dest1[$l] = $origins1[$l]}
-		       if($origins1[$l] eq $thing){
-		       push(@elems, $l);
-		       }
-	       }
+                       if($dest1[$l] eq ''){$dest1[$l] = $origins1[$l]}
+                       if($origins3[$l] eq $thing){
+                       push(@elems, $l);
+                       }
+               }
 
 	       print $file "[";
 	       
