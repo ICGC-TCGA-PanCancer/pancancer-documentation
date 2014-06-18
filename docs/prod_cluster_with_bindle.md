@@ -132,10 +132,10 @@ Note the "$" is the Bash shell prompt in these examples and "#" is a comment:
 
     # install bindle dependencies, again see README for Bindle
     $ sudo apt-get update
-    $ sudo apt-get install libjson-perl libtemplate-perl make gcc
+    $ sudo apt-get install libjson-perl libtemplate-perl libconfig-simple-perl libcarp-always-perl libipc-system-simple-perl make gcc
 
     # make sure you have all the dependencies needed for Bindle, this should not produce an error
-    $ perl -c vagrant_cluster_launch.pl
+    $ perl -c bin/launcher/launch_cluster.pl
 
     # now install the Vagrant tool which is used by Bindle
     $ wget https://dl.bintray.com/mitchellh/vagrant/vagrant_1.4.3_x86_64.deb
@@ -159,15 +159,17 @@ launch a whole cluster of nodes that are suitable for larger-scale analysis.
 
 Assuming you are still logged into you launcher node above you will do the
 following to setup a computational node.  The steps below assume you are
-working in the bindle_1.2 directory:
+working in the Bindle directory:
 
-    # copy the template used to setup a SeqWare single compute node for PanCancer
-    $ cp templates/sample_configs/vagrant_cluster_launch.pancancer.seqware.install.sge_node.json.template vagrant_cluster_launch.json
-    # modify the .json template to include your settings, for AWS you need to make sure you fill in the "AWS_*" settings
-    $ vim vagrant_cluster_launch.json
-    # paste your key pem file, whatever you call it
+    # copy the path of the json template used to setup a SeqWare single compute node for PanCancer
+    # you will need to paste this path in the .cfg file you will be modifying next: 
+    # templates/sample_configs/vagrant_cluster_launch.pancancer.seqware.install.sge_node.json.template
+    # modify the .cfg file to include your settings, for AWS you need to make sure you fill in "aws.cfg"
+    # For more help on filling the .cfg file, please refer to config/sample.cfg or the readme of Bindle repository
+    $ vim config/aws.cfg
+    # paste your key pem file contents, whatever you call it
     $ vim ~/.ssh/brian-oicr-3.pem
-    $ chmod 600 /home/ubuntu/.ssh/brian-oicr-3.pem
+    $ chmod 600 ~/.ssh/brian-oicr-3.pem
 
 Make sure you have copied your key to this machine (your pem file). I suggest
 you use IAM to create limited scope credentials.  See the Amazon site for more
@@ -179,23 +181,18 @@ worker nodes by increasing the number in the worker array, see the config json
 file.  We typically use between 3 and 6 worker nodes which, depending on the
 cloud, would align a 60x coverage genome in between 10 and 5 hours respectiely.
 
-    # copy the template used to setup a SeqWare compute cluster for PanCancer
-    $ cp templates/sample_configs/vagrant_cluster_launch.pancancer.seqware.install.sge_cluster.json.template vagrant_cluster_launch.json
-    # modify the .json template to include your settings, for AWS you need to make sure you fill in the "AWS_*" settings, also customize number of workers
-    $ vim vagrant_cluster_launch.json
-
+    # copy the path of json template used to setup a SeqWare compute cluster for PanCancer:
+    # templates/sample_configs/vagrant_cluster_launch.pancancer.seqware.install.sge_cluster.json.template 
+    # modify the .cfg file to include your settings, for AWS you need to make sure you fill in "aws.cfg". 
+    # For more help on filling the .cfg file, please refer to config/sample.cfg  or the readme of Bindle repository
+    $ vim config/aws.cfg
+   
 #### Step - Launch a SeqWare Node/Cluster
 
-Now that you have customized the settings in vagrant_cluster_launch.json the
-next step is to launch a computational node. Note, each launch of a
-node/cluster gets its own "--working-dir", you cannot resuse these.  Within the
-working dir you will find a log for each node (simply master.log for a
-single-node launch) and a directory for each node that is used by the vagrant
-command line tool (the "master" directory for a single-node launch). The latter
-is important for controlling your node/cluster once launched.
+Now that you have customized the settings in .cfg file, the next step is to launch a computational node. Note, each cluster gets its own target directory which you can specify the name of in .cfg file when you make a cluster block ; you cannot reuse these. Within the target dir you will find a log for each node (simply master.log for a single-node launch) and a directory for each node that is used by the vagrant command line tool (the "master" directory for a single-node launch). The latter is important for controlling your node/cluster once launched. 
 
-    # now launch the compute node
-    $ perl vagrant_cluster_launch.pl --use-aws --working-dir target-aws-1 --config-file vagrant_cluster_launch.json
+    # now launch the compute node. For --launch-cluster, you specify the name of the cluster block you want to launch from the .cfg file
+    $ perl bin/launcher/launch_cluster.pl --use-aws --use-default-config --launch-cluster cluster1
 
 You can follow the progress of this cluster launch in another terminal with.
 Use multiple terminals to watch logs for multiple-node clusters if you desire:
@@ -258,8 +255,7 @@ because IP addresses typically change and this disrupts things like GridEngine
 and Hadoop.
 
     # terminate the cluster/node
-    $ cd target-aws-1/master
-    $ vagrant destroy
+    $ perl bin/launcher/destroy_launcher.pl --cluster-name target-aws-1/
 
 You should always check in the AWS console (or OpenStack, vCloud, or other
 console for a different cloud) that your nodes have been terminated otherwise
@@ -267,7 +263,7 @@ you will be billed for a machine you think is terminated.
 
 #### Next Steps
 
-Much more information can be found in the README for the Bindle project, see https://github.com/SeqWare/vagrant
+Much more information can be found in the README for the Bindle project, see https://github.com/CloudBindle
 
 In latter sections of this document you can see more information about:
 
@@ -295,10 +291,10 @@ PanCancer workflows pre-installed.  This saves provisioning runtime, which can
 be as short as 20 minutes, and gives you flexibility to install
 newer/alternative/custom workflows.
 
-    # use this template, customize it
-    cp templates/sample_configs/vagrant_cluster_launch.pancancer.seqware.install.sge_cluster.json.template vagrant_cluster_launch.json
+    # copy-paste this json template path in the appropriate .cfg file:
+    # templates/sample_configs/vagrant_cluster_launch.pancancer.seqware.install.sge_cluster.json.template
     # launch, use the correct command line args for your cloud environment, see docs above and the README for Bindle
-    perl vagrant_cluster_launch.pl --use-openstack
+    perl bin/launcher/launch_cluster.pl --use-openstack --use-default-config --launch-cluster cluster1
 
 ### Cluster With BWA Workflow
 
@@ -306,10 +302,10 @@ In this environment we create a cluster of VMs with the PanCancer BWA Workflow
 2.0 installed. This process can take ~1.5 hours depending on your connection to
 the storage site for the workflow (it is a large workflow).
 
-    # use this template, customize it
-    cp templates/sample_configs/vagrant_cluster_launch.pancancer.bwa_workflow.seqware.install.sge_cluster.json.template vagrant_cluster_launch.json
+    # copy-paste this json template path in the appropriate .cfg file:
+    # templates/sample_configs/vagrant_cluster_launch.pancancer.bwa_workflow.seqware.install.sge_cluster.json.template 
     # launch, use the correct command line args for your cloud environment, see docs above and the README for Bindle
-    perl vagrant_cluster_launch.pl --use-openstack
+    perl bin/launcher/launch_cluster.pl --use-openstack --use-default-config --launch-cluster cluster1
 
 ### Single Instance without Workflows
 
@@ -317,19 +313,19 @@ In this environment we create a single VM but it does not have any PanCancer
 workflows pre-installed.  This saves provisioning runtime which can be as short
 as 20 minutes and gives you flexibility to install newer/alternative workflows.
 
-    # use this template, customize it
-    cp templates/sample_configs/vagrant_cluster_launch.pancancer.seqware.install.sge_node.json.template vagrant_cluster_launch.json
+    # copy-paste this json template path in the appropriate .cfg file:
+    # templates/sample_configs/vagrant_cluster_launch.pancancer.seqware.install.sge_node.json.template 
     # launch, use the correct command line args for your cloud environment, see docs above and the README for Bindle
-    perl vagrant_cluster_launch.pl --use-openstack
+    perl bin/launcher/launch_cluster.pl --use-openstack --use-default-config --launch-cluster cluster1
 
 ### Single Instance with Workflows
 
 In this environment we create a VM with the PanCancer BWA Workflow 2.0 installed.
 
-    # use this template, customize it
-    cp templates/sample_configs/vagrant_cluster_launch.pancancer.bwa_workflow.seqware.install.sge_node.json.template vagrant_cluster_launch.json
+    # copy-paste this json template path in the appropriate .cfg file:
+    # templates/sample_configs/vagrant_cluster_launch.pancancer.bwa_workflow.seqware.install.sge_node.json.template 
     # launch, use the correct command line args for your cloud environment, see docs above and the README for Bindle
-    perl vagrant_cluster_launch.pl --use-openstack
+    perl bin/launcher/launch_cluster.pl --use-openstack --use-default-config --launch-cluster cluster1
 
 ## Cloud-Specific Notes
 
@@ -352,8 +348,8 @@ When you launch the cluster you need to do the following differently from the ex
     $ vagrant plugin install vagrant-openstack-plugin
     # make sure you apply the rsync fix described in the README.md
 
-    # example launching a host
-    $ perl vagrant_cluster_launch.pl --use-openstack --working-dir target-os-1 --config-file vagrant_cluster_launch.json
+    # example launching a host 
+    $ perl bin/launcher/launch_cluster.pl --use-openstack --use-default-config --launch-cluster cluster1
 
 There are several items you need to take care of post-provisioning to ensure you have a working cluster:
 
@@ -382,7 +378,6 @@ OICR uses OpenStack internally for testing and the Vagrant OpenStack plugin is
 quite stable.  The cluster is not available to the general PanCancer group.
 
 * generate your keypair using the web conole
-* make sure you patch the rsync issue, see README.md for this project
 
 Here are some difference from the docs above:
 
@@ -390,12 +385,11 @@ Here are some difference from the docs above:
     $ vagrant plugin install vagrant-openstack-plugin
 
     # example launching a host
-    $ perl vagrant_cluster_launch.pl --use-openstack --working-dir target-os-1 --config-file vagrant_cluster_launch.json
+    $ perl bin/launcher/launch_cluster.pl --use-openstack --use-default-config --launch-cluster cluster1
 
 Also note, here are the additional things I had to do to get this to work:
 
 * I absolutely had to use float IP addresses for all nodes. Without the float IPs addresses the nodes could not reach the Internet and provisioning failed.
-* I had to apply the patch to the folder sync object in Vagrant (see this project README). Otherwise the sync of /vagrant failed on the provisioning failed.  Note, this is required by Vagrant >= 1.4.x
 * I used the "seqware" network
 * I used the "SoftEng" tennant
 * see our internal wiki for more settings
