@@ -49,20 +49,13 @@ height:420px;
 }
 	
 #center2{
-	width: 930px;
-	max-height: 1200px;
-	margin-left: auto;
-	margin-right: auto;
-	-moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-    moz-box-shadow: 0px 0px 8px #165be3;
-    -webkit-box-shadow: 0px 0px 8px #165be3;
-    box-shadow: 0px 0px 8px #165be3;
-    opacity: 1;
-    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity = 100);
-    filter: alpha(opacity = 100);
-    padding: 15px;
+	width: 1370px;
+
+        max-height: 1200px;
+
+        margin-left: auto;
+
+        margin-right: auto;
 }
 #radio{
 	float: right;
@@ -130,7 +123,7 @@ body
 
   /*----- Tabs -----*/
     .tabs {
-    width:900px;
+    width:1100px;
     display:inline-block;
     
 }
