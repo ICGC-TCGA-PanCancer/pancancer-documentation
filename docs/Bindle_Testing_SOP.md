@@ -19,6 +19,18 @@ refer to CloudBindle/Bindle repository.
 The following is a detailed example of the testing process once you have launched
 a cluster successfully using bindle. 
 
+### Step - Check if gluster is setup or not
+
+This checks for gluster. It should be set up for a multi-node cluster but shouldn't exist for a single node cluster.
+
+    # check for gluster peers. If set up properly, it will show you a list of peers(worker1,worker2, etc.)
+    # if it isn't set up, it will give you the following: "peer status: No peers present"
+    $ sudo gluster peer status
+    
+    # check for gluster volumes. If set up properly, it will show you a list of gluster volumes
+    # if it isn't set up, it will give you the following: "No volumes present"
+    $ sudo gluster volume status
+    
 ### Step - Run the Seqware Sanity Check Tool
 
 This simply checks if the seqware environment is set up correctly on the cluster.
