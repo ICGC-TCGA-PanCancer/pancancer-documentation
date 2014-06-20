@@ -3,7 +3,7 @@ use strict;
 use warnings;
 
 use WWW::Mechanize;
-# Create a new mechanize object
+# Create a new mechanize object.
 my $mech = WWW::Mechanize->new();
 my @id = [];
 my $count1;
