@@ -3,7 +3,7 @@
 cd /home/ubuntu/gitroot/pancancer-info/pancan-scripts/results
 rm *.txt
 perl `locate get_spreadsheets.pl`
-cat *.txt > all_files.txt
+cat *.txt > all_files.txt #downloading files
 cat *-DE*.txt > defiles.txt
 cat *-AU*.txt > aufiles.txt
 cat *PBCA-DE*.txt > pbcadefiles.txt
@@ -24,7 +24,7 @@ cat *ESAD-UK*.txt > camfiles.txt
 cat *BRCA-EU*.txt >> camfiles.txt
 cat *PRAD-UK*.txt > hinfiles.txt
 cat *BRCA-UK*.txt >> hinfiles.txt
-cat *BOCA-UK*.txt >> hinfiles.txt
+cat *BOCA-UK*.txt >> hinfiles.txt 
 cat *CMDI-UK*.txt >> hinfiles.txt
 cd /home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data
 perl `locate update_data.pl`
