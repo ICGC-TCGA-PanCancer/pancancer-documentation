@@ -15,7 +15,7 @@ use Getopt::Long;
 use Data::Dumper;
 use Carp qw( verbose );
 
-# globally overriding calls to die, and sending them to Carp
+# globally overriding calls to die, and sending them to Carp.
 $SIG{__DIE__} = sub { &Carp::confess };
 
 my $username = q{};
