@@ -3,8 +3,7 @@
 ## About
 The files in this directory are all the ones being used on pancan.info . Everything needed is contained here except for the script workflow_decider.pl which is in:
     
-    https://github.com/SeqWare/public-workflows/tree/feature/brian_workflow_2.5/decider-bwa-pancancer
-
+    https://github.com/SeqWare/public-workflows/raw/develop/decider-bwa-pancancer/workflow_decider.pl
 
 
 ## Sample Usage
