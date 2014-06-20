@@ -236,6 +236,80 @@ for ($h = 0; $h < scalar @totals; $h++){
         if ($size[$h] >= 0.0 && $size[$h] < 3){$size[$h] = 3;};
 }
 
+my $num;
+my %match;
+my @match_pair;
+
+foreach my $i ("gtrepo-bsc","gtrepo-dkfz", "gtrepo-osdc", "gtrepo-etri", "gtrepo-ebi", "gtrepo-riken") {
+  my $url = "http://pancancer.info/${i}.log";
+  # Associate the mechanize object with a URL
+  $mech->get($url);
+  # Print the content of the URL
+  my $results = index ($url, "gtrepo");
+  my $fname = substr($url,$results);
+  my @content = [];
+  #makes log files for every repo
+  open(my $fh, '>', "${i}.log");
+  print $fh $mech->content;
+  close $fh;
+  my @line;
+
+  # Load URL::Escape to escape URI's with uri_escape method.
+  use URI::Escape;
+  my @links = $mech->links;
+  foreach my $link (@links) {
+      print uri_escape($link->url), "\n";
+  }
+
+  #reads the log files and finds the specimen_id
+  open(FH,"${i}.log") or die("Can't open guestbook.txt: $!");
+  while (my $line = <FH>) {
+   my $result = index($line, "SPECIMEN/SAMPLE:");
+   if ($result == 1){
+   push(@id, substr($line,$result+17));
+   }
+  }
+  close(FH);
+}
+
+my $count_pass = 0;
+foreach my $a ("defiles.txt","camfiles.txt","cafiles.txt","esfiles.txt","sgfiles.txt","jpfiles.txt","hinfiles.txt","krfiles.txt","pbcadefiles.txt","malydefiles.txt","eopcdefiles.txt","brcaeufiles.txt","pradukfiles.txt","esadukfiles.txt","brcaukfiles.txt","cmdiukfiles.txt","bocaukfiles.txt"){
+
+ my $len;
+ my $match_count;
+ # print "$count_pass\n";
+ $match_count = 0;
+ $len = 0;
+ for (keys %match)
+    {
+        delete $match{$_};
+    }
+ open (FILE, "/home/ubuntu/gitroot/pancancer-info/pancan-scripts/results/${a}");
+ while (<FILE>) {
+ chomp;
+ ($Study, $dcc_project_code, $Accession_Identifier, $submitter_donor_id, $submitter_specimen_id, $submitter_sample_id, $Readgroup, $dcc_specimen_type, $Normal_Tumor_Designation,$ICGC_Sample_Identifier,$Sequencing_Strategy,$Number_of_BAM,$Target,$Actual) = split("\t");
+  if ($Study ne "Study" && $Study ne ''){
+  push (@{$match{$submitter_donor_id}}, $submitter_specimen_id);
+  }
+ }
+ close (FILE);
+
+foreach my $elems (keys %match){
+ $len = 0;
+ my $h = 0;
+ for ($h = 0;$h < scalar @{$match{$elems}};$h++){
+ if (grep( /^$match{$elems}[$h]$/, @id) && $match{$elems}[$h] ne ''){
+  $len++;
+ }
+}
+if ($len == scalar @{$match{$elems}}){
+ $match_count++;}
+}
+  $match_pair[$count_pass] = $match_count;
+  $count_pass += 1;
+}
+
+
 #writes to bubble_data.json 
 open(my $file,'>', "~/gitroot/pancancer-info/pancan-scripts/map-data/bubble_data.json");
 print $file qq([
@@ -444,5 +518,125 @@ else {
         }}
 };
 close $file_up2;
+
+foreach my $thing ('DKFZ','EBI','BSC','RIKEN','OSDC','ETRI'){
+        open(my $file, '>>', "/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/${thing}_up_archive.csv");
+        open(my $filea, '>>', "/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/${thing}_ave_archive.csv");
+        if ($thing eq 'DKFZ'){
+                #print $file "quarter,PBCA-DE,MALY-DE,EOPC-DE\n";
+                #print $filea "quarter,PBCA-DE,MALY-DE,EOPC-DE\n";
+                print $file "\n";
+                print $filea "\n";
+                print $file "$date,$uploads[8],$uploads[9],$uploads[10]";
+                print $filea "$date,$ave[8],$ave[9],$ave[10]";}
+        elsif ($thing eq 'EBI'){
+                #print $file "quarter,BRCA-UK,CMDI-UK,BOCA-UK,PRAD-UK,ESAD-UK,BRCA-EU,PACA-CA\n";
+                #print $filea "quarter,BRCA-UK,CMDI-UK,BOCA-UK,PRAD-UK,ESAD-UK,BRCA-EU,PACA-CA\n";
+                print $file "\n";
+                print $filea "\n";
+                print $file "$date,$uploads[14],$uploads[15],$uploads[16],$uploads[12],$uploads[13],$uploads[11],$uploads[2]";
+                print $filea "$date,$ave[14],$ave[15],$ave[16],$ave[12],$ave[13],$ave[11],$ave[2]";}
+        elsif ($thing eq 'BSC'){
+                #print $file "quarter,CLLE-ES\n";
+                #print $filea "quarter,CLLE-ES\n";
+                print $file "\n";
+                print $filea "\n";
+                print $file "$date,$uploads[3]";
+                print $filea "$date,$ave[3]";}
+        elsif ($thing eq 'RIKEN'){
+                #print $file "quarter,BTCA-SG,LIRI-JP\n";
+                #print $filea "quarter,BTCA-SG,LIRI-JP\n";
+                print $file "\n";
+                print $filea "\n";
+                print $file "$date,$uploads[4],$uploads[5]";
+                print $filea "$date,$ave[4],$ave[5]";}
+        elsif ($thing eq 'OSDC'){
+                #print $file "quarter\n";
+                #print $filea "quarter\n";
+                print $file "\n";
+                print $filea "\n";
+                print $file "$date";
+                print $filea "$date";}
+        elsif ($thing eq 'ETRI'){
+                #print $file "quarter,LAML-KR\n";
+                #print $filea "quarter,LAML-KR\n";
+                print $file "\n";
+                print $filea "\n";
+                print $file "$date,$uploads[7]";
+                print $filea "$date,$ave[7]";}
+        close $file;
+        close $filea;
+        }
+
+
+foreach my $elems ('DKFZ','EBI','BSC','OSDC','RIKEN','ETRI'){
+my @aryre = [];
+my $count_avere = 0;
+my @ary1re = [];
+my $count_upre = 0;
+my @day_ary1re = [];
+my $count_day1re = 0;
+my @day_ary2re = [];
+my $count_day2re = 0;
+#finding number of rows in the archived data
+open(FH,"/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/${elems}_ave_archive.csv") or &dienice("Can't open guestbook.txt: $!");
+while (my $line = <FH>) {
+    $count_avere += 1;
+    push (@aryre,"$line");
+    my $result = index($line,'12:0');
+    my $result1 = index($line,'quarter');
+    if ($result != -1){
+           push (@day_ary1re,$line);
+           $count_day1re ++;}
+    elsif($result1 != -1){push (@day_ary1,$line);}
+}
+close(FH);
+
+#only displaying 20 lines on the chart for hourly
+open(my $file_ave, '>',"/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/${elems}_ave_data.csv") or &dienice("Can't open guestbook.txt: $!");
+if ($count_avere > 21){
+        my $h = 0;
+        print $file_ave $aryre[1];
+        for ($h = $count_avere -19; $h < $count_avere +1;$h++){
+                print $file_ave $aryre[$h];
+        }
+}
+else {
+        my $p = 0;
+        for ($p = 1; $p < $count_avere +1;$p++){
+                print $file_ave $aryre[$p];
+        }
+};
+close $file_ave;
+
+open(FH,"/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/${elems}_up_archive.csv") or &dienice("Can't open guestbook.txt: $!");
+while (my $line = <FH>) {
+    $count_upre += 1;
+    push (@ary1re,"$line");
+    my $result = index($line,'12:0');
+    my $result1 = index($line,'quarter');
+    if ($result != -1){
+           push (@day_ary2re,$line);
+           $count_day2re ++;}
+    elsif($result1 != -1){push (@day_ary2re,$line);}
+}
+close(FH);
+#only displaying 20 lines on the chart for hourly 
+open(my $file_up, '>',"/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/${elems}_up_data.csv") or &dienice("Can't open guestbook.txt: $!");
+if ($count_upre > 21){
+        my $h = 0;
+        print $file_up $ary1re[1];
+        for ($h = $count_upre - 19; $h < $count_upre +1;$h++){
+                print $file_up $ary1re[$h];
+        }
+}
+else {
+        my $p = 0;
+        for ($p = 1; $p < $count_upre +1;$p++){
+                print $file_up $ary1re[$p];
+        }
+};
+close $file_up;
+}
 
 exit;
