@@ -239,59 +239,59 @@ for ($h = 0; $h < scalar @totals; $h++){
 #writes to bubble_data.json 
 open(my $file,'>', "~/gitroot/pancancer-info/pancan-scripts/map-data/bubble_data.json");
 print $file qq([
-          {"name": "Heidelberg", "total": $totals[0], "uploaded": $uploads[0], "latitude": 49.403159, "longitude": 8.676061, "radius": $rad[0], "fillKey": "orange", "tumour": $tumour[0], "normal": $normal[0], "project": "Heidelberg"},
+          {"name": "Heidelberg", "total": $totals[0], "uploaded": $uploads[0], "latitude": 49.403159, "longitude": 8.676061, "radius": $rad[0], "fillKey": "orange","match": $match_pair[0], "tumour": $tumour[0], "normal": $normal[0], "project": "Heidelberg"},
           {"name": "Heidelberg", "total": $totals[0], "uploaded": $uploads[0], "latitude": 49.403159, "longitude": 8.676061, "radius": $size[0], "fillKey": "$col[0]", "project": "Heidelberg"},
           
-          {"name": "Cambridge", "total": $totals[1], "uploaded": $uploads[1], "latitude": 52.202544, "longitude": 0.131237 , "radius": $rad[1], "fillKey": "orange","tumour": $tumour[1], "normal": $normal[1], "project": "Cambridge"},
+          {"name": "Cambridge", "total": $totals[1], "uploaded": $uploads[1], "latitude": 52.202544, "longitude": 0.131237 , "radius": $rad[1], "fillKey": "orange","match": $match_pair[1],"tumour": $tumour[1], "normal": $normal[1], "project": "Cambridge"},
           {"name": "Cambridge", "total": $totals[1], "uploaded": $uploads[1], "latitude": 52.202544, "longitude": 0.131237 , "radius": $size[1], "fillKey": "$col[1]", "project": "Cambridge"},
           
-          {"name": "Hinxton", "total": $totals[6], "uploaded": $uploads[6], "latitude": 52.082869, "longitude": 0.18269 , "radius": $rad[6], "fillKey": "orange", "tumour": $tumour[6], "normal": $normal[6], "project": "Hinxton"},
+          {"name": "Hinxton", "total": $totals[6], "uploaded": $uploads[6], "latitude": 52.082869, "longitude": 0.18269 , "radius": $rad[6], "fillKey": "orange", "match": $match_pair[6],"tumour": $tumour[6], "normal": $normal[6], "project": "Hinxton"},
           {"name": "Hinxton", "total": $totals[6], "uploaded": $uploads[6], "latitude": 52.082869, "longitude": 0.18269 , "radius": $size[6], "fillKey": "$col[6]", "project": "Hinxton"},
           
-          {"name": "Toronto", "total": $totals[2], "uploaded": $uploads[2], "latitude": 43.7000, "longitude": -79.4000, "radius": $rad[2], "fillKey": "orange", "tumour": $tumour[2], "normal": $normal[2], "project": "PACA-CA"},
+          {"name": "Toronto", "total": $totals[2], "uploaded": $uploads[2], "latitude": 43.7000, "longitude": -79.4000, "radius": $rad[2], "fillKey": "orange","match": $match_pair[2], "tumour": $tumour[2], "normal": $normal[2], "project": "PACA-CA"},
           {"name": "Toronto", "total": $totals[2], "uploaded": $uploads[2], "latitude": 43.7000, "longitude": -79.4000, "radius": $size[2], "fillKey": "$col[2]", "project": "PACA-CA"},
      
-          {"name": "Barcelona", "total": $totals[3], "uploaded": $uploads[3], "latitude": 41.378691, "longitude": 2.175547, "radius": $rad[3], "fillKey": "orange", "tumour": $tumour[3], "normal": $normal[3], "project": "CLLE-ES"},
+          {"name": "Barcelona", "total": $totals[3], "uploaded": $uploads[3], "latitude": 41.378691, "longitude": 2.175547, "radius": $rad[3], "fillKey": "orange","match": $match_pair[3], "tumour": $tumour[3], "normal": $normal[3], "project": "CLLE-ES"},
           {"name": "Barcelona", "total": $totals[3], "uploaded": $uploads[3], "latitude": 41.378691, "longitude": 2.175547, "radius": $size[3], "fillKey": "$col[3]", "project": "CLLE-ES"},
 
-          {"name": "Singapore", "total": $totals[4], "uploaded": $uploads[4], "latitude": 1.2896700, "longitude": 103.8500700, "radius": $rad[4], "fillKey": "orange", "tumour": $tumour[4], "normal": $normal[4], "project": "BTCA-SG"},
+          {"name": "Singapore", "total": $totals[4], "uploaded": $uploads[4], "latitude": 1.2896700, "longitude": 103.8500700, "radius": $rad[4], "fillKey": "orange","match": $match_pair[4], "tumour": $tumour[4], "normal": $normal[4], "project": "BTCA-SG"},
           {"name": "Singapore", "total": $totals[4], "uploaded": $uploads[4], "latitude": 1.2896700, "longitude": 103.8500700, "radius": $size[4], "fillKey": "$col[4]", "project": "BTCA-SG"},
           
-          {"name": "Seoul", "total": $totals[7], "uploaded": $uploads[7], "latitude": 37.532600, "longitude": 127.024612, "radius": $rad[7], "fillKey": "orange", "tumour": $tumour[7], "normal": $normal[7], "project": "LAML-KR"},
+          {"name": "Seoul", "total": $totals[7], "uploaded": $uploads[7], "latitude": 37.532600, "longitude": 127.024612, "radius": $rad[7], "fillKey": "orange","match": $match_pair[7], "tumour": $tumour[7], "normal": $normal[7], "project": "LAML-KR"},
           {"name": "Seoul", "total": $totals[7], "uploaded": $uploads[7], "latitude": 37.532600, "longitude": 127.024612, "radius": $size[7], "fillKey": "$col[7]", "project": "LAML-KR"},
 
-          {"name": "Tokyo", "total": $totals[5], "uploaded": $uploads[5], "latitude": 35.684219, "longitude": 139.755020, "radius": $rad[5], "fillKey": "orange", "tumour": $tumour[5], "normal": $normal[5], "project": "LIRI-JP"},
+          {"name": "Tokyo", "total": $totals[5], "uploaded": $uploads[5], "latitude": 35.684219, "longitude": 139.755020, "radius": $rad[5], "fillKey": "orange","match": $match_pair[5], "tumour": $tumour[5], "normal": $normal[5], "project": "LIRI-JP"},
           {"name": "Tokyo", "total": $totals[5], "uploaded": $uploads[5], "latitude": 35.684219, "longitude": 139.755020, "radius": $size[5], "fillKey": "$col[5]", "project": "LIRI-JP"}
 
 ]);
 
 open(my $file_add,'>', "/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/bubble_data1.json");
 print $file_add qq([
-        {"name": "Heidelberg", "total": $totals[8], "uploaded": $uploads[8], "latitude": 49.403159, "longitude": 8.676061, "radius": $rad[8], "fillKey": "orange", "tumour": $tumour[8], "normal": $normal[8], "project": "PBCA-DE"},
+        {"name": "Heidelberg", "total": $totals[8], "uploaded": $uploads[8], "latitude": 49.403159, "longitude": 8.676061, "radius": $rad[8], "fillKey": "orange","match": $match_pair[8], "tumour": $tumour[8], "normal": $normal[8], "project": "PBCA-DE"},
         {"name": "Heidelberg", "total": $totals[8], "uploaded": $uploads[8], "latitude": 49.403159, "longitude": 8.676061, "radius": $size[8], "fillKey": "$col[8]", "project": "PBCA-DE"},
         
-        {"name": "Heidelberg", "total": $totals[9], "uploaded": $uploads[9], "latitude": 49.403159, "longitude": 8.676061, "radius": $rad[9], "fillKey": "orange", "tumour": $tumour[9], "normal": $normal[9], "project": "MALY-DE"},
+        {"name": "Heidelberg", "total": $totals[9], "uploaded": $uploads[9], "latitude": 49.403159, "longitude": 8.676061, "radius": $rad[9], "fillKey": "orange","match": $match_pair[9], "tumour": $tumour[9], "normal": $normal[9], "project": "MALY-DE"},
         {"name": "Heidelberg", "total": $totals[9], "uploaded": $uploads[9], "latitude": 49.403159, "longitude": 8.676061, "radius": $size[9], "fillKey": "$col[9]", "project": "MALY-DE"},
         
-        {"name": "Heidelberg", "total": $totals[10], "uploaded": $uploads[10], "latitude": 49.403159, "longitude": 8.676061, "radius": $rad[10], "fillKey": "orange", "tumour": $tumour[10], "normal": $normal[10], "project": "EOPC-DE"},
+        {"name": "Heidelberg", "total": $totals[10], "uploaded": $uploads[10], "latitude": 49.403159, "longitude": 8.676061, "radius": $rad[10], "fillKey": "orange","match": $match_pair[10], "tumour": $tumour[10], "normal": $normal[10], "project": "EOPC-DE"},
         {"name": "Heidelberg", "total": $totals[10], "uploaded": $uploads[10], "latitude": 49.403159, "longitude": 8.676061, "radius": $size[10], "fillKey": "$col[10]", "project": "EOPC-DE"},
         
-        {"name": "Hinxton", "total": $totals[12], "uploaded": $uploads[12], "latitude": 52.082869, "longitude": 0.18269 , "radius": $rad[12], "fillKey": "orange", "tumour": $tumour[12], "normal": $normal[12], "project": "PRAD-UK"},
+        {"name": "Hinxton", "total": $totals[12], "uploaded": $uploads[12], "latitude": 52.082869, "longitude": 0.18269 , "radius": $rad[12], "fillKey": "orange","match": $match_pair[12], "tumour": $tumour[12], "normal": $normal[12], "project": "PRAD-UK"},
         {"name": "Hinxton", "total": $totals[12], "uploaded": $uploads[12], "latitude": 52.082869, "longitude": 0.18269 , "radius": $size[12], "fillKey": "$col[12]", "project": "PRAD-UK"},
         
-        {"name": "Hinxton", "total": $totals[14], "uploaded": $uploads[14], "latitude": 52.082869, "longitude": 0.18269 , "radius": $rad[14], "fillKey": "orange", "tumour": $tumour[14], "normal": $normal[14], "project": "BRCA-UK"},
+        {"name": "Hinxton", "total": $totals[14], "uploaded": $uploads[14], "latitude": 52.082869, "longitude": 0.18269 , "radius": $rad[14], "fillKey": "orange","match": $match_pair[14], "tumour": $tumour[14], "normal": $normal[14], "project": "BRCA-UK"},
         {"name": "Hinxton", "total": $totals[14], "uploaded": $uploads[14], "latitude": 52.082869, "longitude": 0.18269 , "radius": $size[14], "fillKey": "$col[14]", "project": "BRCA-UK"},
         
-        {"name": "Hinxton", "total": $totals[15], "uploaded": $uploads[15], "latitude": 52.082869, "longitude": 0.18269 , "radius": $rad[15], "fillKey": "orange", "tumour": $tumour[15], "normal": $normal[15], "project": "CMDI-UK"},
+        {"name": "Hinxton", "total": $totals[15], "uploaded": $uploads[15], "latitude": 52.082869, "longitude": 0.18269 , "radius": $rad[15], "fillKey": "orange","match": $match_pair[15], "tumour": $tumour[15], "normal": $normal[15], "project": "CMDI-UK"},
         {"name": "Hinxton", "total": $totals[15], "uploaded": $uploads[15], "latitude": 52.082869, "longitude": 0.18269 , "radius": $size[15], "fillKey": "$col[15]", "project": "CMDI-UK"},
         
-        {"name": "Hinxton", "total": $totals[16], "uploaded": $uploads[16], "latitude": 52.082869, "longitude": 0.18269 , "radius": $rad[16], "fillKey": "orange", "tumour": $tumour[16], "normal": $normal[16], "project": "BOCA-UK"},
+        {"name": "Hinxton", "total": $totals[16], "uploaded": $uploads[16], "latitude": 52.082869, "longitude": 0.18269 , "radius": $rad[16], "fillKey": "orange","match": $match_pair[16], "tumour": $tumour[16], "normal": $normal[16], "project": "BOCA-UK"},
         {"name": "Hinxton", "total": $totals[16], "uploaded": $uploads[16], "latitude": 52.082869, "longitude": 0.18269 , "radius": $size[16], "fillKey": "$col[16]", "project": "BOCA-UK"},
         
-        {"name": "Cambridge", "total": $totals[13], "uploaded": $uploads[13], "latitude": 52.202544, "longitude": 0.131237 , "radius": $rad[13], "fillKey": "orange","tumour": $tumour[13], "normal": $normal[13], "project": "ESAD-UK"},
+        {"name": "Cambridge", "total": $totals[13], "uploaded": $uploads[13], "latitude": 52.202544, "longitude": 0.131237 , "radius": $rad[13], "fillKey": "orange","match": $match_pair[13],"tumour": $tumour[13], "normal": $normal[13], "project": "ESAD-UK"},
         {"name": "Cambridge", "total": $totals[13], "uploaded": $uploads[13], "latitude": 52.202544, "longitude": 0.131237 , "radius": $size[13], "fillKey": "$col[13]", "project": "ESAD-UK"},
         
-        {"name": "Cambridge", "total": $totals[11], "uploaded": $uploads[11], "latitude": 52.202544, "longitude": 0.131237 , "radius": $rad[11], "fillKey": "orange","tumour": $tumour[11], "normal": $normal[11], "project": "BRCA-EU"},
+        {"name": "Cambridge", "total": $totals[11], "uploaded": $uploads[11], "latitude": 52.202544, "longitude": 0.131237 , "radius": $rad[11], "fillKey": "orange","match": $match_pair[11],"tumour": $tumour[11], "normal": $normal[11], "project": "BRCA-EU"},
         {"name": "Cambridge", "total": $totals[11], "uploaded": $uploads[11], "latitude": 52.202544, "longitude": 0.131237 , "radius": $size[11], "fillKey": "$col[11]", "project": "BRCA-EU"},
 ]);
 close $file_add;
