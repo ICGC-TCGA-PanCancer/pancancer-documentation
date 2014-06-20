@@ -7,8 +7,6 @@ use CGI;
 use JSON 2;
 use IO::Handle;
 
-#print CGI->header("text/javascript");
-
 my ($Study, $dcc_project_code, $Accession_Identifier, $submitter_donor_id, $submitter_specimen_id, $submitter_sample_id, $Readgroup, $dcc_specimen_type, $Normal_Tumor_Designation,$ICGC_Sample_Identifier,$Sequencing_Strategy,$Number_of_BAM,$Target,$Actual);
 
 my ($all_emp_count, $all_fill_count) = (0)x2;
