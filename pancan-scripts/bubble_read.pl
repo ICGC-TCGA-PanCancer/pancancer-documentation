@@ -74,7 +74,7 @@ foreach my $thing (@dest1){
                 else {push (@dest2, 'NONE');};
         }
 
-#creating the file that conatins the origins and destinations in a json file
+#creating the file that conatins the origins and destinations in a json file.
 open(my $file1, '>', "/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/table2.json");
 my $p = 0;
 print $file1 "[";
