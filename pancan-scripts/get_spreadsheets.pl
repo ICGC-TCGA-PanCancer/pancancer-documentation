@@ -88,8 +88,8 @@ my $timestamp = sprintf("%04d_%02d_%02d_%02d%02d", $now[5]+1900, $now[4]+1, $now
 
 # Create a new Net::Google::Spreadsheets object:
 my $service = Net::Google::Spreadsheets->new(
-    username => "joseph.r.lugo\@gmail.com",
-    password => "orThooke#22",
+    username => "<gmail account>",
+    password => "<password>",
 );
 
 # iterate over the project codes in the %projects hash
