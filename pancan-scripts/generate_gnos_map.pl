@@ -24,7 +24,7 @@ my $specimens = 5000;
 my $total_aligned = 0;
 my $total_unaligned = 0;
 
-# queries each gnos repo
+# queries each gnos repo.
 foreach my $i ("gtrepo-bsc", "gtrepo-dkfz", "gtrepo-osdc", "gtrepo-etri", "gtrepo-ebi", "gtrepo-riken", "gtrepo-cghub") {
 #foreach my $i ("gtrepo-cghub") {
   #system("rm -rf xml");
