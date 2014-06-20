@@ -63,7 +63,7 @@ while (my $line = <FH>) {
 }
 close(FH);
 
-#check if any upload feild is empty
+#check if any upload feild is empty.
 my $c = 0;
 for ($c = 0; $c < scalar @uploads; $c++){
 	if ($uploads[$c] eq ''){
