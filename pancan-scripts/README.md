@@ -104,5 +104,7 @@ This should put all the necessary files in the /var/www/ directory and have the 
 You can set up a cron job running the scripts as freqeutnly as you would like using :
 
     $ crontab -e
-    ex. (1 * * * * /home/ubuntu/gitroot/pancancer-info/pancan-scripts/decider.cron &> /home/ubuntu/gitroot/pancancer-info/pancan-scripts/decider.cron.log)
+    # 1 * * * * /home/ubuntu/gitroot/pancancer-info/pancan-scripts/decider.cron &> /home/ubuntu/gitroot/pancancer-info/pancan-scripts/decider.cron.log
     # this will run every first minute of every hour
+    # * */2 * * * /home/ubuntu/gitroot/pancancer-info/pancan-scripts/run_get.sh
+    # this will run every other hour
