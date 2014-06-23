@@ -1,7 +1,0 @@
-test,"sci","sci2"
-"Composite",506.70,538.64
-"Monte Carlo",339.24,341.75
-"Fast Fourier Transform",87.16,72.77
-"Sparse Matrix Multiply",626.08,608.88
-"Dense LU Matrix Factorization",885.67,886.49
-"Jacobi Successive Over-Relaxation",745.85,752.69

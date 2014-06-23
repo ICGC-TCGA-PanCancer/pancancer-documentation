@@ -1,4 +1,0 @@
-[
-	  {"name":"Hinxton","latitude": 52.082869, "longitude": 0.18269 , "radius": 15, "fillKey": "blue"},
-          {"name": "Toronto", "total": 123, "uploaded": 62, "latitude": 43.7000, "longitude": -79.4000, "radius": 20, "fillKey": "orange"},
-          {"name": "Toronto", "total": 123, "uploaded": 62, "latitude": 43.7000, "longitude": -79.4000, "radius": 10.0813008130081, "fillKey": "yellow"}]
