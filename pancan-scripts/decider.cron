@@ -16,4 +16,4 @@ for i in gtrepo-etri gtrepo-osdc gtrepo-dkfz gtrepo-bsc gtrepo-riken gtrepo-cghu
 sudo cp index.html /var/www/
 #cp index.html cluster.html /var/www/
 sudo cp gtrepo*.log /var/www/
-rm workflow_decider.pl
+rm *workflow_decider*.pl
