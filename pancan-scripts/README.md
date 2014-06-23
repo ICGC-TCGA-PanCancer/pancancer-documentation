@@ -26,7 +26,7 @@ Run the program without arguments to see the latest options. For example:
     	--upload-results     a flag indicating the resulting BAM files and metadata should be uploaded to GNOS, default is to not upload!!!
 
 ## Preparing the environment
-This documentation will exmplain how to set up the environment needed for Pancancer.info to live on. It will go though all the necessary installs and downloads needed. By following this you should be able to migrate the site to whatever server you would like. To configure the site onto another server you must do the following:
+This documentation will exmplain how to set up the environment needed for Pancancer.info to live on. It will go though all the necessary installs and downloads needed. By following this you should be able to migrate the site to whatever server you would like. Launch a cluster or node on AWS and ssh into that cluster/node. To configure the site onto the cluster/node, you must do the following:
 
 First make a directory under /home/ubuntu:
 
