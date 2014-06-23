@@ -32,7 +32,7 @@ First make a directory under /home/ubuntu:
 
     $ mkdir gitroot
 
-We then have to make some more directories in /var/www/
+We then have to make some more directories in /var/www/ :
 
     $ cd /var/www/
     $ mkdir bubbles
