@@ -39,7 +39,7 @@ We then have to make some more directories in /var/www/
     $ mkdir up_data
     $ mkdir ave_data
 
-Now go into gitroot and begin to download scripts
+Now go into gitroot and begin to download scripts :
 
     $ cd ~/gitroot/
 
@@ -48,13 +48,13 @@ Clone the branch onto the machine using :
     $ git clone https://github.com/SeqWare/pancancer-info.git
     $ cd pancancer-info
 
-Move into the feature branch and copy uploads.html to /var/www/:
+Move into the feature branch and copy uploads.html to /var/www/ :
 
     $ git checkout feature/jlugo_site
     $ cd pancan-scripts
     $ sudo cp uploads.html /var/www/
 
-Before running any scripts you need to check if perl is at least version 5.18.2 using perl -v. You might also want to use cpanminus to make installing modules much easier. If necessary, update perl to version 5.18.2. To do this, you need to use perlbrew. Perlbrew allows you to manage and use multiple versions perl on the same machine, you can check it out here (http://perlbrew.pl/). To use perlbrew do the following:
+Before running any scripts you need to check if perl is at least version 5.18.2 using perl -v. You might also want to use cpanminus to make installing modules much easier. If necessary, update perl to version 5.18.2. To do this, you need to use perlbrew. Perlbrew allows you to manage and use multiple versions perl on the same machine, you can check it out here (http://perlbrew.pl/). To use perlbrew do the following :
 
     # download perlbrew
     $ wget -O - http://install.perlbrew.pl | bash
@@ -63,7 +63,7 @@ Before running any scripts you need to check if perl is at least version 5.18.2 
     # initialize perlbrew environment
     $ perlbrew init
 
-Now that perlbrew is installed, you can download perl 5.18.2. 
+Now that perlbrew is installed, you can download perl 5.18.2 :
 
     # install perl-5.18.2
     $ perlbrew install perl-5.18.2
@@ -76,7 +76,7 @@ Now that perlbrew is installed, you can download perl 5.18.2.
     # install cpanm 
     $ perlbrew install-cpanm
 
-Now that you have the right version of perl, we can begin to install all the dependencies. Before installing the modules, you need to install all the packages:
+Now that you have the right version of perl, we can begin to install all the dependencies. Before installing the modules, you need to install all the packages :
 
     $ sudo apt-get install libxml2-dev
     $ sudo apt-get install libexpat1-dev
@@ -92,7 +92,7 @@ If you are having trouble using cpanm you can try to install the modules using c
 
 You have to put in your credentials for the get_spreadsheets.pl and get_uploads.pl scripts. You will put your gmail address containing all the spreadsheets fo rthe projects and your gmail password.
 
-Once everything is installed and ready to use, you can try and run the shell scripts
+Once everything is installed and ready to use, you can try and run the shell scripts :
 
     #make sure you are in /home/ubuntu/gitroot/pancancer-info/pancan-scripts/
     $ ./decider.cron
@@ -100,6 +100,6 @@ Once everything is installed and ready to use, you can try and run the shell scr
 
 This should put all the necessary files in the /var/www/ directory and have the site ready for use.
 
-You can set up a cron job running the scripts as freqeutnly as you would like using: 
+You can set up a cron job running the scripts as freqeutnly as you would like using :
 
     $ crontab -e
