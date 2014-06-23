@@ -12,7 +12,7 @@ my ($Study, $dcc_project_code, $Accession_Identifier, $submitter_donor_id, $subm
 my ($all_emp_count, $all_fill_count) = (0)x2;
 
 #For all the arrays 
-#[0]=Heidelberg,[1]=Cambridge,[2]=Toronto,[3]=Barcelona,[4]=Singapore,[5]=Tokyo,[6]Hinxton
+#[0]=Heidelberg,[1]=Cambridge,[2]=Toronto,[3]=Barcelona,[4]=Singapore,[5]=Tokyo,[6]=Hinxton,[7]=Seoul
 
 my @fill_counts = (0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
 my @emp_counts = (0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
@@ -27,8 +27,8 @@ my @normal = (0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
 my ($projectcode,$leadjurisdiction,$tumourtype,$gnos,$numberofwgstnpairs,$numberofspecimens,$numberofspecimensuploaded,$percentuploaded);
 my @totals;
 
-#reading from text file containing all spreadsheets
-#individual project text files created from get_spreadsheets.pl
+#reading from text file containing summary of all the projects
+#individual project text files created from get_uplaods.pl
 open (FILE, "/home/ubuntu/gitroot/pancancer-info/pancan-scripts/results/summary.txt");
 while (<FILE>) {
 chomp;
@@ -92,7 +92,7 @@ my @id = [];
 my $counter = 0;
 my $uploaded = 0;
 
-#Finding what is uplaoded from the GNOS repo files
+#Finding what is uplaoded from the GNOS log files
 foreach my $a ("defiles.txt","camfiles.txt","cafiles.txt","esfiles.txt","sgfiles.txt","jpfiles.txt","hinfiles.txt","krfiles.txt","pbcadefiles.txt","malydefiles.txt","eopcdefiles.txt","brcaeufiles.txt","pradukfiles.txt","esadukfiles.txt","brcaukfiles.txt","cmdiukfiles.txt","bocaukfiles.txt","lirijpfiles.txt","pacacafiles.txt"){
 foreach my $i ("gtrepo-bsc", "gtrepo-dkfz", "gtrepo-osdc", "gtrepo-etri", "gtrepo-ebi", "gtrepo-riken") {
 
@@ -146,11 +146,13 @@ foreach my $i ("gtrepo-bsc", "gtrepo-dkfz", "gtrepo-osdc", "gtrepo-etri", "gtrep
                 }
                 close (FILE);
         }
+        #updates the uploads array 
         $uploads[$counter] = $uploaded;
         $counter += 1;
         $uploaded = 0;
 }
 
+#fixes those that do not contain anything
 my $o = 0;
 for ($o = 0; $o < scalar @tumour; $o++){
         if ($tumour[$o] != 0){$tumour[$o] = $tumour[$o];}
@@ -180,6 +182,9 @@ my $num;
 my %match;
 my @match_pair;
 
+#finding the matched tumour/normal pairs
+
+#gets an array of all the specimen ids that are uplaoded
 foreach my $i ("gtrepo-bsc","gtrepo-dkfz", "gtrepo-osdc", "gtrepo-etri", "gtrepo-ebi", "gtrepo-riken") {
   my $url = "http://pancancer.info/${i}.log";
   # Associate the mechanize object with a URL
@@ -212,6 +217,7 @@ foreach my $i ("gtrepo-bsc","gtrepo-dkfz", "gtrepo-osdc", "gtrepo-etri", "gtrepo
   close(FH);
 }
 
+#creates a hash of arrays with the donor id as the key and the specimen ids as the valuees in the arrays
 my $count_pass = 0;
 foreach my $a ("defiles.txt","camfiles.txt","cafiles.txt","esfiles.txt","sgfiles.txt","jpfiles.txt","hinfiles.txt","krfiles.txt","pbcadefiles.txt","malydefiles.txt","eopcdefiles.txt","brcaeufiles.txt","pradukfiles.txt","esadukfiles.txt","brcaukfiles.txt","cmdiukfiles.txt","bocaukfiles.txt","lirijpfiles.txt","pacacafiles.txt"){
 
@@ -234,6 +240,7 @@ foreach my $a ("defiles.txt","camfiles.txt","cafiles.txt","esfiles.txt","sgfiles
  }
  close (FILE);
 
+#checking if each element in each array is uploaded
 foreach my $elems (keys %match){
  $len = 0;
  my $h = 0;
@@ -280,6 +287,7 @@ print $file qq([
 ]);
 close $file;
 
+#writes to bubble_data1.json
 open(my $file_add,'>', "/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/bubble_data1.json");
 print $file_add qq([
         {"name": "Heidelberg", "total": $totals[8], "uploaded": $uploads[8], "latitude": 49.403159, "longitude": 8.676061, "radius": $rad[8], "fillKey": "orange","match": $match_pair[8], "tumour": $tumour[8], "normal": $normal[8], "project": "PBCA-DE"},
@@ -464,6 +472,7 @@ else {
 };
 close $file_up2;
 
+#writing to the data needed for the line graphs
 foreach my $thing ('DKFZ','EBI','BSC','RIKEN','OSDC','ETRI'){
         open(my $file, '>>', "/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/${thing}_up_archive.csv");
         open(my $filea, '>>', "/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/${thing}_ave_archive.csv");
@@ -523,6 +532,7 @@ my @day_ary1re = [];
 my $count_day1re = 0;
 my @day_ary2re = [];
 my $count_day2re = 0;
+
 #finding number of rows in the archived data
 open(FH,"/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/${elems}_ave_archive.csv") or &dienice("Can't open guestbook.txt: $!");
 while (my $line = <FH>) {
