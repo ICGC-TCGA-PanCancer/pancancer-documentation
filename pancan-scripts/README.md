@@ -63,7 +63,7 @@ Before running any scripts you need to check if perl is at least version 5.18.2 
     # initialize perlbrew environment
     $ perlbrew init
 
-Now that perlbrew is installed, you can download the perl 5.18.2. 
+Now that perlbrew is installed, you can download perl 5.18.2. 
 
     # install perl-5.18.2
     $ perlbrew install perl-5.18.2
