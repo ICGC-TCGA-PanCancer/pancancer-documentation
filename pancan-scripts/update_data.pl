@@ -16,7 +16,6 @@ my ($all_emp_count, $all_fill_count) = (0)x2;
 
 my @fill_counts = (0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
 my @emp_counts = (0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
-my @totals = (0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
 my @col = ("","","","","","","","","","","","","","");
 my @rad = (0,0,0,0,0,0,0,0,0,0,0,0,0,0);
 my @size = (0,0,0,0,0,0,0,0,0,0,0,0,0,0);
@@ -25,121 +24,63 @@ my @uploads = (0,0,0,0,0,0,0,0,0,0,0,0,0,0);
 my @tumour = (0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
 my @normal = (0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
 
+my ($projectcode,$leadjurisdiction,$tumourtype,$gnos,$numberofwgstnpairs,$numberofspecimens,$numberofspecimensuploaded,$percentuploaded);
+my @totals;
+
 #reading from text file containing all spreadsheets
 #individual project text files created from get_spreadsheets.pl
-open (FILE, "/home/ubuntu/gitroot/pancancer-info/pancan-scripts/results/all_files.txt");
+open (FILE, "/home/ubuntu/gitroot/pancancer-info/pancan-scripts/results/summary.txt");
 while (<FILE>) {
-        chomp;
-        ($Study, $dcc_project_code, $Accession_Identifier, $submitter_donor_id, $submitter_specimen_id, $submitter_sample_id, $Readgroup,$dcc_specimen_type, $Normal_Tumor_Designation,$ICGC_Sample_Identifier,$Sequencing_Strategy,$Number_of_BAM,$Target,$Actual) = split("\t");
-        if ($Actual eq "" && $Study ne 'Study'){
-                $all_emp_count += 1;
-                if ($dcc_project_code eq 'BTCA-SG'){
-                        $emp_counts[4] += 1;
-                        $totals[4] += 1;}
-                elsif ($dcc_project_code eq 'CLLE-ES'){
-                        $emp_counts[3] += 1;
-                        $totals[3] += 1;}
-                elsif ($dcc_project_code eq 'LIRI-JP'){
-                        $emp_counts[5] += 1;
-                        $totals[5] += 1;}
-                elsif ($dcc_project_code eq 'PACA-CA'){
-                        $emp_counts[2] += 1;
-                        $totals[2] +=1 ;}
-                elsif ($dcc_project_code eq 'LAML-KR'){
-                        $emp_counts[7] += 1;
-                        $totals[7] += 1;}
-                elsif($dcc_project_code eq 'PBCA-DE'){
-                        $emp_counts[8] += 1;
-                        $totals[8] += 1;
-                        $totals[0] += 1;}
-                elsif($dcc_project_code eq 'MALY-DE'){
-                        $emp_counts[9] += 1;
-                        $totals[9] += 1;
-                        $totals[0] += 1;}
-                elsif($dcc_project_code eq 'EOPC-DE'){
-                        $emp_counts[10] += 1;
-                        $totals[10] += 1;
-                        $totals[0] += 1;}
-                elsif($dcc_project_code eq 'BRCA-EU'){
-                        $emp_counts[11] += 1;
-                        $totals[11] += 1;
-                        $totals[1] += 1;}
-                elsif($dcc_project_code eq 'PRAD-UK'){
-                        $emp_counts[12] += 1;
-                        $totals[12] += 1;
-                        $totals[6] += 1;}
-                elsif ($dcc_project_code eq 'ESAD-UK'){
-                        $emp_counts[13] += 1;
-                        $totals[13] += 1;
-                        $totals[1] += 1;}
-                elsif($dcc_project_code eq 'BRCA-UK'){
-                        $emp_counts[14] += 1;
-                        $totals[14] += 1;
-                        $totals[6] += 1;}
-                elsif($dcc_project_code eq 'CMDI-UK'){
-                        $emp_counts[15] += 1;
-                        $totals[15] += 1;
-                        $totals[6] += 1;}
-                elsif($dcc_project_code eq 'BOCA-UK'){
-                        $emp_counts[16] += 1;
-                        $totals[16] += 1;
-                        $totals[6] += 1;}
-                };
+chomp;
+($projectcode,$leadjurisdiction,$tumourtype,$gnos,$numberofwgstnpairs,$numberofspecimens,$numberofspecimensuploaded,$percentuploaded) = split("\t");
 
-        if ($Actual ne "" && $Study ne 'Study'){
-                $all_fill_count += 1;
-                if (substr($dcc_project_code,5,6) eq 'SG'){
-                        $fill_counts[4] += 1;
-                        $totals[4] += 1;}
-                elsif (substr($dcc_project_code,5,6) eq 'ES'){
-                        $fill_counts[3] += 1;
-                        $totals[3] += 1;}
-                elsif (substr($dcc_project_code,5,6) eq 'JP'){
-                        $fill_counts[5] += 1;
-                        $totals[5] += 1;}
-                elsif (substr($dcc_project_code,5,6) eq 'CA'){
-                        $fill_counts[2] += 1;
-                        $totals[2] +=1 ;}
-                elsif(substr($dcc_project_code,5,6) eq 'KR'){
-                        $fill_counts[7] += 1;
-                        $totals[7] += 1;}
-                elsif($dcc_project_code eq 'PBCA-DE'){
-                        $fill_counts[8] += 1;
-                        $totals[8] += 1;
-                        $totals[0] += 1;}
-                elsif($dcc_project_code eq 'MALY-DE'){
-                        $fill_counts[9] += 1;
-                        $totals[9] += 1;
-                        $totals[0] += 1;}
-                elsif($dcc_project_code eq 'EOPC-DE'){
-                        $fill_counts[10] += 1;
-                        $totals[10] += 1;
-                        $totals[0] += 1;}
-                elsif($dcc_project_code eq 'BRCA-EU'){
-                        $fill_counts[11] += 1;
-                        $totals[11] += 1;
-                        $totals[1] += 1;}
-                elsif($dcc_project_code eq 'PRAD-UK'){
-                        $fill_counts[12] += 1;
-                        $totals[12] += 1;
-                        $totals[6] += 1;}
-                elsif ($dcc_project_code eq 'ESAD-UK'){
-                        $fill_counts[13] += 1;
-                        $totals[13] += 1;
-                        $totals[1] += 1;}
-                elsif($dcc_project_code eq 'BRCA-UK'){
-                        $fill_counts[14] += 1;
-                        $totals[14] += 1;
-                        $totals[6] += 1;}
-                elsif($dcc_project_code eq 'CMDI-UK'){
-                        $fill_counts[15] += 1;
-                        $totals[15] += 1;
-                        $totals[6] += 1;}
-                elsif($dcc_project_code eq 'BOCA-UK'){
-                        $fill_counts[16] += 1;
-                        $totals[16] += 1;
-                        $totals[6] += 1;}
-                };
+if ($projectcode ne 'Project Code' && $projectcode ne ''){
+		if (substr($projectcode,5,6) eq 'SG'){
+			$totals[4] += $numberofspecimens;}
+		elsif (substr($projectcode,5,6) eq 'ES'){
+			$totals[3] += $numberofspecimens;}
+		elsif ($projectcode eq 'LIRI-JP'){
+			$totals[17] += $numberofspecimens;
+			$totals[5] += $numberofspecimens;}
+		elsif ($projectcode eq 'LINC-JP'){
+			$totals[19] += $numberofspecimens;
+			$totals[5] += $numberofspecimens;}
+		elsif ($projectcode eq 'PACA-CA'){
+			$totals[18] += $numberofspecimens;
+			$totals[2] += $numberofspecimens ;}
+		elsif ($projectcode eq 'PRAD-CA'){
+			$totals[20] += $numberofspecimens;
+			$totals[2] += $numberofspecimens ;}
+		elsif (substr($projectcode,5,6) eq 'KR'){
+			$totals[7] += $numberofspecimens;}
+		elsif($projectcode eq 'PBCA-DE'){
+			$totals[8] += $numberofspecimens;
+			$totals[0] += $numberofspecimens;}
+		elsif($projectcode eq 'MALY-DE'){
+			$totals[9] += $numberofspecimens;
+			$totals[0] += $numberofspecimens;}
+		elsif($projectcode eq 'EOPC-DE'){
+			$totals[10] += $numberofspecimens;
+			$totals[0] += $numberofspecimens;}
+		elsif($projectcode eq 'BRCA-EU'){
+			$totals[11] += $numberofspecimens;
+			$totals[1] += $numberofspecimens;}
+		elsif($projectcode eq 'PRAD-UK'){
+			$totals[12] += $numberofspecimens;
+			$totals[6] += $numberofspecimens;}
+		elsif ($projectcode eq 'ESAD-UK'){
+			$totals[13] += $numberofspecimens;
+			$totals[1] += $numberofspecimens;}
+		elsif($projectcode eq 'BRCA-UK'){
+			$totals[14] += $numberofspecimens;
+			$totals[6] += $numberofspecimens;}
+		elsif($projectcode eq 'CMDI-UK'){
+			$totals[15] += $numberofspecimens;
+			$totals[6] += $numberofspecimens;}
+		elsif($projectcode eq 'BOCA-UK'){
+			$totals[16] += $numberofspecimens;
+			$totals[6] += $numberofspecimens;}
+		};
 }
 close (FILE);
 
@@ -152,7 +93,7 @@ my $counter = 0;
 my $uploaded = 0;
 
 #Finding what is uplaoded from the GNOS repo files
-foreach my $a ("defiles.txt","camfiles.txt","cafiles.txt","esfiles.txt","sgfiles.txt","jpfiles.txt","hinfiles.txt","krfiles.txt","pbcadefiles.txt","malydefiles.txt","eopcdefiles.txt","brcaeufiles.txt","pradukfiles.txt","esadukfiles.txt","brcaukfiles.txt","cmdiukfiles.txt","bocaukfiles.txt"){
+foreach my $a ("defiles.txt","camfiles.txt","cafiles.txt","esfiles.txt","sgfiles.txt","jpfiles.txt","hinfiles.txt","krfiles.txt","pbcadefiles.txt","malydefiles.txt","eopcdefiles.txt","brcaeufiles.txt","pradukfiles.txt","esadukfiles.txt","brcaukfiles.txt","cmdiukfiles.txt","bocaukfiles.txt","lirijpfiles.txt","pacacafiles.txt"){
 foreach my $i ("gtrepo-bsc", "gtrepo-dkfz", "gtrepo-osdc", "gtrepo-etri", "gtrepo-ebi", "gtrepo-riken") {
 
                 @id = [];
@@ -227,7 +168,8 @@ for ($h = 0; $h < scalar @totals; $h++){
                 else {$col[$h] = "green";};
 
         if($totals[$h] <= 120 && $totals[$h] >=0){$rad[$h] = 15;}
-                elsif($totals[$h] <= 300 && $totals[$h] >=120){$rad[$h] = 20;}
+                elsif($totals[$h] <= 500 && $totals[$h] >120){$rad[$h] = 20;}
+                elsif($totals[$h] <= 800 && $totals[$h] >500){$rad[$h] = 25;}
                 else{$rad[$h] = 30;};
 
         $size[$h] = $rad[$h]*$ave[$h];
@@ -271,7 +213,7 @@ foreach my $i ("gtrepo-bsc","gtrepo-dkfz", "gtrepo-osdc", "gtrepo-etri", "gtrepo
 }
 
 my $count_pass = 0;
-foreach my $a ("defiles.txt","camfiles.txt","cafiles.txt","esfiles.txt","sgfiles.txt","jpfiles.txt","hinfiles.txt","krfiles.txt","pbcadefiles.txt","malydefiles.txt","eopcdefiles.txt","brcaeufiles.txt","pradukfiles.txt","esadukfiles.txt","brcaukfiles.txt","cmdiukfiles.txt","bocaukfiles.txt"){
+foreach my $a ("defiles.txt","camfiles.txt","cafiles.txt","esfiles.txt","sgfiles.txt","jpfiles.txt","hinfiles.txt","krfiles.txt","pbcadefiles.txt","malydefiles.txt","eopcdefiles.txt","brcaeufiles.txt","pradukfiles.txt","esadukfiles.txt","brcaukfiles.txt","cmdiukfiles.txt","bocaukfiles.txt","lirijpfiles.txt","pacacafiles.txt"){
 
  my $len;
  my $match_count;
@@ -311,31 +253,32 @@ if ($len == scalar @{$match{$elems}}){
 #writes to bubble_data.json 
 open(my $file,'>', "~/gitroot/pancancer-info/pancan-scripts/map-data/bubble_data.json");
 print $file qq([
-          {"name": "Heidelberg", "total": $totals[0], "uploaded": $uploads[0], "latitude": 49.403159, "longitude": 8.676061, "radius": $rad[0], "fillKey": "orange","match": $match_pair[0], "tumour": $tumour[0], "normal": $normal[0], "project": "Heidelberg"},
-          {"name": "Heidelberg", "total": $totals[0], "uploaded": $uploads[0], "latitude": 49.403159, "longitude": 8.676061, "radius": $size[0], "fillKey": "$col[0]", "project": "Heidelberg"},
+        {"name": "Heidelberg", "total": $totals[0], "uploaded": $uploads[0], "latitude": 49.403159, "longitude": 8.676061, "radius": $rad[0], "fillKey": "orange","match": $match_pair[0], "tumour": $tumour[0], "normal": $normal[0]},
+        {"name": "Heidelberg", "total": $totals[0], "uploaded": $uploads[0], "latitude": 49.403159, "longitude": 8.676061, "radius": $size[0], "fillKey": "$col[0]"},
           
-          {"name": "Cambridge", "total": $totals[1], "uploaded": $uploads[1], "latitude": 52.202544, "longitude": 0.131237 , "radius": $rad[1], "fillKey": "orange","match": $match_pair[1],"tumour": $tumour[1], "normal": $normal[1], "project": "Cambridge"},
-          {"name": "Cambridge", "total": $totals[1], "uploaded": $uploads[1], "latitude": 52.202544, "longitude": 0.131237 , "radius": $size[1], "fillKey": "$col[1]", "project": "Cambridge"},
+        {"name": "Cambridge", "total": $totals[1], "uploaded": $uploads[1], "latitude": 52.202544, "longitude": 0.131237 , "radius": $rad[1], "fillKey": "orange","match": $match_pair[1],"tumour": $tumour[1], "normal": $normal[1]},
+        {"name": "Cambridge", "total": $totals[1], "uploaded": $uploads[1], "latitude": 52.202544, "longitude": 0.131237 , "radius": $size[1], "fillKey": "$col[1]"},
+        
+        {"name": "Hinxton", "total": $totals[6], "uploaded": $uploads[6], "latitude": 52.082869, "longitude": 0.18269 , "radius": $rad[6], "fillKey": "orange", "match": $match_pair[6],"tumour": $tumour[6], "normal": $normal[6]},
+        {"name": "Hinxton", "total": $totals[6], "uploaded": $uploads[6], "latitude": 52.082869, "longitude": 0.18269 , "radius": $size[6], "fillKey": "$col[6]"},
           
-          {"name": "Hinxton", "total": $totals[6], "uploaded": $uploads[6], "latitude": 52.082869, "longitude": 0.18269 , "radius": $rad[6], "fillKey": "orange", "match": $match_pair[6],"tumour": $tumour[6], "normal": $normal[6], "project": "Hinxton"},
-          {"name": "Hinxton", "total": $totals[6], "uploaded": $uploads[6], "latitude": 52.082869, "longitude": 0.18269 , "radius": $size[6], "fillKey": "$col[6]", "project": "Hinxton"},
-          
-          {"name": "Toronto", "total": $totals[2], "uploaded": $uploads[2], "latitude": 43.7000, "longitude": -79.4000, "radius": $rad[2], "fillKey": "orange","match": $match_pair[2], "tumour": $tumour[2], "normal": $normal[2], "project": "PACA-CA"},
-          {"name": "Toronto", "total": $totals[2], "uploaded": $uploads[2], "latitude": 43.7000, "longitude": -79.4000, "radius": $size[2], "fillKey": "$col[2]", "project": "PACA-CA"},
+        {"name": "Toronto", "total": $totals[2], "uploaded": $uploads[2], "latitude": 43.7000, "longitude": -79.4000, "radius": $rad[2], "fillKey": "orange","match": $match_pair[2], "tumour": $tumour[2], "normal": $normal[2]},
+        {"name": "Toronto", "total": $totals[2], "uploaded": $uploads[2], "latitude": 43.7000, "longitude": -79.4000, "radius": $size[2], "fillKey": "$col[2]"},
      
-          {"name": "Barcelona", "total": $totals[3], "uploaded": $uploads[3], "latitude": 41.378691, "longitude": 2.175547, "radius": $rad[3], "fillKey": "orange","match": $match_pair[3], "tumour": $tumour[3], "normal": $normal[3], "project": "CLLE-ES"},
-          {"name": "Barcelona", "total": $totals[3], "uploaded": $uploads[3], "latitude": 41.378691, "longitude": 2.175547, "radius": $size[3], "fillKey": "$col[3]", "project": "CLLE-ES"},
+        {"name": "Barcelona", "total": $totals[3], "uploaded": $uploads[3], "latitude": 41.378691, "longitude": 2.175547, "radius": $rad[3], "fillKey": "orange","match": $match_pair[3], "tumour": $tumour[3], "normal": $normal[3],"project": "CLLE-ES"},
+        {"name": "Barcelona", "total": $totals[3], "uploaded": $uploads[3], "latitude": 41.378691, "longitude": 2.175547, "radius": $size[3], "fillKey": "$col[3]","project": "CLLE-ES"},
+  
+        {"name": "Singapore", "total": $totals[4], "uploaded": $uploads[4], "latitude": 1.2896700, "longitude": 103.8500700, "radius": $rad[4], "fillKey": "orange","match": $match_pair[4], "tumour": $tumour[4], "normal": $normal[4],"project": "BTCA-SG"},
+        {"name": "Singapore", "total": $totals[4], "uploaded": $uploads[4], "latitude": 1.2896700, "longitude": 103.8500700, "radius": $size[4], "fillKey": "$col[4]","project": "BTCA-SG"},
+         
+        {"name": "Seoul", "total": $totals[7], "uploaded": $uploads[7], "latitude": 37.532600, "longitude": 127.024612, "radius": $rad[7], "fillKey": "orange","match": $match_pair[7], "tumour": $tumour[7], "normal": $normal[7],"project": "LAML-KR"},
+        {"name": "Seoul", "total": $totals[7], "uploaded": $uploads[7], "latitude": 37.532600, "longitude": 127.024612, "radius": $size[7], "fillKey": "$col[7]","project": "LAML-KR"},
 
-          {"name": "Singapore", "total": $totals[4], "uploaded": $uploads[4], "latitude": 1.2896700, "longitude": 103.8500700, "radius": $rad[4], "fillKey": "orange","match": $match_pair[4], "tumour": $tumour[4], "normal": $normal[4], "project": "BTCA-SG"},
-          {"name": "Singapore", "total": $totals[4], "uploaded": $uploads[4], "latitude": 1.2896700, "longitude": 103.8500700, "radius": $size[4], "fillKey": "$col[4]", "project": "BTCA-SG"},
-          
-          {"name": "Seoul", "total": $totals[7], "uploaded": $uploads[7], "latitude": 37.532600, "longitude": 127.024612, "radius": $rad[7], "fillKey": "orange","match": $match_pair[7], "tumour": $tumour[7], "normal": $normal[7], "project": "LAML-KR"},
-          {"name": "Seoul", "total": $totals[7], "uploaded": $uploads[7], "latitude": 37.532600, "longitude": 127.024612, "radius": $size[7], "fillKey": "$col[7]", "project": "LAML-KR"},
-
-          {"name": "Tokyo", "total": $totals[5], "uploaded": $uploads[5], "latitude": 35.684219, "longitude": 139.755020, "radius": $rad[5], "fillKey": "orange","match": $match_pair[5], "tumour": $tumour[5], "normal": $normal[5], "project": "LIRI-JP"},
-          {"name": "Tokyo", "total": $totals[5], "uploaded": $uploads[5], "latitude": 35.684219, "longitude": 139.755020, "radius": $size[5], "fillKey": "$col[5]", "project": "LIRI-JP"}
+        {"name": "Tokyo", "total": $totals[5], "uploaded": $uploads[5], "latitude": 35.684219, "longitude": 139.755020, "radius": $rad[5], "fillKey": "orange","match": $match_pair[5], "tumour": $tumour[5], "normal": $normal[5]},
+        {"name": "Tokyo", "total": $totals[5], "uploaded": $uploads[5], "latitude": 35.684219, "longitude": 139.755020, "radius": $size[5], "fillKey": "$col[5]"}
 
 ]);
+close $file;
 
 open(my $file_add,'>', "/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/bubble_data1.json");
 print $file_add qq([
@@ -360,14 +303,18 @@ print $file_add qq([
         {"name": "Hinxton", "total": $totals[16], "uploaded": $uploads[16], "latitude": 52.082869, "longitude": 0.18269 , "radius": $rad[16], "fillKey": "orange","match": $match_pair[16], "tumour": $tumour[16], "normal": $normal[16], "project": "BOCA-UK"},
         {"name": "Hinxton", "total": $totals[16], "uploaded": $uploads[16], "latitude": 52.082869, "longitude": 0.18269 , "radius": $size[16], "fillKey": "$col[16]", "project": "BOCA-UK"},
         
+        {"name": "Toronto", "total": $totals[18], "uploaded": $uploads[18], "latitude": 43.7000, "longitude": -79.4000, "radius": $rad[18], "fillKey": "orange","match": $match_pair[2], "tumour": $tumour[2], "normal": $normal[2], "project": "PACA-CA"},
+        {"name": "Toronto", "total": $totals[18], "uploaded": $uploads[18], "latitude": 43.7000, "longitude": -79.4000, "radius": $size[18], "fillKey": "$col[18]", "project": "PACA-CA"},
+        
+        {"name": "Tokyo", "total": $totals[17], "uploaded": $uploads[17], "latitude": 35.684219, "longitude": 139.755020, "radius": $rad[17], "fillKey": "orange","match": $match_pair[5], "tumour": $tumour[5], "normal": $normal[5], "project": "LIRI-JP"},
+        {"name": "Tokyo", "total": $totals[17], "uploaded": $uploads[17], "latitude": 35.684219, "longitude": 139.755020, "radius": $size[17], "fillKey": "$col[17]", "project": "LIRI-JP"},
+        
         {"name": "Cambridge", "total": $totals[13], "uploaded": $uploads[13], "latitude": 52.202544, "longitude": 0.131237 , "radius": $rad[13], "fillKey": "orange","match": $match_pair[13],"tumour": $tumour[13], "normal": $normal[13], "project": "ESAD-UK"},
         {"name": "Cambridge", "total": $totals[13], "uploaded": $uploads[13], "latitude": 52.202544, "longitude": 0.131237 , "radius": $size[13], "fillKey": "$col[13]", "project": "ESAD-UK"},
         
         {"name": "Cambridge", "total": $totals[11], "uploaded": $uploads[11], "latitude": 52.202544, "longitude": 0.131237 , "radius": $rad[11], "fillKey": "orange","match": $match_pair[11],"tumour": $tumour[11], "normal": $normal[11], "project": "BRCA-EU"},
         {"name": "Cambridge", "total": $totals[11], "uploaded": $uploads[11], "latitude": 52.202544, "longitude": 0.131237 , "radius": $size[11], "fillKey": "$col[11]", "project": "BRCA-EU"},
 ]);
-close $file_add;
-
 close $file;
 
 use POSIX qw(strftime);
