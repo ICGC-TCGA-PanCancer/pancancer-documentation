@@ -39,9 +39,10 @@ We then have to make some more directories in /var/www/ :
     $ mkdir up_data
     $ mkdir ave_data
 
-Now go into gitroot and begin to download scripts :
+Now go into gitroot and begin to download scripts and make one more directory :
 
     $ cd ~/gitroot/
+    $ mkdir results
 
 Clone the branch onto the machine using :
 
