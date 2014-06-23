@@ -48,6 +48,8 @@ foreach my $item (@origins){
                 elsif ($item eq 'sgfiles.txt'){push (@origins1, 'Singapore');push (@origins2, 'BTCA-SG');push (@origins3, 'Singapore');}
                 elsif ($item eq 'jpfiles.txt'){push (@origins1, 'Tokyo');push (@origins2, 'LIRI-JP');push (@origins3, 'Tokyo');}
                 elsif ($item eq 'krfiles.txt'){push (@origins1, 'Seoul');push (@origins2, 'LAML-KR');push (@origins3, 'Seoul');}
+                elsif ($item eq 'pacacafiles.txt'){push (@origins1, 'Toronto');push (@origins2, 'PACA-CA');push (@origins3, 'PACA-CA');}
+                elsif ($item eq 'lirijpfiles.txt'){push (@origins1, 'Tokyo');push (@origins2, 'LIRI-JP');push (@origins3, 'LIRI-JP');}
                 else {push (@origins3, '');};
         }
 
@@ -90,7 +92,7 @@ close $file1;
 
 #creating bubble json files for every location 
 #appends all the output to different files for each location
-foreach my $thing ('Heidelberg','PBCA-DE','MALY-DE','EOPC-DE','Hinxton','BRCA-UK','CMDI-UK','BOCA-UK','PRAD-UK','Cambridge','ESAD-UK','BRCA-EU','Toronto','Barcelona','Singapore','Tokyo','Seoul'){
+foreach my $thing ('Heidelberg','PBCA-DE','MALY-DE','EOPC-DE','Hinxton','BRCA-UK','CMDI-UK','BOCA-UK','PRAD-UK','Cambridge','ESAD-UK','BRCA-EU','PACA-CA','Barcelona','Singapore','LIRI-JP','Seoul'){
                open(my $file, '>', "/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/${thing}_bub.json");
                my $l = 0;
                my @elems;
