@@ -84,6 +84,7 @@ Now that you have the right version of perl, we can begin to install all the dep
     $ sudo apt-get install libcrypt-ssleay-perl
     $ sudo apt-get install libssl-dev
     
+    # make sure to install the modules in this order as they are dependant of one another
     $ cpanm XML::LibXML
     $ cpanm XML::DOM
     $ cpanm Net::SSLeay
