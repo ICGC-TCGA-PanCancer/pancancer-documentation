@@ -94,7 +94,7 @@ You have to put in your credentials for the get_spreadsheets.pl and get_uploads.
 
 Once everything is installed and ready to use, you can try and run the shell scripts :
 
-    #make sure you are in /home/ubuntu/gitroot/pancancer-info/pancan-scripts/
+    # make sure you are in /home/ubuntu/gitroot/pancancer-info/pancan-scripts/
     $ ./decider.cron
     $ ./run_get.sh
 
