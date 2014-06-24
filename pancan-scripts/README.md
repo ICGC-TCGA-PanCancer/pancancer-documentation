@@ -26,7 +26,7 @@ Run the program without arguments to see the latest options. For example:
     	--upload-results     a flag indicating the resulting BAM files and metadata should be uploaded to GNOS, default is to not upload!!!
 
 ## Preparing the environment
-This documentation will exmplain how to set up the environment needed for Pancancer.info to live on. It will go though all the necessary installs and downloads needed. By following this you should be able to migrate the site to whatever server you would like. To configure the site onto another server you must do the following:
+This documentation will exmplain how to set up the environment needed for Pancancer.info to live on. It will go though all the necessary installs and downloads needed. By following this you should be able to migrate the site to whatever server you would like. Launch a cluster or node on AWS and ssh into that cluster/node. To configure the site onto the cluster/node, you must do the following:
 
 First make a directory under /home/ubuntu:
 
@@ -39,9 +39,10 @@ We then have to make some more directories in /var/www/ :
     $ mkdir up_data
     $ mkdir ave_data
 
-Now go into gitroot and begin to download scripts :
+Now go into gitroot and begin to download scripts and make one more directory :
 
     $ cd ~/gitroot/
+    $ mkdir results
 
 Clone the branch onto the machine using :
 
@@ -54,7 +55,7 @@ Move into the feature branch and copy uploads.html to /var/www/ :
     $ cd pancan-scripts
     $ sudo cp uploads.html /var/www/
 
-Before running any scripts you need to check if perl is at least version 5.18.2 using perl -v. You might also want to use cpanminus to make installing modules much easier. If necessary, update perl to version 5.18.2. To do this, you need to use perlbrew. Perlbrew allows you to manage and use multiple versions perl on the same machine, you can check it out here (http://perlbrew.pl/). To use perlbrew do the following :
+Before running any scripts you need to check if perl is at least version 5.18.2 using perl -v. From past experience, this version of perl has worked fine. If necessary, update perl to version 5.18.2. To do this, you need to use perlbrew. Perlbrew allows you to manage and use multiple versions perl on the same machine, you can check it out here (http://perlbrew.pl/). To use perlbrew do the following :
 
     # download perlbrew
     $ wget -O - http://install.perlbrew.pl | bash
@@ -73,16 +74,17 @@ Now that perlbrew is installed, you can download perl 5.18.2 :
     $ perlbrew use 5.18.2
     # check if right version 
     $ perl -v # should show you 5.18.2
-    # install cpanm 
+    # You might also want to use cpanminus to make installing modules much easier
     $ perlbrew install-cpanm
 
-Now that you have the right version of perl, we can begin to install all the dependencies. Before installing the modules, you need to install all the packages :
+Now that you have the right version of perl, we can begin to install all the dependencies. Before installing the modules, you need to install the following packages :
 
     $ sudo apt-get install libxml2-dev
     $ sudo apt-get install libexpat1-dev
     $ sudo apt-get install libcrypt-ssleay-perl
     $ sudo apt-get install libssl-dev
     
+    # make sure to install the modules in this order as they are dependant of one another
     $ cpanm XML::LibXML
     $ cpanm XML::DOM
     $ cpanm Net::SSLeay
@@ -103,3 +105,12 @@ This should put all the necessary files in the /var/www/ directory and have the 
 You can set up a cron job running the scripts as freqeutnly as you would like using :
 
     $ crontab -e
+    # 1 * * * * /home/ubuntu/gitroot/pancancer-info/pancan-scripts/decider.cron &> /home/ubuntu/gitroot/pancancer-info/pancan-scripts/decider.cron.log
+    # this will run every first minute of every hour
+    # * */2 * * * /home/ubuntu/gitroot/pancancer-info/pancan-scripts/run_get.sh > /home/ubuntu/gitroot/pancancer-info/pancan-scripts/run_get.sh.log 2>&1
+    # this will run every other hour
+    
+You can use tail on the log files to see if the cronjobs are being run properly :
+
+    $ tail -f /home/ubuntu/gitroot/pancancer-info/pancan-scripts/decider.cron.log
+    $ tail -f /home/ubuntu/gitroot/pancancer-info/pancan-scripts/run_get.sh.log
