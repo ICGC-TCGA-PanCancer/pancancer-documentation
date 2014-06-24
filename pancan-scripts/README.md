@@ -109,3 +109,8 @@ You can set up a cron job running the scripts as freqeutnly as you would like us
     # this will run every first minute of every hour
     # * */2 * * * /home/ubuntu/gitroot/pancancer-info/pancan-scripts/run_get.sh > /home/ubuntu/gitroot/pancancer-info/pancan-scripts/run_get.sh.log 2>&1
     # this will run every other hour
+    
+You can use tail on the log files to see if the cronjobs are being run properly :
+
+    $ tail -f /home/ubuntu/gitroot/pancancer-info/pancan-scripts/decider.cron.log
+    $ tail -f /home/ubuntu/gitroot/pancancer-info/pancan-scripts/run_get.sh.log
