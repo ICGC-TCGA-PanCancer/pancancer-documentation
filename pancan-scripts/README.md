@@ -55,7 +55,7 @@ Move into the feature branch and copy uploads.html to /var/www/ :
     $ cd pancan-scripts
     $ sudo cp uploads.html /var/www/
 
-Before running any scripts you need to check if perl is at least version 5.18.2 using perl -v. You might also want to use cpanminus to make installing modules much easier. If necessary, update perl to version 5.18.2. To do this, you need to use perlbrew. Perlbrew allows you to manage and use multiple versions perl on the same machine, you can check it out here (http://perlbrew.pl/). To use perlbrew do the following :
+Before running any scripts you need to check if perl is at least version 5.18.2 using perl -v. From past experience, this version of perl has worked fine. If necessary, update perl to version 5.18.2. To do this, you need to use perlbrew. Perlbrew allows you to manage and use multiple versions perl on the same machine, you can check it out here (http://perlbrew.pl/). To use perlbrew do the following :
 
     # download perlbrew
     $ wget -O - http://install.perlbrew.pl | bash
@@ -74,10 +74,10 @@ Now that perlbrew is installed, you can download perl 5.18.2 :
     $ perlbrew use 5.18.2
     # check if right version 
     $ perl -v # should show you 5.18.2
-    # install cpanm 
+    # You might also want to use cpanminus to make installing modules much easier
     $ perlbrew install-cpanm
 
-Now that you have the right version of perl, we can begin to install all the dependencies. Before installing the modules, you need to install all the packages :
+Now that you have the right version of perl, we can begin to install all the dependencies. Before installing the modules, you need to install the following packages :
 
     $ sudo apt-get install libxml2-dev
     $ sudo apt-get install libexpat1-dev
@@ -107,5 +107,5 @@ You can set up a cron job running the scripts as freqeutnly as you would like us
     $ crontab -e
     # 1 * * * * /home/ubuntu/gitroot/pancancer-info/pancan-scripts/decider.cron &> /home/ubuntu/gitroot/pancancer-info/pancan-scripts/decider.cron.log
     # this will run every first minute of every hour
-    # * */2 * * * /home/ubuntu/gitroot/pancancer-info/pancan-scripts/run_get.sh
+    # * */2 * * * /home/ubuntu/gitroot/pancancer-info/pancan-scripts/run_get.sh > /home/ubuntu/gitroot/pancancer-info/pancan-scripts/run_get.sh.log 2>&1
     # this will run every other hour
