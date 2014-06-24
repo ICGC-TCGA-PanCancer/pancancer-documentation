@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# need this line to run perlbrew
 source ~/.bash_profile
 
 cd /home/ubuntu/gitroot/pancancer-info/pancan-scripts/results
