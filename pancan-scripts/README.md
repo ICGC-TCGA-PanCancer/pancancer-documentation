@@ -26,7 +26,7 @@ Run the program without arguments to see the latest options. For example :
     	--upload-results     a flag indicating the resulting BAM files and metadata should be uploaded to GNOS, default is to not upload!!!
 
 ## Preparing the environment
-This documentation will exmplain how to set up the environment needed for Pancancer.info to live on. It will go though all the necessary installs and downloads needed. By following this you should be able to migrate the site to whatever server you would like. Launch a cluster or node on AWS and ssh into that cluster/node. To configure the site onto the cluster/node, you must do the following :
+This documentation will exmplain how to set up the environment needed for Pancancer.info to live on. It will go though all the necessary installs and downloads needed. By following this you should be able to migrate the site to whatever server you would like. Launch an instance on AWS and ssh into that instance. To configure the site onto the instance, you must do the following :
 
 First make a directory under /home/ubuntu :
  
@@ -35,9 +35,9 @@ First make a directory under /home/ubuntu :
 We then have to make some more directories in /var/www/ :
 
     $ cd /var/www/
-    $ mkdir bubbles
-    $ mkdir up_data
-    $ mkdir ave_data
+    $ sudo mkdir bubbles
+    $ sudo mkdir up_data
+    $ sudo mkdir ave_data
 
 Now go into gitroot and begin to download scripts and make one more directory :
 
@@ -55,18 +55,18 @@ Move into the feature branch and copy uploads.html to /var/www/ :
     $ cd pancan-scripts
     $ sudo cp uploads.html /var/www/
 
-Before running any scripts you need to check if perl is at least version 5.18.2 using perl -v. From past experience, this version of perl has worked fine. If necessary, update perl to version 5.18.2. To do this, you need to use perlbrew. Perlbrew allows you to manage and use multiple versions perl on the same machine, you can check it out here (http://perlbrew.pl/). To use perlbrew do the following :
+Before running any scripts you need to check if perl is at least version 5.18.2 using perl -v. From past experience, this version of perl has worked fine with all the perl scripts. If necessary, update perl to version 5.18.2. To do this, you need to use perlbrew. Perlbrew allows you to manage and use multiple versions perl on the same machine, you can check it out here (http://perlbrew.pl/). To use perlbrew do the following :
 
     # download perlbrew
     $ wget -O - http://install.perlbrew.pl | bash
-    $ vim .bash_profile # place this line:  source ~/perl5/perlbrew/etc/bashrc into the file
+    $ vim ~/.bash_profile # place this line:  source ~/perl5/perlbrew/etc/bashrc into the file
     $ sudo apt-get install perlbrew
     # initialize perlbrew environment
     $ perlbrew init
 
 Now that perlbrew is installed, you can download perl 5.18.2 :
 
-    # install perl-5.18.2
+    # install perl-5.18.2, this may take a while ...
     $ perlbrew install perl-5.18.2
     # you can track the status using
     $ tail -f ~/perl5/perlbrew/build.log
@@ -90,7 +90,10 @@ Now that you have the right version of perl, we can begin to install all the dep
     $ cpanm Net::SSLeay
     $ cpanm Net::Google::Spreadsheets
 
-If you are having trouble using cpanm you can try to install the modules using cpan.
+If you are having trouble installing modules using cpanm you try to install the modules using cpan. For example :
+    
+    $ cpan
+    $ cpan[1]> install Net::Google::Spreadsheets
 
 You have to put in your credentials for the get_spreadsheets.pl and get_uploads.pl scripts. You will put your gmail address containing all the spreadsheets for the projects and your gmail password.
 
