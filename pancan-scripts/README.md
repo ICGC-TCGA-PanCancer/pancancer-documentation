@@ -1,7 +1,7 @@
 # PANCAN.INFO
 
 ## About
-The files in this directory are all the ones being used on pancan.info . Everything needed is contained here except for the script workflow_decider.pl which is in:
+The files in this directory are all the ones being used on pancan.info. To prevent having multiple versions of the workflow decider, we have decided to keep it out of this repo. Feel free to take a look at the script here :
     
     https://github.com/SeqWare/public-workflows/raw/develop/decider-bwa-pancancer/workflow_decider.pl
 
