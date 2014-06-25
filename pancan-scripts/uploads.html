@@ -110,7 +110,7 @@
 		</div><!--chartdiv-->
 		<script type="text/javascript">
 			function charts(data,label,popup,spot,maxnum,num){
-			//creates the line chart.f
+			//creates the line chart
 			  var margin = {top: 20, right: 55, bottom: 115, left: 40},
 				  width  = 550,
 				  height = 200;
@@ -514,18 +514,9 @@
                                 cell_6[1].firstChild.data = ''+json_data2[i-1].dest+', '+json_data2[i-2].dest;
                                 cell_6[1] = table2[0].rows[i].cells[2];
                                 val_6[1] = cell_6[1].firstChild.data;
-                                cell_6[1].firstChild.data = ''+json_data2[i].dest;}
+                                cell_6[1].firstChild.data = ''+json_data2[i].dest;
+                                }
                                 
-                //      else if (i == json_data2.length-1 ){
-                //              cell_6[1] = table2[0].rows[i].cells[0];
-                //              val_6[1] = cell_6[1].firstChild.data;
-                //              cell_6[1].firstChild.data = ''+json_data2[i].origin;
-                //              cell_6[1] = table2[0].rows[i].cells[1];
-                //              val_6[1] = cell_6[1].firstChild.data;
-                //              cell_6[1].firstChild.data = ''+json_data2[i-1].project;
-                //              cell_6[1] = table2[0].rows[i].cells[2];
-                //              val_6[1] = cell_6[1].firstChild.data;
-                //              cell_6[1].firstChild.data = ''+json_data2[i].dest;}
                         else {
                                 cell_6[1] = table2[0].rows[i].cells[0];
                                 val_6[1] = cell_6[1].firstChild.data;
@@ -740,6 +731,7 @@ d3.json("frontuk.json", function(error, json) {
 </script>
 
 				<div id="tab2"  style="margin:0px auto;position:relative; width: 800px; height: 500px;"class="tab">
+					<!--drop down menu-->
                                         <select id="HEID" onchange = "run1()">
                                           <option value="1" selected="selected">PBCA-DE</option>
                                           <option value="2">MALY-DE</option>
@@ -749,6 +741,7 @@ d3.json("frontuk.json", function(error, json) {
                                 </div></div>
 		 
 				<div id="tab3" style="margin:0px auto;position:relative; width: 800px; height: 500px;"class="tab">
+					<!--drop down menu-->
                                         <select id="CAM" onchange="run2()">
                                           <option value="1"selected="selected">ESAD-UK</option>
                                           <option value="2" >BRCA-EU</option>
@@ -757,11 +750,12 @@ d3.json("frontuk.json", function(error, json) {
                                 </div></div>
 
                                 <div id="tab4" style="margin:0px auto;position:relative; width: 800px; height: 500px;"class="tab">
+                                	<!--drop down menu-->
                                         <select id="HIN" onchange="run3()">
-                                        <option value="1"selected="selected">BRCA-UK</option>
-                                        <option value="2">CMDI-UK</option>
-                                        <option value="3">BOCA-UK</option>
-                                        <option value="4">PRAD-UK</option>
+                                          <option value="1"selected="selected">BRCA-UK</option>
+                                          <option value="2">CMDI-UK</option>
+                                          <option value="3">BOCA-UK</option>
+                                          <option value="4">PRAD-UK</option>
                                         </select>
                                 <div id="tab4a" style="margin:0px auto;position:relative; width: 800px; height: 500px;">
                                 </div></div>
@@ -786,6 +780,8 @@ d3.json("frontuk.json", function(error, json) {
 	</div><!--center2-->
 </div><!--fullcontain-->
 <script>
+
+	//checks what data to show for Heidelberg
 	function run1() {
     var e = document.getElementById("HEID");
     var strUser = e.options[e.selectedIndex].value;
@@ -803,6 +799,7 @@ d3.json("frontuk.json", function(error, json) {
     }
         }
 
+	 //checks what data to show for Cambridge
          function run2() {
     var e = document.getElementById("CAM");
     var strUser = e.options[e.selectedIndex].value;
@@ -816,6 +813,7 @@ d3.json("frontuk.json", function(error, json) {
     }
         }
         
+        //checks what data to show for Hinxton
         function run3() {
     var e = document.getElementById("HIN");
     var strUser = e.options[e.selectedIndex].value;
