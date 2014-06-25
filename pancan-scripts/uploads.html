@@ -82,31 +82,31 @@
 		</div><!--tablediv-->
 		<div id="chartdiv">
 				<div id="charttop">
-                                        <h3 style="margin: 20px;">Percentage of Files Uploaded</h3>
-                                        <div id="radio" style="margin-right:25px;">
-                                                <input type="radio" name="time" id="hr1" onchange="checkr1()">Hourly
-                                                <input type="radio" name="time" id="day1" onchange="checkr1()">Daily
+                                        <h3 style="margin: 10px;">Percentage of Files Uploaded</h3>
+                                        <div id="radio" style="margin-right:55px;">
+                                                <input type="radio" name="time" id="hr1" onchange="checkr1()">Daily
+                                                <input type="radio" name="time" id="day1" onchange="checkr1()">Weekly
                                                 <input type="radio" name="time" id="dkfz1" onchange="checkr1()">DKFZ
                                                 <input type="radio" name="time" id="ebi1" onchange="checkr1()">EBI
                                                 <input type="radio" name="time" id="bsc1" onchange="checkr1()">BSC
                                                 <input type="radio" name="time" id="etri1" onchange="checkr1()">ETRI
                                                 <input type="radio" name="time" id="osdc1" onchange="checkr1()">OSDC
                                                 <input type="radio" name="time" id="riken1" onchange="checkr1()">RIKEN
-                                        </div>
-                                </div>
+                                        </div><!--radio-->
+                                </div><!--charttop-->
                                 <div id ="chartbottom">
-                                        <h3 style="margin: 20px;">Number of Files Uploaded</h3>
-                                        <div id="radio" style="margin-right:25px;">
-                                                <input type="radio" name="time" id="hr2" onchange="checkr2()">Hourly
-                                                <input type="radio" name="time" id="day2" onchange="checkr2()">Daily
+                                        <h3 style="margin: 10px;">Number of Files Uploaded</h3>
+                                        <div id="radio" style="margin-right:55px;">
+                                                <input type="radio" name="time" id="hr2" onchange="checkr2()">Daily
+                                                <input type="radio" name="time" id="day2" onchange="checkr2()">Weekly
                                                 <input type="radio" name="time" id="dkfz2" onchange="checkr2()">DKFZ
                                                 <input type="radio" name="time" id="ebi2" onchange="checkr2()">EBI
                                                 <input type="radio" name="time" id="bsc2" onchange="checkr2()">BSC
                                                 <input type="radio" name="time" id="etri2" onchange="checkr2()">ETRI
                                                 <input type="radio" name="time" id="osdc2" onchange="checkr2()">OSDC
                                                 <input type="radio" name="time" id="riken2" onchange="checkr2()">RIKEN
-                                        </div>
-                                </div>
+                                        </div><!--radio-->
+                                </div><!--chartbottom-->
 		</div><!--chartdiv-->
 		<script type="text/javascript">
 			function charts(data,label,popup,spot,maxnum,num){
@@ -500,7 +500,7 @@
         
         d3.json("table2.json", function(error, json) {
                 json_data2 = json;
-                for (var i = 1; i < json_data2.length; i++){
+                for (var i = 1; i < json_data2.length+1; i++){
                         
                         if (json_data2[i-1].project == current){
                                 cell_6[1] = table2[0].rows[i].cells[0];
@@ -516,16 +516,16 @@
                                 val_6[1] = cell_6[1].firstChild.data;
                                 cell_6[1].firstChild.data = ''+json_data2[i].dest;}
                                 
-                        else if (i == json_data2.length-1 || i == json_data2.length-2){
-                                cell_6[1] = table2[0].rows[i].cells[0];
-                                val_6[1] = cell_6[1].firstChild.data;
-                                cell_6[1].firstChild.data = ''+json_data2[i].origin;
-                                cell_6[1] = table2[0].rows[i].cells[1];
-                                val_6[1] = cell_6[1].firstChild.data;
-                                cell_6[1].firstChild.data = ''+json_data2[i].project;
-                                cell_6[1] = table2[0].rows[i].cells[2];
-                                val_6[1] = cell_6[1].firstChild.data;
-                                cell_6[1].firstChild.data = ''+json_data2[i].dest;}
+                //      else if (i == json_data2.length-1 ){
+                //              cell_6[1] = table2[0].rows[i].cells[0];
+                //              val_6[1] = cell_6[1].firstChild.data;
+                //              cell_6[1].firstChild.data = ''+json_data2[i].origin;
+                //              cell_6[1] = table2[0].rows[i].cells[1];
+                //              val_6[1] = cell_6[1].firstChild.data;
+                //              cell_6[1].firstChild.data = ''+json_data2[i-1].project;
+                //              cell_6[1] = table2[0].rows[i].cells[2];
+                //              val_6[1] = cell_6[1].firstChild.data;
+                //              cell_6[1].firstChild.data = ''+json_data2[i].dest;}
                         else {
                                 cell_6[1] = table2[0].rows[i].cells[0];
                                 val_6[1] = cell_6[1].firstChild.data;
@@ -535,9 +535,11 @@
                                 cell_6[1].firstChild.data = ''+json_data2[i-1].project;
                                 cell_6[1] = table2[0].rows[i].cells[2];
                                 val_6[1] = cell_6[1].firstChild.data;
-                                cell_6[1].firstChild.data = ''+json_data2[i-1].dest;}
+                                cell_6[1].firstChild.data = ''+json_data2[i-1].dest;
+                                }
                                 
                         var current = json_data2[i-1].project;
+
                 }
                         
         });
