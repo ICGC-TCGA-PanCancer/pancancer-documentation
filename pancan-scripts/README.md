@@ -8,7 +8,7 @@ The files in this directory are all the ones being used on pancan.info. To preve
 
 ## Sample Usage
 Preview of how workflow_decider.pl is used.
-Run the program without arguments to see the latest options. For example:
+Run the program without arguments to see the latest options. For example :
 
     $ perl decider-bwa-pancancer/workflow_decider.pl
     USAGE: 'perl decider-bwa-pancancer/workflow_decider.pl --gnos-url <URL> --cluster-json <cluster.json> [--working-dir <working_dir>] [--sample <sample_id>] [--threads <num_threads_bwa_default_8>] [--test] [--ignore-lane-count] [--force-run] [--skip-meta-download] [--report <workflow_decider_report.txt>] [--settings <seqware_settings_file>] [--upload-results]'
@@ -26,10 +26,10 @@ Run the program without arguments to see the latest options. For example:
     	--upload-results     a flag indicating the resulting BAM files and metadata should be uploaded to GNOS, default is to not upload!!!
 
 ## Preparing the environment
-This documentation will exmplain how to set up the environment needed for Pancancer.info to live on. It will go though all the necessary installs and downloads needed. By following this you should be able to migrate the site to whatever server you would like. Launch a cluster or node on AWS and ssh into that cluster/node. To configure the site onto the cluster/node, you must do the following:
+This documentation will exmplain how to set up the environment needed for Pancancer.info to live on. It will go though all the necessary installs and downloads needed. By following this you should be able to migrate the site to whatever server you would like. Launch a cluster or node on AWS and ssh into that cluster/node. To configure the site onto the cluster/node, you must do the following :
 
-First make a directory under /home/ubuntu:
-
+First make a directory under /home/ubuntu :
+ 
     $ mkdir gitroot
 
 We then have to make some more directories in /var/www/ :
