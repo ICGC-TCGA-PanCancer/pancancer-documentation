@@ -92,7 +92,7 @@ Now that you have the right version of perl, we can begin to install all the dep
 
 If you are having trouble using cpanm you can try to install the modules using cpan.
 
-You have to put in your credentials for the get_spreadsheets.pl and get_uploads.pl scripts. You will put your gmail address containing all the spreadsheets fo rthe projects and your gmail password.
+You have to put in your credentials for the get_spreadsheets.pl and get_uploads.pl scripts. You will put your gmail address containing all the spreadsheets for the projects and your gmail password.
 
 Once everything is installed and ready to use, you can try and run the shell scripts :
 
