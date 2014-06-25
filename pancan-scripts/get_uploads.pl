@@ -1,5 +1,6 @@
 #!/usr/bin/perl
 # File: get_spreadsheets.pl by Marc Perry
+# Edit: original file get_spreadsheets.pl, changed by Joseph Lugo
 #
 # Concept: I would like to create a command line tool
 # that will let me quickly download a GDocs spreadsheet
@@ -34,8 +35,8 @@ my $timestamp = sprintf("%04d_%02d_%02d_%02d%02d", $now[5]+1900, $now[4]+1, $now
 
 # Create a new Net::Google::Spreadsheets object:
 my $service = Net::Google::Spreadsheets->new(
-    username => "joseph.r.lugo\@gmail.com",
-    password => "orThooke#22",
+    username => "<GMAIL ADDRESS>",
+    password => "<GMAIL PASSWORD>",
 );
 
 # iterate over the project codes in the %projects hash
