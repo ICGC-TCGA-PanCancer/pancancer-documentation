@@ -3,7 +3,6 @@
 use strict;
 use warnings;
 
-use CGI;
 use JSON 2;
 use IO::Handle;
 my $count = 0;
