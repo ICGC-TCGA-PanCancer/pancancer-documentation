@@ -5,8 +5,12 @@ source ~/.bash_profile
 
 cd /home/ubuntu/gitroot/pancancer-info/pancan-scripts/results
 rm *.txt
+
+# getting all the updated spreadsheets
 perl `locate get_spreadsheets.pl`
 perl `find /home/ubuntu/gitroot/ -name get_uploads.pl`
+
+# making all the necessary files
 cat *.txt > all_sheets.txt
 cat *-DE*.txt > defiles.txt
 cat *-AU*.txt > aufiles.txt
@@ -33,11 +37,15 @@ cat *BRCA-UK*.txt >> hinfiles.txt
 cat *BOCA-UK*.txt >> hinfiles.txt
 cat *CMDI-UK*.txt >> hinfiles.txt
 cat Pancan-UP*.txt > summary.txt
+
+# creating all the files needed for the site
 cd /home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data
 perl `locate update_data.pl`
 perl `locate generate_upload_info.pl` > out.csv
 perl `locate arc_read.pl`
 perl `locate bubble_read.pl`
+
+# copying everything over to the right directory 
 sudo cp *.json /var/www/
 sudo cp *.csv /var/www/
 cd /var/www/
