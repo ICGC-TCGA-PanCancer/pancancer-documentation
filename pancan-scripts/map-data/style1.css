@@ -22,7 +22,7 @@ img{
 }
 
 #center1{
-	width: 800px;
+	width: 900px;
 	margin: 0px auto;
 }
 
@@ -34,24 +34,32 @@ img{
 }
 
 #charttop{
-width: 670px;
+
+
 font-size: 10px;
-height:420px;
+
+height:460px;
 margin: 0px auto;
+
 }
+
 #chartbottom{
-width: 670px;
+
+
 font-size: 10px;
-height:420px;
+
+height:485px;
+
 margin: 0px auto;
 }
+
 
 #table1{
 	padding: 10px;
 }
 	
 #center2{
-	width: 1370px;
+	width: 1280px;
 
         max-height: 1200px;
 
@@ -125,7 +133,7 @@ body
 
   /*----- Tabs -----*/
     .tabs {
-    width:1100px;
+    width:968px;
     display:inline-block;
     
 }
