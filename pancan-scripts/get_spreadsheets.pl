@@ -88,8 +88,8 @@ my $timestamp = sprintf("%04d_%02d_%02d_%02d%02d", $now[5]+1900, $now[4]+1, $now
 
 # Create a new Net::Google::Spreadsheets object:
 my $service = Net::Google::Spreadsheets->new(
-    username => "<gmail account>",
-    password => "<password>",
+    username => "<GMAIL ADDRESS>",
+    password => "<GMAIL PASSWORD>",
 );
 
 # iterate over the project codes in the %projects hash
@@ -129,7 +129,7 @@ foreach my $proj ( keys %projects ) {
                 my $content = $row->content();
                 # here using a hash slice on the dereferenced hashref
                 # to extract the values
-                my @values = @{$content}{@header};
+                my @values = @{$content}{@header};
                 # there may be lots of blank rows at the bottom that
                 # we don't want to print
                 next if $values[0] =~ m/^(''|\#N\/A)/;
