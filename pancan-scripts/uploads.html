@@ -10,7 +10,6 @@
     <script type="text/javascript" src="http://datamaps.github.io/scripts/datamaps.all.min.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script type="text/javascript" src="http://bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="http://bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="http://localhost/cgi-bin/styletable">
     <link rel="stylesheet" type="text/css" href="http://bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 </head>
@@ -103,7 +102,7 @@
                                                 <input style="margin-left:5px;" type="radio" name="time" id="ebi2" onchange="checkr2()">EBI
                                                 <input style="margin-left:5px;" type="radio" name="time" id="bsc2" onchange="checkr2()">BSC
                                                 <input style="margin-left:5px;" type="radio" name="time" id="etri2" onchange="checkr2()">ETRI
-                                                <input style="margin-left:5px;" type="radio" name="time" id="oscd2" onchange="checkr2()">OSDC
+                                                <input style="margin-left:5px;" type="radio" name="time" id="osdc2" onchange="checkr2()">OSDC
                                                 <input style="margin-left:5px;" type="radio" name="time" id="riken2" onchange="checkr2()">RIKEN
                                         </div><!--radio-->
                                 </div><!--chartbottom-->
@@ -482,20 +481,14 @@
         var cell_1 = [];
         var cell_2 = [];
         var cell_3 = [];
-        var cell_4 = [];
-        var cell_5 = [];
         var cell_6 = [];
         var val_1 = [];
         var val_2 = [];
         var val_3 = [];
-        var val_4 = [];
-        var val_5 = [];
         var val_6 = [];
         var total_1 = 0;
         var total_2 = 0;
         var total_3 = 0;
-        var total_4 = 0;
-        var total_5 = 0; 
         var total_6 = 0;
         
         d3.json("table2.json", function(error, json) {
