@@ -326,7 +326,7 @@ close $file;
 
 use POSIX qw(strftime);
 
-my $date = strftime "%m/%d/%Y - %R", localtime;
+my $date = strftime "%a %b %d '%y - %R", localtime;
 
 #updates the average data for the chart
 #appending to file with all average data
