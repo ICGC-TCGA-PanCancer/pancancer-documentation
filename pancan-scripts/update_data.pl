@@ -368,7 +368,7 @@ open(FH,"~/gitroot/pancancer-info/pancan-scripts/map-data/ave_data_archive.csv")
 while (my $line = <FH>) {
     $count_ave += 1;
     push (@ary,"$line");
-    my $result = index($line,'12:0');
+    my $result = index($line,'Mon');
     my $result1 = index($line,'quarter');
     if ($result != -1){
            push (@day_ary1,$line);
@@ -400,7 +400,7 @@ if ($count_day1 > 20){
         my $h = 0;
         print $file_ave2 $day_ary1[1];
         for ($h = $count_day1 -19; $h < $count_day1 +2;$h++){
-                my $result = index($day_ary1[$h],'12:0');
+                my $result = index($day_ary1[$h],'Mon');
                 if ($result != -1){
                 print $file_ave2 $day_ary1[$h];
         }
@@ -410,7 +410,7 @@ else {
         print $file_ave2 $day_ary1[1];
         my $p = 0;
         for ($p = 0; $p < $count_day1 +2;$p++){
-                my $result = index($day_ary1[$p],'12:0');
+                my $result = index($day_ary1[$p],'Mon');
                 if ($result != -1){
                 print $file_ave2 $day_ary1[$p];
         }}
@@ -422,7 +422,7 @@ open(FH,"~/gitroot/pancancer-info/pancan-scripts/map-data/up_data_archive.csv") 
 while (my $line = <FH>) {
     $count_up += 1;
     push (@ary1,"$line");
-    my $result = index($line,'12:0');
+    my $result = index($line,'Mon');
     my $result1 = index($line,'quarter');
     if ($result != -1){
            push (@day_ary2,$line);
@@ -454,7 +454,7 @@ if ($count_day2 > 21){
         my $h = 0;
         print $file_up2 $day_ary2[1];
         for ($h = $count_day2 -19; $h < $count_day2 +2;$h++){
-                my $result = index($day_ary2[$h],'12:0');
+                my $result = index($day_ary2[$h],'Mon');
                 if ($result != -1){
                 print $file_up2 $day_ary2[$h];
         }
@@ -464,7 +464,7 @@ else {
         print $file_up2 $day_ary2[1];
         my $p = 0;
         for ($p = 0; $p < $count_day2 +2;$p++){
-                my $result = index($day_ary2[$p],'12:0');
+                my $result = index($day_ary2[$p],'Mon');
                 if ($result != -1){
                 print $file_up2 $day_ary2[$p];
         }}
@@ -525,7 +525,7 @@ open(FH,"/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/${elems}_av
 while (my $line = <FH>) {
     $count_avere += 1;
     push (@aryre,"$line");
-    my $result = index($line,'12:0');
+    my $result = index($line,'Mon');
     my $result1 = index($line,'quarter');
     if ($result != -1){
            push (@day_ary1re,$line);
@@ -555,7 +555,7 @@ open(FH,"/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/${elems}_up
 while (my $line = <FH>) {
     $count_upre += 1;
     push (@ary1re,"$line");
-    my $result = index($line,'12:0');
+    my $result = index($line,'Mon');
     my $result1 = index($line,'quarter');
     if ($result != -1){
            push (@day_ary2re,$line);
