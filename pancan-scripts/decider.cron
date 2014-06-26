@@ -21,4 +21,4 @@ sudo cp index.html /var/www/
 sudo cp gtrepo*.log /var/www/
 
 # getting rid of the workflow_decider.pl script
-rm *workflow_decider*.pl
+rm *workflow_decider*.pl*
