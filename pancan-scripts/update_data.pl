@@ -471,52 +471,40 @@ else {
 };
 close $file_up2;
 
-#writing to the data needed for the line graphs
+#writing to the data needed for the individual repo line graphs
 foreach my $thing ('DKFZ','EBI','BSC','RIKEN','OSDC','ETRI'){
         open(my $file, '>>', "/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/${thing}_up_archive.csv") or die ("Can't open ${thing}_up_archive.csv") ;
         open(my $filea, '>>', "/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/${thing}_ave_archive.csv") or die ("Can't open ${thing}_ave_archive.csv");
         if ($thing eq 'DKFZ'){
                 #print $file "quarter,PBCA-DE,MALY-DE,EOPC-DE\n";
                 #print $filea "quarter,PBCA-DE,MALY-DE,EOPC-DE\n";
-                print $file "\n";
-                print $filea "\n";
-                print $file "$date,$uploads[8],$uploads[9],$uploads[10]";
-                print $filea "$date,$ave[8],$ave[9],$ave[10]";}
+                printf $file "$date,%.3f,%.3f,%.3f\n", $uploads[8],$uploads[9],$uploads[10];
+                printf $filea "$date,%.3f,%.3f,%.3f\n", $ave[8],$ave[9],$ave[10];}
         elsif ($thing eq 'EBI'){
                 #print $file "quarter,BRCA-UK,CMDI-UK,BOCA-UK,PRAD-UK,ESAD-UK,BRCA-EU,PACA-CA\n";
                 #print $filea "quarter,BRCA-UK,CMDI-UK,BOCA-UK,PRAD-UK,ESAD-UK,BRCA-EU,PACA-CA\n";
-                print $file "\n";
-                print $filea "\n";
-                print $file "$date,$uploads[14],$uploads[15],$uploads[16],$uploads[12],$uploads[13],$uploads[11],$uploads[2]";
-                print $filea "$date,$ave[14],$ave[15],$ave[16],$ave[12],$ave[13],$ave[11],$ave[2]";}
+                printf $file "$date,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f\n", $uploads[14],$uploads[15],$uploads[16],$uploads[12],$uploads[13],$uploads[11],$uploads[2];
+                printf $filea "$date,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f\n", $ave[14],$ave[15],$ave[16],$ave[12],$ave[13],$ave[11],$ave[2];}
         elsif ($thing eq 'BSC'){
                 #print $file "quarter,CLLE-ES\n";
                 #print $filea "quarter,CLLE-ES\n";
-                print $file "\n";
-                print $filea "\n";
-                print $file "$date,$uploads[3]";
-                print $filea "$date,$ave[3]";}
+                printf $file "$date,%.3f\n", $uploads[3];
+                printf $filea "$date,%.3f\n", $ave[3];}
         elsif ($thing eq 'RIKEN'){
                 #print $file "quarter,BTCA-SG,LIRI-JP\n";
                 #print $filea "quarter,BTCA-SG,LIRI-JP\n";
-                print $file "\n";
-                print $filea "\n";
-                print $file "$date,$uploads[4],$uploads[5]";
-                print $filea "$date,$ave[4],$ave[5]";}
+                printf $file "$date,%.3f,%.3f\n", $uploads[4],$uploads[5];
+                printf $filea "$date,%.3f,%.3f\n", $ave[4],$ave[5];}
         elsif ($thing eq 'OSDC'){
                 #print $file "quarter\n";
                 #print $filea "quarter\n";
-                print $file "\n";
-                print $filea "\n";
-                print $file "$date";
-                print $filea "$date";}
+                printf $file "$date\n";
+                printf $filea "$date\n";}
         elsif ($thing eq 'ETRI'){
                 #print $file "quarter,LAML-KR\n";
                 #print $filea "quarter,LAML-KR\n";
-                print $file "\n";
-                print $filea "\n";
-                print $file "$date,$uploads[7]";
-                print $filea "$date,$ave[7]";}
+                printf $file "$date,%.3f\n", $uploads[7];
+                printf $filea "$date,%.3f\n", $ave[7];}
         close $file;
         close $filea;
         }
