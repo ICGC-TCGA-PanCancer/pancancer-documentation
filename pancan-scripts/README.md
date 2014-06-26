@@ -39,11 +39,6 @@ We then have to make some more directories in /var/www/ :
     $ sudo mkdir up_data
     $ sudo mkdir ave_data
 
-Now go into gitroot and begin to download scripts and make one more directory :
-
-    $ cd ~/gitroot/
-    $ mkdir results
-
 Clone the branch onto the machine using :
 
     $ git clone https://github.com/SeqWare/pancancer-info.git
@@ -53,6 +48,8 @@ Move into the feature branch and copy uploads.html to /var/www/ :
 
     $ git checkout feature/jlugo_site
     $ cd pancan-scripts
+    # need one more directory
+    $ mkdir results
     $ sudo cp uploads.html /var/www/
 
 Before running any scripts you need to check if perl is at least version 5.18.2 using perl -v. From past experience, this version of perl has worked fine with all the perl scripts. If necessary, update perl to version 5.18.2. To do this, you need to use perlbrew. Perlbrew allows you to manage and use multiple versions perl on the same machine, you can check it out here (http://perlbrew.pl/). To use perlbrew do the following :
@@ -84,10 +81,7 @@ Now that you have the right version of perl, we can begin to install all the dep
     $ sudo apt-get install libcrypt-ssleay-perl
     $ sudo apt-get install libssl-dev
     
-    # make sure to install the modules in this order as they are dependant of one another
-    $ cpanm XML::LibXML
-    $ cpanm XML::DOM
-    $ cpanm Net::SSLeay
+    # this is needed for get_spreadsheets.pl
     $ cpanm Net::Google::Spreadsheets
 
 If you are having trouble installing modules using cpanm you try to install the modules using cpan. For example :
