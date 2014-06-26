@@ -83,6 +83,7 @@ Now that you have the right version of perl, we can begin to install all the dep
     
     # this is needed for get_spreadsheets.pl and it will also take a while
     $ cpanm Net::Google::Spreadsheets
+    $ cpanm XML::DOM
 
 If you are having trouble installing modules using cpanm you try to install the modules using cpan. For example :
     
