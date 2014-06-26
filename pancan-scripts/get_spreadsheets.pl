@@ -27,7 +27,10 @@ my @real_header = ( 'Study', 'dcc_project_code', 'Accession Identifier', 'submit
 # The mangled column header fields created when Net::Google::Spreadsheets parses the GoogleDocs:
 my @header = ( 'study', 'dccprojectcode', 'accessionidentifier', 'submitterdonorid', 'submitterspecimenid', 'submittersampleid', 'readgroupsmuuid', 'dccspecimentype', 'normaltumordesignation', 'matchingnormalortumouricgcsampleidentifier', 'sequencingstrategy', 'numberofbamfilessample', 'targetuploaddateddmmyyyy', 'actualuploaddateddmmyyyy', );
 
-my %projects = ( 'BRCA-EU' => { key => '0AoQ6zq-rG38-dDhvU0VZNk4wMGpDUk1NaWZHMG5LLWc',
+my %projects = ( 'BOCA-UK' => { key => '0AoQ6zq-rG38-dE5ZZVEyaUNadU9mZlpVN1hDU0lDOWc',
+                             title => 'Sheet1',
+                              },
+              'BRCA-EU' => { key => '0AoQ6zq-rG38-dDhvU0VZNk4wMGpDUk1NaWZHMG5LLWc',
                              title => 'Sheet1',
                            },
               'BRCA-UK' => { key => '0ApWzavEDzSJddDAzdjVPbVVubHV6UDgxSEcxa0F3bEE',
@@ -38,6 +41,9 @@ my %projects = ( 'BRCA-EU' => { key => '0AoQ6zq-rG38-dDhvU0VZNk4wMGpDUk1NaWZHMG5
                            },
               'CLLE-ES' => { key => '0ApWzavEDzSJddFlnVTNmVXA5dWFNWlBhbVlpTFdWTlE',
                              title => 'CLLE-ES PanCancer Data',
+                           },
+              'CMDI-UK' => { key => '0AoQ6zq-rG38-dDMzQmZvNGVLUU9LRnpiV0RSenNCbHc',
+                             title => 'Sheet1',
                            },
               'EOPC-DE' => { key => '0ApWzavEDzSJddEUtMUdHTFlrajA5Y0poQmFqTVdpY3c',
                              title => 'EOPC-DE PanCancer Data',
