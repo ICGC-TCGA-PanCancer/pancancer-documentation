@@ -129,7 +129,7 @@ foreach my $proj ( keys %projects ) {
                 my $content = $row->content();
                 # here using a hash slice on the dereferenced hashref
                 # to extract the values
-                my @values = @{$content}{@header};
+                my @values = @{$content}{@header};
                 # there may be lots of blank rows at the bottom that
                 # we don't want to print
                 next if $values[0] =~ m/^(''|\#N\/A)/;
