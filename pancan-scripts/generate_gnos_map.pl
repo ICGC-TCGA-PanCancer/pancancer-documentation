@@ -10,11 +10,10 @@ use Cwd;
 my $output = "index.html";
 my $cluster_json = "cluster.json";
 my $template = "template/map.html";
-my $decider = "";
 
-if (scalar(@ARGV) != 8) { die "USAGE: generate_gnos_map.pl --output index.html --cluster-json cluster.json --template template/map.html --decider workflow_decider.pl"; }
+if (scalar(@ARGV) != 6) { die "USAGE: generate_gnos_map.pl --output index.html --cluster-json cluster.json --template template/map.html"; }
 
-GetOptions("output=s" => \$output, "cluster-json=s" => \$cluster_json, "template=s" => \$template, "decider=s" => \$decider);
+GetOptions("output=s" => \$output, "cluster-json=s" => \$cluster_json, "template=s" => \$template);
 
 
 my $t = `cat $template`;
@@ -28,10 +27,10 @@ my $total_unaligned = 0;
 foreach my $i ("gtrepo-bsc", "gtrepo-dkfz", "gtrepo-osdc", "gtrepo-etri", "gtrepo-ebi", "gtrepo-riken", "gtrepo-cghub") {
 #foreach my $i ("gtrepo-cghub") {
   #system("rm -rf xml");
-  my $cmd = "perl $decider --gnos-url https://$i.annailabs.com --report $i.log --ignore-lane-count --upload-results --test --working-dir $i --skip-cached";
+  my $cmd = "perl workflow_decider.pl --gnos-url https://$i.annailabs.com --report $i.log --ignore-lane-count --upload-results --test --working-dir $i --skip-cached";
   # hack for CGHub
   if ($i =~ /gtrepo-cghub/) {
-    $cmd = "perl $decider --gnos-url https://cghub.ucsc.edu --report $i.log --ignore-lane-count --upload-results --test --working-dir $i --skip-cached";
+    $cmd = "perl workflow_decider.pl --gnos-url https://cghub.ucsc.edu --report $i.log --ignore-lane-count --upload-results --test --working-dir $i --skip-cached";
   }
   print "$cmd";
   my $result = system($cmd);
