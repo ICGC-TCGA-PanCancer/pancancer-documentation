@@ -10,7 +10,7 @@
     <script type="text/javascript" src="http://datamaps.github.io/scripts/datamaps.all.min.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script type="text/javascript" src="http://bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="http://localhost/cgi-bin/styletable">
+    <link rel="stylesheet" type="text/css" href="style1.css">
     <link rel="stylesheet" type="text/css" href="http://bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 </head>
 <style>
@@ -29,7 +29,7 @@
                 <center><div id="inside">
                  <ul class="tab-links">
                                 <li><a href="index.html">Sites</a></li>
-                                <li><a href="upload.html">Uploads</a></li>
+                                <li><a href="uploads.html">Uploads</a></li>
                  </ul>
                  </div></center>
                  </div>
@@ -111,7 +111,7 @@
 			function charts(data,label,popup,spot,maxnum,num){
 			//creates the line chart
 			  var margin = {top: 20, right: 55, bottom: 115, left: 40},
-				  width  = 550,
+				  width  = 900,
 				  height = 200;
 
 			  var x = d3.scale.ordinal()
@@ -162,7 +162,7 @@
 				x.domain(data.map(function (d) { return d.quarter; }));
 				
 				if (maxnum == 1){
-					y.domain([0,1]);
+					y.domain([0,100]);
 					}
 				else {
 				y.domain([0,d3.max(seriesData, function (c) { 
@@ -528,7 +528,7 @@
                         
         });
 
-	d3.json("bubble_data.json", function(error, json) {
+	d3.json("bubbles/bubble_data.json", function(error, json) {
                 json_data = json;
                 for (var i = 1,j = 0; i < json_data.length/2 + 2, j < json_data.length; i++, j+=2){
                                 cell_1[i] = table[0].rows[1].cells[i];
@@ -559,13 +559,15 @@
                 cell_2[10] = table[0].rows[2].cells[10];
                 cell_3[9] = table[0].rows[3].cells[9];
                 cell_6[9] = table[0].rows[4].cells[9];
+                cell_6[10] = table[0].rows[4].cells[10];
                 
                 val_1[9] = cell_1[9].firstChild.data;
                 val_2[9] = cell_1[9].firstChild.data;
-                val_1[10] = cell_1[9].firstChild.data;
-                val_2[10] = cell_1[9].firstChild.data;
+                val_1[10] = cell_1[10].firstChild.data;
+                val_2[10] = cell_1[10].firstChild.data;
                 val_3[9] = cell_1[9].firstChild.data;
                 val_6[9] = cell_1[9].firstChild.data;
+                val_6[10] = cell_1[10].firstChild.data;
                 
                 cell_1[9].firstChild.data = ''+total_1;
                 cell_2[9].firstChild.data = ''+total_2;
@@ -574,9 +576,11 @@
                 
                 var ave1 = 100*(total_1/(total_1+total_2));
                 var ave2 = 100*(total_2/(total_1+total_2));
+                var ave3 = 100*(total_6/(json_data[0].match_total));
                 var all = total_1 + total_2;
                 cell_1[10].firstChild.data = ''+total_1+'/'+all+' ('+ave1.toFixed(2)+')';
-                cell_2[10].firstChild.data = ''+total_2+'/'+all+' ('+ave2.toFixed(2)+')';               
+                cell_2[10].firstChild.data = ''+total_2+'/'+all+' ('+ave2.toFixed(2)+')';
+                cell_6[10].firstChild.data = ''+total_6+'/'+json_data[0].match_total+' ('+ave3.toFixed(2)+')';               
 });
 
 </script>
@@ -677,7 +681,7 @@
 
 	var json_data;
 
-	d3.json("bubble_data.json", function(error, json) {
+	d3.json("bubbles/bubble_data.json", function(error, json) {
 	json_data = json;
 	pic.bubbles(json_data, {
 		  popupTemplate: function(geo, data) {
@@ -712,7 +716,7 @@
 			orange: "90FFFA"}
 		})
 		
-d3.json("frontuk.json", function(error, json) {
+d3.json("front_uk.json", function(error, json) {
 	json_data = json;
 	zoom.bubbles(json_data, {
 		  popupTemplate: function(geo, data) {
