@@ -81,7 +81,7 @@ Now that you have the right version of perl, we can begin to install all the dep
     $ sudo apt-get install libcrypt-ssleay-perl
     $ sudo apt-get install libssl-dev
     
-    # this is needed for get_spreadsheets.pl
+    # this is needed for get_spreadsheets.pl and it will also take a while
     $ cpanm Net::Google::Spreadsheets
 
 If you are having trouble installing modules using cpanm you try to install the modules using cpan. For example :
