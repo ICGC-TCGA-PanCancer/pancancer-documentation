@@ -46,12 +46,12 @@ perl `find /home/ubuntu/gitroot/ -name arc_read.pl`
 perl `find /home/ubuntu/gitroot/ -name bubble_read.pl`
 
 # copying everything over to the right directory 
-sudo cp *.json /var/www/
-sudo cp *.csv /var/www/
+cp *.json /var/www/
+cp *.csv /var/www/
 cd /var/www/
-sudo mv *bub*.json bubbles/
-sudo mv *up*.csv up_data/
-sudo mv *ave*.csv ave_data/
+mv *bub*.json bubbles/
+mv *up*.csv up_data/
+mv *ave*.csv ave_data/
 cd /home/ubuntu/gitroot/pancancer-info/pancan-scripts/results
-sudo cp *files.txt /var/www/
+cp *files.txt /var/www/
 cd /home/ubuntu/gitroot/pancancer-info/pancan-scripts
