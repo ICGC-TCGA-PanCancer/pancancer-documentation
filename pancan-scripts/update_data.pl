@@ -136,7 +136,7 @@ foreach my $i ("gtrepo-bsc", "gtrepo-dkfz", "gtrepo-osdc", "gtrepo-etri", "gtrep
                 }
 
                 #reads the log files and finds the specimen_id
-                open(FH,"${i}.log") or or die ("Could not open ${i}.log");
+                open(FH,"${i}.log") or die ("Could not open ${i}.log");
                 while (my $line = <FH>) {
                  my $result = index($line, "SPECIMEN/SAMPLE:");
                  if ($result == 1){
