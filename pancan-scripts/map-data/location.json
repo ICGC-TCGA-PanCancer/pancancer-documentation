@@ -1,0 +1,22 @@
+[
+          {"name": "Heidelberg","latitude": 49.403159, "longitude": 8.676061, "radius": 30, "fillKey": "blue", "project": "DKFZ"},
+
+          {"name":"Cambridge","latitude": 52.202544, "longitude": 0.131237 , "radius": 15, "fillKey": "blue", "project": "Cambridge"},
+
+	        {"name":"Hinxton","latitude": 52.082869, "longitude": 0.18269 , "radius": 15, "fillKey": "blue", "project": "EBI"},
+            
+          {"name": "Toronto", "latitude": 43.7000, "longitude": -79.4000, "radius": 20, "fillKey": "blue", "project": "Toronto"},
+     
+          {"name": "Barcelona", "latitude": 41.378691, "longitude": 2.175547, "radius": 20, "fillKey": "blue", "project": "BSC"},
+
+          {"name": "Singapore", "latitude": 1.2896700, "longitude": 103.8500700, "radius": 15, "fillKey": "blue", "project": "Singapore"},
+
+          {"name": "Tokyo", "latitude": 35.684219, "longitude": 139.755020, "radius": 30, "fillKey": "blue", "project": "RIKEN"},
+
+	        {"name": "Seoul", "latitude": 37.532600, "longitude": 127.024612, "radius": 20, "fillKey": "blue", "project": "ETRI"},
+
+      	  {"name": "Brisbane", "latitude": -27.4679400, "longitude": 153.0280900, "radius": 20, "fillKey": "blue", "project": "Brisbane"},
+
+	        {"name": "Chicago", "latitude": 41.8500300, "longitude": -87.6500500, "radius": 20, "fillKey": "blue", "project": "OSDC"},
+
+]
