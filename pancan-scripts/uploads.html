@@ -527,16 +527,16 @@
                         if (json_data2[i-1].project == current){
                                 cell_6[1] = table2[0].rows[i].cells[0];
                                 val_6[1] = cell_6[1].firstChild.data;
-                                cell_6[1].firstChild.data = ''+json_data2[i].origin;
+                                cell_6[1].firstChild.data = ''+json_data2[json_data2.length-1].origin;
                                 cell_6[1] = table2[0].rows[i].cells[1];
                                 val_6[1] = cell_6[1].firstChild.data;
-                                cell_6[1].firstChild.data = ''+json_data2[i].project;
+                                cell_6[1].firstChild.data = ''+json_data2[json_data2.length-1].project;
                                 cell_6[1] = table2[0].rows[i-1].cells[2];
                                 val_6[1] = cell_6[1].firstChild.data;
                                 cell_6[1].firstChild.data = ''+json_data2[i-1].dest+', '+json_data2[i-2].dest;
                                 cell_6[1] = table2[0].rows[i].cells[2];
                                 val_6[1] = cell_6[1].firstChild.data;
-                                cell_6[1].firstChild.data = ''+json_data2[i].dest;
+                                cell_6[1].firstChild.data = ''+json_data2[json_data2.length-1].dest;
                                 }
                                 
                         else {
