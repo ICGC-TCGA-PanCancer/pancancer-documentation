@@ -300,13 +300,14 @@ print $file qq([
 
           {"name": "Tokyo", "total": $totals[5], "uploaded": $uploads[5], "latitude": 35.684219, "longitude": 139.755020, "radius": $rad[5], "fillKey": "orange","match": $match_pair[5], "tumour": $tumour[5], "normal": $normal[5]},
           {"name": "Tokyo", "total": $totals[5], "uploaded": $uploads[5], "latitude": 35.684219, "longitude": 139.755020, "radius": $size[5], "fillKey": "$col[5]"}
+
 ]);
 close $file;
 
 #writes to bubble_data1.json
 open(my $file_add,'>', "/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/bubble_data1.json") or die ("Could not open bubble_data.json");
 print $file_add qq([
-	{"name": "Heidelberg", "total": $totals[8], "uploaded": $uploads[8], "latitude": 49.403159, "longitude": 8.676061, "radius": $rad[8], "fillKey": "orange","match": $match_pair[8], "tumour": $tumour[8], "normal": $normal[8], "project": "PBCA-DE"},
+        {"name": "Heidelberg", "total": $totals[8], "uploaded": $uploads[8], "latitude": 49.403159, "longitude": 8.676061, "radius": $rad[8], "fillKey": "orange","match": $match_pair[8], "tumour": $tumour[8], "normal": $normal[8], "project": "PBCA-DE"},
         {"name": "Heidelberg", "total": $totals[8], "uploaded": $uploads[8], "latitude": 49.403159, "longitude": 8.676061, "radius": $size[8], "fillKey": "$col[8]", "project": "PBCA-DE"},
         
         {"name": "Heidelberg", "total": $totals[9], "uploaded": $uploads[9], "latitude": 49.403159, "longitude": 8.676061, "radius": $rad[9], "fillKey": "orange","match": $match_pair[9], "tumour": $tumour[9], "normal": $normal[9], "project": "MALY-DE"},
@@ -326,7 +327,7 @@ print $file_add qq([
         
         {"name": "Hinxton", "total": $totals[16], "uploaded": $uploads[16], "latitude": 52.082869, "longitude": 0.18269 , "radius": $rad[16], "fillKey": "orange","match": $match_pair[16], "tumour": $tumour[16], "normal": $normal[16], "project": "BOCA-UK"},
         {"name": "Hinxton", "total": $totals[16], "uploaded": $uploads[16], "latitude": 52.082869, "longitude": 0.18269 , "radius": $size[16], "fillKey": "$col[16]", "project": "BOCA-UK"},
-
+        
         {"name": "Toronto", "total": $totals[18], "uploaded": $uploads[18], "latitude": 43.7000, "longitude": -79.4000, "radius": $rad[18], "fillKey": "orange","match": $match_pair[2], "tumour": $tumour[2], "normal": $normal[2], "project": "PACA-CA"},
         {"name": "Toronto", "total": $totals[18], "uploaded": $uploads[18], "latitude": 43.7000, "longitude": -79.4000, "radius": $size[18], "fillKey": "$col[18]", "project": "PACA-CA"},
         
