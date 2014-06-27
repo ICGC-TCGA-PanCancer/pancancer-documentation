@@ -12,6 +12,17 @@
     <script type="text/javascript" src="http://bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style1.css">
     <link rel="stylesheet" type="text/css" href="http://bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-52348443-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
 </head>
 <style>
 	#header1{
@@ -22,6 +33,12 @@
 		line-height: 50px;
 		font-size:12px;
 	}
+	#city{
+                border-color:#0000ff;
+        }
+        #gnos{
+                border-color:#0000ff;
+        }
 </style>
 <body>
 	 <div id="header1">
@@ -35,6 +52,7 @@
                  </div>
                  <center><h2>Upload/ Download Progress via GNOS</h2>
                 <p style="font-size:10px;">Projects that are not included are OV-AU, PACA-AU, PAEN-AU, PRAD-CA, GAGA-CN, LICA-FR, ORCA-IN, LINC-JP, BRCA-KR, and all US TCGA projects</p>
+                <p style="font-size:12px;">To see projects included, hover over the city names.</p>
                 </center>
 <div id="fullcontain">
         <div id="center1">
@@ -58,13 +76,13 @@
                                 </thead>
 				 <tbody>
                                         <tr>
-                                                <td><b>Uploaded</b></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+                                                <td><b>Specimens Uploaded</b></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
                                         </tr>
                                         <tr>
-                                                <td><b>Files Left</b></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+                                                <td><b>Specimens Left</b></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
                                         </tr>
                                         <tr>
-                                                <td><b>Total Files</b></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td></td>
+                                                <td><b>Total Number of Speciemens</b></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td></td>
                                         </tr>
                                         <tr>
                                                 <td><b>Matched Tumour/Normal Pairs</b></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
@@ -80,29 +98,41 @@
 		</div><!--tablediv-->
 		<div id="chartdiv">
 				<div id="charttop">
-                                        <h3 style="margin: 30px;">Percentage of Files Uploaded</h3>
+                                        <h3 style="margin: 30px;">Percentage of Specimens Uploaded</h3>
                                         <div id="radio" style="margin-right:25px;">
+                                                <div id="city" style="float:left;">
+                                                <b><p style="margin-left:5px;font-size:12px;width:130px;">Project Cities</p></b>
                                                 <input style="margin-left:5px;" type="radio" name="time" id="hr1" onchange="checkr1()">Daily
                                                 <input style="margin-left:5px;" type="radio" name="time" id="day1" onchange="checkr1()">Weekly
+                                                </div><!--city-->
+                                                <div id="gnos" style="float:left;">
+                                                <b><p style="margin-left:5px;font-size:12px;">GNOS Repos</p></b>
                                                 <input style="margin-left:5px;" type="radio" name="time" id="dkfz1" onchange="checkr1()">DKFZ
                                                 <input style="margin-left:5px;" type="radio" name="time" id="ebi1" onchange="checkr1()">EBI
                                                 <input style="margin-left:5px;" type="radio" name="time" id="bsc1" onchange="checkr1()">BSC
                                                 <input style="margin-left:5px;" type="radio" name="time" id="etri1" onchange="checkr1()">ETRI
                                                 <input style="margin-left:5px;" type="radio" name="time" id="osdc1" onchange="checkr1()">OSDC
                                                 <input style="margin-left:5px;" type="radio" name="time" id="riken1" onchange="checkr1()">RIKEN
-                                        </div>
-                                </div>
+                                                </div><!--gnos-->
+                                        </div><!--radio-->
+                                </div><!--charttop-->
                                 <div id ="chartbottom">
-                                        <h3 style="margin: 30px;">Number of Files Uploaded</h3>
+                                        <h3 style="margin: 30px;">Number of Specimens Uploaded</h3>
                                         <div id="radio" style="margin-right:25px;">
+                                        <div id="city" style="float:left;">
+                                                <b><p style="margin-left:5px;font-size:12px;width:130px;">Project Cities</p></b>
                                                 <input style="margin-left:5px;" type="radio" name="time" id="hr2" onchange="checkr2()">Daily
                                                 <input style="margin-left:5px;" type="radio" name="time" id="day2" onchange="checkr2()">Weekly
+                                                </div><!--city-->
+                                                <div id="gnos" style="float:left;">
+                                                <b><p style="margin-left:5px;font-size:12px;">GNOS Repos</p></b>
                                                 <input style="margin-left:5px;" type="radio" name="time" id="dkfz2" onchange="checkr2()">DKFZ
                                                 <input style="margin-left:5px;" type="radio" name="time" id="ebi2" onchange="checkr2()">EBI
                                                 <input style="margin-left:5px;" type="radio" name="time" id="bsc2" onchange="checkr2()">BSC
                                                 <input style="margin-left:5px;" type="radio" name="time" id="etri2" onchange="checkr2()">ETRI
                                                 <input style="margin-left:5px;" type="radio" name="time" id="osdc2" onchange="checkr2()">OSDC
                                                 <input style="margin-left:5px;" type="radio" name="time" id="riken2" onchange="checkr2()">RIKEN
+                                                </div><!--gnos-->
                                         </div><!--radio-->
                                 </div><!--chartbottom-->
 		</div><!--chartdiv-->
