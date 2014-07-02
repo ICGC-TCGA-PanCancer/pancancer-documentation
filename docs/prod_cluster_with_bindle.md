@@ -138,8 +138,8 @@ Note the "$" is the Bash shell prompt in these examples and "#" is a comment:
     $ perl -c bin/launcher/launch_cluster.pl
 
     # now install the Vagrant tool which is used by Bindle
-    $ wget https://dl.bintray.com/mitchellh/vagrant/vagrant_1.4.3_x86_64.deb
-    $ sudo dpkg -i vagrant_1.4.3_x86_64.deb
+    $ wget https://dl.bintray.com/mitchellh/vagrant/vagrant_1.6.3_x86_64.deb
+    $ sudo dpkg -i vagrant_1.6.3_x86_64.deb
     $ vagrant plugin install vagrant-aws
 
 At this point you should have a launcher with Bindle and associated
