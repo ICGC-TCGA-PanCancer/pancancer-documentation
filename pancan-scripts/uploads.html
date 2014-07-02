@@ -12,7 +12,7 @@
     <script type="text/javascript" src="http://bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style1.css">
     <link rel="stylesheet" type="text/css" href="http://bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-    <script>
+<script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -165,6 +165,7 @@
 			  var color = d3.scale.ordinal()
 				  .range(["#001c9c","#7F5217","#475003","#9c8305","#d3c47c","#800000","#6C007D","#63AFD0"]);
 
+			  //selecting div to place chart in 
 			  var svg = d3.select("#chart"+spot).append("svg")
 				  .attr("id","svg"+num)
 				  .attr("width",  width  + margin.left + margin.right)
@@ -316,8 +317,8 @@
 			  });
 		  }
 		 
-		//checks which data to graph for the proportion chart
-                function checkr1(){
+	//checks which data to graph for the proportion chart
+        function checkr1(){
         if (document.getElementById("hr1").checked == true){
         d3.select("#svg1").remove();
         charts("ave_data/ave_data.csv","Percentage Uploaded %","Uploaded %","top",1,1);
@@ -354,8 +355,8 @@
         ;
 }
 
-		//checks which data to graph for the upload number chart
-            function checkr2(){
+	//checks which data to graph for the upload number chart
+        function checkr2(){
         if (document.getElementById("hr2").checked == true){
         d3.select("#svg2").remove();
         charts("up_data/up_data.csv","Uploaded","Uploaded","bottom",0,2);
@@ -391,7 +392,7 @@
         ;
 }
 			
-			//calls function to make the charts
+		    //calls function to make the charts
 		    charts("ave_data/ave_data.csv","Percentage Uploaded %","Uploaded %","top",1,1);
                     charts("up_data/up_data.csv","Uploaded","Uploaded","bottom",0,2);
 			</script>
@@ -471,7 +472,7 @@
 			fills: {
 				defaultFill: "#ABDDA4",
 				red: "#FF0000",
-                blue: "#63AFD0",
+                		blue: "#63AFD0",
 				yellow: "#FFFF00",
 				green: "#00FF00",
 				orange: "90FFFA"}
@@ -524,6 +525,7 @@
                 json_data2 = json;
                 for (var i = 1; i < json_data2.length+1; i++){
                         
+                        //checks if project is uploading to more than one repo
                         if (json_data2[i-1].project == current){
                                 cell_6[1] = table2[0].rows[i].cells[0];
                                 val_6[1] = cell_6[1].firstChild.data;
@@ -538,7 +540,8 @@
                                 val_6[1] = cell_6[1].firstChild.data;
                                 cell_6[1].firstChild.data = ''+json_data2[json_data2.length-1].dest;
                                 }
-                                
+                        
+                        //if not, go on to the next one        
                         else {
                                 cell_6[1] = table2[0].rows[i].cells[0];
                                 val_6[1] = cell_6[1].firstChild.data;
@@ -560,7 +563,7 @@
 	d3.json("bubbles/bubble_data.json", function(error, json) {
                 json_data = json;
                 for (var i = 1,j = 0; i < json_data.length/2 + 2, j < json_data.length; i++, j+=2){
-                                cell_1[i] = table[0].rows[1].cells[i];
+                cell_1[i] = table[0].rows[1].cells[i];
                 val_1[i] = cell_1[i].firstChild.data;
                 cell_1[i].firstChild.data = ''+json_data[j].uploaded;
                 total_1 += json_data[j].uploaded;
@@ -580,8 +583,10 @@
                 var left = json_data[j].total - json_data[j].uploaded;
                 cell_2[i].firstChild.data = ''+left;
                 total_2 += left;
+                
                 }
 		
+		//getting totals and percentages
 		cell_1[9] = table[0].rows[1].cells[9];
                 cell_2[9] = table[0].rows[2].cells[9];
                 cell_1[10] = table[0].rows[1].cells[10];
@@ -807,8 +812,8 @@ d3.json("front_uk.json", function(error, json) {
 </div><!--fullcontain-->
 <script>
 
-	//checks what data to show for Heidelberg
-	function run1() {
+    //checks what data to show for Heidelberg from drop down menu
+    function run1() {
     var e = document.getElementById("HEID");
     var strUser = e.options[e.selectedIndex].value;
     if (strUser == "1"){
@@ -825,8 +830,8 @@ d3.json("front_uk.json", function(error, json) {
     }
         }
 
-	 //checks what data to show for Cambridge
-         function run2() {
+    //checks what data to show for Cambridge from drop down menu
+    function run2() {
     var e = document.getElementById("CAM");
     var strUser = e.options[e.selectedIndex].value;
     if (strUser == "1"){
@@ -839,8 +844,8 @@ d3.json("front_uk.json", function(error, json) {
     }
         }
         
-        //checks what data to show for Hinxton
-        function run3() {
+    //checks what data to show for Hinxton from drop down menu
+    function run3() {
     var e = document.getElementById("HIN");
     var strUser = e.options[e.selectedIndex].value;
     if (strUser == "1"){
@@ -863,8 +868,8 @@ d3.json("front_uk.json", function(error, json) {
 	
 	$(document).ready(function() {
 		$('.tabs .tab-links a').on('click', function(e)  {
-        var currentAttrValue = $(this).attr('href');
- 
+        		var currentAttrValue = $(this).attr('href');
+ 	
         // Show/Hide Tabs
         $('.tabs ' + currentAttrValue).show().siblings().hide();
 
