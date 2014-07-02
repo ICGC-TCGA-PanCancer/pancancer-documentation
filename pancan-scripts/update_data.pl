@@ -10,8 +10,8 @@ my ($Study, $dcc_project_code, $Accession_Identifier, $submitter_donor_id, $subm
 
 my ($all_emp_count, $all_fill_count) = (0)x2;
 
-#For all the arrays 
-#[0]=Heidelberg,[1]=Cambridge,[2]=Toronto,[3]=Barcelona,[4]=Singapore,[5]=Tokyo,[6]=Hinxton,[7]=Seoul
+# For all the arrays 
+# [0]=Heidelberg,[1]=Cambridge,[2]=Toronto,[3]=Barcelona,[4]=Singapore,[5]=Tokyo,[6]=Hinxton,[7]=Seoul
 my @fill_counts;
 my @emp_counts;
 my @col;
