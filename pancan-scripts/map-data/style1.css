@@ -72,13 +72,27 @@ margin: 0px auto;
 	font-size: 12px
 }
 #svg1 {
-    display: block;
-    margin: 0px auto;
-}
+	display: block;
+	margin: 0px auto;
+	}
 #svg2 {
-    display: block;
-    margin: 0px auto;
+	display: block;
+	margin: 0px auto;
 }
+#header1{
+    	background-color: #7FB5DA;
+}
+#inside{
+	line-height: 50px;
+	font-size:12px;
+}
+#city{
+	border-color:#0000ff;
+}
+#gnos{
+    	border-color:#0000ff;
+}
+
 /* ------------------
  styling for the tables 
    ------------------   */
