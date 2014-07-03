@@ -35,8 +35,8 @@
                  </div></center>
                  </div>
                  <center><h2>Upload/ Download Progress via GNOS</h2>
-                <p style="font-size:10px;">Projects that are not included are OV-AU, PACA-AU, PAEN-AU, PRAD-CA, GAGA-CN, LICA-FR, ORCA-IN, LINC-JP, BRCA-KR, and all US TCGA projects</p>
-                <p style="font-size:12px;">To see projects included, hover over the city names.</p>
+                <p style="font-size:10px;width:900px;">Projects that are not included are OV-AU, PACA-AU, PAEN-AU, GAGA-CN, LICA-FR, ORCA-IN, BRCA-KR, and all US TCGA projects. These projects have not been included because nothing has been uploaded and there is insufficient data. The number added to the <b><i>Total Number of Specimens</i></b>, is the total number of specimens of the ICGC projects previously stated. It has been added to show the correct ICGC percentage uploaded.</p>
+                <p style="font-size:12px;">To see projects, hover over the city names.</p>
                 </center>
 <div id="fullcontain">
         <div id="center1">
@@ -587,17 +587,18 @@
                 val_6[9] = cell_1[9].firstChild.data;
                 val_6[10] = cell_1[10].firstChild.data;
                 
+                var diff = 3159 - total_3;
                 cell_1[9].firstChild.data = ''+total_1;
                 cell_2[9].firstChild.data = ''+total_2;
-                cell_3[9].firstChild.data = ''+total_3;
+                cell_3[9].firstChild.data = ''+total_3+ ' + ' +diff;
                 cell_6[9].firstChild.data = ''+total_6;
                 
-                var ave1 = 100*(total_1/(total_1+total_2));
-                var ave2 = 100*(total_2/(total_1+total_2));
+                var ave1 = 100*(total_1/(3159));
+                var ave2 = 100*(total_2/(3159));
                 var ave3 = 100*(total_6/(json_data[0].match_total));
                 var all = total_1 + total_2;
-                cell_1[10].firstChild.data = ''+total_1+'/'+all+' ('+ave1.toFixed(2)+')';
-                cell_2[10].firstChild.data = ''+total_2+'/'+all+' ('+ave2.toFixed(2)+')';
+                cell_1[10].firstChild.data = ''+total_1+'/'+3159+' ('+ave1.toFixed(2)+')';
+                cell_2[10].firstChild.data = ''+total_2+'/'+3159+' ('+ave2.toFixed(2)+')';
                 cell_6[10].firstChild.data = ''+total_6+'/'+json_data[0].match_total+' ('+ave3.toFixed(2)+')';               
 });
 
