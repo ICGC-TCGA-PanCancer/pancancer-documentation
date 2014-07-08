@@ -32,7 +32,9 @@ my %data = ( 'Heidelberg' => { 'latitude' => 49.403159,
              'Chicago' => { 'latitude' => 41.8500300,
                             'longitude' => -87.6500500,},
              'Seoul' => { 'latitude' => 37.532600,
-                            'longitude' => 127.024612});
+                            'longitude' => 127.024612},
+             'Kalyani' => { 'latitude' => 22.98000,
+                            'longitude' => 88.44000,},);
 			    
 #opens the file containing upload info
 open(FH,"/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/out.csv") or die ("Can't open out.csv");
@@ -87,6 +89,7 @@ foreach my $item (@origins){
                 elsif ($item eq 'krfiles.txt'){push (@origins1, 'Seoul');push (@origins2, 'LAML-KR');push (@origins3, 'Seoul');}
                 elsif ($item eq 'pacacafiles.txt'){push (@origins1, 'Toronto');push (@origins2, 'PACA-CA');push (@origins3, 'PACA-CA');}
                 elsif ($item eq 'lirijpfiles.txt'){push (@origins1, 'Tokyo');push (@origins2, 'LIRI-JP');push (@origins3, 'LIRI-JP');}
+                elsif ($item eq 'orcainfiles.txt'){push (@origins1, 'Kalyani');push (@origins2, 'ORCA-IN');push (@origins3, 'ORCA-IN');}
                 else {push (@origins1, '');};
         }
 	
@@ -102,7 +105,7 @@ foreach my $elem (@dest){
 	}
 
 #creating the json files for the arc data for every location
-foreach my $thing ('Heidelberg','PBCA-DE','MALY-DE','EOPC-DE','BRCA-UK','CMDI-UK','BOCA-UK','PRAD-UK','ESAD-UK','BRCA-EU','PACA-CA','Barcelona','Singapore','LIRI-JP','Seoul'){
+foreach my $thing ('Heidelberg','PBCA-DE','MALY-DE','EOPC-DE','BRCA-UK','CMDI-UK','BOCA-UK','PRAD-UK','ESAD-UK','BRCA-EU','PACA-CA','Barcelona','Singapore','LIRI-JP','Seoul','ORCA-IN'){
                open(my $file, '>', "/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/${thing}.json") or die ("Can't open ${thing}.json");
 	       my @elems;
 	       my $l = 0;
