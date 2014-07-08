@@ -22,7 +22,7 @@ img{
 }
 
 #center1{
-	width: 900px;
+	width: 1178px;
 	margin: 0px auto;
 }
 
@@ -59,7 +59,7 @@ margin: 0px auto;
 }
 	
 #center2{
-	width: 1300px;
+	width: 1400px;
 
         max-height: 1200px;
 
@@ -149,7 +149,6 @@ body
 
   /*----- Tabs -----*/
     .tabs {
-    width:968px;
     display:inline-block;
     
 }
