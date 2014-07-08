@@ -25,6 +25,7 @@ my @normal;
 my ($projectcode,$leadjurisdiction,$tumourtype,$gnos,$pledgednumberofwgstnpairs,$numberofwgstnpairstheyaretracking,$numberofspecimens,$numberofspecimensuploaded,$percentuploaded,$pairuploaded,$alignedspecimens,$alignedpair);
 my @totals;
 my $totals_match;
+my $total_icgc;
 
 # reading from text file containing summary of all the projects
 # individual project text files created from get_uplaods.pl
@@ -46,7 +47,7 @@ if ($projectcode ne 'Project Code' && $projectcode ne ''){
                         $totals[5] += $numberofspecimens;}
                 elsif ($projectcode eq 'LINC-JP'){
                         $totals_match += $pledgednumberofwgstnpairs;
-                        $totals[19] += $numberofspecimens;
+                        $totals[20] += $numberofspecimens;
                         $totals[5] += $numberofspecimens;}
                 elsif ($projectcode eq 'PACA-CA'){
                         $totals_match += $pledgednumberofwgstnpairs;
@@ -54,7 +55,7 @@ if ($projectcode ne 'Project Code' && $projectcode ne ''){
                         $totals[2] += $numberofspecimens ;}
                 elsif ($projectcode eq 'PRAD-CA'){
                         $totals_match += $pledgednumberofwgstnpairs;
-                        $totals[20] += $numberofspecimens;
+                        $totals[21] += $numberofspecimens;
                         $totals[2] += $numberofspecimens ;}
                 elsif (substr($projectcode,5,6) eq 'KR'){
                         $totals_match += $pledgednumberofwgstnpairs;
@@ -95,6 +96,13 @@ if ($projectcode ne 'Project Code' && $projectcode ne ''){
                         $totals_match += $pledgednumberofwgstnpairs;
                         $totals[16] += $numberofspecimens;
                         $totals[6] += $numberofspecimens;}
+                elsif($projectcode eq 'ORCA-IN'){
+                        $total_icgc += $numberofspecimens;
+                        $totals_match += $pledgednumberofwgstnpairs;
+                        $totals[19] += $numberofspecimens;}
+                elsif($leadjurisdiction ne 'US TCGA'){
+                        $total_icgc += $numberofspecimens;
+                        $totals_match += $pledgednumberofwgstnpairs;}
 		};
 }
 close (FILE);
@@ -108,7 +116,7 @@ my $counter = 0;
 my $uploaded = 0;
 
 # Finding what is uplaoded from the GNOS log files
-foreach my $a ("defiles.txt","camfiles.txt","cafiles.txt","esfiles.txt","sgfiles.txt","jpfiles.txt","hinfiles.txt","krfiles.txt","pbcadefiles.txt","malydefiles.txt","eopcdefiles.txt","brcaeufiles.txt","pradukfiles.txt","esadukfiles.txt","brcaukfiles.txt","cmdiukfiles.txt","bocaukfiles.txt","lirijpfiles.txt","pacacafiles.txt"){
+foreach my $a ("defiles.txt","camfiles.txt","cafiles.txt","esfiles.txt","sgfiles.txt","jpfiles.txt","hinfiles.txt","krfiles.txt","pbcadefiles.txt","malydefiles.txt","eopcdefiles.txt","brcaeufiles.txt","pradukfiles.txt","esadukfiles.txt","brcaukfiles.txt","cmdiukfiles.txt","bocaukfiles.txt","lirijpfiles.txt","pacacafiles.txt","orcainfiles.txt"){
 foreach my $i ("gtrepo-bsc", "gtrepo-dkfz", "gtrepo-osdc", "gtrepo-etri", "gtrepo-ebi", "gtrepo-riken") {
 
                 @id = [];
@@ -149,7 +157,7 @@ foreach my $i ("gtrepo-bsc", "gtrepo-dkfz", "gtrepo-osdc", "gtrepo-etri", "gtrep
                         chomp;
                         ($Study, $dcc_project_code, $Accession_Identifier, $submitter_donor_id, $submitter_specimen_id, $submitter_sample_id, $Readgroup, $dcc_specimen_type, $Normal_Tumor_Designation,$ICGC_Sample_Identifier,$Sequencing_Strategy,$Number_of_BAM,$Target,$Actual) = split("\t");
                         # if it is found, update the data
-                        if (grep( /^$submitter_specimen_id$/, @id) && $submitter_specimen_id ne ''){
+                        if (grep( m/$submitter_specimen_id/, @id) && $submitter_specimen_id ne ''){
                           $uploaded += 1;
                            my $ress = index($Normal_Tumor_Designation,'tumour');
                            my $ress1 = index($Normal_Tumor_Designation,'normal');
@@ -235,7 +243,7 @@ foreach my $i ("gtrepo-bsc","gtrepo-dkfz", "gtrepo-osdc", "gtrepo-etri", "gtrepo
 
 # creates a hash of arrays with the donor id as the key and the specimen ids as the valuees in the arrays
 my $count_pass = 0;
-foreach my $a ("defiles.txt","camfiles.txt","cafiles.txt","esfiles.txt","sgfiles.txt","jpfiles.txt","hinfiles.txt","krfiles.txt","pbcadefiles.txt","malydefiles.txt","eopcdefiles.txt","brcaeufiles.txt","pradukfiles.txt","esadukfiles.txt","brcaukfiles.txt","cmdiukfiles.txt","bocaukfiles.txt","lirijpfiles.txt","pacacafiles.txt"){
+foreach my $a ("defiles.txt","camfiles.txt","cafiles.txt","esfiles.txt","sgfiles.txt","jpfiles.txt","hinfiles.txt","krfiles.txt","pbcadefiles.txt","malydefiles.txt","eopcdefiles.txt","brcaeufiles.txt","pradukfiles.txt","esadukfiles.txt","brcaukfiles.txt","cmdiukfiles.txt","bocaukfiles.txt","lirijpfiles.txt","pacacafiles.txt","orcainfiles.txt"){
 
  my $len;
  my $match_count;
@@ -261,7 +269,7 @@ foreach my $elems (keys %match){
  $len = 0;
  my $h = 0;
  for ($h = 0;$h < scalar @{$match{$elems}};$h++){
- if (grep( /^$match{$elems}[$h]$/, @id) && $match{$elems}[$h] ne ''){
+ if (grep( m/$match{$elems}[$h]/, @id) && $match{$elems}[$h] ne ''){
   $len++;
  }
 }
@@ -272,13 +280,17 @@ if ($len == scalar @{$match{$elems}}){
   $count_pass += 1;
 }
 
+# Fixing PACA-CA count
+$uploads[2] += 23;
+$uploads[18] += 23;
+$match_pair[2] += 12;
+
 
 # writes to bubble_data.json 
 open(my $file,'>', "/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/bubble_data.json") or die ("Could not open bubble_data.json");
 print $file qq([
-          {"name": "Heidelberg", "total": $totals[0], "uploaded": $uploads[0], "latitude": 49.403159, "longitude": 8.676061, "radius": $rad[0], "fillKey": "orange","match_total": $totals_match, "match": $match_pair[0], "tumour": $tumour[0], "normal": $normal[0]},
-          {"name": "Heidelberg", "total": $totals[0], "uploaded": $uploads[0], "latitude": 49.403159, "longitude": 8.676061, "radius": $size[0], "fillKey": "$col[0]"},
-          
+          {"total_icgc": $total_icgc, "name": "Heidelberg", "total": $totals[0], "uploaded": $uploads[0], "latitude": 49.403159, "longitude": 8.676061, "radius": $rad[0], "fillKey": "orange","match_total": $totals_match, "match": $match_pair[0], "tumour": $tumour[0], "normal": $normal[0]},
+          {"name": "Heidelberg", "total": $totals[0], "uploaded": $uploads[0], "latitude": 49.403159, "longitude": 8.676061, "radius": $size[0], "fillKey": "$col[0]"},       
           {"name": "Cambridge", "total": $totals[1], "uploaded": $uploads[1], "latitude": 52.202544, "longitude": 0.131237 , "radius": $rad[1], "fillKey": "orange","match": $match_pair[1],"tumour": $tumour[1], "normal": $normal[1]},
           {"name": "Cambridge", "total": $totals[1], "uploaded": $uploads[1], "latitude": 52.202544, "longitude": 0.131237 , "radius": $size[1], "fillKey": "$col[1]"},
           
@@ -297,8 +309,12 @@ print $file qq([
           {"name": "Seoul", "total": $totals[7], "uploaded": $uploads[7], "latitude": 37.532600, "longitude": 127.024612, "radius": $rad[7], "fillKey": "orange","match": $match_pair[7], "tumour": $tumour[7], "normal": $normal[7],"project": "LAML-KR"},
           {"name": "Seoul", "total": $totals[7], "uploaded": $uploads[7], "latitude": 37.532600, "longitude": 127.024612, "radius": $size[7], "fillKey": "$col[7]","project": "LAML-KR"},
 
+          {"name": "Kalyani", "total": $totals[19], "uploaded": $uploads[19], "latitude": 22.98000, "longitude": 88.44000, "radius": $rad[19], "fillKey": "orange","match": $match_pair[19], "tumour": $tumour[19], "normal": $normal[19]},
+{"name": "Kalyani", "total": $totals[19], "uploaded": $uploads[19], "latitude": 22.98000,  "longitude": 88.44000, "radius": $size[19], "fillKey": "$col[19]"},
+
           {"name": "Tokyo", "total": $totals[5], "uploaded": $uploads[5], "latitude": 35.684219, "longitude": 139.755020, "radius": $rad[5], "fillKey": "orange","match": $match_pair[5], "tumour": $tumour[5], "normal": $normal[5]},
           {"name": "Tokyo", "total": $totals[5], "uploaded": $uploads[5], "latitude": 35.684219, "longitude": 139.755020, "radius": $size[5], "fillKey": "$col[5]"}
+
 
 ]);
 close $file;
@@ -333,6 +349,9 @@ print $file_add qq([
         {"name": "Tokyo", "total": $totals[17], "uploaded": $uploads[17], "latitude": 35.684219, "longitude": 139.755020, "radius": $rad[17], "fillKey": "orange","match": $match_pair[5], "tumour": $tumour[5], "normal": $normal[5], "project": "LIRI-JP"},
         {"name": "Tokyo", "total": $totals[17], "uploaded": $uploads[17], "latitude": 35.684219, "longitude": 139.755020, "radius": $size[17], "fillKey": "$col[17]", "project": "LIRI-JP"},
         
+        {"name": "Kalyani", "total": $totals[19], "uploaded": $uploads[19], "latitude": 22.98000, "longitude": 88.44000, "radius": $rad[19], "fillKey": "orange","match": $match_pair[19], "tumour": $tumour[19], "normal": $normal[19],"project": "ORCA-IN"},
+{"name": "Kalyani", "total": $totals[19], "uploaded": $uploads[19], "latitude": 22.98000,  "longitude": 88.44000, "radius": $size[19], "fillKey": "$col[19]","project": "ORCA-IN"},
+        
         {"name": "Cambridge", "total": $totals[13], "uploaded": $uploads[13], "latitude": 52.202544, "longitude": 0.131237 , "radius": $rad[13], "fillKey": "orange","match": $match_pair[13],"tumour": $tumour[13], "normal": $normal[13], "project": "ESAD-UK"},
         {"name": "Cambridge", "total": $totals[13], "uploaded": $uploads[13], "latitude": 52.202544, "longitude": 0.131237 , "radius": $size[13], "fillKey": "$col[13]", "project": "ESAD-UK"},
         
@@ -351,12 +370,15 @@ open(my $f, '>>', "/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/a
 print $f "$date,";
 my $k = 0;
 my $count1 = 0;
-for ($k = 0; $k < scalar @totals - 9; $k++){
-        if ($count1 >= 0 && $count1 < scalar @totals -10){printf $f "%.3f,", $ave[$k];}
-        else {printf $f "%.3f\n", $ave[$k];}
+for ($k = 0; $k < scalar @totals - 14; $k++){
+        if ($count1 >= 0 && $count1 < scalar @totals -15){printf $f "%.3f,", $ave[$k];}
+        else {printf $f "%.3f,", $ave[$k];}
         $count1 += 1;
 }
+printf $f "%.3f,", $ave[19];
+print $f "100.000\n";
 close $f;
+
 
 # updates the total uploads for the chart
 # appending to file with all upload data
@@ -364,12 +386,15 @@ open(my $f1, '>>', "/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/
 print $f1 "$date,";
 my $r = 0;
 my $count2 = 0;
-for ($r = 0; $r < scalar @totals - 9; $r++){
-        if ($count2 >= 0 && $count2 < scalar @totals -10){printf $f1 "%.3f,", $uploads[$r];}
-        else {printf $f1 "%.3f\n", $uploads[$r];}
+for ($r = 0; $r < scalar @totals - 14; $r++){
+        if ($count2 >= 0 && $count2 < scalar @totals - 15){printf $f1 "%.3f,", $uploads[$r];}
+        else {printf $f1 "%.3f,", $uploads[$r];}
         $count2 += 1;
 }
+printf $f1 "%.3f,", $uploads[19];
+print $f1 "1874\n";
 close $f1;
+
 
 my @ary = [];
 my $count_ave = 0;
@@ -510,8 +535,9 @@ foreach my $thing ('DKFZ','EBI','BSC','RIKEN','OSDC','ETRI'){
         elsif ($thing eq 'RIKEN'){
                 #print $file "quarter,BTCA-SG,LIRI-JP\n";
                 #print $filea "quarter,BTCA-SG,LIRI-JP\n";
-                printf $file "$date,%.3f,%.3f\n", $uploads[4],$uploads[5];
-                printf $filea "$date,%.3f,%.3f\n", $ave[4],$ave[5];}
+                printf $file "$date,%.3f,%.3f,%.3f\n", $uploads[4],$uploads[5],$uploads[19];
+                printf $filea "$date,%.3f,%.3f,%.3f\n", $ave[4],$ave[5],$ave[19];}
+
         elsif ($thing eq 'OSDC'){
                 #print $file "quarter\n";
                 #print $filea "quarter\n";
