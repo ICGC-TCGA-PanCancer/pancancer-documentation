@@ -9,7 +9,7 @@ my @id = [];
 my $count1;
 my $count2;
 
-foreach my $a ("defiles.txt","pbcadefiles.txt","malydefiles.txt","eopcdefiles.txt","brcaukfiles.txt","cmdiukfiles.txt","bocaukfiles.txt","pradukfiles.txt","esadukfiles.txt","brcaeufiles.txt","pacacafiles.txt","esfiles.txt","sgfiles.txt","jpfiles.txt","krfiles.txt","lirijpfiles.txt","krfiles.txt"){
+foreach my $a ("defiles.txt","pbcadefiles.txt","malydefiles.txt","eopcdefiles.txt","brcaukfiles.txt","cmdiukfiles.txt","bocaukfiles.txt","pradukfiles.txt","esadukfiles.txt","brcaeufiles.txt","pacacafiles.txt","esfiles.txt","sgfiles.txt","jpfiles.txt","krfiles.txt","orcainfiles.txt"){
   $count1 = 0;
   $count2 = 0;
  foreach my $i ("gtrepo-bsc", "gtrepo-dkfz", "gtrepo-osdc", "gtrepo-etri", "gtrepo-ebi", "gtrepo-riken") {
