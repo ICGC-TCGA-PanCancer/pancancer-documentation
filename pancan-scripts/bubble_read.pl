@@ -50,6 +50,7 @@ foreach my $item (@origins){
                 elsif ($item eq 'krfiles.txt'){push (@origins1, 'Seoul');push (@origins2, 'LAML-KR');push (@origins3, 'Seoul');}
                 elsif ($item eq 'pacacafiles.txt'){push (@origins1, 'Toronto');push (@origins2, 'PACA-CA');push (@origins3, 'PACA-CA');}
                 elsif ($item eq 'lirijpfiles.txt'){push (@origins1, 'Tokyo');push (@origins2, 'LIRI-JP');push (@origins3, 'LIRI-JP');}
+                elsif ($item eq 'orcainfiles.txt'){push (@origins1, 'Kalyani');push (@origins2, 'ORCA-IN');push (@origins3, 'ORCA-IN');}
                 else {push (@origins3, '');};
         }
 
@@ -91,7 +92,7 @@ close $file1;
 
 #creating bubble json files for every location 
 #appends all the output to different files for each location
-foreach my $thing ('Heidelberg','PBCA-DE','MALY-DE','EOPC-DE','Hinxton','BRCA-UK','CMDI-UK','BOCA-UK','PRAD-UK','Cambridge','ESAD-UK','BRCA-EU','PACA-CA','Barcelona','Singapore','LIRI-JP','Seoul'){
+foreach my $thing ('Heidelberg','PBCA-DE','MALY-DE','EOPC-DE','Hinxton','BRCA-UK','CMDI-UK','BOCA-UK','PRAD-UK','Cambridge','ESAD-UK','BRCA-EU','PACA-CA','Barcelona','Singapore','LIRI-JP','Seoul','ORCA-IN'){
                open(my $file, '>', "/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/${thing}_bub.json");
                my $l = 0;
                my @elems;
@@ -109,10 +110,10 @@ foreach my $thing ('Heidelberg','PBCA-DE','MALY-DE','EOPC-DE','Hinxton','BRCA-UK
                print $file "[\n";
 
                #gathers the destination json data
-               open(FH,"/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/location.json") or die("Can't open guestbook.txt: $!");
+              open(FH,"/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/location.json") or die("Can't open guestbook.txt: $!");
                while (my $line = <FH>) {
                               foreach my $items (@elems){
-                                             my $result = index($line, $dest1[$items]);
+                                             my $result = index($line, $thing);
                                              if ($result != -1){
                                                      print $file $line;
                                              }
@@ -123,7 +124,7 @@ foreach my $thing ('Heidelberg','PBCA-DE','MALY-DE','EOPC-DE','Hinxton','BRCA-UK
                my $count_bub = 0;
                open(FH,"/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/bubble_data.json") or die("Can't open guestbook.txt: $!");
                while (my $line = <FH>) {
-                              my $result = index($line, $origins3[$elems[0]]);
+                              my $result = index($line, $thing);
                               if ($result != -1){
                                              $count_bub += 1;
                                              if ($count_bub == 2 && $thing ne 'Tokyo'){print $file substr($line,0,-2);}
@@ -136,7 +137,7 @@ foreach my $thing ('Heidelberg','PBCA-DE','MALY-DE','EOPC-DE','Hinxton','BRCA-UK
                my $count_bub1 = 0;
                open(FH,"/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/bubble_data1.json") or die("Can't open guestbook.txt: $!");
                while (my $linea = <FH>){
-                              my $res = index($linea, $origins3[$elems[0]]);
+                              my $res = index($linea, $thing);
                               if ($res != -1){
                                               $count_bub1 += 1;
                                              if ($count_bub1 == 2 && $thing ne 'BRCA-EU'){print $file substr($linea,0,-2);}
