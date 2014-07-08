@@ -7,11 +7,11 @@ cd /home/ubuntu/gitroot/pancancer-info/pancan-scripts/results
 rm *.txt
 
 # getting all the updated spreadsheets
-perl `find /home/ubuntu/gitroot/ -name get_spreadsheets.pl`
-perl `find /home/ubuntu/gitroot/ -name get_uploads.pl`
+perl `find /home/ubuntu/gitroot/pancancer-info/ -name get_spreadsheets.pl`
+perl `find /home/ubuntu/gitroot/pancancer-info/ -name get_uploads.pl`
 
 # making all the necessary files
-cat *.txt > all_sheets.txt
+cat *.txt > all_files.txt
 cat *-DE*.txt > defiles.txt
 cat *-AU*.txt > aufiles.txt
 cat *PBCA-DE*.txt > pbcadefiles.txt
@@ -30,6 +30,7 @@ cat *BRCA-UK*.txt > brcaukfiles.txt
 cat *BRCA-EU*.txt > brcaeufiles.txt
 cat *PRAD-UK*.txt > pradukfiles.txt
 cat *-KR*.txt > krfiles.txt
+cat *ORCA-IN*.txt > orcainfiles.txt
 cat *ESAD-UK*.txt > camfiles.txt
 cat *BRCA-EU*.txt >> camfiles.txt
 cat *PRAD-UK*.txt > hinfiles.txt
@@ -40,10 +41,10 @@ cat Pancan-UP*.txt > summary.txt
 
 # creating all the files needed for the site
 cd /home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data
-perl `find /home/ubuntu/gitroot/ -name update_data.pl`
-perl `find /home/ubuntu/gitroot/ -name generate_upload_info.pl` > out.csv
-perl `find /home/ubuntu/gitroot/ -name arc_read.pl`
-perl `find /home/ubuntu/gitroot/ -name bubble_read.pl`
+perl `find /home/ubuntu/gitroot/pancancer-info -name update_data.pl`
+perl `find /home/ubuntu/gitroot/pancancer-info -name generate_upload_info.pl` > out.csv
+perl `find /home/ubuntu/gitroot/pancancer-info -name arc_read.pl`
+perl `find /home/ubuntu/gitroot/pancancer-info -name bubble_read.pl`
 
 # copying everything over to the right directory 
 cp *.json /var/www/
