@@ -49,5 +49,14 @@ What profiles from Bindle 1.2 have been tested in which cloud environments.
 |*vagrant_cluster_launch.pancancer.seqware.install.sge_cluster.json.template* | NA | &#x2713; Vagrant 1.6.3, vagrant-aws (0.4.1), Ubuntu 12.04, Amish | &#x2713; Vagrant 1.6.3, vagrant-openstack-plugin (0.3.3), Ubuntu 12.04, Adam | &#x2713; Vagrant 1.6.3, vagrant-openstack-plugin (0.7.0), Ubuntu 12.04, Amish| &#x2713; Vagrant 1.6.3, vagrant-openstack-plugin (0.7.0), Ubuntu 12.04, Amish | &#x2713; Vagrant 1.6.3, vagrant-openstack-plugin (0.7.0), Ubuntu 12.04, Brian | &#x2713; Vagrant 1.6.3, vagrant-openstack-plugin (0.7.0), Ubuntu 12.04, Wei  |  &#x2717; Vagrant 1.6.3, vagrant-openstack-plugin (0.7.0), Ubuntu 12.04, Wei| | |
 |*vagrant_cluster_launch.pancancer.seqware.install.sge_node.json.template* |  &#x2713; Vagrant 1.3.5, MacOSX, Brian | &#x2713; Vagrant 1.6.3, vagrant-aws (0.4.1), Ubuntu 12.04, Amish | &#x2713; Vagrant 1.6.3, vagrant-openstack-plugin (0.3.3), Ubuntu 12.04, Adam | &#x2713; Vagrant 1.6.3, vagrant-openstack-plugin (0.7.0), Ubuntu 12.04, Amish | &#x2713; Vagrant 1.6.3, vagrant-openstack-plugin (0.7.0), Ubuntu 12.04, Amish | &#x2713; Vagrant 1.6.3, vagrant-openstack-plugin (0.7.0), Ubuntu 12.04, Brian | &#x2713; Vagrant 1.6.3, vagrant-openstack-plugin (0.7.0), Ubuntu 12.04, Wei |  &#x2717; Vagrant 1.6.3, vagrant-openstack-plugin (0.7.0), Ubuntu 12.04, Wei| | |
 
+What profiles from Bindle 1.2.1 have been tested in which cloud environments
+| *Configuration name*  | VirtualBox | AWS      | vCloud (London) | OpenStack (Toronto)  | OpenStack (Icehouse-Toronto) | OpenStack (Chicago) | OpenStack (Heidelberg) | OpenStack (Seoul) | Tokyo | Barcelona |
+|-----|:----------:|:--------:|:---------:|:------:|:--------:|:--:|:--:|:--:|:--:|:--:|
+|*vagrant_cluster_launch.pancancer.bwa_workflow.seqware.install.sge_cluster.json.template* | NA | &#x2713; Vagrant 1.6.3, vagrant-aws (0.4.1), Ubuntu 12.04, Amish |  |  | &#x2713; Vagrant 1.6.3, vagrant-openstack-plugin (0.7.0), Ubuntu 12.04, Amish | |  |  | | |
+|*vagrant_cluster_launch.pancancer.bwa_workflow.seqware.install.sge_node.json.template* | | &#x2713; Vagrant 1.6.3, vagrant-aws (0.4.1), Ubuntu 12.04, Amish | | | &#x2713; Vagrant 1.6.3, vagrant-openstack-plugin (0.7.0), Ubuntu 12.04, Amish |  |  |  | | |
+|*vagrant_cluster_launch.pancancer.seqware.install.sge_cluster.json.template* | NA | &#x2713; Vagrant 1.6.3, vagrant-aws (0.4.1), Ubuntu 12.04, Amish | | | &#x2713; Vagrant 1.6.3, vagrant-openstack-plugin (0.7.0), Ubuntu 12.04, Amish | | |  | | |
+|*vagrant_cluster_launch.pancancer.seqware.install.sge_node.json.template* |  | &#x2713; Vagrant 1.6.3, vagrant-aws (0.4.1), Ubuntu 12.04, Amish |  |  | &#x2713; Vagrant 1.6.3, vagrant-openstack-plugin (0.7.0), Ubuntu 12.04, Amish |  |  | | | |
+
+
 passed: &#x2713; not passed: &#x2717;
 
