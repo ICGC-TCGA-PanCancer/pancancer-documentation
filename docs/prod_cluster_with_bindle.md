@@ -121,7 +121,7 @@ onto your launcher now and perform the following actions as ubuntu (who also
 has sudo).
 
 Much more information about Bindle can be found at our GitHub site
-https://github.com/SeqWare/vagrant. In particular take a look at the README.md.
+https://github.com/CloudBindle/Bindle. In particular take a look at the README.md.
 
 Note the "$" is the Bash shell prompt in these examples and "#" is a comment:
 
