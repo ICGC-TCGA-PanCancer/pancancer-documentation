@@ -21,11 +21,15 @@ my @ave;
 my @uploads;
 my @tumour;
 my @normal;
+my @totals2;
 
 my ($projectcode,$leadjurisdiction,$tumourtype,$gnos,$pledgednumberofwgstnpairs,$numberofwgstnpairstheyaretracking,$numberofspecimens,$numberofspecimensuploaded,$percentuploaded,$pairuploaded,$alignedspecimens,$alignedpair);
 my @totals;
 my $totals_match;
 my $total_icgc;
+my @up;
+my @matches_up;
+my $missing;
 
 # reading from text file containing summary of all the projects
 # individual project text files created from get_uplaods.pl
@@ -35,75 +39,162 @@ chomp;
 ($projectcode,$leadjurisdiction,$tumourtype,$gnos,$pledgednumberofwgstnpairs,$numberofwgstnpairstheyaretracking,$numberofspecimens,$numberofspecimensuploaded,$percentuploaded,$pairuploaded,$alignedspecimens,$alignedpair) = split("\t");
 
 if ($projectcode ne 'Project Code' && $projectcode ne ''){
-                if (substr($projectcode,5,6) eq 'SG'){
+		if (substr($projectcode,5,6) eq 'SG'){
+		        $total_icgc += $numberofspecimens;
                         $totals_match += $pledgednumberofwgstnpairs;
+                        $up[4] = $numberofspecimensuploaded;
+                        $matches_up[4] = $pairuploaded;
                         $totals[4] += $numberofspecimens;}
                 elsif (substr($projectcode,5,6) eq 'ES'){
+                        $bar_count = $numberofspecimensuploaded;
+                        $total_icgc += $numberofspecimens;
                         $totals_match += $pledgednumberofwgstnpairs;
+                        $up[3] = $numberofspecimensuploaded;
+                        $matches_up[3] = $pairuploaded;
                         $totals[3] += $numberofspecimens;}
                 elsif ($projectcode eq 'LIRI-JP'){
+                        $total_icgc += $numberofspecimens;
                         $totals_match += $pledgednumberofwgstnpairs;
+                        $up[17] = $numberofspecimensuploaded;
+                        $up[5] += $numberofspecimensuploaded;
+                        $matches_up[17] = $pairuploaded;
+                        $matches_up[5] += $pairuploaded;
                         $totals[17] += $numberofspecimens;
                         $totals[5] += $numberofspecimens;}
                 elsif ($projectcode eq 'LINC-JP'){
+                        $total_icgc += $numberofspecimens;
                         $totals_match += $pledgednumberofwgstnpairs;
+                        $up[20] = $numberofspecimensuploaded;
+                        $up[5] += $numberofspecimensuploaded;
+                        $matches_up[20] = $pairuploaded;
+                        $matches_up[5] += $pairuploaded;
                         $totals[20] += $numberofspecimens;
                         $totals[5] += $numberofspecimens;}
                 elsif ($projectcode eq 'PACA-CA'){
+                        $marc_count = $numberofspecimensuploaded;
+                        $total_icgc += $numberofspecimens;
                         $totals_match += $pledgednumberofwgstnpairs;
+                        $up[18] = $numberofspecimensuploaded;
+                        $up[2] += $numberofspecimensuploaded;
+                        $matches_up[18] = $pairuploaded;
+                        $matches_up[2] += $pairuploaded;
                         $totals[18] += $numberofspecimens;
                         $totals[2] += $numberofspecimens ;}
                 elsif ($projectcode eq 'PRAD-CA'){
+                        $total_icgc += $numberofspecimens;
                         $totals_match += $pledgednumberofwgstnpairs;
+                        $up[21] = $numberofspecimensuploaded;
+                        $up[2] += $numberofspecimensuploaded;
+                        $matches_up[21] = $pairuploaded;
+                        $matches_up[2] += $pairuploaded;
                         $totals[21] += $numberofspecimens;
                         $totals[2] += $numberofspecimens ;}
                 elsif (substr($projectcode,5,6) eq 'KR'){
+                        $total_icgc += $numberofspecimens;
                         $totals_match += $pledgednumberofwgstnpairs;
+                        $up[7] = $numberofspecimensuploaded;
+                        $matches_up[7] = $pairuploaded;
                         $totals[7] += $numberofspecimens;}
                 elsif($projectcode eq 'PBCA-DE'){
+                        $total_icgc += $numberofspecimens;
                         $totals_match += $pledgednumberofwgstnpairs;
+                        $up[8] = $numberofspecimensuploaded;
+                        $up[0] += $numberofspecimensuploaded;
+                        $matches_up[8] = $pairuploaded;
+                        $matches_up[0] += $pairuploaded;
                         $totals[8] += $numberofspecimens;
                         $totals[0] += $numberofspecimens;}
                 elsif($projectcode eq 'MALY-DE'){
+                        $total_icgc += $numberofspecimens;
                         $totals_match += $pledgednumberofwgstnpairs;
+                        $up[9] = $numberofspecimensuploaded;
+                        $up[0] += $numberofspecimensuploaded;
+                        $matches_up[9] = $pairuploaded;
+                        $matches_up[0] += $pairuploaded;
                         $totals[9] += $numberofspecimens;
                         $totals[0] += $numberofspecimens;}
                 elsif($projectcode eq 'EOPC-DE'){
+                        $total_icgc += $numberofspecimens;
                         $totals_match += $pledgednumberofwgstnpairs;
+                        $up[10] = $numberofspecimensuploaded;
+                        $up[0] = $numberofspecimensuploaded;
+                        $matches_up[10] = $pairuploaded;
+                        $matches_up[0] += $pairuploaded;
                         $totals[10] += $numberofspecimens;
                         $totals[0] += $numberofspecimens;}
-		elsif($projectcode eq 'BRCA-EU'){
+                elsif($projectcode eq 'BRCA-EU'){
+                        $brcaeu_count = $numberofspecimensuploaded;
+                        $total_icgc += $numberofspecimens;
                         $totals_match += $pledgednumberofwgstnpairs;
+                        $up[11] = $numberofspecimensuploaded;
+                        $up[1] += $numberofspecimensuploaded;
+                        $matches_up[11] = $pairuploaded;
+                        $matches_up[1] += $pairuploaded;
                         $totals[11] += $numberofspecimens;
                         $totals[1] += $numberofspecimens;}
                 elsif($projectcode eq 'PRAD-UK'){
+                        $prad_count = $numberofspecimensuploaded;
+                        $total_icgc += $numberofspecimens;
                         $totals_match += $pledgednumberofwgstnpairs;
+                        $up[12] = $numberofspecimensuploaded;
+                        $up[6] += $numberofspecimensuploaded;
+                        $matches_up[12] = $pairuploaded;
+                        $matches_up[6] += $pairuploaded;
                         $totals[12] += $numberofspecimens;
                         $totals[6] += $numberofspecimens;}
                 elsif ($projectcode eq 'ESAD-UK'){
+                        $esad_count = $numberofspecimensuploaded;
+                        $total_icgc += $numberofspecimens;
                         $totals_match += $pledgednumberofwgstnpairs;
+                        $up[13] = $numberofspecimensuploaded;
+                        $up[1] += $numberofspecimensuploaded;
+                        $matches_up[13] = $pairuploaded;
+                        $matches_up[1] += $pairuploaded;
                         $totals[13] += $numberofspecimens;
                         $totals[1] += $numberofspecimens;}
                 elsif($projectcode eq 'BRCA-UK'){
+                        $brca_count = $numberofspecimensuploaded;
+                        $total_icgc += $numberofspecimens;
                         $totals_match += $pledgednumberofwgstnpairs;
+                        $up[14] = $numberofspecimensuploaded;
+                        $up[6] += $numberofspecimensuploaded;
+                        $matches_up[14] = $pairuploaded;
+                        $matches_up[6] += $pairuploaded;
                         $totals[14] += $numberofspecimens;
                         $totals[6] += $numberofspecimens;}
                 elsif($projectcode eq 'CMDI-UK'){
+                        $cmdi_count = $numberofspecimensuploaded;
+                        $total_icgc += $numberofspecimens;
                         $totals_match += $pledgednumberofwgstnpairs;
+                        $up[15] = $numberofspecimensuploaded;
+                        $up[6] += $numberofspecimensuploaded;
+                        $matches_up[15] = $pairuploaded;
+                        $matches_up[6] += $pairuploaded;
                         $totals[15] += $numberofspecimens;
                         $totals[6] += $numberofspecimens;}
                 elsif($projectcode eq 'BOCA-UK'){
+                        $boca_count = $numberofspecimensuploaded;
+                        $total_icgc += $numberofspecimens;
                         $totals_match += $pledgednumberofwgstnpairs;
+                        $up[16] = $numberofspecimensuploaded;
+                        $up[6] += $numberofspecimensuploaded;
+                        $matches_up[16] = $pairuploaded;
+                        $matches_up[6] += $pairuploaded;
                         $totals[16] += $numberofspecimens;
                         $totals[6] += $numberofspecimens;}
                 elsif($projectcode eq 'ORCA-IN'){
                         $total_icgc += $numberofspecimens;
                         $totals_match += $pledgednumberofwgstnpairs;
+                        $up[19] = $numberofspecimensuploaded;
+                        $matches_up[19] = $pairuploaded;
                         $totals[19] += $numberofspecimens;}
                 elsif($leadjurisdiction ne 'US TCGA'){
+                        $missing += $numberofspecimens;
                         $total_icgc += $numberofspecimens;
                         $totals_match += $pledgednumberofwgstnpairs;}
-		};
+                };
+
+
 }
 close (FILE);
 
@@ -168,6 +259,7 @@ foreach my $i ("gtrepo-bsc", "gtrepo-dkfz", "gtrepo-osdc", "gtrepo-etri", "gtrep
                           $total_files += 1;}
                 }
                 close (FILE);
+                $totals2[$counter] = $total_files;
         }
         # updates the uploads array 
         $uploads[$counter] = $uploaded;
@@ -182,6 +274,25 @@ for ($o = 0; $o < scalar @tumour; $o++){
         else {$tumour[$o] = 0};
 }
 
+# check if Marc's uploads are bigger
+my $e;
+for ($e = 0;$e < scalar @up;$e++){
+        if($uploads[$e] < $up[$e]){$uploads[$e] = $up[$e];}
+}
+
+my $y;
+for ($y=0 ; $y < scalar @totals; $y++){
+        if ($totals[$y] < $totals2[$y]){
+                $totals[$y] = $totals2[$y]; }
+}
+
+$totals[0] = $totals[8] + $totals[9] + $totals[10];
+$totals[1] = $totals[11] + $totals[13];
+$totals[2] = $totals[18] + $totals[21];
+$totals[5] = $totals[17] + $totals[19];
+$totals[6] = $totals[12] + $totals[14] + $totals[15] + $totals[16];
+
+$total_icgc = $totals[0] + $totals[1] + $totals[2] + $totals[3] + $totals[4] + $totals[5] + $totals[6] + $totals[7] + $totals[20] + $missing;
 
 # applying colors and radius to each bubble, as long as getting the average
 my $h = 0;
@@ -285,6 +396,10 @@ $uploads[2] += 23;
 $uploads[18] += 23;
 $match_pair[2] += 12;
 
+my $z;
+for ($z = 0;$z < scalar @matches_up;$z++){
+        if($match_pair[$z] < $matches_up[$z]){$match_pair[$z] = $matches_up[$z];}
+}
 
 # writes to bubble_data.json 
 open(my $file,'>', "/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/bubble_data.json") or die ("Could not open bubble_data.json");
