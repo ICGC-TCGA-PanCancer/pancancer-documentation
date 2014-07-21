@@ -22,8 +22,8 @@ $SIG{__DIE__} = sub { &Carp::confess };
 my $username = q{};
 my $password = q{};
 
-my @real_header = ('Project code','Lead Jurisdiction','Tumour Type','GNOS','Pledged Number of WGS T/N Pairs','Number of WGS T/N Pairs They are Tracking','Number of Specimens','Number of Specimens Uploaded','Percent Uploaded','Pair Uploaded','Aligned Specimens','Aligned Pair','');
-my @header = ('projectcode','leadjurisdiction','tumourtype','gnos','pledgednumberofwgstnpairs','numberofwgstnpairstheyaretracking','numberofspecimens','numberofspecimensuploaded','percentuploaded','pairuploaded','alignedspecimens','alignedpair','');
+my @real_header = ('Project code','Lead Jurisdiction','Tumour Type','GNOS','Pledged Number of WGS T/N Pairs','Number of WGS T/N Pairs They are Tracking','Number of Specimens','Number of Specimens Uploaded','Percent Uploaded','Uploaded T/N Pairs of Specimens','');
+my @header = ('projectcode','leadjurisdiction','tumourtype','gnos','pledgednumberofwgstnpairs','numberofwgstnpairstheyaretracking','numberofspecimens','numberofspecimensuploaded','percentuploaded','uploadedtnpairsofspecimens','');
 
  my %projects = ( 'Pancan-UP' => { key => '0AnBqxOn9BY8ldE5RUk5WX09hV1k4MllOVDdBMFFRNWc',
                                    title => 'ICGC',
