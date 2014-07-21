@@ -157,7 +157,7 @@ launch cluster jobs via GridEngine, or perform MapReduce jobs.  In this step we
 will launch a standalone node and in the next command block I will show you how to
 launch a whole cluster of nodes that are suitable for larger-scale analysis.
 
-Assuming you are still logged into you launcher node above you will do the
+Assuming you are still logged into your launcher node above, you will do the
 following to setup a computational node.  The steps below assume you are
 working in the Bindle directory:
 
@@ -165,7 +165,7 @@ working in the Bindle directory:
     # you will need to paste this path in the .cfg file you will be modifying next: 
     # templates/sample_configs/vagrant_cluster_launch.pancancer.seqware.install.sge_node.json.template
     # modify the .cfg file to include your settings, for AWS you need to make sure you fill in "aws.cfg"
-    # For more help on filling the .cfg file, please refer to config/sample.cfg or the readme of Bindle repository
+    # For more help on filling the .cfg file, please refer to the section below
     $ vim config/aws.cfg
     # paste your key pem file contents, whatever you call it
     $ vim ~/.ssh/brian-oicr-3.pem
@@ -186,10 +186,79 @@ cloud, would align a 60x coverage genome in between 10 and 5 hours respectiely.
     # modify the .cfg file to include your settings, for AWS you need to make sure you fill in "aws.cfg". 
     # For more help on filling the .cfg file, please refer to config/sample.cfg  or the readme of Bindle repository
     $ vim config/aws.cfg
+
+#### Filling in the config file
+
+One thing you must keep in mind before filling in the config files is not to delete any of the default
+parameters you are not going to be needing. Simply, leave them blank if that is the case. 
+Also, please refer to "Configuration for Virtualbox" if you want to provision clusters on Virtualbox
+
+##### Platform Specific Information
+
+This section of the config file contains all the information that is required to set up the cloud platform.
+We will need to fill out all the information in config/aws.cfg. For OpenStack, it is os.cfg and for vCloud, it is vcloud.cfg
+
+Let us go through the parameters that might confuse you when you are filling the config file. I will not be going 
+through the most obvious parameters (ie. key, secret_key, etc):
+
+    [platform]
+    # can be either openstack(os) or aws or vcloud
+    type=os/aws/vcloud
+    
+    # asks for the name of your pem file. Please make sure you have the pem file under ~/.ssh on your launcher host
+    ssh_key_name=ap-oicr-2
+    
+    # asks for the type of node you want to launch (m1.small, m1.medium, m1.xlarge, etc)
+    instance_type=m1.xlarge
+    
+    # This list is to indicate the devices you want to use to setup gluster file system on.
+    # To find out the list of devices you can use, execute “df | grep /dev/” on an instance currently running on the same platform. 
+    # DO NOT use any device that ends with "a" or "a" and a number following it(sda or sda1) because these are used for root partition
+    # Also, if you don't want to use any devices to set up gluster, please keep the value empty (gluster_device_whitelist=''). You need to do that when you are dealing with a single node cluster or when you have no devices to work with
+    # For AWS, when you create an EBS volume by using --aws-ebs parameter, it creates an "sdf" device, so specify "f" in your list gluster_devices
+    # Now, if you want to use "sdb/xvdb" and "sdf/xvdf" then your list should look like the following:
+    gluster_device_whitelist='--whitelist b,f'
+
+    # this parameter indicates the path you want to use to set up gluster IF you don't have any devices to work with
+    # If you don't want to use directories, simply leave this parameter empty (gluster_directory_path=''). This should be the case for single node clusters
+    # If you don't have devices, include the path and folder name that can be used instead to set up the volumes for a multi-node cluster: 
+    gluster_directory_path='--directorypath /mnt/volumes/gluster'
+    
+The other platform specific parameters are self explanatory. In the config file, there is a "fillmein" value which indicates that you
+defintely have to fill those in to have bindle working properly. The others are defult values that you may use unless otherwise stated.
+
+##### Cluster Specific Information
+
+This information exists in small blocks named cluster1, cluster2, etc. These blocks contain essential information such as number of nodes,
+target_directory, the json_template file path, etc.
+    
+Please note that you can create a new cluster by copy-pasting the existing cluster1
+block and modifying the configs for it or you can simply modify cluster1 configs and use that.
+Feel free to change the number of nodes (min 1, max recommended 11). Please note that 
+if the number of nodes is 1, it means that there will be 1 master and 0 worker nodes. 
+An example cluster block will look something like this:
+
+    # Clusters are named cluster1, 2, 3 etc.
+    # When launching a cluster using launch_cluster.pl
+    # use the section name(cluster1 in this case) as a parameter to --launch-cluster
+    [cluster1]
    
+    # this includes one master and four workers
+    number_of_nodes=4
+   
+    # this specifies the output directory where everything will get installed on the launcher
+    target_directory = target-aws-2
+   
+    #this contains the path to the json template file this cluster needs
+    json_template_file_path = templates/sample_configs/vagrant_cluster_launch.pancancer.seqware.install.sge_cluster.json.template
+ 
+To use a specific cluster block, you need to use the section name of that block as a parameter to --launch-cluster when you
+are running the launch_cluster perl script.
+
+
 #### Step - Launch a SeqWare Node/Cluster
 
-Now that you have customized the settings in .cfg file, the next step is to launch a computational node. Note, each cluster gets its own target directory which you can specify the name of in .cfg file when you make a cluster block ; you cannot reuse these. Within the target dir you will find a log for each node (simply master.log for a single-node launch) and a directory for each node that is used by the vagrant command line tool (the "master" directory for a single-node launch). The latter is important for controlling your node/cluster once launched. 
+Now that you have customized the settings in .cfg file, the next step is to launch a computational node. Note, each cluster gets its own target directory which you can specify the name of in .cfg file when you make a cluster block. Within the target dir you will find a log for each node (simply master.log for a single-node launch) and a directory for each node that is used by the vagrant command line tool (the "master" directory for a single-node launch). The latter is important for controlling your node/cluster once launched. 
 
     # now launch the compute node. For --launch-cluster, you specify the name of the cluster block you want to launch from the .cfg file
     $ perl bin/launcher/launch_cluster.pl --use-aws --use-default-config --launch-cluster cluster1
@@ -202,6 +271,8 @@ Use multiple terminals to watch logs for multiple-node clusters if you desire:
 
 Once this process complete you should see no error messages from
 "vagrant_cluster_launch.pl". If so, you are ready to use your cluster/node.
+
+If you want to launch multiple clusters, make sure to specify different target directory each time!
 
 #### Step - Log In To Node/Cluster
 
