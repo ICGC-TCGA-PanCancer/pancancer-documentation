@@ -189,11 +189,12 @@ cloud, would align a 60x coverage genome in between 10 and 5 hours respectiely.
 
 ##### Filling in the config file
 
+The config files are located at "Bindle/configs/". Please open up aws.cfg (vim config/aws.cfg) since we are launching a cluster on aws. 
 One thing you must keep in mind before filling in the config files is not to delete any of the default
 parameters you are not going to be needing. Simply, leave them blank if that is the case. 
 Also, please refer to "Configuration for Virtualbox" if you want to provision clusters on Virtualbox
 
-###### Platform Specific Information
+##### Platform Specific Information
 
 This section of the config file contains all the information that is required to set up the cloud platform.
 We will need to fill out all the information in config/aws.cfg. For OpenStack, it is os.cfg and for vCloud, it is vcloud.cfg
@@ -227,7 +228,7 @@ through the most obvious parameters (ie. key, secret_key, etc):
 The other platform specific parameters are self explanatory. In the config file, there is a "fillmein" value which indicates that you
 defintely have to fill those in to have bindle working properly. The others are defult values that you may use unless otherwise stated.
 
-###### Cluster Specific Information
+##### Cluster Specific Information
 
 This information exists in small blocks named cluster1, cluster2, etc. These blocks contain essential information such as number of nodes,
 target_directory, the json_template file path, etc.
@@ -238,7 +239,7 @@ Feel free to change the number of nodes (min 1, max recommended 11). Please note
 if the number of nodes is 1, it means that there will be 1 master and 0 worker nodes. 
 An example cluster block will look something like this:
 
-    # Clusters are named cluster1, 2, 3 etc.
+    # Clusters are named cluster1, cluster2, etc.
     # When launching a cluster using launch_cluster.pl
     # use the section name(cluster1 in this case) as a parameter to --launch-cluster
     [cluster1]
@@ -365,7 +366,7 @@ newer/alternative/custom workflows.
     # copy-paste this json template path in the appropriate .cfg file:
     # templates/sample_configs/vagrant_cluster_launch.pancancer.seqware.install.sge_cluster.json.template
     # launch, use the correct command line args for your cloud environment, see docs above and the README for Bindle
-    perl bin/launcher/launch_cluster.pl --use-openstack --use-default-config --launch-cluster cluster1
+    perl bin/launcher/launch_cluster.pl --use-aws --use-default-config --launch-cluster cluster1
 
 ### Cluster With BWA Workflow
 
@@ -376,7 +377,7 @@ the storage site for the workflow (it is a large workflow).
     # copy-paste this json template path in the appropriate .cfg file:
     # templates/sample_configs/vagrant_cluster_launch.pancancer.bwa_workflow.seqware.install.sge_cluster.json.template 
     # launch, use the correct command line args for your cloud environment, see docs above and the README for Bindle
-    perl bin/launcher/launch_cluster.pl --use-openstack --use-default-config --launch-cluster cluster1
+    perl bin/launcher/launch_cluster.pl --use-aws --use-default-config --launch-cluster cluster1
 
 ### Single Instance without Workflows
 
@@ -387,7 +388,7 @@ as 20 minutes and gives you flexibility to install newer/alternative workflows.
     # copy-paste this json template path in the appropriate .cfg file:
     # templates/sample_configs/vagrant_cluster_launch.pancancer.seqware.install.sge_node.json.template 
     # launch, use the correct command line args for your cloud environment, see docs above and the README for Bindle
-    perl bin/launcher/launch_cluster.pl --use-openstack --use-default-config --launch-cluster cluster1
+    perl bin/launcher/launch_cluster.pl --use-aws --use-default-config --launch-cluster cluster1
 
 ### Single Instance with Workflows
 
@@ -396,7 +397,7 @@ In this environment we create a VM with the PanCancer BWA Workflow 2.0 installed
     # copy-paste this json template path in the appropriate .cfg file:
     # templates/sample_configs/vagrant_cluster_launch.pancancer.bwa_workflow.seqware.install.sge_node.json.template 
     # launch, use the correct command line args for your cloud environment, see docs above and the README for Bindle
-    perl bin/launcher/launch_cluster.pl --use-openstack --use-default-config --launch-cluster cluster1
+    perl bin/launcher/launch_cluster.pl --use-aws --use-default-config --launch-cluster cluster1
 
 ## Cloud-Specific Notes
 
@@ -415,7 +416,7 @@ can launch VM clusters or single nodes.
 
 When you launch the cluster you need to do the following differently from the examples above:
 
-    # install the open stack vagrant plugin
+    # install the OpenStack vagrant plugin
     $ vagrant plugin install vagrant-openstack-plugin
     # make sure you apply the rsync fix described in the README.md
 
