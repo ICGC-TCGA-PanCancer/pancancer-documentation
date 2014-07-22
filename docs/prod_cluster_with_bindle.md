@@ -179,7 +179,7 @@ Alternatively, you may want to launch a compute cluster instead of a single
 node.  In that case, use a different template.  You can customize the number of
 worker nodes by increasing the number in the worker array, see the config json
 file.  We typically use between 3 and 6 worker nodes which, depending on the
-cloud, would align a 60x coverage genome in between 10 and 5 hours respectiely.
+cloud, would align a 60x coverage genome in between 10 and 5 hours respectively.
 
     # copy the path of json template used to setup a SeqWare compute cluster for PanCancer:
     # templates/sample_configs/vagrant_cluster_launch.pancancer.seqware.install.sge_cluster.json.template 
@@ -192,7 +192,6 @@ cloud, would align a 60x coverage genome in between 10 and 5 hours respectiely.
 The config files are located at "Bindle/configs/". Please open up aws.cfg (vim config/aws.cfg) since we are launching a cluster on aws. 
 One thing you must keep in mind before filling in the config files is not to delete any of the default
 parameters you are not going to be needing. Simply, leave them blank if that is the case. 
-Also, please refer to "Configuration for Virtualbox" if you want to provision clusters on Virtualbox
 
 ##### Platform Specific Information
 
@@ -300,15 +299,15 @@ functioning correctly.  Depending on the template you used this may or may not
 be already installed under the seqware user account. If not, you can download a
 copy of the workflow and install it yourself following our guides on
 http://seqware.io (see
-https://s3.amazonaws.com/oicr.workflow.bundles/released-bundles/Workflow_Bundle_HelloWorld_1.0-SNAPSHOT_SeqWare_1.0.13.zip).
+https://s3.amazonaws.com/oicr.workflow.bundles/released-bundles/Workflow_Bundle_HelloWorld_1.0-SNAPSHOT_SeqWare_1.0.15.zip).
 The commands below assume the workflow is installed into
-provisioned-bundles/Workflow_Bundle_HelloWorld_1.0-SNAPSHOT_SeqWare_1.0.13.
+provisioned-bundles/Workflow_Bundle_HelloWorld_1.0-SNAPSHOT_SeqWare_1.0.15.
 
     # assumes you have logged into your master node and switched to the seqware user
     $ ls provisioned-bundles/
-    Workflow_Bundle_HelloWorld_1.0-SNAPSHOT_SeqWare_1.0.13
+    Workflow_Bundle_HelloWorld_1.0-SNAPSHOT_SeqWare_1.0.15
     # now run the workflow
-    $ seqware bundle launch --dir provisioned-bundles/Workflow_Bundle_HelloWorld_1.0-SNAPSHOT_SeqWare_1.0.13
+    $ seqware bundle launch --dir provisioned-bundles/Workflow_Bundle_HelloWorld_1.0-SNAPSHOT_SeqWare_1.0.15
 
 This command should finish without errors.  If there are problems please report
 the errors to the SeqWare user group, see http://seqware.io/community/ for
