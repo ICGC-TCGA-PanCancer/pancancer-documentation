@@ -187,13 +187,13 @@ cloud, would align a 60x coverage genome in between 10 and 5 hours respectiely.
     # For more help on filling the .cfg file, please refer to config/sample.cfg  or the readme of Bindle repository
     $ vim config/aws.cfg
 
-#### Filling in the config file
+##### Filling in the config file
 
 One thing you must keep in mind before filling in the config files is not to delete any of the default
 parameters you are not going to be needing. Simply, leave them blank if that is the case. 
 Also, please refer to "Configuration for Virtualbox" if you want to provision clusters on Virtualbox
 
-##### Platform Specific Information
+###### Platform Specific Information
 
 This section of the config file contains all the information that is required to set up the cloud platform.
 We will need to fill out all the information in config/aws.cfg. For OpenStack, it is os.cfg and for vCloud, it is vcloud.cfg
@@ -227,7 +227,7 @@ through the most obvious parameters (ie. key, secret_key, etc):
 The other platform specific parameters are self explanatory. In the config file, there is a "fillmein" value which indicates that you
 defintely have to fill those in to have bindle working properly. The others are defult values that you may use unless otherwise stated.
 
-##### Cluster Specific Information
+###### Cluster Specific Information
 
 This information exists in small blocks named cluster1, cluster2, etc. These blocks contain essential information such as number of nodes,
 target_directory, the json_template file path, etc.
@@ -243,7 +243,7 @@ An example cluster block will look something like this:
     # use the section name(cluster1 in this case) as a parameter to --launch-cluster
     [cluster1]
    
-    # this includes one master and four workers
+    # this includes one master and three worker nodes
     number_of_nodes=4
    
     # this specifies the output directory where everything will get installed on the launcher
@@ -253,7 +253,7 @@ An example cluster block will look something like this:
     json_template_file_path = templates/sample_configs/vagrant_cluster_launch.pancancer.seqware.install.sge_cluster.json.template
  
 To use a specific cluster block, you need to use the section name of that block as a parameter to --launch-cluster when you
-are running the launch_cluster perl script.
+are running the launch_cluster perl script. More on this in the next step.
 
 
 #### Step - Launch a SeqWare Node/Cluster
@@ -269,10 +269,10 @@ Use multiple terminals to watch logs for multiple-node clusters if you desire:
     # watch the log
     $ tail -f target-aws-1/master.log
 
-Once this process complete you should see no error messages from
-"vagrant_cluster_launch.pl". If so, you are ready to use your cluster/node.
+Once this process finishes, you should see no error messages from
+"bin/launcher/launch_cluster.pl". If so, you are ready to use your cluster/node.
 
-If you want to launch multiple clusters, make sure to specify different target directory each time!
+If you want to launch multiple clusters, make sure to specify different target directory names (ex. target-os-1, target-os-2, etc.) in the config file!
 
 #### Step - Log In To Node/Cluster
 
