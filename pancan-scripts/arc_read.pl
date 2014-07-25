@@ -34,7 +34,11 @@ my %data = ( 'Heidelberg' => { 'latitude' => 49.403159,
              'Seoul' => { 'latitude' => 37.532600,
                             'longitude' => 127.024612},
              'Kalyani' => { 'latitude' => 22.98000,
-                            'longitude' => 88.44000,},);
+                            'longitude' => 88.44000,},
+             'Brisbane' => { 'latitude' => -27.4679400,
+                            'longitude' => 153.0280900,},
+             'Beijing' => { 'latitude' => 39.9139,
+                            'longitude' => 116.3917,},);
 			    
 #opens the file containing upload info
 open(FH,"/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/out.csv") or die ("Can't open out.csv");
@@ -90,6 +94,10 @@ foreach my $item (@origins){
                 elsif ($item eq 'pacacafiles.txt'){push (@origins1, 'Toronto');push (@origins2, 'PACA-CA');push (@origins3, 'PACA-CA');}
                 elsif ($item eq 'lirijpfiles.txt'){push (@origins1, 'Tokyo');push (@origins2, 'LIRI-JP');push (@origins3, 'LIRI-JP');}
                 elsif ($item eq 'orcainfiles.txt'){push (@origins1, 'Kalyani');push (@origins2, 'ORCA-IN');push (@origins3, 'ORCA-IN');}
+                elsif ($item eq 'pacaaufiles.txt'){push (@origins1, 'Brisbane');push (@origins2, 'PACA-AU');push (@origins3, 'PACA-AU');}
+                elsif ($item eq 'paenaufiles.txt'){push (@origins1, 'Brisbane');push (@origins2, 'PAEN-AU');push (@origins3, 'PAEN-AU');}
+                elsif ($item eq 'ovaufiles.txt'){push (@origins1, 'Brisbane');push (@origins2, 'OV-AU');push (@origins3, 'OV-AU');}
+                elsif ($item eq 'gacacnfiles.txt'){push (@origins1, 'Beijing');push (@origins2, 'GACA-CN');push (@origins3, 'GACA-CN');}
                 else {push (@origins1, '');};
         }
 	
@@ -105,7 +113,7 @@ foreach my $elem (@dest){
 	}
 
 #creating the json files for the arc data for every location
-foreach my $thing ('Heidelberg','PBCA-DE','MALY-DE','EOPC-DE','BRCA-UK','CMDI-UK','BOCA-UK','PRAD-UK','ESAD-UK','BRCA-EU','PACA-CA','Barcelona','Singapore','LIRI-JP','Seoul','ORCA-IN'){
+foreach my $thing ('Heidelberg','PBCA-DE','MALY-DE','EOPC-DE','BRCA-UK','CMDI-UK','BOCA-UK','PRAD-UK','ESAD-UK','BRCA-EU','PACA-CA','Barcelona','Singapore','LIRI-JP','Seoul','ORCA-IN','Brisbane','PACA-AU','PAEN-AU','OV-AU','GACA-CN'){
                open(my $file, '>', "/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/${thing}.json") or die ("Can't open ${thing}.json");
 	       my @elems;
 	       my $l = 0;
