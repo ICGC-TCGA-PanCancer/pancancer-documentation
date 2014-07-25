@@ -75,13 +75,18 @@ my %projects = ( 'BOCA-UK' => { key => '0AoQ6zq-rG38-dE5ZZVEyaUNadU9mZlpVN1hDU0l
               'ORCA-IN' => { key => '0ApWzavEDzSJddEdwaHBVdlJqMlVfYjd5SFRqek9PbHc',
                              title => 'ORCA-IN PanCancer Data',
                            },
-              'OV-AU'   => { key => '0ApWzavEDzSJddFBieGxUQ204dGdzLVg0T3Zfb1NXNnc',
-                             title => 'OV-AU PanCancer Data',
-                           },
               'GACA-CN' => { key => '0ApWzavEDzSJddFBNZmJtREV2eG1ybkZCZ2FoV1g2T3c',
                              title => 'GACA-CN PanCancer Data',
                            },
-);
+              'PACA-AU' => { key => '0AmNjl5CExbvAdDA0N2JEZXptQXVKcXR3SmNja0llSWc',
+                             title => 'Sheet1',
+                           },
+              'PAEN-AU' => { key => '0AmNjl5CExbvAdG1iekFoNDRnZ1p5bm1KSzBhUmItNlE',
+                             title => 'Sheet1',
+                           },
+              'OV-AU' => { key => '0AmNjl5CExbvAdGNqc0wzcG5sZVBEZmJrbUtMaWNoQVE',
+                             title => 'Sheet1',
+                           },
 
 #my $usage = "USAGE: '$0 --user <your.address\@gmail.com> --pass <your GMail password>'\n\n";
 
