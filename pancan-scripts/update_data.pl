@@ -55,8 +55,8 @@ if ($projectcode ne 'Project Code' && $projectcode ne ''){
                 elsif ($projectcode eq 'LIRI-JP'){
                         $total_icgc += $numberofspecimens;
                         $totals_match += $pledgednumberofwgstnpairs;
-                        $up[17] = $numberofspecimensuploaded;
-                        $up[5] += $numberofspecimensuploaded;
+                        $uplo[17] = $numberofspecimensuploaded;
+                        $uplo[5] += $numberofspecimensuploaded;
                         $matches_up[17] = $pairuploaded;
                         $matches_up[5] += $pairuploaded;
                         $totals[17] += $numberofspecimens;
@@ -64,18 +64,18 @@ if ($projectcode ne 'Project Code' && $projectcode ne ''){
                 elsif ($projectcode eq 'LINC-JP'){
                         $total_icgc += $numberofspecimens;
                         $totals_match += $pledgednumberofwgstnpairs;
-                        $up[20] = $numberofspecimensuploaded;
-                        $up[5] += $numberofspecimensuploaded;
-                        $matches_up[20] = $pairuploaded;
+                        $uplo[25] = $numberofspecimensuploaded;
+                        $uplo[5] += $numberofspecimensuploaded;
+                        $matches_up[25] = $pairuploaded;
                         $matches_up[5] += $pairuploaded;
-                        $totals[20] += $numberofspecimens;
+                        $totals[25] += $numberofspecimens;
                         $totals[5] += $numberofspecimens;}
                 elsif ($projectcode eq 'PACA-CA'){
                         $marc_count = $numberofspecimensuploaded;
                         $total_icgc += $numberofspecimens;
                         $totals_match += $pledgednumberofwgstnpairs;
-                        $up[18] = $numberofspecimensuploaded;
-                        $up[2] += $numberofspecimensuploaded;
+                        $uplo[18] = $numberofspecimensuploaded;
+                        $uplo[2] += $numberofspecimensuploaded;
                         $matches_up[18] = $pairuploaded;
                         $matches_up[2] += $pairuploaded;
                         $totals[18] += $numberofspecimens;
@@ -83,23 +83,23 @@ if ($projectcode ne 'Project Code' && $projectcode ne ''){
                 elsif ($projectcode eq 'PRAD-CA'){
                         $total_icgc += $numberofspecimens;
                         $totals_match += $pledgednumberofwgstnpairs;
-                        $up[21] = $numberofspecimensuploaded;
-                        $up[2] += $numberofspecimensuploaded;
-                        $matches_up[21] = $pairuploaded;
+                        $uplo[26] = $numberofspecimensuploaded;
+                        $uplo[2] += $numberofspecimensuploaded;
+                        $matches_up[26] = $pairuploaded;
                         $matches_up[2] += $pairuploaded;
-                        $totals[21] += $numberofspecimens;
+                        $totals[26] += $numberofspecimens;
                         $totals[2] += $numberofspecimens ;}
                 elsif (substr($projectcode,5,6) eq 'KR'){
                         $total_icgc += $numberofspecimens;
                         $totals_match += $pledgednumberofwgstnpairs;
-                        $up[7] = $numberofspecimensuploaded;
+                        $uplo[7] = $numberofspecimensuploaded;
                         $matches_up[7] = $pairuploaded;
                         $totals[7] += $numberofspecimens;}
                 elsif($projectcode eq 'PBCA-DE'){
                         $total_icgc += $numberofspecimens;
                         $totals_match += $pledgednumberofwgstnpairs;
-                        $up[8] = $numberofspecimensuploaded;
-                        $up[0] += $numberofspecimensuploaded;
+                        $uplo[8] = $numberofspecimensuploaded;
+                        $uplo[0] += $numberofspecimensuploaded;
                         $matches_up[8] = $pairuploaded;
                         $matches_up[0] += $pairuploaded;
                         $totals[8] += $numberofspecimens;
@@ -107,8 +107,8 @@ if ($projectcode ne 'Project Code' && $projectcode ne ''){
                 elsif($projectcode eq 'MALY-DE'){
                         $total_icgc += $numberofspecimens;
                         $totals_match += $pledgednumberofwgstnpairs;
-                        $up[9] = $numberofspecimensuploaded;
-                        $up[0] += $numberofspecimensuploaded;
+                        $uplo[9] = $numberofspecimensuploaded;
+                        $uplo[0] += $numberofspecimensuploaded;
                         $matches_up[9] = $pairuploaded;
                         $matches_up[0] += $pairuploaded;
                         $totals[9] += $numberofspecimens;
@@ -116,8 +116,8 @@ if ($projectcode ne 'Project Code' && $projectcode ne ''){
                 elsif($projectcode eq 'EOPC-DE'){
                         $total_icgc += $numberofspecimens;
                         $totals_match += $pledgednumberofwgstnpairs;
-                        $up[10] = $numberofspecimensuploaded;
-                        $up[0] = $numberofspecimensuploaded;
+                        $uplo[10] = $numberofspecimensuploaded;
+                        $uplo[0] = $numberofspecimensuploaded;
                         $matches_up[10] = $pairuploaded;
                         $matches_up[0] += $pairuploaded;
                         $totals[10] += $numberofspecimens;
@@ -126,8 +126,8 @@ if ($projectcode ne 'Project Code' && $projectcode ne ''){
                         $brcaeu_count = $numberofspecimensuploaded;
                         $total_icgc += $numberofspecimens;
                         $totals_match += $pledgednumberofwgstnpairs;
-                        $up[11] = $numberofspecimensuploaded;
-                        $up[1] += $numberofspecimensuploaded;
+                        $uplo[11] = $numberofspecimensuploaded;
+                        $uplo[1] += $numberofspecimensuploaded;
                         $matches_up[11] = $pairuploaded;
                         $matches_up[1] += $pairuploaded;
                         $totals[11] += $numberofspecimens;
@@ -136,8 +136,8 @@ if ($projectcode ne 'Project Code' && $projectcode ne ''){
                         $prad_count = $numberofspecimensuploaded;
                         $total_icgc += $numberofspecimens;
                         $totals_match += $pledgednumberofwgstnpairs;
-                        $up[12] = $numberofspecimensuploaded;
-                        $up[6] += $numberofspecimensuploaded;
+                        $uplo[12] = $numberofspecimensuploaded;
+                        $uplo[6] += $numberofspecimensuploaded;
                         $matches_up[12] = $pairuploaded;
                         $matches_up[6] += $pairuploaded;
                         $totals[12] += $numberofspecimens;
@@ -146,8 +146,8 @@ if ($projectcode ne 'Project Code' && $projectcode ne ''){
                         $esad_count = $numberofspecimensuploaded;
                         $total_icgc += $numberofspecimens;
                         $totals_match += $pledgednumberofwgstnpairs;
-                        $up[13] = $numberofspecimensuploaded;
-                        $up[1] += $numberofspecimensuploaded;
+                        $uplo[13] = $numberofspecimensuploaded;
+                        $uplo[1] += $numberofspecimensuploaded;
                         $matches_up[13] = $pairuploaded;
                         $matches_up[1] += $pairuploaded;
                         $totals[13] += $numberofspecimens;
@@ -156,8 +156,8 @@ if ($projectcode ne 'Project Code' && $projectcode ne ''){
                         $brca_count = $numberofspecimensuploaded;
                         $total_icgc += $numberofspecimens;
                         $totals_match += $pledgednumberofwgstnpairs;
-                        $up[14] = $numberofspecimensuploaded;
-                        $up[6] += $numberofspecimensuploaded;
+                        $uplo[14] = $numberofspecimensuploaded;
+                        $uplo[6] += $numberofspecimensuploaded;
                         $matches_up[14] = $pairuploaded;
                         $matches_up[6] += $pairuploaded;
                         $totals[14] += $numberofspecimens;
@@ -166,8 +166,8 @@ if ($projectcode ne 'Project Code' && $projectcode ne ''){
                         $cmdi_count = $numberofspecimensuploaded;
                         $total_icgc += $numberofspecimens;
                         $totals_match += $pledgednumberofwgstnpairs;
-                        $up[15] = $numberofspecimensuploaded;
-                        $up[6] += $numberofspecimensuploaded;
+                        $uplo[15] = $numberofspecimensuploaded;
+                        $uplo[6] += $numberofspecimensuploaded;
                         $matches_up[15] = $pairuploaded;
                         $matches_up[6] += $pairuploaded;
                         $totals[15] += $numberofspecimens;
@@ -176,8 +176,8 @@ if ($projectcode ne 'Project Code' && $projectcode ne ''){
                         $boca_count = $numberofspecimensuploaded;
                         $total_icgc += $numberofspecimens;
                         $totals_match += $pledgednumberofwgstnpairs;
-                        $up[16] = $numberofspecimensuploaded;
-                        $up[6] += $numberofspecimensuploaded;
+                        $uplo[16] = $numberofspecimensuploaded;
+                        $uplo[6] += $numberofspecimensuploaded;
                         $matches_up[16] = $pairuploaded;
                         $matches_up[6] += $pairuploaded;
                         $totals[16] += $numberofspecimens;
@@ -185,9 +185,45 @@ if ($projectcode ne 'Project Code' && $projectcode ne ''){
                 elsif($projectcode eq 'ORCA-IN'){
                         $total_icgc += $numberofspecimens;
                         $totals_match += $pledgednumberofwgstnpairs;
-                        $up[19] = $numberofspecimensuploaded;
+                        $uplo[19] = $numberofspecimensuploaded;
                         $matches_up[19] = $pairuploaded;
                         $totals[19] += $numberofspecimens;}
+                elsif($projectcode eq 'PACA-AU'){
+                        $brca_count = $numberofspecimensuploaded;
+                        $total_icgc += $numberofspecimens;
+                        $totals_match += $pledgednumberofwgstnpairs;
+                        $uplo[21] = $numberofspecimensuploaded;
+                        $uplo[20] += $numberofspecimensuploaded;
+                        $matches_up[21] = $pairuploaded;
+                        $matches_up[20] += $pairuploaded;
+                        $totals[21] += $numberofspecimens;
+                        $totals[20] += $numberofspecimens;}
+                elsif($projectcode eq 'PAEN-AU'){
+                        $cmdi_count = $numberofspecimensuploaded;
+                        $total_icgc += $numberofspecimens;
+                        $totals_match += $pledgednumberofwgstnpairs;
+                        $uplo[22] = $numberofspecimensuploaded;
+                        $uplo[20] += $numberofspecimensuploaded;
+                        $matches_up[22] = $pairuploaded;
+                        $matches_up[20] += $pairuploaded;
+                        $totals[22] += $numberofspecimens;
+                        $totals[20] += $numberofspecimens;}
+                elsif($projectcode eq 'OV-AU'){
+                        $boca_count = $numberofspecimensuploaded;
+                        $total_icgc += $numberofspecimens;
+                        $totals_match += $pledgednumberofwgstnpairs;
+                        $uplo[23] = $numberofspecimensuploaded;
+                        $uplo[20] += $numberofspecimensuploaded;
+                        $matches_up[23] = $pairuploaded;
+                        $matches_up[20] += $pairuploaded;
+                        $totals[23] += $numberofspecimens;
+                        $totals[20] += $numberofspecimens;}
+                elsif($projectcode eq 'GACA-CN'){
+                        $total_icgc += $numberofspecimens;
+                        $totals_match += $pledgednumberofwgstnpairs;
+                        $uplo[24] = $numberofspecimensuploaded;
+                        $matches_up[24] = $pairuploaded;
+                        $totals[24] += $numberofspecimens;}
                 elsif($leadjurisdiction ne 'US TCGA'){
                         $missing += $numberofspecimens;
                         $total_icgc += $numberofspecimens;
@@ -207,7 +243,7 @@ my $counter = 0;
 my $uploaded = 0;
 
 # Finding what is uplaoded from the GNOS log files
-foreach my $a ("defiles.txt","camfiles.txt","cafiles.txt","esfiles.txt","sgfiles.txt","jpfiles.txt","hinfiles.txt","krfiles.txt","pbcadefiles.txt","malydefiles.txt","eopcdefiles.txt","brcaeufiles.txt","pradukfiles.txt","esadukfiles.txt","brcaukfiles.txt","cmdiukfiles.txt","bocaukfiles.txt","lirijpfiles.txt","pacacafiles.txt","orcainfiles.txt"){
+foreach my $a ("defiles.txt","camfiles.txt","cafiles.txt","esfiles.txt","sgfiles.txt","jpfiles.txt","hinfiles.txt","krfiles.txt","pbcadefiles.txt","malydefiles.txt","eopcdefiles.txt","brcaeufiles.txt","pradukfiles.txt","esadukfiles.txt","brcaukfiles.txt","cmdiukfiles.txt","bocaukfiles.txt","lirijpfiles.txt","pacacafiles.txt","orcainfiles.txt",,"aufiles.txt","pacaaufiles.txt","paenaufiles.txt","ovaufiles.txt","gacacnfiles.txt"){
 foreach my $i ("gtrepo-bsc", "gtrepo-dkfz", "gtrepo-osdc", "gtrepo-etri", "gtrepo-ebi", "gtrepo-riken") {
 
                 @id = [];
@@ -274,25 +310,25 @@ for ($o = 0; $o < scalar @tumour; $o++){
         else {$tumour[$o] = 0};
 }
 
-# check if Marc's uploads are bigger
 my $e;
-for ($e = 0;$e < scalar @up;$e++){
-        if($uploads[$e] < $up[$e]){$uploads[$e] = $up[$e];}
+for ($e = 0;$e < scalar @uplo;$e++){
+        if($uploads[$e] < $uplo[$e]){$uploads[$e] = $uplo[$e];}
 }
 
 my $y;
 for ($y=0 ; $y < scalar @totals; $y++){
-        if ($totals[$y] < $totals2[$y]){
-                $totals[$y] = $totals2[$y]; }
+        if ($totals[$y] < $totals2[$y]){$totals[$y] = $totals2[$y];}
 }
+
+if ($totals[24] < $totals2[24]){$totals[24] = $totals2[24];}
 
 $totals[0] = $totals[8] + $totals[9] + $totals[10];
 $totals[1] = $totals[11] + $totals[13];
-$totals[2] = $totals[18] + $totals[21];
-$totals[5] = $totals[17] + $totals[19];
+$totals[2] = $totals[18] + $totals[26];
+$totals[5] = $totals[17] + $totals[25];
 $totals[6] = $totals[12] + $totals[14] + $totals[15] + $totals[16];
-
-$total_icgc = $totals[0] + $totals[1] + $totals[2] + $totals[3] + $totals[4] + $totals[5] + $totals[6] + $totals[7] + $totals[20] + $missing;
+$totals[20] = $totals[21] + $totals[22] + $totals[23];
+$total_icgc = $totals[0] + $totals[1] + $totals[2] + $totals[3] + $totals[4] + $totals[5] + $totals[6] + $totals[7] + $totals[20] + $totals[19] + $totals[24] + $missing;
 
 # applying colors and radius to each bubble, as long as getting the average
 my $h = 0;
@@ -354,7 +390,7 @@ foreach my $i ("gtrepo-bsc","gtrepo-dkfz", "gtrepo-osdc", "gtrepo-etri", "gtrepo
 
 # creates a hash of arrays with the donor id as the key and the specimen ids as the valuees in the arrays
 my $count_pass = 0;
-foreach my $a ("defiles.txt","camfiles.txt","cafiles.txt","esfiles.txt","sgfiles.txt","jpfiles.txt","hinfiles.txt","krfiles.txt","pbcadefiles.txt","malydefiles.txt","eopcdefiles.txt","brcaeufiles.txt","pradukfiles.txt","esadukfiles.txt","brcaukfiles.txt","cmdiukfiles.txt","bocaukfiles.txt","lirijpfiles.txt","pacacafiles.txt","orcainfiles.txt"){
+foreach my $a ("defiles.txt","camfiles.txt","cafiles.txt","esfiles.txt","sgfiles.txt","jpfiles.txt","hinfiles.txt","krfiles.txt","pbcadefiles.txt","malydefiles.txt","eopcdefiles.txt","brcaeufiles.txt","pradukfiles.txt","esadukfiles.txt","brcaukfiles.txt","cmdiukfiles.txt","bocaukfiles.txt","lirijpfiles.txt","pacacafiles.txt","orcainfiles.txt","aufiles.txt","pacaaufiles.txt","paenaufiles.txt","ovaufiles.txt","gacacnfiles.txt"){
 
  my $len;
  my $match_count;
@@ -427,6 +463,12 @@ print $file qq([
           {"name": "Kalyani", "total": $totals[19], "uploaded": $uploads[19], "latitude": 22.98000, "longitude": 88.44000, "radius": $rad[19], "fillKey": "orange","match": $match_pair[19], "tumour": $tumour[19], "normal": $normal[19]},
 {"name": "Kalyani", "total": $totals[19], "uploaded": $uploads[19], "latitude": 22.98000,  "longitude": 88.44000, "radius": $size[19], "fillKey": "$col[19]"},
 
+	  {"name": "Brisbane", "total": $totals[20], "uploaded": $uploads[20], "latitude": -27.4679400, "longitude": 153.0280900, "radius": $rad[20], "fillKey": "orange","match": $match_pair[20]},
+          {"name": "Brisbane", "total": $totals[20], "uploaded": $uploads[20], "latitude": -27.4679400, "longitude": 153.0280900, "radius": $size[20], "fillKey": "$col[20]"},
+          
+          {"name": "Beijing", "total": $totals[24], "uploaded": $uploads[24], "latitude": 39.9139, "longitude": 116.3917, "radius": $rad[24], "fillKey": "orange","match": $match_pair[24], "project": "GACA-CN"},
+          {"name": "Beijing", "total": $totals[24], "uploaded": $uploads[24], "latitude": 39.9139, "longitude": 116.3917, "radius": $size[24], "fillKey": "$col[24]", "project": "GACA-CN"},
+
           {"name": "Tokyo", "total": $totals[5], "uploaded": $uploads[5], "latitude": 35.684219, "longitude": 139.755020, "radius": $rad[5], "fillKey": "orange","match": $match_pair[5], "tumour": $tumour[5], "normal": $normal[5]},
           {"name": "Tokyo", "total": $totals[5], "uploaded": $uploads[5], "latitude": 35.684219, "longitude": 139.755020, "radius": $size[5], "fillKey": "$col[5]"}
 
@@ -466,6 +508,15 @@ print $file_add qq([
         
         {"name": "Kalyani", "total": $totals[19], "uploaded": $uploads[19], "latitude": 22.98000, "longitude": 88.44000, "radius": $rad[19], "fillKey": "orange","match": $match_pair[19], "tumour": $tumour[19], "normal": $normal[19],"project": "ORCA-IN"},
 {"name": "Kalyani", "total": $totals[19], "uploaded": $uploads[19], "latitude": 22.98000,  "longitude": 88.44000, "radius": $size[19], "fillKey": "$col[19]","project": "ORCA-IN"},
+
+	{"name": "Brisbane", "total": $totals[21], "uploaded": $uploads[21], "latitude": -27.4679400, "longitude": 153.0280900, "radius": $rad[21], "fillKey": "orange", "match": $match_pair[21], "project": "PACA-AU"},
+        {"name": "Brisbane", "total": $totals[21], "uploaded": $uploads[21], "latitude": -27.4679400, "longitude": 153.0280900, "radius": $size[21], "fillKey": "$col[21]", "project": "PACA-AU"},
+          
+        {"name": "Brisbane", "total": $totals[22], "uploaded": $uploads[22], "latitude": -27.4679400, "longitude": 153.0280900, "radius": $rad[22], "fillKey": "orange","match": $match_pair[22], "project": "PAEN-AU"},
+        {"name": "Brisbane", "total": $totals[22], "uploaded": $uploads[22], "latitude": -27.4679400, "longitude": 153.0280900, "radius": $size[22], "fillKey": "$col[22]", "project": "PAEN-AU"},
+          
+        {"name": "Brisbane", "total": $totals[23], "uploaded": $uploads[23], "latitude": -27.4679400, "longitude": 153.0280900, "radius": $rad[23], "fillKey": "orange","match": $match_pair[20], "project": "OV-AU"},
+        {"name": "Brisbane", "total": $totals[23], "uploaded": $uploads[23], "latitude": -27.4679400, "longitude": 153.0280900, "radius": $size[23], "fillKey": "$col[23]", "project": "OV-AU"},
         
         {"name": "Cambridge", "total": $totals[13], "uploaded": $uploads[13], "latitude": 52.202544, "longitude": 0.131237 , "radius": $rad[13], "fillKey": "orange","match": $match_pair[13],"tumour": $tumour[13], "normal": $normal[13], "project": "ESAD-UK"},
         {"name": "Cambridge", "total": $totals[13], "uploaded": $uploads[13], "latitude": 52.202544, "longitude": 0.131237 , "radius": $size[13], "fillKey": "$col[13]", "project": "ESAD-UK"},
@@ -485,15 +536,16 @@ open(my $f, '>>', "/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/a
 print $f "$date,";
 my $k = 0;
 my $count1 = 0;
-for ($k = 0; $k < scalar @totals - 14; $k++){
-        if ($count1 >= 0 && $count1 < scalar @totals -15){printf $f "%.3f,", $ave[$k];}
+for ($k = 0; $k < scalar @totals - 19; $k++){
+        if ($count1 >= 0 && $count1 < scalar @totals -20){printf $f "%.3f,", $ave[$k];}
         else {printf $f "%.3f,", $ave[$k];}
         $count1 += 1;
 }
 printf $f "%.3f,", $ave[19];
+printf $f "%.3f,", $ave[20];
+printf $f "%.3f,", $ave[24];
 print $f "100.000\n";
 close $f;
-
 
 # updates the total uploads for the chart
 # appending to file with all upload data
@@ -501,12 +553,14 @@ open(my $f1, '>>', "/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/
 print $f1 "$date,";
 my $r = 0;
 my $count2 = 0;
-for ($r = 0; $r < scalar @totals - 14; $r++){
-        if ($count2 >= 0 && $count2 < scalar @totals - 15){printf $f1 "%.3f,", $uploads[$r];}
+for ($r = 0; $r < scalar @totals - 19; $r++){
+        if ($count2 >= 0 && $count2 < scalar @totals - 20){printf $f1 "%.3f,", $uploads[$r];}
         else {printf $f1 "%.3f,", $uploads[$r];}
         $count2 += 1;
 }
 printf $f1 "%.3f,", $uploads[19];
+printf $f1 "%3f,", $uploads[20];
+printf $f1 "%3f,", $uploads[24];
 print $f1 "1874\n";
 close $f1;
 
@@ -638,21 +692,20 @@ foreach my $thing ('DKFZ','EBI','BSC','RIKEN','OSDC','ETRI'){
                 printf $file "$date,%.3f,%.3f,%.3f\n", $uploads[8],$uploads[9],$uploads[10];
                 printf $filea "$date,%.3f,%.3f,%.3f\n", $ave[8],$ave[9],$ave[10];}
         elsif ($thing eq 'EBI'){
-                #print $file "quarter,BRCA-UK,CMDI-UK,BOCA-UK,PRAD-UK,ESAD-UK,BRCA-EU,PACA-CA\n";
-                #print $filea "quarter,BRCA-UK,CMDI-UK,BOCA-UK,PRAD-UK,ESAD-UK,BRCA-EU,PACA-CA\n";
-                printf $file "$date,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f\n", $uploads[14],$uploads[15],$uploads[16],$uploads[12],$uploads[13],$uploads[11],$uploads[2];
-                printf $filea "$date,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f\n", $ave[14],$ave[15],$ave[16],$ave[12],$ave[13],$ave[11],$ave[2];}
+                #print $file "quarter,BRCA-UK,CMDI-UK,BOCA-UK,PRAD-UK,ESAD-UK,BRCA-EU,PACA-CA,PACA-AU,PAEN-AU,OV-AU\n";
+                #print $filea "quarter,BRCA-UK,CMDI-UK,BOCA-UK,PRAD-UK,ESAD-UK,BRCA-EU,PACA-CA,PACA-AU,PAEN-AU,OV-AU\n";
+                printf $file "$date,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f\n", $uploads[14],$uploads[15],$uploads[16],$uploads[12],$uploads[13],$uploads[11],$uploads[18],$uploads[21],$uploads[22],$uploads[23];
+                printf $filea "$date,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f\n", $ave[14],$ave[15],$ave[16],$ave[12],$ave[13],$ave[11],$ave[18],$ave[21],$ave[22],$ave[23];}
         elsif ($thing eq 'BSC'){
                 #print $file "quarter,CLLE-ES\n";
                 #print $filea "quarter,CLLE-ES\n";
                 printf $file "$date,%.3f\n", $uploads[3];
                 printf $filea "$date,%.3f\n", $ave[3];}
         elsif ($thing eq 'RIKEN'){
-                #print $file "quarter,BTCA-SG,LIRI-JP\n";
-                #print $filea "quarter,BTCA-SG,LIRI-JP\n";
-                printf $file "$date,%.3f,%.3f,%.3f\n", $uploads[4],$uploads[5],$uploads[19];
-                printf $filea "$date,%.3f,%.3f,%.3f\n", $ave[4],$ave[5],$ave[19];}
-
+                #print $file "quarter,BTCA-SG,LIRI-JP,ORCA-IN,GACA-CN\n";
+                #print $filea "quarter,BTCA-SG,LIRI-JP,ORCA-IN,GACA-CN\n";
+                printf $file "$date,%.3f,%.3f,%.3f,%.3f\n", $uploads[4],$uploads[5],$uploads[19],$uploads[24];
+                printf $filea "$date,%.3f,%.3f,%.3f,%.3f\n", $ave[4],$ave[5],$ave[19],$ave[24];}
         elsif ($thing eq 'OSDC'){
                 #print $file "quarter\n";
                 #print $filea "quarter\n";
@@ -666,7 +719,6 @@ foreach my $thing ('DKFZ','EBI','BSC','RIKEN','OSDC','ETRI'){
         close $file;
         close $filea;
         }
-
 
 foreach my $elems ('DKFZ','EBI','BSC','OSDC','RIKEN','ETRI'){
 my @aryre = [];
