@@ -20,5 +20,7 @@
 	  {"name": "Chicago", "latitude": 41.8500300, "longitude": -87.6500500, "radius": 20, "fillKey": "blue", "project": "OSDC"},
 	  
 	  {"name": "Kalyani", "latitude": 22.98000, "longitude": 88.44000, "radius": 20, "fillKey": "blue", "project": "Kalyani"},
+	  
+	  {"name": "Beijing", "latitude": 39.9139, "longitude": 116.3917, "radius": 15, "fillKey": "blue","project": "GACA-CN"},
 
 ]
