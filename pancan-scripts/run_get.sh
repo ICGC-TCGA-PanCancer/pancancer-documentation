@@ -5,6 +5,9 @@ source ~/.bash_profile
 
 cd /home/ubuntu/gitroot/pancancer-info/pancan-scripts/results
 rm *.txt
+cd ../
+cp gacacnfiles.txt results
+cd results
 
 # getting all the updated spreadsheets
 perl `find /home/ubuntu/gitroot/pancancer-info/ -name get_spreadsheets.pl`
@@ -37,6 +40,9 @@ cat *PRAD-UK*.txt > hinfiles.txt
 cat *BRCA-UK*.txt >> hinfiles.txt
 cat *BOCA-UK*.txt >> hinfiles.txt
 cat *CMDI-UK*.txt >> hinfiles.txt
+cat *PACA-AU*.txt > pacaaufiles.txt
+cat *PAEN-AU*.txt > paenaufiles.txt
+cat *OV-AU*.txt > ovaufiles.txt
 cat Pancan-UP*.txt > summary.txt
 
 # creating all the files needed for the site
