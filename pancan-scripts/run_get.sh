@@ -44,6 +44,7 @@ cat *PACA-AU*.txt > pacaaufiles.txt
 cat *PAEN-AU*.txt > paenaufiles.txt
 cat *OV-AU*.txt > ovaufiles.txt
 cat Pancan-UP*.txt > summary.txt
+perl ../cleanup_esad.pl
 
 # creating all the files needed for the site
 cd /home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data
