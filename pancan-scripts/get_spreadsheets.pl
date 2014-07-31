@@ -22,10 +22,9 @@ my $username = q{};
 my $password = q{};
 
 # The actual column header fields in the first row of all of these spreadsheets:
-my @real_header = ( 'Study', 'dcc_project_code', 'Accession Identifier', 'submitter_donor_id', 'submitter_specimen_id', 'submitter_sample_id', 'Readgroup SM UUID', 'dcc_specimen_type', 'Normal/Tumor Designation', 'Matching Normal or Tumour ICGC Sample Identifier', 'Sequencing Strategy', 'Number of BAM files/sample', 'Target Upload Date (DD/MM/YYYY)', 'Actual Upload Date (DD/MM/YYYY)', );
-
+my @real_header;
 # The mangled column header fields created when Net::Google::Spreadsheets parses the GoogleDocs:
-my @header = ( 'study', 'dccprojectcode', 'accessionidentifier', 'submitterdonorid', 'submitterspecimenid', 'submittersampleid', 'readgroupsmuuid', 'dccspecimentype', 'normaltumordesignation', 'matchingnormalortumouricgcsampleidentifier', 'sequencingstrategy', 'numberofbamfilessample', 'targetuploaddateddmmyyyy', 'actualuploaddateddmmyyyy', );
+my @header;
 
 my %projects = ( 'BOCA-UK' => { key => '0AoQ6zq-rG38-dE5ZZVEyaUNadU9mZlpVN1hDU0lDOWc',
                              title => 'Sheet1',
@@ -87,6 +86,11 @@ my %projects = ( 'BOCA-UK' => { key => '0AoQ6zq-rG38-dE5ZZVEyaUNadU9mZlpVN1hDU0l
               'OV-AU' => { key => '0AmNjl5CExbvAdGNqc0wzcG5sZVBEZmJrbUtMaWNoQVE',
                              title => 'Sheet1',
                            },
+              'Pancan-UP' => { key => '0AnBqxOn9BY8ldE5RUk5WX09hV1k4MllOVDdBMFFRNWc',
+                               title => 'ICGC',
+                             },
+);
+               
 
 #my $usage = "USAGE: '$0 --user <your.address\@gmail.com> --pass <your GMail password>'\n\n";
 
@@ -105,6 +109,14 @@ my $service = Net::Google::Spreadsheets->new(
 
 # iterate over the project codes in the %projects hash
 foreach my $proj ( keys %projects ) {
+if ($proj eq 'Pancan-UP'){
+      @header = ('projectcode','leadjurisdiction','tumourtype','gnos','pledgednumberofwgstnpairs','numberofwgstnpairstheyaretracking','numberofspecimens','numberofspecimensuploaded','percentuploaded','uploadedtnpairsofspecimens');
+      @real_header = ('Project code','Lead Jurisdiction','Tumour Type','GNOS','Pledged Number of WGS T/N Pairs','Number of WGS T/N Pairs They are Tracking','Number of Specimens','Number of Specimens Uploaded','Percent Uploaded','Uploaded T/N Pairs of Specimens');
+    }
+else{
+      @real_header = ( 'Study', 'dcc_project_code', 'Accession Identifier', 'submitter_donor_id', 'submitter_specimen_id', 'submitter_sample_id', 'Readgroup SM UUID', 'dcc_specimen_type', 'Normal/Tumor Designation', 'Matching Normal or Tumour ICGC Sample Identifier', 'Sequencing Strategy', 'Number of BAM files/sample', 'Target Upload Date (DD/MM/YYYY)', 'Actual Upload Date (DD/MM/YYYY)', );
+      @header = ( 'study', 'dccprojectcode', 'accessionidentifier', 'submitterdonorid', 'submitterspecimenid', 'submittersampleid', 'readgroupsmuuid', 'dccspecimentype', 'normaltumordesignation', 'matchingnormalortumouricgcsampleidentifier', 'sequencingstrategy', 'numberofbamfilessample', 'targetuploaddateddmmyyyy', 'actualuploaddateddmmyyyy', );
+    }
     # request the GoogleDocs spreadsheet corresponding
     # to the current key => value pair
     my $spreadsheet;
