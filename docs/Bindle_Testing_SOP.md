@@ -7,11 +7,30 @@ Note that this guide does not explain you how to set up bindle for the
 particular environment you are going to be testing. For that, please 
 refer to CloudBindle/Bindle repository.
 
+## The Template files to test with:
+
+* vagrant_cluster_launch.pancancer.bwa_workflow.seqware.install.sge_cluster.json.template
+* vagrant_cluster_launch.pancancer.bwa_workflow.seqware.install.sge_node.json.template
+* vagrant_cluster_launch.pancancer.seqware.install.sge_cluster.json.template
+* vagrant_cluster_launch.pancancer.seqware.install.sge_node.json.template
+
 ## Testing Process
 
 The following is a detailed example of the testing process once you have launched
 a cluster successfully using bindle. 
 
+### Step - Check if gluster is setup or not
+
+This checks for gluster. It should be set up for a multi-node cluster but shouldn't exist for a single node cluster.
+
+    # check for gluster peers. If set up properly, it will show you a list of peers(worker1,worker2, etc.)
+    # if it isn't set up, it will give you the following: "peer status: No peers present"
+    $ sudo gluster peer status
+    
+    # check for gluster volumes. If set up properly, it will show you a list of gluster volumes
+    # if it isn't set up, it will give you the following: "No volumes present"
+    $ sudo gluster volume status
+    
 ### Step - Run the Seqware Sanity Check Tool
 
 This simply checks if the seqware environment is set up correctly on the cluster.

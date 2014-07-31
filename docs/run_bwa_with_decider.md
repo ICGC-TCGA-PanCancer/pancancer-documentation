@@ -1,15 +1,11 @@
 # TCGA/ICGC PanCancer - BWA-Mem Automated Workflow Running SOP
 
-# TODO: 
-
-* .seqware/settings on the launcher host???? Should add a sample to the tarball.  Also, will need to copy it to ~/.seqware/settings otherwise the submit will not work?  Is this true?
-
 ## Overview
 
 This document describes how to automate the running of the BWA-Mem SeqWare
 workflow for TCGA/ICGC PanCancer. In order to do this you need to have a GNOS
 repository to read data and metadata from, one or more SeqWare node/cluster
-provisioned with SeqWare-Vagrant on a PanCancer cloud, and the BWA-Mem workflow
+provisioned with Bindle (CloudBindle) on a PanCancer cloud, and the BWA-Mem workflow
 installed on those SeqWare nodes/clusters. The general idea is you run the
 "decider" documented here on an hourly cron job on your launcher host which
 then finds unaligned samples and assigns running of these samples on one of the
@@ -17,10 +13,11 @@ SeqWare hosts.
 
 ## Requirements
 
-* seqware nodes/clusters, see https://github.com/SeqWare/vagrant, specifically https://github.com/SeqWare/vagrant/blob/feature/brian_pancan_fixes/PANCAN_CLUSTER_LAUNCH_README.md for information about building nodes/clusters for PanCancer
+* seqware nodes/clusters, see https://github.com/CloudBindle/Bindle, specifically https://github.com/SeqWare/pancancer-info/blob/develop/docs/workflow_dev_node_with_bindle.md for information about building nodes/clusters for PanCancer
 * a cluster.json that describes the clusters (see the sample cluster.json)
-* a launcher host to run the decider on, see https://github.com/SeqWare/vagrant/blob/feature/brian_pancan_fixes/PANCAN_CLUSTER_LAUNCH_README.md
-* BWA workflow installed on each node/cluster, see https://github.com/SeqWare/public-workflows/blob/feature/brian_bwa_pancan_gnos_download/PANCANCER_RUNNING_BWA.md
+* a decider VM to run the decider 
+
+* BWA workflow installed on each node/cluster, see https://github.com/SeqWare/pancancer-info/blob/develop/docs/run_bwa.md
 * GNOS key installed on each node/cluster, get your key from https://pancancer-token.annailabs.com/ and replace the contents of gnostest.pem
 * GNOS repository filled with data that meets our metadata requirements, see https://wiki.oicr.on.ca/display/PANCANCER/PAWG+Researcher%27s+Guide
 
@@ -32,7 +29,7 @@ This automated guide assumes you will use the following architecture:
                           ^
                           |       -> cluster1 -> run workflow BWA-Mem on sample1
     launcher host -> decider cron -> cluster2 -> run workflow BWA-Mem on sample2
-                                  -> node3    -> run workflow BWA-Mem on sample3
+                                  -> cluster3 -> run workflow BWA-Mem on sample3
 
 In this setup, several SeqWare clusters (or nodes) are created using
 SeqWare-Vagrant and the template for PanCancer. The BWA-Mem SeqWare workflow is
@@ -47,35 +44,19 @@ future runs of the decider that this sample is now aligned.
 
 ## Getting the Decider and Dependencies
 
-We have a release available at:
-https://s3.amazonaws.com/oicr.workflow.bundles/released-bundles/decider-bwa-pancancer_1.0.tar.gz
+Download the repository:
+    $ mkdir ~/git
+    $ cd git
+    $ git clone https://github.com/SeqWare/public-workflows.git
+    $ cd public-workflows/decider-bwa-pancancer
+    $ sudo bash install 
 
-Download and unzip this to your launcher host.
-
-Next, you need to install dependencies for the decider. This assumes you are on Ubuntu 12.04 for your launcher and logged in as the ubuntu user which can perform admin actions using sudo.
-
-    $ sudo apt-get update
-    $ sudo apt-get -q -y --force-yes install liblz-dev zlib1g-dev libxml-dom-perl samtools libossp-uuid-perl libjson-perl libxml-libxml-perl libboost-filesystem1.48.0 libboost-program-options1.48.0 libboost-regex1.48.0 libboost-system1.48.0 libicu48 libxerces-c3.1 libxqilla6
-    $ wget http://cghub.ucsc.edu/software/downloads/GeneTorrent/3.8.5/genetorrent-common_3.8.5-ubuntu2.91-12.04_amd64.deb
-    $ wget http://cghub.ucsc.edu/software/downloads/GeneTorrent/3.8.5/genetorrent-download_3.8.5-ubuntu2.91-12.04_amd64.deb
-    $ wget http://cghub.ucsc.edu/software/downloads/GeneTorrent/3.8.5/genetorrent-upload_3.8.5-ubuntu2.91-12.04_amd64.deb
-    $ sudo dpkg -i genetorrent-common_3.8.5-ubuntu2.91-12.04_amd64.deb genetorrent-download_3.8.5-ubuntu2.91-12.04_amd64.deb genetorrent-upload_3.8.5-ubuntu2.91-12.04_amd64.deb
 
 You can check to see if everything is correctly installed with:
 
-    $ perl -c workflow_decider.pl
+    $ perl -c bin/workflow_decider.pl
 
 That should produce no errors.
-
-The SeqWare command line tool is also used by the decider.  Install it using the following:
-
-    $ wget https://github.com/SeqWare/seqware/releases/download/1.0.11/seqware
-    $ sudo cp seqware /usr/local/bin/
-    $ sudo chmod a+x /usr/local/bin/seqware
-
-Java can be installed using:
-
-    $ sudo apt-get install openjdk-7-jdk
 
 ## Cluster Setup
 
@@ -83,7 +64,7 @@ You need to setup one or more nodes/clusters that are used for running
 workflows and processing data.  These are distinct from the launcher host which
 runs the decider documented here.  Launch one or more compute clusters using
 the [TCGA/ICGC PanCancer - Computational Node/Cluster Launch
-SOP](https://github.com/SeqWare/vagrant/blob/feature/brian_pancan_fixes/PANCAN_CLUSTER_LAUNCH_README.md).
+SOP](https://github.com/SeqWare/pancancer-info/blob/develop/docs/prod_cluster_with_bindle.md).
 
 You should use the node/cluster profile that includes the installation of the
 BWA-Mem workflow for PanCancer. This will ensure your compute clusters are
@@ -93,7 +74,7 @@ ensure you first get a GNOS key for the PanCancer project by following
 instructures at the [PAWG Researcher
 Guide](https://wiki.oicr.on.ca/display/PANCANCER/PAWG+Researcher%27s+Guide).
 You then need to take the contents of this key and replace the contents of
-"~seqware/provisioned-bundles/Workflow_Bundle_BWA_2.1_SeqWare_1.0.11/Workflow_Bundle_BWA/2.1/scripts/gnostest.pem"
+"~seqware/provisioned-bundles/Workflow_Bundle_BWA_{workflow-version}._SeqWare_1.0.11/Workflow_Bundle_BWA/{workflow-version}/scripts/gnostest.pem"
 on the master node of each computational cluster you launch. This will ensure
 input and output data can be read/written to the GNOS repositories used in the
 project.
@@ -114,8 +95,11 @@ find it installed under SeqWare accession "2".
          "workflow_accession": "2",
          "username": "admin@admin.com",
          "password": "admin",
-         "webservice": "http://master:8080/SeqWareWebService",
-         "host": "master"
+         "webservice": "http://{cluster-ip}:8080/SeqWareWebService",
+         "host": "master",
+         "max_workflows": "1",
+         "max_scheduled_workflows": "1"
+
        }
     }
 
@@ -152,6 +136,13 @@ And the result looks like:
 You can then use this information to fill in your cluster.json config for the
 decider.
 
+## Getting to know the decider
+
+    perl bin/workflow_decider.pl --man
+    
+    
+This will provide you will an explaination of all the flags and how they are to be used. 
+
 ## Running the Decider in Testing Mode
 
 First, you will want to run the decider in test mode just to see the samples
@@ -160,7 +151,7 @@ launcher host, presumably running in the same cloud as the GNOS instance you
 point to (though not neccesarily). This will produce a report that clearly
 shows what is available in GNOS, which samples have already been aligned, etc.
 
-    perl workflow_decider.pl --gnos-url https://gtrepo-ebi.annailabs.com --report report.txt --force-run --test 
+    Flags: --workflow-skip-scheduling --schedule-force-run
 
 This will produce a report in "report.txt" for every sample in GNOS along with
 sample workflow execution command lines.
@@ -179,36 +170,93 @@ You typically will manually call the decider for a single sample, for example,
 if you want to force that sample to be re-run in order to test a workflow.
 Here is an example of how to specify a particular sample:
 
-    perl workflow_decider.pl --gnos-url https://gtrepo-ebi.annailabs.com --report report.2.txt --force-run --test --skip-meta-download --sample SP2163
+    Flag: --schedule-sample[=][ ]<sample_uuid>  or  --schedule-center[=][]<center_name>
 
-And this will just prepare to launch the workflow for sample SP2163.  Note a
-couple of things, 1) it does not launch because --test was used, 2) it does not
-download metadata again, it uses the cached version from the last run since
---skip-meta-download, and 3) it just does the sample command for SP2163.
+And this will just prepare to launch the workflow for sample sample_uuid
 
 ### Automatically Calling via Cron
 
 Add the following to your cronjob, running every hour:
 
-    perl workflow_decider.pl --gnos-url https://gtrepo-ebi.annailabs.com --report report.cron.txt
+    perl bin/workflow_decider.pl --seqware-clusters cluster.json --workflow-version 2.6.0 
 
 ### Parameters
 
-There are several additional parameters that may be useful:
+REQUIRED ARGUMENTS
+    --seqware-clusters[=][ ]<cluster_json>
+        JSON file that describes the clusters available to schedule workflows
+        to. Should be located in the config folder.
 
-    USAGE: 'perl workflow_decider.pl --gnos-url <URL> --cluster-json <cluster.json> [--working-dir <working_dir>] [--sample <sample_id>] [--threads <num_threads_bwa_default_8>] [--test] [--ignore-lane-count] [--force-run] [--skip-meta-download] [--report <workflow_decider_report.txt>] [--settings <seqware_settings_file>] [--upload-results]'
-    	--gnos-url           a URL for a GNOS server, e.g. https://gtrepo-ebi.annailabs.com
-    	--cluster-json       a json file that describes the clusters available to schedule workflows to
-    	--working-dir        a place for temporary ini and settings files
-    	--sample             to only run a particular sample
-    	--threads            number of threads to use for BWA
-    	--test               a flag that indicates no workflow should be scheudle, just summary of what would have been run
-    	--ignore-lane-count  skip the check that the GNOS XML contains a count of lanes for this sample and the bams count matches
-    	--force-run          schedule workflows even if they were previously run/failed/scheduled
-    	--skip-meta-download use the previously downloaded XML from GNOS, only useful for testing
-    	--report             the report file name
-    	--settings           the template seqware settings file
-    	--upload-results     a flag indicating the resulting BAM files and metadata should be uploaded to GNOS, default is to not upload!!!
+    --workflow-version[=][ ]<workflow_version>
+        Specify the BWA workflow version you would like to run (eg. 2.6.0)
+
+OPTIONS
+    --gnos-url[=][ ]<gnos_url>
+        URL for a GNOS server, e.g. https://gtrepo-ebi.annailas.com
+
+    --working-dir[=][ ]<working_directory>
+        A place for temporary ini and settings files
+
+    --use-cached-analysis
+        Use the previously downloaded list of files from GNOS that are marked
+        in the live state (only useful for testing).
+
+    --seqware-settings[=][ ]<seqware_settings>
+        The template seqware settings file
+
+    --report[=][ ]<report_file>
+        The report file name that the results will be placed in by the decider
+
+    --use-live-cached
+        A flag indicating that previously download xml files for each analysis
+        file should not be downloaded again
+
+    --schedule-ignore-failed
+        A flag indicating that previously failed runs for this specimen should
+        be ignored and the specimen scheduled again
+
+    --schedule-sample[=][ ]<sample_uuid>
+        For only running one particular sample based on its uuid
+
+    --schedule-center[=][]<center_name>
+        For only running samples from one institute
+
+    --schedule-ignore-lane-count
+        Skip the check that the GNOS XML contains a count of lanes for this
+        sample and the bams count matches
+
+    --schedule-force-run
+        Schedule workflows even if they were previously completed
+
+    --workflow-bwa-threads[=][ ]<thread_count>
+        Number of threads to use for BWA
+
+    --workflow-skip-scheduling
+        Indicates no workflow should be scheduled, just summary of what would
+        have been run.
+
+    --workflow-upload-results
+        A flag indicating the resulting BAM files and metadata should be
+        uploaded to GNOS, default is to not upload!!!
+
+    --workflow-skip-gtdownload
+        A flag indicating that input files should be just the bam input paths
+        and not from GNOS
+
+    --workflow-skip-gtupload
+        A flag indicating that upload should not take place but output files
+        should be placed in output_prefix/output_dir
+
+    --workflow-output-prefix[=][ ]<output_prefix>
+        If --skip-gtupload is set, use this to specify the prefix of where
+        output files are written
+
+    --workflow-output-dir[=][ ]<output_directory>
+        if --skip-gtupload is set, use this to specify the dir of where output
+        files are written
+
+    --workflow-input-prefix[=][ ]<prefix>
+        if --skip-gtdownload is set, this is the input bam file prefix
 
 ## Dealing with Workflow Failure
 
@@ -235,10 +283,10 @@ This section describes modifications needed on a per PanCancer cloud basis.
 
 This cloud uses a web proxy, the settings for which are stored in environment variables.  This means you need to override these variables when interacting with the local network.  For example, to run the decider on the launcher host you would do:
 
-    http_proxy= perl workflow_decider.pl --test --ignore-lane-count --force-run --cluster-json cluster.json --report bionimbus.log --gnos-url https://gtrepo-osdc.annailabs.com
+    http_proxy= perl bin/workflow_decider.pl --workflow-skip-schduling --schedule-ignore-lane-count --schedule-force-run --seqware-clusters cluster.json --report bionimbus.log --gnos-url https://gtrepo-osdc.annailabs.com
 
 The "http_proxy=" here disables the proxy settings for just this command.
 
 ## TODO
 
-* document how to find the IPs of the master nodes using a command line script
+* Add support for getting stats from GNOS, Make it so that a list of samples can be supplied for scheduling
