@@ -1,7 +1,7 @@
 # PANCAN.INFO
 
 ## About
-The files in this directory are all the ones being used on pancan.info. To prevent having multiple versions of the workflow decider, we have decided to keep it out of this repo. Feel free to take a look at the script here :
+The files in this directory are all the ones being used on pancancer.info. To prevent having multiple versions of the workflow decider, we have decided to keep it out of this repo. Feel free to take a look at the script here :
     
     https://github.com/SeqWare/public-workflows/raw/develop/decider-bwa-pancancer/workflow_decider.pl
 
@@ -44,9 +44,8 @@ Clone the branch onto the machine using :
     $ git clone https://github.com/SeqWare/pancancer-info.git
     $ cd pancancer-info
 
-Move into the feature branch and copy uploads.html to /var/www/ :
+Copy uploads.html to /var/www/ :
 
-    $ git checkout feature/jlugo_site
     $ cd pancan-scripts
     # need one more directory
     $ mkdir results
@@ -76,10 +75,7 @@ Now that perlbrew is installed, you can download perl 5.18.2 :
 
 Now that you have the right version of perl, we can begin to install all the dependencies. Before installing the modules, you need to install the following packages :
 
-    $ sudo apt-get install libxml2-dev
-    $ sudo apt-get install libexpat1-dev
-    $ sudo apt-get install libcrypt-ssleay-perl
-    $ sudo apt-get install libssl-dev
+    $ sudo apt-get install libxml2-dev libexpat1-dev libcrypt-ssleay-perl libssl-dev
     
     $ cpanm Net::Google::Spreadsheets
     $ cpanm XML::DOM
