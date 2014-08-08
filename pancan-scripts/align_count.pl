@@ -15,6 +15,8 @@ my %id;
 
 my @spec_marc;
 
+# train_1.csv is the data freeze 1.0 spresheet found here:
+# https://docs.google.com/spreadsheets/d/14NItsHKJUevHZIuFkFTwNF-C12WbXTrFe0oM0Xq6b4M/edit#gid=111470950
 open(FH,"train_1.csv") or die("Can't open guestbook.txt: $!");
 while (my $line = <FH>) {
   chomp $line;
