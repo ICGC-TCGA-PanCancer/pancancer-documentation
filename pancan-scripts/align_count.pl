@@ -189,7 +189,9 @@ for ($h = 0; $h < scalar @train2_unalign; $h++){
 
 }
 
+
 open(my $file,'>', "traindata2.json");
+if ($train eq "2"){
 print $file qq([
        {"name": "Chicago(ICGC)", "total": $train2_unalign[1], "aligned": $train2_align[1], "latitude": 41.891519, "longitude": -87.629159, "radius': $rad[1], "fillKey": 'gt60'},
        {"name": "Chicago(ICGC)", "total": $train2_unalign[1], "aligned": $train2_align[1], "latitude": 41.891519, "longitude": -87.629159, "radius": $size[1], "fillKey": 'gt70'},
@@ -214,4 +216,5 @@ print $file qq([
 
        {"name": "Santa Cruz", "total": $train2_unalign[7], "aligned": $train2_align[7], "latitude": 36.971944, "longitude": -122.026389, "radius": $size[7], "fillKey": 'gt70'}
 ]);
+}
 close $file;
