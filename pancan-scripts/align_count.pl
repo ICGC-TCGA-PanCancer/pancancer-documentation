@@ -25,10 +25,6 @@ my $align_total_archive = 0;
 if (scalar(@ARGV) != 2) { die "USAGE: perl align_count.pl --train <TRAIN NUMBER>i"; }
 GetOptions ("train=s" => \$train);
 
-#my $str = "  df ";
-#$str = trim($str);
-#print "string '$str'\n";
-
 my @spec_marc1;
 my @spec_marc2;
 
@@ -186,11 +182,6 @@ push (@train1_align,$data1);
 push (@train2_align,$data2);
 push (@train1_unalign,$unaligned_total1);
 push (@train2_unalign,$unaligned_total2);
-#print "$elem\n";
-#print "data train 1 ALIGNED: $data1\n";
-#print "data train 2 ALIGNED: $data2\n";
-#print "unaligned total: $unaligned_total\n";
-#print "unaligned remaining: $unaligned_remain\n";
 }
 
 print "]";
