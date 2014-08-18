@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<title>ICGC PanCancer Status</title>
+<head>
+    <link rel="shortcut icon" href="https://icgc.org/files/org_sys/pan.png">
+    <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script type="text/javascript" src="http://d3js.org/topojson.v1.min.js"></script>
+    <script type="text/javascript" src="http://datamaps.github.io/scripts/datamaps.all.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style1.css">
+    <link rel="stylesheet" type="text/css" href="http://bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-34523087-2', 'pancancer.info');
+  ga('create', 'UA-52348443-1', 'auto', {'name': 'newTracker'});
+  ga('send', 'pageview');
+  ga('newTracker.send', 'pageview');
+
+</script>
+
+</head>
+<body>
+	 <div id="header1">
+                <h1 style="float:left;margin-left:10px;font-size:25px;">PANCANCER.INFO</h1>
+                <center><div id="inside">
+                 <ul class="tab-links">
+                                <li><a href="index.html">Sites</a></li>
+                                <li><a href="uploads.html">Uploads</a></li>
+                 </ul>
+                 </div></center>
+                 </div>
+                 <center><h2>Upload/ Download Progress via GNOS</h2>
+                <p style="font-size:12px;width:900px;">Projects that are in the <b><i>Pending</i></b> column are LICA-FR and BRCA-KR. These projects are in this column because nothing has been uploaded and there is insufficient data on the spreadsheets that the data is based on.</p>
+                <p style="font-size:12px;"><i>*This is still a work in progres, final numbers should be in soon!</i></p>
+                </center>
+<div id="fullcontain">
+        <div id="center1">
+                <div id="tablediv">
+                        <div id="table">
+                        <table name="x" id="rounded-corner" summary="">
+                                <thead>
+                                        <tr>
+                                        <th scope="col"></th>
+                                        <th scope="col"><a target="_blank" href="defiles.txt" title="PBCA-DE, MALY-DE, EOPC-DE">Heidelberg</a></th>
+                                        <th scope="col"><a target="_blank" href="camfiles.txt" title="ESAD-UK, BRCA-EU">Cambridge</a></th>
+                                        <th scope="col"><a target="_blank" href="hinfiles.txt" title="BRCA-UK, CMDI-UK, BOCA-UK, PRAD-UK">Hinxton</a></th>
+                                        <th scope="col"><a target="_blank" href="cafiles.txt" title="PACA-CA, PRAD-CA">Toronto</a></th>
+                                        <th scope="col"><a target="_blank" href="esfiles.txt" title="CLLE-ES">Barcelona</a></th>
+                                        <th scope="col"><a target="_blank" href="sgfiles.txt" title="BTCA-SG">Singapore</a></th>
+                                        <th scope="col"><a target="_blank" href="krfiles.txt" title="LAML-KR">Seoul</a></th>
+                                        <th scope="col"><a target="_blank" href="orcainfiles.txt" title="ORCA-IN">Kalyani</a></th>
+                                        <th scope="col"><a target="_blank" href="aufiles.txt" title="PACA-AU, PAEN-AU, OV-AU">Brisbane</a></th>
+                                        <th scope="col"><a target="_blank" href="gacacnfiles.txt" title="GACA-CN">Beijing</a></th>
+                                        <th scope="col"><a target="_blank" href="jpfiles.txt" title="LIRI-JP, LINC-JP">Tokyo</a></th>
+                                        <th scope="col"><a title="This column is for the following projects (LICA-FR, BRCA-KR) which have not yet submitted sample level data."</a>Pending</th>
+                                        <th scope="col"><a target="_blank" href="all_files.txt" title="This column shows the totals of all the ICGC projects.">ICGC Total</a></th>
+                                        <th scope="col">ICGC Percentage</a></th>
+                                        <th scope="col"><a title="This column shows the totals of all the TCGA projects.">TCGA Total</a></th>
+                                        <th scope="col">TCGA Percentage</th>
+                                        <th scope="col"><a title="This column shows the totals of both the ICGC and TCGA projects.">Cumluative Total</a></th>
+                                        <th scope="col">Cumulative Percentage</th>
+                                        </tr>
+                                </thead>
+				 <tbody>
+                                 <tr>
+                                                <td><b>Specimens Uploaded</b></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+                                        </tr>
+                                        <tr>
+                                                <td><b>Specimens Left</b></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+                                        </tr>
+                                        <tr>
+                                                <td><b>Total Number of Specimens</b></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td></td><td>0</td><td></td><td>0</td><td></td>
+                                        </tr>
+                                        <tr>
+                                                <td><b>Matched Tumour/Normal Pairs</b></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+                                        </tr>
+                                 </tbody>
+
+				<tfoot>
+                                        <tr>
+                                                <td colspan="19">*Updates every day at 13:00 GMT, hover over the column headers to see more information.</td>
+                                        </tr>
+                                </tfoot>
+
+				</table>
+			</div><!--table-->
+		</div><!--tablediv-->
+		<div id="chartdiv">
+				<div id="charttop">
+                                        <h3 style="margin: 90px;">Percentage of Specimens Uploaded</h3>
+                                        <div id="radio" style="margin-right:140px;">
+                                                <div id="city" style="float:left;">
+                                                <b><p style="margin-left:5px;font-size:12px;width:130px;">Project Cities</p></b>
+                                                <input style="margin-left:5px;" type="radio" name="time" id="hr1" onchange="checkr1()">Daily
+                                                <input style="margin-left:5px;" type="radio" name="time" id="day1" onchange="checkr1()">Weekly
+                                                </div><!--city-->
+                                                <div id="gnos" style="float:left;">
+                                                <b><p style="margin-left:5px;font-size:12px;">GNOS Repos</p></b>
+                                                <input style="margin-left:5px;" type="radio" name="time" id="dkfz1" onchange="checkr1()">DKFZ
+                                                <input style="margin-left:5px;" type="radio" name="time" id="ebi1" onchange="checkr1()">EBI
+                                                <input style="margin-left:5px;" type="radio" name="time" id="bsc1" onchange="checkr1()">BSC
+                                                <input style="margin-left:5px;" type="radio" name="time" id="etri1" onchange="checkr1()">ETRI
+                                                <input style="margin-left:5px;" type="radio" name="time" id="osdc1" onchange="checkr1()">OSDC
+                                                <input style="margin-left:5px;" type="radio" name="time" id="riken1" onchange="checkr1()">RIKEN
+                                                </div><!--gnos-->
+                                        </div><!--radio-->
+                                </div><!--charttop-->
+                                <div id ="chartbottom">
+                                        <h3 style="margin: 90px;">Number of Specimens Uploaded</h3>
+                                        <div id="radio" style="margin-right:140px;">
+                                        <div id="city" style="float:left;">
+                                                <b><p style="margin-left:5px;font-size:12px;width:130px;">Project Cities</p></b>
+                                                <input style="margin-left:5px;" type="radio" name="time" id="hr2" onchange="checkr2()">Daily
+                                                <input style="margin-left:5px;" type="radio" name="time" id="day2" onchange="checkr2()">Weekly
+                                                </div><!--city-->
+                                                <div id="gnos" style="float:left;">
+                                                <b><p style="margin-left:5px;font-size:12px;">GNOS Repos</p></b>
+                                                <input style="margin-left:5px;" type="radio" name="time" id="dkfz2" onchange="checkr2()">DKFZ
+                                                <input style="margin-left:5px;" type="radio" name="time" id="ebi2" onchange="checkr2()">EBI
+                                                <input style="margin-left:5px;" type="radio" name="time" id="bsc2" onchange="checkr2()">BSC
+                                                <input style="margin-left:5px;" type="radio" name="time" id="etri2" onchange="checkr2()">ETRI
+                                                <input style="margin-left:5px;" type="radio" name="time" id="osdc2" onchange="checkr2()">OSDC
+                                                <input style="margin-left:5px;" type="radio" name="time" id="riken2" onchange="checkr2()">RIKEN
+                                                </div><!--gnos-->
+                                        </div><!--radio-->
+                                </div><!--chartbottom-->
+		</div><!--chartdiv-->
+		<script type="text/javascript">
+			function charts(data,label,popup,spot,maxnum,num){
+			//creates the line chart
+			  var margin = {top: 20, right: 55, bottom: 115, left: 40},
+				  width  = 800,
+                                  height = 250;
+
+			  var x = d3.scale.ordinal()
+				  .rangeRoundBands([0, width], .1);
+
+			  var y = d3.scale.linear()
+				  .rangeRound([height, 0]);
+
+			  var xAxis = d3.svg.axis()
+				  .scale(x)
+				  .orient("bottom");
+
+			  var yAxis = d3.svg.axis()
+				  .scale(y)
+				  .orient("left");
+
+			  var line = d3.svg.line()
+				  .interpolate("cardinal")
+				  .x(function (d) { return x(d.label) + x.rangeBand() / 2; })
+				  .y(function (d) { return y(d.value); });
+
+			  var color = d3.scale.ordinal()
+				   .range(["#001c9c","#7F5217","#475003","#9c8305","#d3c47c","#800000","#6C007D","#63AFD0","#FF0000","#FF00F7","#FAF569"]);
+
+			  //selecting div to place chart in 
+			  var svg = d3.select("#chart"+spot).append("svg")
+				  .attr("id","svg"+num)
+				  .attr("width",  width  + margin.left + margin.right)
+				  .attr("height", height + margin.top  + margin.bottom)
+				  .append("g")
+				  .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+			  //reading in the data
+			  d3.csv(""+data, function (error, data) {
+
+				var labelVar = 'quarter';
+				var varNames = d3.keys(data[0]).filter(function (key) { return key !== labelVar;});
+				color.domain(varNames);
+
+				var seriesData = varNames.map(function (name) {
+				  return {
+					name: name,
+					values: data.map(function (d) {
+					  return {name: name, label: d[labelVar], value: +d[name]};
+					})
+				  };
+				});
+
+				x.domain(data.map(function (d) { return d.quarter; }));
+				
+				y.domain([0,
+                                   
+                                    d3.max(seriesData, function (c) { 
+                                      return d3.max(c.values, function (d) { return d.value; });
+                                    })]);
+
+				svg.append("g")
+					.attr("class", "x axis")
+					.attr("transform", "translate(0," + height + ")")
+					.call(xAxis)
+					.selectAll("text")  
+				//.call(wrap, x.rangeBand())
+					.style("text-anchor", "end")
+					.attr("dx", "-.8em")
+					.attr("dy", ".15em")
+					.attr("transform", function(d) {
+						return "rotate(-70)" 
+						});
+
+				svg.append("g")
+					.attr("class", "y axis")
+					.call(yAxis)
+					.append("text")
+					.attr("transform", "rotate(-90)")
+					.attr("y", 6)
+					.attr("dy", ".71em")
+					.style("text-anchor", "end")
+					.text(""+label);
+
+				var series = svg.selectAll(".series")
+					.data(seriesData)
+					.enter().append("g")
+					.attr("class", "series");
+
+				series.append("path")
+				  .attr("class", "line")
+				  .attr("d", function (d) { return line(d.values); })
+				  .style("stroke", function (d) { return color(d.name); })
+				  .style("stroke-width", "4px")
+				  .style("fill", "none")
+
+				series.selectAll(".point")
+				  .data(function (d) { return d.values; })
+				  .enter().append("circle")
+				   .attr("class", "point")
+				   .attr("cx", function (d) { return x(d.label) + x.rangeBand()/2; })
+				   .attr("cy", function (d) { return y(d.value); })
+				   .attr("r", "5px")
+				   .style("fill", function (d) { return color(d.name); })
+				   .style("stroke", "grey")
+				   .style("stroke-width", "2px")
+				   .on("mouseover", function (d) { showPopover.call(this, d); })
+				   .on("mouseout",  function (d) { removePopovers(); })
+
+				var legend = svg.selectAll(".legend")
+					.data(varNames.slice().reverse())
+				  .enter().append("g")
+					.attr("class", "legend")
+					.attr("transform", function (d, i) { return "translate(55," + i * 20 + ")"; });
+
+				legend.append("rect")
+					.attr("x", width - 10)
+					.attr("width", 10)
+					.attr("height", 10)
+					.style("fill", color)
+					.style("stroke", "grey");
+
+				legend.append("text")
+					.attr("x", width - 12)
+					.attr("y", 6)
+					.attr("dy", ".35em")
+					.style("text-anchor", "end")
+					.text(function (d) { return d; });
+
+				//handles the hover aspect
+				function removePopovers () {
+				  $('.popover').each(function() {
+					$(this).remove();
+				  }); 
+				}
+
+				function showPopover (d) {
+				  $(this).popover({
+					title: d.name,
+					placement: 'auto top',
+					container: 'body',
+					trigger: 'manual',
+					html : true,
+					content: function() { 
+					  return "Date: " + d.label + 
+							 "<br/>"+popup+ ": " + d3.format(",")(d.value ? d.value: d.y1 - d.y0); }
+				  });
+				  $(this).popover('show')
+				}
+				
+				//rotates the x-axis label
+				function wrap(text, width) {
+				  text.each(function() {
+					var text = d3.select(this),
+						words = text.text().split(/\s+/).reverse(),
+						word,
+						line = [],
+						lineNumber = 0,
+						lineHeight = 1.1, // ems
+						y = text.attr("y"),
+						dy = parseFloat(text.attr("dy")),
+						tspan = text.text(null).append("tspan").attr("x", 0).attr("y", y).attr("dy", dy + "em");
+					while (word = words.pop()) {
+					  line.push(word);
+					  tspan.text(line.join(" "));
+					  if (tspan.node().getComputedTextLength() > width) {
+						line.pop();
+						tspan.text(line.join(" "));
+						line = [word];
+						tspan = text.append("tspan").attr("x", 0).attr("y", y).attr("dy", ++lineNumber * lineHeight + dy + "em").text(word);
+				  }
+				 }
+				});
+			   }
+			  });
+		  }
+		 
+	//checks which data to graph for the proportion chart
+        function checkr1(){
+        if (document.getElementById("hr1").checked == true){
+        d3.select("#svg1").remove();
+        charts("ave_data/ave_data.csv","Percentage Uploaded %","Uploaded %","top",1,1);
+        }
+        else if (document.getElementById("day1").checked == true){
+        d3.select("#svg1").remove();
+        charts("ave_data/ave_daily.csv","Percentage Uploaded %","Uploaded %","top",1,1);
+        }
+        else if (document.getElementById("dkfz1").checked == true){
+        d3.select("#svg1").remove();
+        charts("ave_data/DKFZ_ave_data.csv","Percentage Uploaded %","Uploaded %","top",1,1);
+        }
+        else if (document.getElementById("ebi1").checked == true){
+        d3.select("#svg1").remove();
+        charts("ave_data/EBI_ave_data.csv","Percentage Uploaded %","Uploaded %","top",1,1);
+        }
+        else if (document.getElementById("bsc1").checked == true){
+        d3.select("#svg1").remove();
+        charts("ave_data/BSC_ave_data.csv","Percentage Uploaded %","Uploaded %","top",1,1);
+        }
+        else if (document.getElementById("etri1").checked == true){
+        d3.select("#svg1").remove();
+        charts("ave_data/ETRI_ave_data.csv","Percentage Uploaded %","Uploaded %","top",1,1);
+        }
+        else if (document.getElementById("osdc1").checked == true){
+        d3.select("#svg1").remove();
+        charts("ave_data/OSDC_ave_data.csv","Percentage Uploaded %","Uploaded %","top",1,1);
+        }
+        else if (document.getElementById("riken1").checked == true){
+        d3.select("#svg1").remove();
+        charts("ave_data/RIKEN_ave_data.csv","Percentage Uploaded %","Uploaded %","top",1,1);
+        }
+
+        ;
+}
+
+	//checks which data to graph for the upload number chart
+        function checkr2(){
+        if (document.getElementById("hr2").checked == true){
+        d3.select("#svg2").remove();
+        charts("up_data/up_data.csv","Uploaded","Uploaded","bottom",0,2);
+        }
+        else if (document.getElementById("day2").checked == true){
+        d3.select("#svg2").remove();
+        charts("up_data/up_daily.csv","Uploaded","Uploaded","bottom",0,2);
+        }
+        else if (document.getElementById("dkfz2").checked == true){
+        d3.select("#svg2").remove();
+        charts("up_data/DKFZ_up_data.csv","Uploaded","Uploaded","bottom",0,2);
+        }
+        else if (document.getElementById("ebi2").checked == true){
+        d3.select("#svg2").remove();
+        charts("up_data/EBI_up_data.csv","Uploaded","Uploaded","bottom",0,2);
+        }
+        else if (document.getElementById("bsc2").checked == true){
+        d3.select("#svg2").remove();
+        charts("up_data/BSC_up_data.csv","Uploaded","Uploaded","bottom",0,2);
+        }
+        else if (document.getElementById("etri2").checked == true){
+        d3.select("#svg2").remove();
+        charts("up_data/ETRI_up_data.csv","Uploaded","Uploaded","bottom",0,2);
+        }
+        else if (document.getElementById("osdc2").checked == true){
+        d3.select("#svg2").remove();
+        charts("up_data/OSDC_up_data.csv","Uploaded","Uploaded","bottom",0,2);
+        }
+        else if (document.getElementById("riken2").checked == true){
+        d3.select("#svg2").remove();
+        charts("up_data/RIKEN_up_data.csv","Uploaded","Uploaded","bottom",0,2);
+        }         
+        ;
+}
+			
+		    //calls function to make the charts
+		    charts("ave_data/ave_data.csv","Percentage Uploaded %","Uploaded %","top",1,1);
+                    charts("up_data/up_data.csv","Uploaded","Uploaded","bottom",0,2);
+			</script>
+	</div><!--center1-->
+<script type="text/javascript">
+      //creates the maps and arcs for all except cambridge
+      
+      //world with all bubbles
+      function whole_world(tab,file,arc){
+		  var colors = d3.scale.category10();
+		  //basic map config with custom fills, mercator projection
+		  var pic = new Datamap({
+			  scope: "world",
+			  element: document.getElementById(tab),
+			  
+			  geographyConfig: {
+				  popupOnHover: false,
+				  highlightOnHover: false,},
+			  
+			  projection: 'mercator',
+			  
+			  fills: {
+				  defaultFill: "#ABDDA4",
+				  red: "#FF0000",
+				  blue: "#63AFD0",
+				  yellow: "#FFFF00",
+				  green: "#00FF00",
+				  orange: "90FFFA"}
+			})
+				  
+		  //creates the bubbles
+		  var json_data;
+		  
+		  d3.json(""+file, function(error, json) {
+			  json_data = json;
+			  pic.bubbles(json_data, {
+				 popupTemplate: function(geo, data) {
+					 if(data.fillKey !== "blue"){
+					  return "<div class='hoverinfo'>"+data.project+"<br/>Uploaded: " + data.uploaded + " Total: " +data.total+ "</div>";	}
+					  else{return "<div class='hoverinfo'>"+data.project};
+					  }
+			  });
+		  });
+		   
+		   //creates the arcs
+		   var arc_data1;
+			  d3.json(""+arc, function(error, json) {
+			  arc_data1 = json;
+			   pic.arc(arc_data1,  {strokeWidth: 2, arcSharpness: 0});
+			   });
+		   
+		 
+		}
+	
+	//map for cambridge and hinxton
+	function world_uk(tab,filename,arc){
+		var zoom = new Datamap({
+			element: document.getElementById(tab),
+			scope: 'world',
+			geographyConfig: {
+				popupOnHover: false,
+				highlightOnHover: false,},
+			setProjection: function(element) {
+		
+				var projection = d3.geo.mercator()
+				.center([1, 52])
+				.rotate([4.4, 0])
+				.scale(3500)
+				.translate([element.offsetWidth / 2, element.offsetHeight / 2]);
+		
+				var path = d3.geo.path()
+				.projection(projection);
+		
+				return {path: path, projection: projection};
+			},
+		
+			fills: {
+				defaultFill: "#ABDDA4",
+				red: "#FF0000",
+                		blue: "#63AFD0",
+				yellow: "#FFFF00",
+				green: "#00FF00",
+				orange: "90FFFA"}
+		})
+
+		//creates the bubbles
+		var json_data;
+
+		d3.json(""+filename, function(error, json) {
+			json_data = json;
+			zoom.bubbles(json_data, {
+				popupTemplate: function(geo, data) {
+					if (data.fillKey !== "blue"){
+					return "<div class='hoverinfo'>"+data.name+"<br/>Uploaded: " + data.uploaded + " Total: " +data.total+ "</div>";}
+					else {return "<div class='hoverinfo'>"+data.name;};
+				}
+			});
+		});
+		
+		//creates the arcs
+		var arc_data1;
+			  d3.json(""+arc, function(error, json) {
+			  arc_data1 = json;
+			   pic.arc(arc_data1,  {strokeWidth: 2, arcSharpness: 0});
+			   });
+		
+
+}
+</script>
+<script type="text/javascript">
+	//updates the table
+	var table = document.getElementsByName("x");
+        var table2 = document.getElementsByName("x1");
+        var json_data;
+        var json_data2;
+        var cell_1 = [];
+        var cell_2 = [];
+        var cell_3 = [];
+        var cell_6 = [];
+        var val_1 = [];
+        var val_2 = [];
+        var val_3 = [];
+        var val_6 = [];
+        var total_1 = 0;
+        var total_2 = 0;
+        var total_3 = 0;
+        var total_6 = 0;
+        
+        d3.json("table2.json", function(error, json) {
+                json_data2 = json;
+                for (var i = 1; i < json_data2.length+1; i++){
+                        
+                        if (json_data2[i-1].project == current){
+                                cell_6[1] = table2[0].rows[i].cells[0];
+                                val_6[1] = cell_6[1].firstChild.data;
+                                cell_6[1].firstChild.data = ''+json_data2[json_data2.length-1].origin;
+                                cell_6[1] = table2[0].rows[i].cells[1];
+                                val_6[1] = cell_6[1].firstChild.data;
+                                cell_6[1].firstChild.data = ''+json_data2[json_data2.length-1].project;
+                                cell_6[1] = table2[0].rows[i-1].cells[2];
+                                val_6[1] = cell_6[1].firstChild.data;
+                                cell_6[1].firstChild.data = ''+json_data2[i-1].dest+', '+json_data2[i-2].dest;
+                                cell_6[1] = table2[0].rows[i].cells[2];
+                                val_6[1] = cell_6[1].firstChild.data;
+                                cell_6[1].firstChild.data = ''+json_data2[json_data2.length-1].dest;
+                                }
+                                
+                        else {
+                                cell_6[1] = table2[0].rows[i].cells[0];
+                                val_6[1] = cell_6[1].firstChild.data;
+                                cell_6[1].firstChild.data = ''+json_data2[i-1].origin;
+                                cell_6[1] = table2[0].rows[i].cells[1];
+                                val_6[1] = cell_6[1].firstChild.data;
+                                cell_6[1].firstChild.data = ''+json_data2[i-1].project;
+                                cell_6[1] = table2[0].rows[i].cells[2];
+                                val_6[1] = cell_6[1].firstChild.data;
+                                cell_6[1].firstChild.data = ''+json_data2[i-1].dest;
+                                }
+                                
+                        var current = json_data2[i-1].project;
+
+                }
+                        
+        });
+
+	d3.json("bubbles/bubble_data.json", function(error, json) {
+                json_data = json;
+                for (var i = 1,j = 0; i < json_data.length/2 + 2, j < json_data.length; i++, j+=2){
+                cell_1[i] = table[0].rows[1].cells[i];
+                val_1[i] = cell_1[i].firstChild.data;
+                cell_1[i].firstChild.data = ''+json_data[j].uploaded;
+                total_1 += json_data[j].uploaded;
+                
+                cell_3[i] = table[0].rows[3].cells[i];
+                val_3[i] = cell_3[i].firstChild.data;
+                cell_3[i].firstChild.data = ''+json_data[j].total;
+                total_3 += json_data[j].total;
+
+                cell_6[i] = table[0].rows[4].cells[i];
+                val_6[i] = cell_6[i].firstChild.data;
+                cell_6[i].firstChild.data = ''+json_data[j].match;
+                total_6 += json_data[j].match;
+                
+                cell_2[i] = table[0].rows[2].cells[i];
+                val_2[i] = cell_2[i].firstChild.data;
+                var left = json_data[j].total - json_data[j].uploaded;
+                cell_2[i].firstChild.data = ''+left;
+                total_2 += left;
+                }
+
+		
+		//getting totals and percentages
+		cell_1[13] = table[0].rows[1].cells[13];
+                cell_2[13] = table[0].rows[2].cells[13];
+                cell_1[15] = table[0].rows[1].cells[15];
+                cell_2[15] = table[0].rows[2].cells[15];
+                cell_1[14] = table[0].rows[1].cells[14];
+                cell_2[14] = table[0].rows[2].cells[14];
+                cell_3[13] = table[0].rows[3].cells[13];
+                cell_3[14] = table[0].rows[3].cells[14];
+                cell_3[15] = table[0].rows[3].cells[15];
+                cell_6[13] = table[0].rows[4].cells[13];
+                cell_6[15] = table[0].rows[4].cells[15];
+                cell_6[14] = table[0].rows[4].cells[14];
+                
+                cell_1[12] = table[0].rows[1].cells[12];
+                cell_2[12] = table[0].rows[2].cells[12];
+                cell_3[12] = table[0].rows[3].cells[12];
+                cell_6[12] = table[0].rows[4].cells[12];
+                
+                cell_1[16] = table[0].rows[1].cells[16];
+                cell_2[16] = table[0].rows[2].cells[16];
+                cell_3[16] = table[0].rows[3].cells[16];
+                cell_6[16] = table[0].rows[4].cells[16];
+                
+                cell_1[17] = table[0].rows[1].cells[17];
+                cell_2[17] = table[0].rows[2].cells[17];
+                cell_3[17] = table[0].rows[3].cells[17];
+                cell_6[17] = table[0].rows[4].cells[17];
+                
+                cell_1[18] = table[0].rows[1].cells[18];
+                cell_2[18] = table[0].rows[2].cells[18];
+                cell_3[18] = table[0].rows[3].cells[18];
+                cell_6[18] = table[0].rows[4].cells[18];   
+                
+                // PENDING
+                var icgctotal = json_data[0].total_icgc;
+                var missing = json_data[0].missing;
+                
+                cell_1[12].firstChild.data = 0;
+                cell_3[12].firstChild.data = missing;
+                cell_2[12].firstChild.data = missing;
+                cell_6[12].firstChild.data = 0;
+                
+                // ICGC TOTAL
+                var icgc_ave1 = 100*(total_1/(icgctotal));
+                var icgc_ave2 = 100*((total_2+diff)/(icgctotal));
+                var icgc_ave3 = 100*(total_6/(json_data[0].match_total));
+                
+                cell_1[13].firstChild.data = total_1;
+                cell_3[13].firstChild.data = icgctotal;
+                cell_2[13].firstChild.data = icgctotal - total_1;
+                cell_6[13].firstChild.data = total_6;   
+                
+                // ICGC PERCENTAGE
+                cell_1[14].firstChild.data = ''+total_1+'/'+icgctotal+' ('+icgc_ave1.toFixed(2)+')';
+                cell_2[14].firstChild.data = ''+(total_2+diff)+'/'+icgctotal+' ('+icgc_ave2.toFixed(2)+')';
+                cell_6[14].firstChild.data = ''+total_6+'/'+json_data[0].match_total+' ('+icgc_ave3.toFixed(2)+')';
+                
+                // TCGA TOTAL
+                var tcgatotal = 1874;
+                var tcgamatch = 912;
+                var tcgaup = 1874;
+                var tcgatotalmatches = 912;
+                
+                cell_1[15].firstChild.data = ''+tcgaup;
+                cell_2[15].firstChild.data = ''+(tcgatotal-tcgaup);
+                cell_3[15].firstChild.data = ''+(tcgatotal);
+                cell_6[15].firstChild.data = ''+(tcgamatch);    
+        	
+        	//TCGA PERCENTAGE
+                var tcga_ave1 = 100*(tcgaup/tcgatotal);
+                var tcga_ave2 = 100*((tcgatotal - tcgaup)/tcgatotal);
+                var tcga_ave3 = 100*(tcgamatch/tcgatotalmatches);
+                
+                cell_1[16].firstChild.data = ''+tcgaup+'/'+tcgatotal+' ('+tcga_ave1.toFixed(2)+')';
+                cell_2[16].firstChild.data = ''+tcgatotal - tcgaup+'/'+tcgatotal+' ('+tcga_ave2.toFixed(2)+')';
+                cell_6[16].firstChild.data = ''+tcgamatch+'/'+tcgatotalmatches+' ('+tcga_ave3.toFixed(2)+')';   
+
+		// CUMULATIVE TOTAL
+                cell_1[17].firstChild.data = tcgaup + total_1;
+                cell_2[17].firstChild.data = (tcgatotal - tcgaup) + (icgctotal - total_1);
+                cell_3[17].firstChild.data = tcgatotal + icgctotal;
+                cell_6[17].firstChild.data = tcgamatch + total_6;
+        
+        	// CUMULATIVE PERCENTAGE
+                var all_ave1 = 100*((tcgaup + total_1)/(tcgatotal + icgctotal));
+                var all_ave2 = 100*(((tcgatotal - tcgaup) + (icgctotal - total_1))/(tcgatotal + icgctotal));
+                var all_ave3 = 100*((tcgamatch + total_6)/(tcgatotalmatches+json_data[0].match_total));
+                
+                cell_1[18].firstChild.data = ''+(tcgaup + total_1)+'/'+(tcgatotal + icgctotal)+' ('+all_ave1.toFixed(2)+') ';
+                cell_2[18].firstChild.data = ''+((tcgatotal - tcgaup) + (icgctotal - total_1))+'/'+(tcgatotal + icgctotal)+' ('+all_ave2.toFixed(2)+') ';
+                cell_6[18].firstChild.data = ''+(tcgamatch + total_6)+'/'+(tcgatotalmatches+json_data[0].match_total)+' ('+all_ave3.toFixed(2)+') ';    
+        });
+
+</script>
+	<div id="center2">
+	<table name="x1" id="rounded-corner" summary="" style="float:left;margin-left:30px;margin-top:5px;">
+        <thead>
+                                        <tr>
+                                        <th scope="col">Origins</th>
+                                        <th scope="col">Projects</th>
+                                        <th scope="col">Destinations</th>
+                                        </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                                <td>Uploaded</td><td>0</td><td>0</td>
+                                        </tr>
+                                        <tr>
+                                                <td>Files Left</td><td>0</td><td>0</td>
+                                        </tr>
+                                        <tr>
+                                                <td>Total Files</td><td>0</td> <td>0</td>
+                                        </tr>
+                                        <tr>
+                                                <td>Tumour</td><td>0</td>  <td>0</td>
+                                        </tr>
+                                        <tr>
+                                                <td>Normal</td><td>0</td> <td>0</td>
+                                        </tr>
+                                        <tr>
+                                                <td>Normal</td><td>0</td> <td>0</td>
+                                        </tr>
+                                        <tr>
+                                                <td>Normal</td><td>0</td> <td>0</td>
+                                        </tr>
+                                        <tr>
+                                                <td>Normal</td><td>0</td> <td>0</td>
+                                        </tr>
+                                        <tr>
+                                                <td>Normal</td><td>0</td> <td>0</td>
+                                        </tr>
+                                        <tr>
+                                                <td>Normal</td><td>0</td> <td>0</td>
+                                        </tr>
+                                        <tr>
+                                                <td>Normal</td><td>0</td> <td>0</td>
+					</tr>
+                                        <tr>
+                                                <td>Normal</td><td>0</td> <td>0</td>
+                                        </tr>
+                                        <tr>
+                                                <td>Normal</td><td>0</td> <td>0</td>
+                                        </tr>
+                                        <tr>
+                                                <td>Normal</td><td>0</td> <td>0</td>
+                                        </tr>
+                                        <tr>
+                                                <td>Normal</td><td>0</td> <td>0</td>
+                                        </tr>
+                                        <tr>
+                                                <td>Normal</td><td>0</td> <td>0</td>
+                                        </tr>
+                                        <tr>
+                                                <td>Normal</td><td>0</td> <td>0</td>
+                                        </tr>
+                                        <tr>
+                                                <td>Normal</td><td>0</td> <td>0</td>
+                                        </tr>
+                                        <tr>
+                                                <td>Normal</td><td>0</td> <td>0</td>
+                                        </tr>
+
+                                </tbody>
+
+        </table>
+
+		<div class="tabs">
+			<ul class="tab-links">
+				<li class="active"><a href="#tab1">Overview</a></li>
+                                <li><a href="#tab2">Heidelberg</a></li>
+                                <li><a href="#tab3">Cambridge</a></li>
+                                <li><a href="#tab4">Hinxton</a></li>
+                                <li><a href="#tab5">Toronto</a></li>
+                                <li><a href="#tab6">Barcelona</a></li>
+                                <li><a href="#tab7">Singapore</a></li>
+                                <li><a href="#tab8">Tokyo</a></li>
+                                <li><a href="#tab9">Seoul</a></li>
+                                <li><a href="#tab10">Kalyani</a></li>
+                                <li><a href="#tab11">Brisbane</a></li>
+                                <li><a href="#tab12">Beijing</a></li>
+			</ul>   
+			<div class="tab-content">
+				<div id="tab1" style="margin: 0px auto;position: relative; max-width: 800px;height: 900px;" class="tab active">
+					<p align="center">Overview of all the locations and their current status. Enlarged view of the UK to see Cambridge and Hinxton separately. To see projects click on tabs.</p>
+					<div id="tab1-map1" style="position: relative; width: 800px; max-height: 500px;" class="tab active"></div>
+					<div id="tab1-map2" style="position: relative; max-width: 800px; max-height: 500px;" class="tab active"></div>
+				</div>
+<script>
+	//map with all the bubbles on it
+	var colors = d3.scale.category10();
+	//basic map config with custom fills, mercator projection
+	var pic = new Datamap({
+		scope: "world",
+		element: document.getElementById("tab1-map1"),
+		geographyConfig: {
+			popupOnHover: false,
+			highlightOnHover: false,},
+
+        projection: 'mercator',
+
+        fills: {defaultFill: "#ABDDA4",
+				red: "#FF0000",
+                blue: "#63AFD0",
+				yellow: "#FFFF00",
+				green: "#00FF00",
+				orange: "90FFFA"}
+				})
+
+	var json_data;
+
+	d3.json("bubbles/bubble_data.json", function(error, json) {
+	json_data = json;
+	pic.bubbles(json_data, {
+		  popupTemplate: function(geo, data) {
+			  return "<div class='hoverinfo'>"+data.name+"<br/>Uploaded: " + data.uploaded + " Total: " +data.total+ "</div>";
+		  }
+	});
+	});
+	
+	//first zoomed in map on UK
+	var zoom = new Datamap({
+		element: document.getElementById("tab1-map2"),
+		scope: 'world',
+		geographyConfig: {
+			popupOnHover: false,
+			highlightOnHover: false,},
+			setProjection: function(element) {
+				var projection = d3.geo.mercator()
+				.center([1, 52])
+				.rotate([4.4, 0])
+				.scale(3500)
+				.translate([element.offsetWidth / 2, element.offsetHeight / 2]);
+				var path = d3.geo.path()
+				.projection(projection);
+				return {path: path, projection: projection};
+			},
+		fills: {
+			defaultFill: "#ABDDA4",
+			red: "#FF0000",
+			blue: "#63AFD0",
+			yellow: "#FFFF00",
+			green: "#00FF00",
+			orange: "90FFFA"}
+		})
+		
+d3.json("front_uk.json", function(error, json) {
+	json_data = json;
+	zoom.bubbles(json_data, {
+		  popupTemplate: function(geo, data) {
+			  return "<div class='hoverinfo'>"+data.name+"<br/>Uploaded: " + data.uploaded + " Total: " +data.total+ "</div>";
+		  }
+	});
+	});
+
+</script>
+
+				<div id="tab2"  style="margin:0px auto;position:relative; width: 800px; height: 500px;"class="tab">
+					<!--drop down menu-->
+                                        <select id="HEID" onchange = "run1()">
+                                          <option value="1" selected="selected">PBCA-DE</option>
+                                          <option value="2">MALY-DE</option>
+                                          <option value="3">EOPC-DE</option>
+                                        </select>
+                                <div id="tab2a" style="margin:0px auto;position:relative; width: 800px; height: 500px;">
+                                </div></div>
+		 
+				<div id="tab3" style="margin:0px auto;position:relative; width: 800px; height: 500px;"class="tab">
+					<!--drop down menu-->
+                                        <select id="CAM" onchange="run2()">
+                                          <option value="1"selected="selected">ESAD-UK</option>
+                                          <option value="2" >BRCA-EU</option>
+                                        </select>
+                                <div id="tab3a" style="margin:0px auto;position:relative; width: 800px; height: 500px;">
+                                </div></div>
+
+                                <div id="tab4" style="margin:0px auto;position:relative; width: 800px; height: 500px;"class="tab">
+                                	<!--drop down menu-->
+                                        <select id="HIN" onchange="run3()">
+                                          <option value="1"selected="selected">BRCA-UK</option>
+                                          <option value="2">CMDI-UK</option>
+                                          <option value="3">BOCA-UK</option>
+                                          <option value="4">PRAD-UK</option>
+                                        </select>
+                                <div id="tab4a" style="margin:0px auto;position:relative; width: 800px; height: 500px;">
+                                </div></div>
+					
+				<div id="tab5" style="margin:0px auto;position:relative; width: 800px; height: 500px;"class="tab">
+                                </div>
+
+                                <div id="tab6" style="margin:0px auto;position:relative; width: 800px; height: 500px;"class="tab">
+                                </div>
+
+                                <div id="tab7" style="margin:0px auto;position:relative; width: 800px; height: 500px;"class="tab">
+                                </div>
+
+                                <div id="tab8" style="margin:0px auto;position:relative; width: 800px; height: 500px;"class="tab">
+                                </div>
+
+                                <div id="tab9" style="margin:0px auto;position:relative; width: 800px; height: 500px;"class="tab">
+                                </div>
+                                
+                                <div id="tab10" style="margin:0px auto;position:relative; width: 800px; height: 500px;"class="tab">
+                                </div>
+                                
+                                <div id="tab11" style="margin:0px auto;position:relative; width: 800px; height: 500px;"class="tab">
+                                        <!--drop down menu-->
+                                        <select id="AU" onchange="run4()">
+                                          <option value="1"selected="selected">PACA-AU</option>
+                                          <option value="2">PAEN-AU</option>
+                                          <option value="3">OV-AU</option>
+                                        </select>
+                                <div id="tab11a" style="margin:0px auto;position:relative; width: 800px; height: 500px;">
+                                </div></div>
+
+                                <div id="tab12" style="margin:0px auto;position:relative; width: 800px; height: 500px;"class="tab">
+                                </div>
+
+			</div><!--tab-content-->
+		</div><!--tabs-->
+	</div><!--center2-->
+</div><!--fullcontain-->
+<script>
+
+    //checks what data to show for Heidelberg from drop down menu
+    function run1() {
+    var e = document.getElementById("HEID");
+    var strUser = e.options[e.selectedIndex].value;
+    if (strUser == "1"){
+    $('#tab2a').empty();
+    whole_world("tab2a","bubbles/PBCA-DE_bub.json","PBCA-DE.json");
+    }
+    else if (strUser == "2"){
+    $('#tab2a').empty();
+    whole_world("tab2a","bubbles/MALY-DE_bub.json","MALY-DE.json");
+    }
+    else if (strUser == "3"){
+    $('#tab2a').empty();
+    whole_world("tab2a","bubbles/EOPC-DE_bub.json","EOPC-DE.json");
+    }
+        }
+
+    //checks what data to show for Cambridge from drop down menu
+    function run2() {
+    var e = document.getElementById("CAM");
+    var strUser = e.options[e.selectedIndex].value;
+    if (strUser == "1"){
+    $('#tab3a').empty();
+    whole_world("tab3a","bubbles/ESAD-UK_bub.json","ESAD-UK.json");
+    }
+    else if (strUser == "2"){
+    $('#tab3a').empty();
+    whole_world("tab3a","bubbles/BRCA-EU_bub.json","BRCA-EU.json");
+    }
+        }
+        
+    //checks what data to show for Hinxton from drop down menu
+    function run3() {
+    var e = document.getElementById("HIN");
+    var strUser = e.options[e.selectedIndex].value;
+    if (strUser == "1"){
+    $('#tab4a').empty();
+    whole_world("tab4a","bubbles/BRCA-UK_bub.json","BRCA-UK.json");
+    }
+    else if (strUser == "2"){
+    $('#tab4a').empty();
+    whole_world("tab4a","bubbles/CMDI-UK_bub.json","CMDI-UK.json");
+    }
+    else if (strUser == "3"){
+    $('#tab4a').empty();
+    whole_world("tab4a","bubbles/BOCA-UK_bub.json","BOCA-UK.json");
+    }
+    else if (strUser == "4"){
+    $('#tab4a').empty();
+    whole_world("tab4a","bubbles/PRAD-UK_bub.json","PRAD-UK.json");
+    }
+        }
+        
+    function run4() {
+    var e = document.getElementById("AU");
+    var strUser = e.options[e.selectedIndex].value;
+    if (strUser == "1"){
+    $('#tab11a').empty();
+    whole_world("tab11a","bubbles/PACA-AU_bub.json","PACA-AU.json");
+    }
+    else if (strUser == "2"){
+    $('#tab11a').empty();
+    whole_world("tab11a","bubbles/PAEN-AU_bub.json","PAEN-AU.json");
+    }
+    else if (strUser == "3"){
+    $('#tab11a').empty();
+    whole_world("tab11a","bubbles/OV-AU_bub.json","OV-AU.json");
+    }
+        }
+	
+	$(document).ready(function() {
+		$('.tabs .tab-links a').on('click', function(e)  {
+        		var currentAttrValue = $(this).attr('href');
+ 	
+        // Show/Hide Tabs
+        $('.tabs ' + currentAttrValue).show().siblings().hide();
+
+		// Picking the right tab/file to show the map
+                if (currentAttrValue.slice(1) == 'tab2' ){
+                $('#tab2a').empty();
+                whole_world(currentAttrValue.slice(1)+'a',"bubbles/PBCA-DE_bub.json","PBCA-DE.json");}
+                else if (currentAttrValue.slice(1) == 'tab3'){
+                $('#tab3a').empty();
+                whole_world(currentAttrValue.slice(1)+'a',"bubbles/ESAD-UK_bub.json","ESAD-UK.json");}
+                else if (currentAttrValue.slice(1) == 'tab4'){
+                $('#tab4a').empty();
+                whole_world(currentAttrValue.slice(1)+'a',"bubbles/BRCA-UK_bub.json","BRCA-UK.json");}
+                else if (currentAttrValue.slice(1) == 'tab5'){
+                $('#tab5').empty();
+                whole_world(currentAttrValue.slice(1),"bubbles/PACA-CA_bub.json","PACA-CA.json");}
+                else if (currentAttrValue.slice(1) == 'tab6'){
+                $('#tab6').empty();
+                whole_world(currentAttrValue.slice(1),"bubbles/Barcelona_bub.json","Barcelona.json");}
+                else if (currentAttrValue.slice(1) == 'tab7'){
+                $('#tab7').empty();
+                whole_world(currentAttrValue.slice(1),"bubbles/Singapore_bub.json","Singapore.json");}
+                else if (currentAttrValue.slice(1) == 'tab8'){
+                $('#tab8').empty();
+                whole_world(currentAttrValue.slice(1),"bubbles/LIRI-JP_bub.json","LIRI-JP.json");}
+                else if (currentAttrValue.slice(1) == 'tab9'){
+                $('#tab9').empty();
+                whole_world(currentAttrValue.slice(1),"bubbles/Seoul_bub.json","Seoul.json");}
+                else if (currentAttrValue.slice(1) == 'tab10'){
+                $('#tab10').empty();
+                whole_world(currentAttrValue.slice(1),"bubbles/ORCA-IN_bub.json","ORCA-IN.json");}
+                else if (currentAttrValue.slice(1) == 'tab11'){
+                $('#tab11a').empty();
+                whole_world(currentAttrValue.slice(1)+'a',"bubbles/PACA-AU_bub.json","PACA-AU.json");}
+                else if(currentAttrValue.slice(1) == 'tab12'){
+                $('#tab12').empty();
+                whole_world(currentAttrValue.slice(1),"bubbles/GACA-CN_bub.json","GACA-CN.json");}
+
+
+
+        // Change/remove current tab to active
+        $(this).parent('li').addClass('active').siblings().removeClass('active');
+ 
+        e.preventDefault();        
+   });
+});
+</script>
+<img src="http://marsinnovation.com/wp-content/uploads/2012/06/OICR-logo-1024x742.jpeg" class="ribbon" width="200" height="150"/>
+</body>
+</html>
