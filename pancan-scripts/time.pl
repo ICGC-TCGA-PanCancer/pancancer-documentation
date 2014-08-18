@@ -46,7 +46,7 @@ my $day = 0;
 my $two = 0;
 my $week = 0;
 
-if (scalar @days >= 7){
+if (scalar @days > 7){
         $day = sprintf("%.2f",$count[-1] - $count[-2]);
         push(@thing,$day);
         $two = sprintf("%.2f",($count[-1] - $count[-3])/2);
@@ -55,7 +55,7 @@ if (scalar @days >= 7){
         push(@thing,$week);
 }
 
-elsif(scalar @days < 7){
+elsif(scalar @days <= 7){
   $day = sprintf("%.2f",$count[-1] - $count[-2]);
   push(@thing,$day);
   $two = sprintf("%.2f",($count[-1] - $count[-3])/2);
