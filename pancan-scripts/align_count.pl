@@ -54,8 +54,11 @@ elsif($train eq "2"){
 @ary = ("gtrepo-bsc","gtrepo-osdc-icgc","gtrepo-osdc-tcga","gtrepo-dkfz","gtrepo-ebi","gtrepo-etri","gtrepo-riken","gtrepo-cghub");}
 elsif ($train eq "all"){
 @ary = ("gtrepo-bsc","gtrepo-osdc-icgc","gtrepo-osdc-tcga","gtrepo-dkfz","gtrepo-ebi","gtrepo-etri","gtrepo-riken","gtrepo-cghub_data1","gtrepo-cghub");}
+elsif ($train eq "bubbles"){
+@ary = ("gtrepo-bsc","gtrepo-osdc-icgc","gtrepo-osdc-tcga","gtrepo-dkfz","gtrepo-ebi","gtrepo-etri","gtrepo-riken","gtrepo-cghub");}
 
-print "[\n";
+if ($train ne "bubbles"){
+print "[\n";}
 
 #check if specimen id has changed or not
 #only count when it has changed
@@ -100,7 +103,7 @@ if (index($line,"unaligned") != -1) {
 }
 # does it NOT have "workflow" in it?
 elsif (index($line,"Workflow") == -1){
-        $check_all += 1;
+#        $check_all += 1;
         if($train eq "1" or $train eq "2"){
         if ($spec ~~ @spec_marc1){
         $check += 1;
@@ -110,11 +113,11 @@ elsif (index($line,"Workflow") == -1){
                 #print "$line_num $line\n";
                 $data1 += 1;}
         }}
-        else{
-        if($check_all == 1){
-                $data_all += 1;
+   #     else{
+ #       if($check_all == 1){
+  #              $data_all += 1;
 #       print "line $line_num\n";
-        }}
+    #    }}
 }
 # does it have "workflow" in it?
 elsif (index($line,"Workflow") != -1){
@@ -184,7 +187,8 @@ push (@train1_unalign,$unaligned_total1);
 push (@train2_unalign,$unaligned_total2);
 }
 
-print "]";
+if ($train ne "bubbles"){
+print "]";}
 
 my $date = strftime "%B %d %Y %R", localtime;
 
@@ -215,10 +219,8 @@ for ($h = 0; $h < scalar @train2_unalign; $h++){
 
 }
 
-
-open(my $file,'>', "traindata2.json");
-if ($train eq "2"){
-print $file qq([
+if ($train eq "bubbles"){
+print qq([
        {"name": "Chicago(ICGC)", "total": $train2_unalign[1], "aligned": $train2_align[1], "latitude": 41.891519, "longitude": -87.629159, "radius": $rad[1], "fillKey": "gt60"},
        {"name": "Chicago(ICGC)", "total": $train2_unalign[1], "aligned": $train2_align[1], "latitude": 41.891519, "longitude": -87.629159, "radius": $size[1], "fillKey": "gt70"},
 
@@ -242,4 +244,3 @@ print $file qq([
 
        {"name": "Santa Cruz", "total": $train2_unalign[7], "aligned": $train2_align[7], "latitude": 36.971944, "longitude": -122.026389, "radius": $size[7], "fillKey": "gt70"}
 ]);}
-close $file;
