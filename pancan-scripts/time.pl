@@ -46,20 +46,19 @@ my $day = 0;
 my $two = 0;
 my $week = 0;
 
-if (scalar @days > 7){
-        @days = @days[-7,-1];
-        $day = $count[-1] - $count[-2];
+if (scalar @days >= 7){
+        $day = sprintf("%.2f",$count[-1] - $count[-2]);
         push(@thing,$day);
-        $two = ($count[-1] - $count[-3])/2;
+        $two = sprintf("%.2f",($count[-1] - $count[-3])/2);
         push(@thing,$two);
-        $week = ($count[-1] - $count[-7])/7;
+        $week = sprintf("%.2f",($count[-1] - $count[-7])/7);
         push(@thing,$week);
 }
 
-elsif(scalar @days <= 7){
-  $day = $count[-1] - $count[-2];
+elsif(scalar @days < 7){
+  $day = sprintf("%.2f",$count[-1] - $count[-2]);
   push(@thing,$day);
-  $two = ($count[-1] - $count[-3])/2;
+  $two = sprintf("%.2f",($count[-1] - $count[-3])/2);
   push(@thing,$two);
   $week = 0;
   push(@thing,$week);
@@ -73,6 +72,8 @@ for (my $m=0; $m < scalar @thing;$m++){
                 push(@real, $thing[$m]);
         }
 }}
+else{@real = @thing;};
+
 $min = min @real;
 my $total = 4150;
 my $current = $add;
