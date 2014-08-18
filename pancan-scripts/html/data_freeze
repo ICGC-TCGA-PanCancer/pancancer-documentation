@@ -321,7 +321,7 @@ charts("data.tsv",140,"#bar1");
 			
 	});
 	
-	d3.json("/bubbles/bubble_data2.json", function(error, json) {
+	d3.json("data_train1_totals.json", function(error, json) {
 		json_data3 = json;
 		for (var i = 1; i < json_data3.length+1; i++){
 			
