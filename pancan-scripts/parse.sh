@@ -3,7 +3,7 @@ rm all.csv
 cp temp.csv all.csv
 #cp temp2.csv all2.csv
 
-cd /home/ubuntu/gitroot/public-workflows/decider-bwa-pancancer/gtrepo-bsc/xml/
+cd /home/ubuntu/gitroot/pancancer-info/pancan-scripts/gtrepo-bsc/xml/
 rm out.csv
 cp ../../temp.csv out.csv
 #cp ../../temp2.csv out2.csv
@@ -13,7 +13,7 @@ tail -n +2 out.csv >> ../../all.csv
 #tail -n +2 out2.csv >> ../../all2.csv
 echo "done bsc"
 
-cd /home/ubuntu/gitroot/public-workflows/decider-bwa-pancancer/gtrepo-dkfz/xml/
+cd /home/ubuntu/gitroot/pancancer-info/pancan-scripts/gtrepo-dkfz/xml/
 rm out.csv
 cp ../../temp.csv out.csv
 #cp ../../temp2.csv out2.csv
@@ -23,7 +23,7 @@ tail -n +2 out.csv >> ../../all.csv
 #tail -n +2 out2.csv >> ../../all2.csv
 echo "done dkfz"
 
-cd /home/ubuntu/gitroot/public-workflows/decider-bwa-pancancer/gtrepo-ebi/xml/
+cd /home/ubuntu/gitroot/pancancer-info/pancan-scripts/gtrepo-ebi/xml/
 rm out.csv
 cp ../../temp.csv out.csv
 #cp ../../temp2.csv out2.csv
@@ -33,7 +33,7 @@ tail -n +2 out.csv >> ../../all.csv
 #tail -n +2 out2.csv >> ../../all2.csv
 echo "done ebi"
 
-cd /home/ubuntu/gitroot/public-workflows/decider-bwa-pancancer/gtrepo-etri/xml/
+cd /home/ubuntu/gitroot/pancancer-info/pancan-scripts/gtrepo-etri/xml/
 rm out.csv
 cp ../../temp.csv out.csv
 #cp ../../temp2.csv out2.csv
@@ -43,7 +43,7 @@ tail -n +2 out.csv >> ../../all.csv
 #tail -n +2 out2.csv >> ../../all2.csv
 echo "done etri"
 
-cd /home/ubuntu/gitroot/public-workflows/decider-bwa-pancancer/gtrepo-riken/xml/
+cd /home/ubuntu/gitroot/pancancer-info/pancan-scripts/gtrepo-riken/xml/
 rm out.csv
 cp ../../temp.csv out.csv
 #cp ../../temp2.csv out2.csv
@@ -53,7 +53,7 @@ tail -n +2 out.csv >> ../../all.csv
 #tail -n +2 out2.csv >> ../../all2.csv
 echo "done riken"
 
-cd /home/ubuntu/gitroot/public-workflows/decider-bwa-pancancer/gtrepo-cghub/xml/
+cd /home/ubuntu/gitroot/pancancer-info/pancan-scripts/gtrepo-cghub/xml/
 rm out.csv
 cp ../../temp.csv out.csv
 #cp ../../temp2.csv out2.csv
@@ -63,7 +63,7 @@ tail -n +2 out.csv >> ../../all.csv
 #tail -n +2 out2.csv >> ../../all2.csv
 echo "done cghub"
 
-cd /home/ubuntu/gitroot/public-workflows/decider-bwa-pancancer/
+cd /home/ubuntu/gitroot/pancancer-info/pancan-scripts/
 rm all_qc.csv
 cp temp.csv all_qc.csv
 perl cleanup.pl >> all_qc.csv
