@@ -86,7 +86,7 @@ If you are having trouble installing modules using cpanm you try to install the 
     $ cpan
     $ cpan[1]> install Net::Google::Spreadsheets
 
-You have to put in your credentials for the get_spreadsheets.pl and get_uploads.pl scripts. You will put your gmail address which has access to all the spreadsheets for the projects and your gmail password.
+You have to put in your credentials for the get_spreadsheets.pl and get_uploads.pl scripts. You will put your gmail address which has access to all the spreadsheets for the projects and your gmail password. To include the "@" symbol you need to put "\@gmail.com" into the perl script. 
 
 Once everything is installed and ready to use, you can try and run the shell scripts :
 
