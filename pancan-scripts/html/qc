@@ -377,7 +377,7 @@ function run1(){
         var strUser3 = e3.options[e3.selectedIndex].value;
 	if (strUser3 == "specimen"){
         $('#graph').empty();
-        chart("/qc_files/qc_spec.csv",strUser,strUser1,strUser2);}
+        chart("qc_spec.csv",strUser,strUser1,strUser2);}
         else {
         $('#graph').empty();
         chart("qc_read.csv",strUser,strUser1,strUser2);}
