@@ -10,7 +10,7 @@ cd /home/ubuntu/gitroot/pancancer-info/pancan-scripts
 wget https://github.com/SeqWare/public-workflows/raw/develop/decider-bam-slicer/workflow_decider.pl
 # make map
 perl generate_gnos_map.pl --output index.html --cluster-json my_cluster.json --template template/map.html
-for i in gtrepo-etri gtrepo-osdc gtrepo-dkfz gtrepo-bsc gtrepo-riken gtrepo-cghub gtrepo-ebi; do cd $i; rm -rf `ls | grep -v xml`; cd -; done;
+for i in gtrepo-etri gtrepo-osdc-icgc gtrepo-dkfz gtrepo-bsc gtrepo-riken gtrepo-cghub gtrepo-ebi; do cd $i; rm -rf `ls | grep -v xml`; cd -; done;
 
 #perl generate_gnos_map.pl --output cluster.html --cluster-json my_cluster.json --template template/cluster_map.html
 cp index.html /var/www/
