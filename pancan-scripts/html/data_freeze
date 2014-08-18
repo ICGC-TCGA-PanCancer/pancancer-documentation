@@ -1,0 +1,351 @@
+
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<title>ICGC PanCancer Status - Data Freeze</title>
+<head>
+	<link rel="shortcut icon" href="https://icgc.org/files/org_sys/pan.png">
+    <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script type="text/javascript" src="http://d3js.org/topojson.v1.min.js"></script>
+    <script type="text/javascript" src="http://datamaps.github.io/scripts/datamaps.all.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style1.css">
+    <link rel="stylesheet" type="text/css" href="http://bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+</head>
+<style>
+        #header1{
+        background-color: #7FB5DA;
+        }
+        #inside{
+                line-height: 50px;
+                font-size:12px;
+        }
+        #city{
+                border-color:#0000ff;
+        }
+        #gnos{
+                border-color:#0000ff;
+        }
+
+#bar1{
+}
+#bar2{
+}
+.bar{
+fill:steelblue;
+}
+/*.bar:hover {
+  fill: orangered ;
+}*/
+
+.x.axis path {
+  display: none;
+}
+
+.d3-tip {
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 2px;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.8);
+  content: "\25BC";
+  position: absolute;
+  text-align: center;
+}
+
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
+}
+</style>
+<body>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-34523087-2', 'pancancer.info');
+  ga('create', 'UA-52348443-1', 'auto', {'name': 'newTracker'});
+  ga('send', 'pageview');
+  ga('newTracker.send', 'pageview');
+</script>
+	 <div id="header1">
+                <h1 style="float:left;margin-left:10px;font-size:25px;">PANCANCER.INFO</h1>
+                <center><div id="inside">
+                 <ul class="tab-links">
+                                <li><a href="index.html">Sites</a></li>
+                                <li><a href="uploads.html">Uploads</a></li>
+				<li><a href="qc">QC Metrics</a></li>
+                                <li><a href="data_freeze">Data Freeze</a></li>
+                 </ul>
+                 </div></center>
+                 </div>
+                 <center><h2>Progress of Uploads Between Data Freezes</h2>
+                <p style="font-size:12px;">This page shows the tables and charts that are associated with Data Freeze 1.0 This is static data, more will be added soon.</p>
+                <p style="font-size:12px;">To see more information, hover over the column headers.</p>
+                </center>
+<div id="fullcontain">
+	<div id="center1">
+		<div id="tablediv">
+			<div id="table" style="width:960px;margin:0px auto;">
+				<h3>Data Freeze 1.0</h3>
+				<table name="x2" id="rounded-corner" summary="">
+				<thead>
+					<tr>
+					<th scope="col"></th>
+					<th scope="col"><a title="This column shows the sum of all the ICGC projects from Data Freeze 1.0.">ICGC Total</a></th>
+					<th scope="col"><a title="This column shows the totals of all the TCGA projects from Data Freeze 1.0.">TCGA Total</a></th>
+					<th scope="col"><a title="This column shows the totals of both the ICGC and TCGA projects from Data Freeze 1.0.">Cumluative Total</a></th>				
+					
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><b>Specimens Uploaded</b></td><td>0</td><td>0</td><td>0</td>
+					</tr>
+					<!--<tr>
+						<td><b>Specimens Left</b></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+					</tr>
+					<tr>
+						<td><b>Total Number of Specimens</b></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+					</tr>-->
+					<tr>
+						<td><b>Matched Tumour/Normal Pairs</b></td><td>0</td><td>0</td><td>0</td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<td colspan="17">*Numbers from Data Freeze 1.0</td>
+					</tr>
+				</tfoot>
+				</table>				
+			</div><!--table-->
+			<div id="bar1" style="width:960px;margin:0px auto;">
+			<h3>Total Specimens Uploaded - Data Freeze 1.0</h3>
+			</div>
+		</div><!--tablediv-->
+<script>
+function charts(data,max,div){
+var margin = {top: 20, right: 20, bottom: 100, left: 80},
+    width = 960 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
+
+var x = d3.scale.ordinal()
+    .rangeRoundBands([0, width], .1);
+
+var y = d3.scale.linear()
+    .range([height, 0]);
+
+var xAxis = d3.svg.axis()
+    .scale(x)
+    .orient("bottom");
+
+var yAxis = d3.svg.axis()
+    .scale(y)
+    .orient("left");
+    //.ticks(10, "%");
+
+var tip = d3.tip()
+  .attr('class', 'd3-tip')
+  .offset([-10, 0])
+  .html(function(d) {
+    return "<strong>Total:</strong> <span style='color:red'>" + d.Total + "</span>";
+  })
+
+var svg = d3.select(div).append("svg")
+    .attr("id","svg1")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+svg.call(tip);
+
+d3.tsv(data, type, function(error, data) {
+  x.domain(data.map(function(d) { return d.Project; }));
+  y.domain([0, max]);
+
+  svg.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis)
+      .selectAll("text")  
+      .style("text-anchor", "end")
+      .attr("dx", "-.8em")
+      .attr("dy", ".15em")
+      .attr("transform", function(d) {
+	return "rotate(-70)" 
+	});
+
+  svg.append("g")
+      .attr("class", "y axis")
+      .call(yAxis)
+    .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+      .text("Total Specimens Uploaded");
+
+  svg.selectAll(".bar")
+      .data(data)
+    .enter().append("rect")
+      .attr("class", "bar")
+      .attr("x", function(d) { return x(d.Project); })
+      .attr("width", x.rangeBand())
+      .attr("y", function(d) { return y(d.Total); })
+      .attr("height", function(d) { return height - y(d.Total); })
+      .on('mouseover', tip.show)
+      .on('mouseout', tip.hide);
+});
+
+function type(d) {
+  d.frequency = +d.frequency;
+  return d;
+}
+
+//rotates the x-axis label
+				function wrap(text, width) {
+				  text.each(function() {
+					var text = d3.select(this),
+						words = text.text().split(/\s+/).reverse(),
+						word,
+						line = [],
+						lineNumber = 0,
+						lineHeight = 1.1, // ems
+						y = text.attr("y"),
+						dy = parseFloat(text.attr("dy")),
+						tspan = text.text(null).append("tspan").attr("x", 0).attr("y", y).attr("dy", dy + "em");
+					while (word = words.pop()) {
+					  line.push(word);
+					  tspan.text(line.join(" "));
+					  if (tspan.node().getComputedTextLength() > width) {
+						line.pop();
+						tspan.text(line.join(" "));
+						line = [word];
+						tspan = text.append("tspan").attr("x", 0).attr("y", y).attr("dy", ++lineNumber * lineHeight + dy + "em").text(word);
+				  }
+				 }
+				});
+			   }
+
+}
+charts("data.tsv",140,"#bar1");
+</script>
+<script type="text/javascript">
+	
+	//updates the table
+	var table = document.getElementsByName("x");
+	var table2 = document.getElementsByName("x1");
+	var table3 = document.getElementsByName("x2");
+	var table4 = document.getElementsByName("x3");
+	var json_data;
+	var json_data2;
+	var json_data3;
+	var json_data4;
+	var cell_1 = [];
+	var cell_2 = [];
+	var cell_3 = [];
+	var cell_6 = [];
+	var cell_7 = [];
+	var cell_8 = [];
+	var cell_9 = [];
+	var cell_10 = [];
+	var val_1 = [];
+	var val_2 = [];
+	var val_3 = [];
+	var val_6 = [];
+	var val_7 = [];
+	var val_8 = [];
+	var val_9 = [];
+	var val_10 = [];
+	var total_1 = 0;
+	var total_2 = 0;
+	var total_3 = 0;
+	var total_6 = 0;
+	
+	
+	
+	d3.json("table2.json", function(error, json) {
+		json_data2 = json;
+                for (var i = 1; i < json_data2.length+1; i++){
+                        
+                        if (json_data2[i-1].project == current){
+                                cell_6[1] = table2[0].rows[i].cells[0];
+                                val_6[1] = cell_6[1].firstChild.data;
+                                cell_6[1].firstChild.data = ''+json_data2[json_data2.length-1].origin;
+                                cell_6[1] = table2[0].rows[i].cells[1];
+                                val_6[1] = cell_6[1].firstChild.data;
+                                cell_6[1].firstChild.data = ''+json_data2[json_data2.length-1].project;
+                                cell_6[1] = table2[0].rows[i-1].cells[2];
+                                val_6[1] = cell_6[1].firstChild.data;
+                                cell_6[1].firstChild.data = ''+json_data2[i-1].dest+', '+json_data2[i-2].dest;
+                                cell_6[1] = table2[0].rows[i].cells[2];
+                                val_6[1] = cell_6[1].firstChild.data;
+                                cell_6[1].firstChild.data = ''+json_data2[json_data2.length-1].dest;
+                                }
+                                
+                        else {
+                                cell_6[1] = table2[0].rows[i].cells[0];
+                                val_6[1] = cell_6[1].firstChild.data;
+                                cell_6[1].firstChild.data = ''+json_data2[i-1].origin;
+                                cell_6[1] = table2[0].rows[i].cells[1];
+                                val_6[1] = cell_6[1].firstChild.data;
+                                cell_6[1].firstChild.data = ''+json_data2[i-1].project;
+                                cell_6[1] = table2[0].rows[i].cells[2];
+                                val_6[1] = cell_6[1].firstChild.data;
+                                cell_6[1].firstChild.data = ''+json_data2[i-1].dest;
+                                }
+                                
+                        var current = json_data2[i-1].project;
+
+                }
+			
+	});
+	
+	d3.json("/bubbles/bubble_data2.json", function(error, json) {
+		json_data3 = json;
+		for (var i = 1; i < json_data3.length+1; i++){
+			
+		cell_7[i] = table3[0].rows[1].cells[i];
+		val_7[i] = cell_7[i].firstChild.data;
+		cell_7[i].firstChild.data = ''+json_data3[i-1].uploaded;
+		//total_1 += json_data3[i-1].uploaded;
+		
+		//cell_9[i] = table3[0].rows[3].cells[i];
+		//val_9[i] = cell_9[i].firstChild.data;
+		//cell_9[i].firstChild.data = ''+json_data3[i-1].total;
+		//total_3 += json_data3[i-1].total;
+		
+		//cell_10[i] = table3[0].rows[4].cells[i];
+		//val_10[i] = cell_10[i].firstChild.data;
+		//cell_10[i].firstChild.data = ''+json_data3[i-1].matched;
+		//total_7 += json_data3[i-1].matched;
+		
+		cell_8[i] = table3[0].rows[2].cells[i];
+		val_8[i] = cell_8[i].firstChild.data;
+		cell_8[i].firstChild.data = ''+json_data3[i-1].matched;
+		//total_2 += json_data3[i-1].left;
+		}
+	});	
+
+</script>
+</body>
