@@ -5,24 +5,25 @@ This page shows the specimens uploaded for every project. The first table shows 
 
 ## Collecting the Data
 This site gets the number of uploads by referencing variuos spreadsheets:
-  BTCA-SG: https://docs.google.com/spreadsheet/ccc?key=0ApWzavEDzSJddGhFak1rZEJmUHFjOWR3MTRPVndrVlE&usp=drive_web
-  BOCA-UK: https://docs.google.com/spreadsheet/ccc?key=0AoQ6zq-rG38-dE5ZZVEyaUNadU9mZlpVN1hDU0lDOWc&usp=drive_web
-  BRCA-EU: https://docs.google.com/spreadsheet/ccc?key=0AoQ6zq-rG38-dGxmTXM0bVdrYWxKUFpSaHFHWFJOaEE&usp=drive_web#gid=0
-  BRCA-UK: https://docs.google.com/spreadsheet/ccc?key=0AoQ6zq-rG38-dGhvbjUzRUR5ZEJHN1RyMEhqM1QwMUE&usp=drive_web#gid=0
-  CLLE-ES: https://docs.google.com/spreadsheet/ccc?key=0ApWzavEDzSJddFlnVTNmVXA5dWFNWlBhbVlpTFdWTlE&usp=drive_web
-  CMDI-UK: https://docs.google.com/spreadsheet/ccc?key=0AoQ6zq-rG38-dDMzQmZvNGVLUU9LRnpiV0RSenNCbHc&usp=drive_web
-  EOPC-DE: https://docs.google.com/spreadsheet/ccc?key=0ApWzavEDzSJddEUtMUdHTFlrajA5Y0poQmFqTVdpY3c&usp=drive_web
-  ESAD-UK: https://docs.google.com/spreadsheet/ccc?key=0ApWzavEDzSJddENiS3F2V1BIU3diVGpRd3hPeHkyWXc&usp=drive_web#gid=4
-  LIRI-JP: https://docs.google.com/spreadsheet/ccc?key=0ApWzavEDzSJddExGbTZfSG1HZmZJTEUxVjN0NzZNNlE&usp=drive_web
-  LICA-FR: https://docs.google.com/spreadsheet/ccc?key=0ApWzavEDzSJddFctcDhqajNtWVM5aWxzQzByTzl2MEE&usp=drive_web
-  MALY-DE: https://docs.google.com/spreadsheet/ccc?key=0ApWzavEDzSJddFdLWlJ3YkxoMzA4TnB4QXhkQ0VuWVE&usp=drive_web
-  ORCA-IN: https://docs.google.com/spreadsheet/ccc?key=0ApWzavEDzSJddEdwaHBVdlJqMlVfYjd5SFRqek9PbHc&usp=drive_web
-  OV-AU: https://docs.google.com/spreadsheet/ccc?key=0AmNjl5CExbvAdGNqc0wzcG5sZVBEZmJrbUtMaWNoQVE&usp=drive_web
-  PACA-AU: https://docs.google.com/spreadsheet/ccc?key=0AmNjl5CExbvAdDA0N2JEZXptQXVKcXR3SmNja0llSWc&usp=drive_web
-  PAEN-AU: https://docs.google.com/spreadsheet/ccc?key=0AmNjl5CExbvAdG1iekFoNDRnZ1p5bm1KSzBhUmItNlE&usp=drive_web
-  PBCA-DE: https://docs.google.com/spreadsheet/ccc?key=0ApWzavEDzSJddDAyT2x1WmQ5dkl0NENnVTdPSXBLRXc&usp=drive_web
-  PRAD-UK: https://docs.google.com/spreadsheet/ccc?key=0ApWzavEDzSJddEZ6aUdVMnVoX1FEdVZ2REswY3pVMGc&usp=drive_web#gid=6
-  LAML-KR: https://docs.google.com/spreadsheet/ccc?key=0ApWzavEDzSJddEJfUVJ2TEd0aGJJazM3RktXVmtGX1E&usp=drive_web
+
+	BTCA-SG: https://docs.google.com/spreadsheet/ccc?key=0ApWzavEDzSJddGhFak1rZEJmUHFjOWR3MTRPVndrVlE&usp=drive_web
+  	BOCA-UK: https://docs.google.com/spreadsheet/ccc?key=0AoQ6zq-rG38-dE5ZZVEyaUNadU9mZlpVN1hDU0lDOWc&usp=drive_web
+  	BRCA-EU: https://docs.google.com/spreadsheet/ccc?key=0AoQ6zq-rG38-dGxmTXM0bVdrYWxKUFpSaHFHWFJOaEE&usp=drive_web#gid=0
+  	BRCA-UK: https://docs.google.com/spreadsheet/ccc?key=0AoQ6zq-rG38-dGhvbjUzRUR5ZEJHN1RyMEhqM1QwMUE&usp=drive_web#gid=0
+  	CLLE-ES: https://docs.google.com/spreadsheet/ccc?key=0ApWzavEDzSJddFlnVTNmVXA5dWFNWlBhbVlpTFdWTlE&usp=drive_web
+  	CMDI-UK: https://docs.google.com/spreadsheet/ccc?key=0AoQ6zq-rG38-dDMzQmZvNGVLUU9LRnpiV0RSenNCbHc&usp=drive_web
+  	EOPC-DE: https://docs.google.com/spreadsheet/ccc?key=0ApWzavEDzSJddEUtMUdHTFlrajA5Y0poQmFqTVdpY3c&usp=drive_web
+  	ESAD-UK: https://docs.google.com/spreadsheet/ccc?key=0ApWzavEDzSJddENiS3F2V1BIU3diVGpRd3hPeHkyWXc&usp=drive_web#gid=4
+	LIRI-JP: https://docs.google.com/spreadsheet/ccc?key=0ApWzavEDzSJddExGbTZfSG1HZmZJTEUxVjN0NzZNNlE&usp=drive_web
+  	LICA-FR: https://docs.google.com/spreadsheet/ccc?key=0ApWzavEDzSJddFctcDhqajNtWVM5aWxzQzByTzl2MEE&usp=drive_web
+  	MALY-DE: https://docs.google.com/spreadsheet/ccc?key=0ApWzavEDzSJddFdLWlJ3YkxoMzA4TnB4QXhkQ0VuWVE&usp=drive_web
+  	ORCA-IN: https://docs.google.com/spreadsheet/ccc?key=0ApWzavEDzSJddEdwaHBVdlJqMlVfYjd5SFRqek9PbHc&usp=drive_web
+  	OV-AU: https://docs.google.com/spreadsheet/ccc?key=0AmNjl5CExbvAdGNqc0wzcG5sZVBEZmJrbUtMaWNoQVE&usp=drive_web
+  	PACA-AU: https://docs.google.com/spreadsheet/ccc?key=0AmNjl5CExbvAdDA0N2JEZXptQXVKcXR3SmNja0llSWc&usp=drive_web
+  	PAEN-AU: https://docs.google.com/spreadsheet/ccc?key=0AmNjl5CExbvAdG1iekFoNDRnZ1p5bm1KSzBhUmItNlE&usp=drive_web
+  	PBCA-DE: https://docs.google.com/spreadsheet/ccc?key=0ApWzavEDzSJddDAyT2x1WmQ5dkl0NENnVTdPSXBLRXc&usp=drive_web
+  	PRAD-UK: https://docs.google.com/spreadsheet/ccc?key=0ApWzavEDzSJddEZ6aUdVMnVoX1FEdVZ2REswY3pVMGc&usp=drive_web#gid=6
+  	LAML-KR: https://docs.google.com/spreadsheet/ccc?key=0ApWzavEDzSJddEJfUVJ2TEd0aGJJazM3RktXVmtGX1E&usp=drive_web
 
 These spreadsheets are most of the projects that are part of ICGC. There are also two master spreadsheets for data train 1 and 2:
   Data Train 1.0: https://docs.google.com/spreadsheets/d/14NItsHKJUevHZIuFkFTwNF-C12WbXTrFe0oM0Xq6b4M/edit?usp=drive_web
