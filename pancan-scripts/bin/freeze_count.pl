@@ -10,7 +10,12 @@ use String::Util 'trim';
 use Getopt::Long;
 use POSIX qw(strftime);
 my %id;
+my %spec;
 my @spec_marc2;
+my $output = "json";
+
+if (scalar(@ARGV) != 2) { die "USAGE: perl freeze_count.pl --output <OUTPUT TYPE>"; }
+GetOptions ("output=s" => \$output);
 
 open(FH,"train_2.tsv") or die("Can't open guestbook.txt: $!");
 while (my $line = <FH>) {
@@ -19,6 +24,7 @@ while (my $line = <FH>) {
 if($cols[0] ne "Study" && $cols[0] ne ""){
         push (@{$id{$cols[1]}{$cols[2]}},$cols[7]);
         push (@spec_marc2,$cols[1]);
+        $spec{$cols[1]} += 1;
 }
 }
 close(FH);
@@ -48,4 +54,19 @@ for my $key (keys %id){
 
 #print Dumper(\%id);
 
-print "total_count $total_count pair $total_pair icgc_count $icgc_count pair $icgc_pair tcga_count $tcga_count pair $tcga_pair\n";
+if ($output eq "json"){
+print qq(
+[
+        {"name": "ICGC Total", "total": "NA", "uploaded": $icgc_count, "left": "NA", "matched": $icgc_pair},
+
+        {"name": "TCGA Total", "total": "NA", "uploaded": $tcga_count, "left": "NA", "matched": $tcga_pair},
+
+        {"name": "Cumulative Total", "total": "NA", "uploaded": $total_count, "left": "NA", "matched": $tcga_pair}
+
+]);}
+
+elsif($output eq "csv"){
+print "project,total\n";
+for my $thing (keys %spec){
+        print "$thing,$spec{$thing}\n"
+}}
