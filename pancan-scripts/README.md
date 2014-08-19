@@ -77,9 +77,7 @@ Now that you have the right version of perl, we can begin to install all the dep
 
     $ sudo apt-get install libxml2-dev libexpat1-dev libcrypt-ssleay-perl libssl-dev
     
-    $ cpanm Net::Google::Spreadsheets
-    $ cpanm XML::DOM
-    $ cpanm WWW::Mechanize
+    $ cpanm Net::Google::Spreadsheets XML::DOM WWW::Mechanize Getopt::Long XML::Simple String::Util
 
 If you are having trouble installing modules using cpanm you try to install the modules using cpan. For example :
     

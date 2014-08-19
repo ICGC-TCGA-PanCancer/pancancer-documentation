@@ -30,6 +30,14 @@ my $total_icgc;
 my @up;
 my @matches_up;
 my $missing;
+my $bar_count;
+my $boca_count;
+my $cmdi_count;
+my $brcaeu_count;
+my $marc_count;
+my $prad_count;
+my $esad_count;
+my $brca_count;
 
 # reading from text file containing summary of all the projects
 # individual project text files created from get_uplaods.pl
@@ -257,7 +265,7 @@ foreach my $i ("gtrepo-bsc", "gtrepo-dkfz", "gtrepo-osdc", "gtrepo-etri", "gtrep
                 my @content = [];
                 
                 # makes log files for every repo
-                open(my $fh, '>', "${i}.log") or die ("Could not open ${i}.log");
+                open(my $fh, '>', "/home/ubuntu/brian/public-workflows/decider-bwa-pancancer/1${i}.log") or die ("Could not open ${i}.log");
                 print $fh $mech->content;
                 close $fh;
                 my @line;
@@ -270,7 +278,7 @@ foreach my $i ("gtrepo-bsc", "gtrepo-dkfz", "gtrepo-osdc", "gtrepo-etri", "gtrep
                 }
 
                 # reads the log files and finds the specimen_id
-                open(FH,"${i}.log") or die ("Could not open ${i}.log");
+                open(FH,"$/home/ubuntu/brian/public-workflows/decider-bwa-pancancer/1${i}.log") or die ("Could not open ${i}.log");
                 while (my $line = <FH>) {
                  my $result = index($line, "SPECIMEN/SAMPLE:");
                  if ($result == 1){
@@ -291,7 +299,7 @@ foreach my $i ("gtrepo-bsc", "gtrepo-dkfz", "gtrepo-osdc", "gtrepo-etri", "gtrep
                            if ($Normal_Tumor_Designation eq 'tumour' || $Normal_Tumor_Designation eq 'Tumor' || $ress != -1){$tumour[$counter] += 1;}
                             elsif ($Normal_Tumor_Designation eq 'normal' || $Normal_Tumor_Designation eq 'Normal' || $ress1 != -1) {$normal[$counter] += 1;}}
 
-                         if ($Study ne "Study"){
+                         if ($Study ne "Study" and $Study ne ""){
                           $total_files += 1;}
                 }
                 close (FILE);
@@ -365,7 +373,7 @@ foreach my $i ("gtrepo-bsc","gtrepo-dkfz", "gtrepo-osdc", "gtrepo-etri", "gtrepo
   my $fname = substr($url,$results);
   my @content = [];
   # makes log files for every repo
-  open(my $fh, '>', "${i}.log") or die ("Could not open ${i}.log");
+  open(my $fh, '>', "/home/ubuntu/brian/public-workflows/decider-bwa-pancancer/1${i}.log") or die ("Could not open ${i}.log");
   print $fh $mech->content;
   close $fh;
   my @line;
@@ -378,7 +386,7 @@ foreach my $i ("gtrepo-bsc","gtrepo-dkfz", "gtrepo-osdc", "gtrepo-etri", "gtrepo
   }
 
   # reads the log files and finds the specimen_id
-  open(FH,"${i}.log") or die ("Could not open ${i}.log");
+  open(FH,"$/home/ubuntu/brian/public-workflows/decider-bwa-pancancer/1${i}.log") or die ("Could not open ${i}.log");
   while (my $line = <FH>) {
    my $result = index($line, "SPECIMEN/SAMPLE:");
    if ($result == 1){
@@ -436,6 +444,8 @@ my $z;
 for ($z = 0;$z < scalar @matches_up;$z++){
         if($match_pair[$z] < $matches_up[$z]){$match_pair[$z] = $matches_up[$z];}
 }
+
+$match_pair[1] = $match_pair[11] + $match_pair[13];
 
 # writes to bubble_data.json 
 open(my $file,'>', "/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/bubble_data.json") or die ("Could not open bubble_data.json");

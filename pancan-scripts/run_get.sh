@@ -25,6 +25,7 @@ cat *BOCA-UK*.txt > bocaukfiles.txt
 cat *CMDI-UK*.txt > cmdiukfiles.txt
 cat *-CA*.txt > cafiles.txt
 cat *PACA-CA*.txt > pacacafiles.txt
+tail -n +2 *PACA-CA2*.txt >> pacacafiles.txt
 cat *-ES*.txt > esfiles.txt
 cat *-SG*.txt > sgfiles.txt
 cat *-JP*.txt > jpfiles.txt

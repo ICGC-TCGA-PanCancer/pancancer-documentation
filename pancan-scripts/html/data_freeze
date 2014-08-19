@@ -133,7 +133,7 @@ fill:steelblue;
 				</tbody>
 				<tfoot>
 					<tr>
-						<td colspan="17">*Numbers from Data Freeze 1.0</td>
+						<td colspan="17">*Numbers from <a target="_blank" href="https://docs.google.com/spreadsheets/d/14NItsHKJUevHZIuFkFTwNF-C12WbXTrFe0oM0Xq6b4M/edit#gid=398607055">Data Freeze Train 1.0 Report</a></td>
 					</tr>
 				</tfoot>
 				</table>				
@@ -321,7 +321,7 @@ charts("data.tsv",140,"#bar1");
 			
 	});
 	
-	d3.json("/bubbles/bubble_data2.json", function(error, json) {
+	d3.json("data_train1_totals.json", function(error, json) {
 		json_data3 = json;
 		for (var i = 1; i < json_data3.length+1; i++){
 			
