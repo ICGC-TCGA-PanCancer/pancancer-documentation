@@ -1,5 +1,14 @@
 # QC Metrics (http://pancancer.info/qc)
 
+# Table of Contents
+  * [About](#about)
+  * [Collecting the Data](#collecting-the-data)
+  * [Visuals Created](#visuals-created)
+  * [Adding Metrics](#adding-metrics)
+    * [First Step](#first-step)
+    * [Second Step](#second-step)
+    * [Third Step](#third-step)
+
 ## About 
 This page shows the qc metrics for that are from the xml files created from the workflow_decider.pl . Only the aligned files have qc metrics so not all xml files are included. It provides a histogram showing distribution of whatever metric you would like to look at. You can also filter the results by readgroup or specimen, by project, and by specimen type. This shows the user a good indication of the quality of the files uploaded. There are also links provided to show the data that has been graphed so the user can analyze it themselves.
 
@@ -22,7 +31,7 @@ As described in the brief description, all the data is from the xml files create
 Using the shell script, parse.sh, it will go through each gtrepo working directory and aggregate the output into one file called all.csv . It will then go and clean it up by runnung cleanup.pl, getting rid of any rows without any qc metrics and make the file all_qc.csv . After that it will make a last file called bases.csv which only includes the metrics per specimen. 
 
 ## Visuals Created
-The histogram is created using d3.js (http://d3js.org/) and all the data needed is created through the scripts: xml_parse.pl, cleanup.pl, specimen_bases.pl
+The histogram is created using d3.js (http://d3js.org/) and all the data needed is created through the scripts: xml_parse.pl, cleanup.pl, specimen_bases.pl . With these scripts, you will have all the necessary files to create the histogram. The histogram lets the user easily see what the distribution is like and provides a quick way of checking if the uploads are meeting criteria(ex. 30x Coverage)
 
 ## Adding Metrics
 The javascript making the graph filters the information based on which fields are selected from the drop down menus. To add other metrics to the graph you have to change the csv files that are created from the scripts. 
