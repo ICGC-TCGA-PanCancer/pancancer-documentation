@@ -36,7 +36,7 @@ These spreadsheets are most of the projects that are part of ICGC. There are als
   	Data Train 1.0: https://docs.google.com/spreadsheets/d/14NItsHKJUevHZIuFkFTwNF-C12WbXTrFe0oM0Xq6b4M/edit?usp=drive_web
   	Data Train 2.0: https://docs.google.com/spreadsheets/d/1X3ZO3SIRm7emv3F5jCU116EprDWJnRGNqCB8x5HqOws/edit?usp=drive_web
   
-And this spreadsheet is a quick check of what si uploaded so far by project:
+And this spreadsheet is a quick check of what is uploaded so far by project:
   	
 	Summary: https://docs.google.com/spreadsheet/ccc?key=0AnBqxOn9BY8ldE5RUk5WX09hV1k4MllOVDdBMFFRNWc&usp=drive_web#gid=0
   
