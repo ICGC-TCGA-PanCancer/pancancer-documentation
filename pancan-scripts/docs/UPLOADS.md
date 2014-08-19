@@ -26,11 +26,13 @@ This site gets the number of uploads by referencing variuos spreadsheets:
   	LAML-KR: https://docs.google.com/spreadsheet/ccc?key=0ApWzavEDzSJddEJfUVJ2TEd0aGJJazM3RktXVmtGX1E&usp=drive_web
 
 These spreadsheets are most of the projects that are part of ICGC. There are also two master spreadsheets for data train 1 and 2:
-  Data Train 1.0: https://docs.google.com/spreadsheets/d/14NItsHKJUevHZIuFkFTwNF-C12WbXTrFe0oM0Xq6b4M/edit?usp=drive_web
-  Data Train 2.0: https://docs.google.com/spreadsheets/d/1X3ZO3SIRm7emv3F5jCU116EprDWJnRGNqCB8x5HqOws/edit?usp=drive_web
+  	
+  	Data Train 1.0: https://docs.google.com/spreadsheets/d/14NItsHKJUevHZIuFkFTwNF-C12WbXTrFe0oM0Xq6b4M/edit?usp=drive_web
+  	Data Train 2.0: https://docs.google.com/spreadsheets/d/1X3ZO3SIRm7emv3F5jCU116EprDWJnRGNqCB8x5HqOws/edit?usp=drive_web
   
 And this spreadsheet is a quick check of what si uploaded so far by project:
-  Summary: https://docs.google.com/spreadsheet/ccc?key=0AnBqxOn9BY8ldE5RUk5WX09hV1k4MllOVDdBMFFRNWc&usp=drive_web#gid=0
+  	
+	Summary: https://docs.google.com/spreadsheet/ccc?key=0AnBqxOn9BY8ldE5RUk5WX09hV1k4MllOVDdBMFFRNWc&usp=drive_web#gid=0
   
 The script get_spreadsheets.pl will download all these spreadsheets except the master ones and will use process them for getting the final numbers. It will turn the spreadsheets into txt files which are tab separated so you acan easily parse them for wanted information.
 
