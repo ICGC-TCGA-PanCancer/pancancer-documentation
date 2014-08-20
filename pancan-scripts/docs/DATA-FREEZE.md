@@ -1,6 +1,7 @@
 # Data Freeze Page (http://pancancer.info/data_freeze)
 
 # Table of Contents
+  * [Scripts Needed](#scripts-needed)
   * [About](#about)
   * [Collecting the Data](#collecting-the-data)
   * [Visuals Created](#visuals-created)
@@ -8,6 +9,9 @@
     * [First Step - Get Data](#first-step---get-file)
     * [Second Step - Add HTML](#second-step---add-html)
     * [Third Step - Add Javascript](#third-step---add-javascript)
+ 
+## Scripts Needed
+  * freeze_count.pl
   
 ## About 
 This page shows the amount of uploaded data in previous data trains. 
