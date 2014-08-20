@@ -1,9 +1,14 @@
 # Trajectory Page (http://pancancer.info/trajectory)
 
 # Table of Contents
+  * [Scritps Needed](#scritps-needed)
   * [About](#about)
   * [Collecting the Data](#collecting-the-data)
   * [Visuals Created](#visuals-created)
+
+## Scripts Needed
+  * time.pl
+  * decider.sh
 
 ## About
 This page was made to predict the completion date for the alignments. It is based on three averages, which are: daily, bi-daily, and weekly. Based on these averages there are three lines showing the slope and this will tell us when the estimated date of completion will be from each average. The target number represented by the red line is the number of uploaded specimens for data train 2.0. 
