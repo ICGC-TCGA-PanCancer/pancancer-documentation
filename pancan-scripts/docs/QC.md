@@ -1,6 +1,7 @@
 # QC Metrics (http://pancancer.info/qc)
 
 # Table of Contents
+  * [Scripts Needed](#scripts-needed)
   * [About](#about)
   * [Collecting the Data](#collecting-the-data)
   * [Visuals Created](#visuals-created)
@@ -8,6 +9,12 @@
     * [First Step](#first-step)
     * [Second Step](#second-step)
     * [Third Step](#third-step)
+ 
+## Scripts Needed
+  * xml_parse.pl
+  * cleanup.pl
+  * per_specimen.pl
+  * parse.sh
 
 ## About 
 This page shows the qc metrics for that are from the xml files created from the workflow_decider.pl . Only the aligned files have qc metrics so not all xml files are included. It provides a histogram showing distribution of whatever metric you would like to look at. You can also filter the results by readgroup or specimen, by project, and by specimen type. This shows the user a good indication of the quality of the files uploaded. There are also links provided to show the data that has been graphed so the user can analyze it themselves.
