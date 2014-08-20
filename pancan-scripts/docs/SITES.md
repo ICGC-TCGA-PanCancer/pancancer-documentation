@@ -1,6 +1,7 @@
 # Sites Page (http://pancancer.info/)
 
 # Table of Contents
+  * [Scripts Needed](#scripts-needed)
   * [About](#about)
   * [Collecting the Data](#collecting-the-data)
   * [Visuals Created](#visuals-created)
@@ -9,6 +10,10 @@
     * [Second Step - Add HTML](#second-step---add-html)
     * [Third Step - Add Javascript](#third-step---add-javascript)
     
+## Scripts Needed 
+  * align_count.pl
+  * decider.sh
+
 ## About 
 This page is the main part of the site. It shows the aligned/unaligned amount of specimens for each train. The trains are filtered to only show the specimens that are included in the repspective train. There is also a live table that shows all the ones that are aligned using workflow 2.6 or higher. You can access log files associated with each count by clicking the headers. 
 
