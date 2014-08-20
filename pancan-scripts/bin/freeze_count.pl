@@ -57,11 +57,11 @@ for my $key (keys %id){
 if ($output eq "json"){
 print qq(
 [
-        {"name": "ICGC Total", "total": "NA", "uploaded": $icgc_count, "left": "NA", "matched": $icgc_pair},
+        {"name": "ICGC Total", "uploaded": $icgc_count, "matched": $icgc_pair},
 
-        {"name": "TCGA Total", "total": "NA", "uploaded": $tcga_count, "left": "NA", "matched": $tcga_pair},
+        {"name": "TCGA Total",  "uploaded": $tcga_count, "matched": $tcga_pair},
 
-        {"name": "Cumulative Total", "total": "NA", "uploaded": $total_count, "left": "NA", "matched": $tcga_pair}
+        {"name": "Cumulative Total", "uploaded": $total_count, "matched": $tcga_pair}
 
 ]);}
 
