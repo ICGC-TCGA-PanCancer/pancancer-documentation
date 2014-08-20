@@ -3,10 +3,10 @@
 ## Table of Contents
 * [Collecting data](#collecting-data)
 * [Changing Scripts](#changing-scripts)
-	* [Update_data.pl](#update_data.pl)
-	* [Arc_read.pl](#arc_read.pl)
-	* [Bubble_read.pl](#bubble_read.pl)
-	* [Uploads.html](#uploads.html)
+	* [Update_data.pl](#update_datapl)
+	* [Arc_read.pl](#arc_readpl)
+	* [Bubble_read.pl](#bubble_readpl)
+	* [Uploads.html](#uploadshtml)
 * [Changing Files](#changing-files)
 
 ## Collecting Data
