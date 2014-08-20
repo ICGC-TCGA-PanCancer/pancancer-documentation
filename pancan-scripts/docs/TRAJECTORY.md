@@ -27,3 +27,6 @@ This will read in all the information from the archive and find each slope for t
 After this you want to put the csv file in the place where the site is reading data from, in this case it is reading from /var/www
 
     cp est.csv /var/www/
+    
+## Visuals Created
+The chart is a multi-series line chart that is very similar to the one on http://pancancer.info/uploads.html . This Tehre are also tooltips that are included so you can hover over each point and see the data for that day. 
