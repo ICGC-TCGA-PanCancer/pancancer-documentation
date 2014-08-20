@@ -1,7 +1,7 @@
 # Uploads Page (http://pancancer.info/uploads.html)
 
 # Table of Contents
-	* [Scripts Needed](#scripts-needed)
+  * [Scripts Needed](#scripts-needed)
   * [About](#about)
   * [Collecting the Data](#collecting-the-data)
   * [Counting Logic](#counting-logic)
