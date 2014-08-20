@@ -13,18 +13,25 @@ my %id;
 my %spec;
 my @spec_marc2;
 my $output = "json";
+my $file = "train_2.tsv";
 
-if (scalar(@ARGV) != 2) { die "USAGE: perl freeze_count.pl --output <OUTPUT TYPE>"; }
-GetOptions ("output=s" => \$output);
+if (scalar(@ARGV) != 4) { die "USAGE: perl freeze_count.pl --file <INPUT FILE> --output <OUTPUT TYPE> tsv or json"; }
+GetOptions ("output=s" => \$output, "file=s" => \$file);
 
-open(FH,"train_2.tsv") or die("Can't open guestbook.txt: $!");
+open(FH,$file) or die("Can't open guestbook.txt: $!");
 while (my $line = <FH>) {
-  chomp $line;
-  my @cols = split "\t" , $line;  #print "$cols[4],";
-if($cols[0] ne "Study" && $cols[0] ne ""){
-        push (@{$id{$cols[1]}{$cols[2]}},$cols[7]);
-        push (@spec_marc2,$cols[1]);
-        $spec{$cols[1]} += 1;
+        chomp $line;
+        my @cols = split "\t" , $line; 
+
+        if($cols[0] ne "Study" && $cols[0] ne ""){
+                my $index;
+                for (my $i=0;$i < scalar @cols;$i++){
+                        if ($cols[$i] eq "Tumour" or $cols[$i] eq "Normal"){
+                                $index = $i;
+                        }}
+                push (@{$id{$cols[1]}{$cols[2]}},$cols[$index]);
+                push (@spec_marc2,$cols[1]);
+                $spec{$cols[1]} += 1;
 }
 }
 close(FH);
@@ -65,8 +72,8 @@ print qq(
 
 ]);}
 
-elsif($output eq "csv"){
-print "project,total\n";
+elsif($output eq "tsv"){
+print "project\ttotal\n";
 for my $thing (keys %spec){
-        print "$thing,$spec{$thing}\n"
+        print "$thing\t$spec{$thing}\n"
 }}
