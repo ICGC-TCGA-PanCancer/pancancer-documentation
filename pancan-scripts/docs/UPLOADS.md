@@ -53,15 +53,15 @@ The script get_spreadsheets.pl will download all these spreadsheets except the m
 ## Counting Logic
 Once all these files are downloaded, the script update_data.pl will parse them and look for what has been uploaded. Using log files from the workflow_decider.pl, the script will check if any of the specimens in the spreadsheets are in the log files and if it is there, it means that the specimen has been uplaoded. For example, if you are looking to see if specimen RK123_B01 has been uploaded, the script will check the log files and see that it is in gtrepo-riken.log:
 
-  DONOR/PARTICIPANT: RK123
+  	DONOR/PARTICIPANT: RK123
 
-	SAMPLE OVERVIEW
-	SPECIMEN/SAMPLE: RK123_B01
-		ALIGNMENT: unaligned
-			ANALYZED SAMPLE/ALIQUOT: RK123_B01
-				LIBRARY: WGS:RIKEN:RK123_B01_L01
-					BAMS: CB4AB818-C622-11E3-BF01-24C6515278C0.bam,CB774658-C622-11E3-BF01-24C6515278C0.bam,CB297928-C622-11E3-BF01-24C6515278C0.bam,CB703FA2-C622-11E3-BF01-24C6515278C0.bam
-					ANALYSIS_IDS: 2b29c42f-da58-11e3-9e71-fa88058fb7ba,2b2f1e93-da58-11e3-9e71-fa88058fb7ba,2b25adb3-da58-11e3-9e71-fa88058fb7ba,2b1a7137-da58-11e3-9e71-fa88058fb7ba
+		SAMPLE OVERVIEW
+		SPECIMEN/SAMPLE: RK123_B01
+			ALIGNMENT: unaligned
+				ANALYZED SAMPLE/ALIQUOT: RK123_B01
+					LIBRARY: WGS:RIKEN:RK123_B01_L01
+						BAMS: CB4AB818-C622-11E3-BF01-24C6515278C0.bam,CB774658-C622-11E3-BF01-24C6515278C0.bam,CB297928-C622-11E3-BF01-24C6515278C0.bam,CB703FA2-C622-11E3-BF01-24C6515278C0.bam
+						ANALYSIS_IDS: 2b29c42f-da58-11e3-9e71-fa88058fb7ba,2b2f1e93-da58-11e3-9e71-fa88058fb7ba,2b25adb3-da58-11e3-9e71-fa88058fb7ba,2b1a7137-da58-11e3-9e71-fa88058fb7ba
 
 After this happens for all the specimens in every spreadsheet, it will have a total count for each project. However it will also check the upload count in this spreadsheet:
 
