@@ -28,7 +28,7 @@ This will give you the data needed for the table and chart. At the moment it is 
 ## Visuals Created
 Like most of the other visuals on other pages, the chart is made using d3.js (http://d3js.org/). This useful tool allows us to easily create these charts by feeding in data. In this case the data that is needed is a csv that is created from the script mentioned above. The table on top is populated by a json file that is also created from the script above. 
 
-## Adding a New Train 
+## Adding New Train 
 Using the script freeze_count.pl makes adding a train fairly simple. For this example you will see how to add data train 2.0 to the site.
 
 ### First Step - Get Data 
