@@ -13,7 +13,7 @@ my @thing;
 my %hsh;
 my @dates;
 my @final;
-my $filename = 'train2.json';
+my $filename = 'map_data/train2.json';
 
 my $json_text = do {
    open(my $json_fh, "<:encoding(UTF-8)", $filename)
