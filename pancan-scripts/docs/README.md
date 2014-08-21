@@ -9,9 +9,9 @@ First make a directory under /home/ubuntu :
 We then have to make some more directories in /var/www/ :
 
     $ cd /var/www/
-    $ sudo mkdir bubbles
-    $ sudo mkdir up_data
-    $ sudo mkdir ave_data
+    $ mkdir bubbles
+    $ mkdir up_data
+    $ mkdir ave_data
 
 Clone the branch onto the machine using :
 
@@ -23,7 +23,7 @@ Copy uploads.html to /var/www/ :
     $ cd pancan-scripts
     # need one more directory
     $ mkdir results
-    $ sudo cp uploads.html /var/www/
+    $ cp uploads.html /var/www/
 
 Before running any scripts you need to check if perl is at least version 5.18.2 using perl -v. From past experience, this version of perl has worked fine with all the perl scripts in the repo. If necessary, update perl to version 5.18.2. To do this, you need to use perlbrew. Perlbrew allows you to manage and use multiple versions perl on the same machine, if there are any problems go to http://perlbrew.pl/ to get some clarification. To use perlbrew do the following :
 
