@@ -21,7 +21,7 @@ GetOptions ("file=s" => \$file, "repo=s" => \$repo);
 #print $repo;
 
 # Parsing XMl and turning into a big hash
-my $booklist = XMLin("/home/ubuntu/gitroot/pancancer-info/pancan-scripts/gtrepo-${repo}/xml/${file}");
+my $booklist = XMLin("/home/ubuntu/gitroot/pancancer-info/pancan-scripts/gtrepo-${repo}/xml/${file}") or die "Can't open /home/ubuntu/gitroot/pancancer-info/pancan-scripts/gtrepo-${repo}/xml/${file}";
 # Getting all the analysis attribut TAGS
 my @attr = @{$booklist->{Result}->{analysis_xml}->{ANALYSIS_SET}->{ANALYSIS}->{ANALYSIS_ATTRIBUTES}->{ANALYSIS_ATTRIBUTE}};
 
