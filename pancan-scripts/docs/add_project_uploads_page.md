@@ -7,6 +7,7 @@
 	* [Arc_read.pl](#arc_readpl)
 	* [Bubble_read.pl](#bubble_readpl)
 	* [Uploads.html](#uploadshtml)
+	* [Run_get.sh](#run_getsh)
 * [Changing Files](#changing-files)
 
 ## Collecting Data
