@@ -34,4 +34,4 @@ After this you want to put the csv file in the place where the site is reading d
     cp est.csv /var/www/
     
 ## Visuals Created
-The chart is a multi-series line chart that is very similar to the one on http://pancancer.info/uploads.html . This Tehre are also tooltips that are included so you can hover over each point and see the data for that day. 
+The chart is a multi-series line chart that is very similar to the one on http://pancancer.info/uploads.html .There are also tooltips that are included so you can hover over each point and see the data for that day. To see more on how the chart was made, you can look at [this](http://www.delimited.io/blog/2014/3/3/creating-multi-series-charts-in-d3-lines-bars-area-and-streamgraphs). The line chart example is very good and explained quite well.
