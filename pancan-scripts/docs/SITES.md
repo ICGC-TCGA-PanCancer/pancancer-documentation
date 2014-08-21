@@ -1,9 +1,13 @@
-# Sites Page (http://pancancer.info/)
+# Sites Page (http://pancancer.info/index1.html)
 
 # Table of Contents
   * [Scripts Needed](#scripts-needed)
   * [About](#about)
   * [Collecting the Data](#collecting-the-data)
+  * [Counting Logic](#counting-logic)
+    * [Data Train 1.0](#data-train-10)
+    * [Data Train 2.0](#data-train-20)
+    * [Workflow 2.6 Live Table](#workflow-26-live-table)
   * [Visuals Created](#visuals-created)
   * [Adding New Train](#adding-new-train)
     * [First Step - Get Data](#first-step---get-file)
@@ -42,8 +46,25 @@ Just pipe the output to a file like train2.json. If you want to get the json for
     
 If you run the script with the train "2" option, it will push the total aligned number to the file align_archive.csv. This archive file is needed for making the chart on http://pancancer.info/trajectory .
 
+##Counting Logic
+For this site, there are three tables with three different ways of counting. 
+
+### Data Train 1.0 
+This table was hard coded and will not change. These numbers are from this [spreadsheet](https://docs.google.com/spreadsheets/d/14NItsHKJUevHZIuFkFTwNF-C12WbXTrFe0oM0Xq6b4M/edit). There is a nice summary page which lists all the uploads from each project. You can easily obtain a count for each repo. 
+
+### Data Train 2.0 
+This table is changing constantly so it could not be hard coded. There are a couple of conditions that must be met for something to count as aligned in data train 2.0.
+
+  * Workflow version must be 2.6 or higher
+  * Specimen must be part of [this](https://docs.google.com/spreadsheets/d/1X3ZO3SIRm7emv3F5jCU116EprDWJnRGNqCB8x5HqOws/edit#gid=1173712136) spreadsheet
+
+When these conditions are met the specimen would be counted towards data train 2.0 aligned. Everything that is unaligned must also be part of the spreasheet or else it would not be counted. 
+
+### Workflow 2.6 Live Table
+This table is not being filtered from the spreadsheet and includes everything that is being aligned with workflow 2.6 or higher. The counts should be close to or higher than the numbers from data train 2.0. The only condition that this table has, is that the workflow version is higher than 2.6
+
 ## Visuals Created
-There are maps and tables on this page that were made using d3. You can see more about the maps [here](http://datamaps.github.io/) and see more about tables [here](https://github.com/ICGC-TCGA-PanCancer/pancancer-info/blob/develop/pancan-scripts/docs/how-to-tables.md) 
+There are maps and tables on this page that were made using d3. You can see more about the maps [here](http://datamaps.github.io/) and see more about tables [here](https://github.com/ICGC-TCGA-PanCancer/pancancer-info/blob/develop/pancan-scripts/docs/how-to-tables.md). I highly recommend looking at these before moving on. 
 
 ## Adding New Train 
 Adding a train invovles changing the scripts and should not be too much of a hassel. For this exmaple you will see how to add data train 2.0
