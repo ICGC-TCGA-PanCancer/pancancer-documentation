@@ -97,4 +97,4 @@ The maps are also created using d3 and take in json data to graph. The json file
     
 These json files are also used to populate the tables that are made from javascript but not d3. 
 
-The scripts that create these files are update_data.pl, bubble_read.pl, and arc_read.pl. These scripts will take care of all the files that are needed for the site. Combined with the run_get.sh shell script the flies will be allocated to the proper directory.
+The scripts that create these files are update_data.pl, bubble_read.pl, and arc_read.pl. These scripts will take care of all the files that are needed for the site. Combined with the run_get.sh shell script the flies will be allocated to the proper directory. To see more on tables click [here](https://github.com/ICGC-TCGA-PanCancer/pancancer-info/blob/develop/pancan-scripts/docs/how-to-tables.md), for more on maps click [here](http://datamaps.github.io/), and for more on line charts click [here](http://www.delimited.io/blog/2014/3/3/creating-multi-series-charts-in-d3-lines-bars-area-and-streamgraphs).
