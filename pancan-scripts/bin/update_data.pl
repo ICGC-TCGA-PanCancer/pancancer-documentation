@@ -257,7 +257,7 @@ foreach my $i ("gtrepo-bsc", "gtrepo-dkfz", "gtrepo-osdc", "gtrepo-etri", "gtrep
                 my @content = [];
                 
                 # makes log files for every repo
-                open(my $fh, '>', "${i}.log") or die ("Could not open ${i}.log");
+                open(my $fh, '>', "/home/ubuntu/gitroot/pancancer-info/pancan-scritps/${i}.log") or die ("Could not open /home/ubuntu/gitroot/pancancer-info/pancan-scritps/${i}.log");
                 print $fh $mech->content;
                 close $fh;
                 my @line;
@@ -270,7 +270,7 @@ foreach my $i ("gtrepo-bsc", "gtrepo-dkfz", "gtrepo-osdc", "gtrepo-etri", "gtrep
                 }
 
                 # reads the log files and finds the specimen_id
-                open(FH,"${i}.log") or die ("Could not open ${i}.log");
+                open(FH,"/home/ubuntu/gitroot/pancancer-info/pancan-scritps/${i}.log") or die ("Could not open /home/ubuntu/gitroot/pancancer-info/pancan-scritps/${i}.log");
                 while (my $line = <FH>) {
                  my $result = index($line, "SPECIMEN/SAMPLE:");
                  if ($result == 1){
@@ -365,7 +365,7 @@ foreach my $i ("gtrepo-bsc","gtrepo-dkfz", "gtrepo-osdc", "gtrepo-etri", "gtrepo
   my $fname = substr($url,$results);
   my @content = [];
   # makes log files for every repo
-  open(my $fh, '>', "${i}.log") or die ("Could not open ${i}.log");
+  open(my $fh, '>', "/home/ubuntu/gitroot/pancancer-info/pancan-scritps/${i}.log") or die ("Could not open /home/ubuntu/gitroot/pancancer-info/pancan-scritps/${i}.log");
   print $fh $mech->content;
   close $fh;
   my @line;
@@ -378,7 +378,7 @@ foreach my $i ("gtrepo-bsc","gtrepo-dkfz", "gtrepo-osdc", "gtrepo-etri", "gtrepo
   }
 
   # reads the log files and finds the specimen_id
-  open(FH,"${i}.log") or die ("Could not open ${i}.log");
+  open(FH,"/home/ubuntu/gitroot/pancancer-info/pancan-scritps/${i}.log") or die ("Could not open /home/ubuntu/gitroot/pancancer-info/pancan-scritps/${i}.log");
   while (my $line = <FH>) {
    my $result = index($line, "SPECIMEN/SAMPLE:");
    if ($result == 1){
