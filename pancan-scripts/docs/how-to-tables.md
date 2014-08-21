@@ -33,17 +33,17 @@ So this is the code to generate the table on the page. Some important things to 
 ## The Javascript Portion 
 The javascript portion is the part that actually populates the table by reading in some kind of json file. Here is the code used for the data train 2.0 table:
 
-  <script type="text/javascript">
-  var table2 = document.getElementsByName("x1");
-  var json_data2;
-  var cell_1 = [];
-  var cell_2 = [];
-  var cell_3 = [];
-  var total_4 = 0;
-  var total_5 = 0;
-  var total_6 = 0;
+    <script type="text/javascript">
+    var table2 = document.getElementsByName("x1");
+    var json_data2;
+    var cell_1 = [];
+    var cell_2 = [];
+    var cell_3 = [];
+    var total_4 = 0;
+    var total_5 = 0;
+    var total_6 = 0;
   
-  d3.json("train2.json", function(error, json) {
+    d3.json("train2.json", function(error, json) {
                 json_data2 = json;
                 var arr =[];
                 for (var i = 0; i < json_data2.length; i++){                
@@ -95,7 +95,7 @@ The javascript portion is the part that actually populates the table by reading 
                 cell_1[10].firstChild.data = '' + num;
         
         });
-  </script>
+    </script>
   
 As i mentioned above, the table name is needed in the javascript portion. The following line makes sure that it is chnaging the right table on the page:
 
@@ -103,30 +103,30 @@ As i mentioned above, the table name is needed in the javascript portion. The fo
   
 You can also see some variables being made which are used in the for loop. The json file being read looks like this:
 
-  [
-  {"repo": "gtrepo-bsc", "align": 0, "total_unalign": 192, "remaining": 192},
-  {"repo": "gtrepo-osdc-icgc", "align": 0, "total_unalign": 0, "remaining": 0},
-  {"repo": "gtrepo-osdc-tcga", "align": 0, "total_unalign": 0, "remaining": 0},
-  {"repo": "gtrepo-dkfz", "align": 39, "total_unalign": 718, "remaining": 679},
-  {"repo": "gtrepo-ebi", "align": 4, "total_unalign": 599, "remaining": 595},
-  {"repo": "gtrepo-etri", "align": 5, "total_unalign": 20, "remaining": 15},
-  {"repo": "gtrepo-riken", "align": 0, "total_unalign": 591, "remaining": 591},
-  {"repo": "gtrepo-cghub", "align": 477, "total_unalign": 477, "remaining": 0}  
-  ]
+    [
+    {"repo": "gtrepo-bsc", "align": 0, "total_unalign": 192, "remaining": 192},
+    {"repo": "gtrepo-osdc-icgc", "align": 0, "total_unalign": 0, "remaining": 0},
+    {"repo": "gtrepo-osdc-tcga", "align": 0, "total_unalign": 0, "remaining": 0},
+    {"repo": "gtrepo-dkfz", "align": 39, "total_unalign": 718, "remaining": 679},
+    {"repo": "gtrepo-ebi", "align": 4, "total_unalign": 599, "remaining": 595},
+    {"repo": "gtrepo-etri", "align": 5, "total_unalign": 20, "remaining": 15},
+    {"repo": "gtrepo-riken", "align": 0, "total_unalign": 591, "remaining": 591},
+    {"repo": "gtrepo-cghub", "align": 477, "total_unalign": 477, "remaining": 0}  
+    ]
 
 This is why the order of the columns matter. It must match the order of the json file for the right numbers to display in the right position. In the for loop we go through each element in the json file and get all three numbers from it to put on the table. We also check if all three numbers are zero, this means that it is offline. We are also getting the totals for every row. Actually changing the cell in the table is a three step process. 
 
 The first step is to say which cell you want to change by doing this:
 
-  cell_1[1] = table2[0].rows[1].cells[1];
+    cell_1[1] = table2[0].rows[1].cells[1];
 
 This line will go to the first row and pick the first cell. The cells start the count at zero so make sure you choose the one you actually want. The next step is to get the current value of the cell:
 
-  val_1[1] = cell_1[1].firstChild.data;
+    val_1[1] = cell_1[1].firstChild.data;
   
 This will get the current value of whatever cell you give it. The last step is to change the cell contents to whatever you like:
 
-  cell_1[1].firstChild.data = ''+json_data2[0].align;
+    cell_1[1].firstChild.data = ''+json_data2[0].align;
   
 This line will make the first cell in the first row 0. This is because the first element in the array has a value of 0 for the align key. 
 
