@@ -24,13 +24,13 @@ The page gets its data from master spreadsheets that were created shortly after 
     
 These master spreadsheets provide all the data from each freeze and is used to make all the tables and charts on the page. The script freeze.pl is how the data on the tables and the charts were collected. The script will create either a json file for the table, or a csv file for the chart. 
 
-  # YOU CHOOSE WHICH FILE YOU WANT 
-  USAGE: perl freeze_count.pl --file <INPUT FILE> --output <OUTPUT TYPE> csv or json
+    # YOU CHOOSE WHICH FILE YOU WANT 
+    USAGE: perl freeze_count.pl --file <INPUT FILE> --output <OUTPUT TYPE> csv or json
   
 This will give you the data needed for the table and chart. At the moment it is set to produce output for Data Train 2.0, however you may change the input file to whatever you like. You just have to put the path to the new file into the --file option. 
 
 ## Visuals Created
-Like most of the other visuals on other pages, the chart is made using d3.js (http://d3js.org/). This useful tool allows us to easily create these charts by feeding in data. In this case the data that is needed is a csv that is created from the script mentioned above. The table on top is populated by a json file that is also created from the script above. 
+Like most of the other visuals on other pages, the chart is made using d3.js (http://d3js.org/). This useful tool allows us to easily create these charts by feeding in data. In this case the data that is needed is a csv that is created from the script mentioned above. The table on top is populated by a json file that is also created from the script above. To see more on the bar chart click [here](http://bl.ocks.org/mbostock/3885304) and to see more on the tables click [here](https://github.com/ICGC-TCGA-PanCancer/pancancer-info/blob/develop/pancan-scripts/docs/how-to-tables.md).
 
 ## Adding New Train 
 Using the script freeze_count.pl makes adding a train fairly simple. For this example you will see how to add data train 2.0 to the site.
