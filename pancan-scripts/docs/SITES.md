@@ -42,6 +42,9 @@ Just pipe the output to a file like train2.json. If you want to get the json for
     
 If you run the script with the train "2" option, it will push the total aligned number to the file align_archive.csv. This archive file is needed for making the chart on http://pancancer.info/trajectory .
 
+## Visuals Created
+There are maps and tables on this page that were made using d3. You can see more about the maps [here](http://datamaps.github.io/) and see more about tables [here](https://github.com/ICGC-TCGA-PanCancer/pancancer-info/blob/develop/pancan-scripts/docs/how-to-tables.md) 
+
 ## Adding New Train 
 Adding a train invovles changing the scripts and should not be too much of a hassel. For this exmaple you will see how to add data train 2.0
 
