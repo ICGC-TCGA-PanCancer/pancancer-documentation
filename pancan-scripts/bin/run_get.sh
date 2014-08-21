@@ -10,7 +10,7 @@ cp gacacnfiles.txt results
 cd results
 
 # getting all the updated spreadsheets
-perl `find /home/ubuntu/gitroot/pancancer-info/bin/ -name get_spreadsheets.pl`
+perl `find /home/ubuntu/gitroot/pancancer-info/ -name get_spreadsheets.pl`
 
 # making all the necessary files
 cat *.txt > all_files.txt
@@ -43,14 +43,14 @@ cat *PACA-AU*.txt > pacaaufiles.txt
 cat *PAEN-AU*.txt > paenaufiles.txt
 cat *OV-AU*.txt > ovaufiles.txt
 cat Pancan-UP*.txt > summary.txt
-perl ../cleanup_esad.pl
+perl ../bin/cleanup_esad.pl
 
 # creating all the files needed for the site
 cd /home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data
-perl `find /home/ubuntu/gitroot/pancancer-info/bin -name update_data.pl`
-perl `find /home/ubuntu/gitroot/pancancer-info/bin -name generate_upload_info.pl` > out.csv
-perl `find /home/ubuntu/gitroot/pancancer-info/bin -name arc_read.pl`
-perl `find /home/ubuntu/gitroot/pancancer-info -name bubble_read.pl`
+perl `find /home/ubuntu/gitroot/pancancer-info/ -name update_data.pl`
+perl `find /home/ubuntu/gitroot/pancancer-info/ -name generate_upload_info.pl` > out.csv
+perl `find /home/ubuntu/gitroot/pancancer-info/ -name arc_read.pl`
+perl `find /home/ubuntu/gitroot/pancancer-info/ -name bubble_read.pl`
 
 # copying everything over to the right directory 
 cp *.json /var/www/
