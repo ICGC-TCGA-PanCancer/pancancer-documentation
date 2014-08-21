@@ -28,8 +28,17 @@ my @totals;
 my $totals_match;
 my $total_icgc;
 my @up;
+my @uplo;
+my $marc_count;
 my @matches_up;
 my $missing;
+my $boca_count;
+my $brca_count;
+my $cmdi_count;
+my $bar_count;
+my $brcaeu_count;
+my $prad_count;
+my $esad_count;
 
 # reading from text file containing summary of all the projects
 # individual project text files created from get_uplaods.pl
