@@ -84,8 +84,7 @@ This html will be inside the tablediv div right under the data train 1.0 visuals
 Now that the html is all set, you need to add a little javascript. You have to add one line to make the chart for data train 2.0. You want to call the "charts" function with new parameters for the new train. 
 
     charts("data_train1.tsv",140,"#bar1");
-    # ADD THIS RIGHT UNDER THE FIRST FUNCTOIN CALL 
-    charts("data_train2.tsv",510,"#bar2");
+    charts("data_train2.tsv",510,"#bar2"); # ADD THIS RIGHT UNDER THE FIRST FUNCTION CALL
     
 The parameters entered are (inputfile,max_number,div). You already know what the inputfile and div are so you just need to find the max number in the tsv file created from freeze_count.pl
 
