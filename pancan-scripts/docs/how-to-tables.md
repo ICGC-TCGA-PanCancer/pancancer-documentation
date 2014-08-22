@@ -97,7 +97,7 @@ The javascript portion is the part that actually populates the table by reading 
         });
     </script>
   
-As i mentioned above, the table name is needed in the javascript portion. The following line makes sure that it is chnaging the right table on the page:
+As i mentioned above, the table name is needed in the javascript portion. The following line makes sure that it is changing the right table on the page:
 
   var table2 = document.getElementsByName("x1");
   
@@ -130,4 +130,4 @@ This will get the current value of whatever cell you give it. The last step is t
   
 This line will make the first cell in the first row 0. This is because the first element in the array has a value of 0 for the align key. 
 
-These are the three steps needed to change the values in the table and yuo see me doing this maunally when i enter the totals and average. 
+These are the three steps needed to change the values in the table and you see me doing this manually when i enter the totals and average. 
