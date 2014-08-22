@@ -1,6 +1,6 @@
 # Preparing the Environment
 
-This documentation will exmplain how to set up the environment needed for Pancancer.info to live on. It will go though all the necessary installs and downloads needed. By following this you should be able to migrate the site to whatever server you would like. Launch an instance on AWS and ssh into that instance. To configure the site onto the instance, you must do the following :
+This documentation will exmplain how to set up the environment needed for Pancancer.info to live on. It will go through all the necessary installs and downloads needed. By following this you should be able to migrate the site to whatever server you would like. Launch an instance on AWS and ssh into that instance. To configure the site onto the instance, you must do the following :
 
 First make a directory under /home/ubuntu :
  
@@ -68,7 +68,7 @@ Once everything is installed and ready to use, you can try and run the shell scr
 
 This should put all the necessary files in the /var/www/ directory and have the site ready for use.
 
-You can set up a cron job running the scripts as freqeutnly as you would like using :
+You can setup a cron job running the scripts as frequently as you would like using :
 
     $ crontab -e
     # 1 * * * * /home/ubuntu/gitroot/pancancer-info/pancan-scripts/decider.cron &> /home/ubuntu/gitroot/pancancer-info/pancan-scripts/decider.cron.log
