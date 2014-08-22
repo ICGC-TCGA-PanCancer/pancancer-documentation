@@ -35,7 +35,7 @@ As described in the brief description, all the data is from the xml files create
 
     2014-07-31 15:33:09,105a51c4-cc7e-4d0f-9cf8-e4d64a31d14d,UCEC-US,Primary tumour - solid tissue,5c22c8d6-5805-455c-8e1c-e6b8006738e4,105a51c4-cc7e-4d0f-9cf8-e4d64a31d14d,ca213835-efc5-4216-a762-a6b320b516bf,,b8f26252-d5bc-4084-8006-dc2ef9928a52,648456b0-d91a-11e3-950a-0927963883d2,184798760,100,7454081758,WUGSC:C2U7DACXX_2,20477109,36777574305,246.807,WGS:WUGSC:H_LR-D1-A17K-01A-11D-A325-09-lg1-lib1a,184671356,157733691,180063318,82923635,100,18463176094,1cfaec8e-9f51-42c0-8543-f055e6492c12,ILLUMINA,648456b0-d91a-11e3-950a-0927963883d2,74810056,18314398211,369597520,7474360756,251.000,31.518,PAWG.1cfaec8e-9f51-42c0-8543-f055e6492c12.bam,184798760,184227162,368898518,36959752000,12.3199173333333,99.5070916736671,99.8108748132293,0.426771508098864,48.7187570955563,5.54038051986929
     
-Using the shell script, parse.sh, it will go through each gtrepo working directory and aggregate the output into one file called all.csv . It will then go and clean it up by runnung cleanup.pl, getting rid of any rows without any qc metrics and make the file all_qc.csv . After that it will make a last file called bases.csv which only includes the metrics per specimen. 
+Using the shell script, parse.sh, it will go through each gtrepo working directory and aggregate the output into one file called all.csv . It will then go and clean it up by running cleanup.pl, getting rid of any rows without any qc metrics and make the file all_qc.csv . After that it will make a last file called bases.csv which only includes the metrics per specimen. 
 
 ## Visuals Created
 The histogram is created using d3.js (http://d3js.org/) and all the data needed is created through the scripts: xml_parse.pl, cleanup.pl, specimen_bases.pl . With these scripts, you will have all the necessary files to create the histogram. The histogram lets the user easily see what the distribution is like and provides a quick way of checking if the uploads are meeting criteria(ex. 30x Coverage). To see more on how the histogram was made, click [here](http://bl.ocks.org/mbostock/3048450). The one used on the site is very similar to this example.
@@ -97,7 +97,7 @@ Now you want to change the output for the per specimen file as well. Here we wil
         print "$date,$ali,$proj,$type,$donor,$sample_id,$key,$lanes,$cntl,$read_id,$total_reads_r2,$read_length_r1,$gc_bases_r1,$platform_unit,$duplicate_reads,$mapped_bases,$mean_insert_size,$library,$mapped_reads_r1,$divergent_bases,$properly_paired,$divergent_bases_r2,$read_length_r2,$mapped_bases_r1,$sample,$platform,$readgroup,$divergent_bases_r1,$mapped_bases_r2,$total_reads,$gc_bases_r2,$median_insert_size,$insert_size_sd,$bam,$total_reads_r1,$mapped_reads_r2,$mapped_reads,$total,$ave,$per_mapped_bases,$per_mapped_reads,$per_diver_bases,$per_proper,$per_dup,$percent_reads_r2\n";
         
 ## Third Step
-By this step you should hvae successfully created a new csv file with your new header at the end. The next step is to go into the html and add this option to the drop down menu:
+By this step you should have successfully created a new csv file with your new header at the end. The next step is to go into the html and add this option to the drop down menu:
 
         <option value="%_total_reads_r2">% Total Reads R2</option>
         
