@@ -1,4 +1,4 @@
-# Sites Page (http://pancancer.info/index1.html)
+# Sites Page (http://pancancer.info/index.html)
 
 # Table of Contents
   * [Scripts Needed](#scripts-needed)
