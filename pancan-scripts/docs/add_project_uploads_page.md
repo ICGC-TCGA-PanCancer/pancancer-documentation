@@ -11,7 +11,7 @@
 * [Changing Files](#changing-files)
 
 ## Collecting Data
-Normally to get the data, you would download the spreadsheets using get_spreadsheets.pl . You update the hash that is in the script with they key from the speradsheet you wan to download and the title of the spreadsheet. This is a special case becuase the people from Beijing could not access google drive so we have to download the file manually. The download can be found here:
+Normally to get the data, you would download the spreadsheets using get_spreadsheets.pl . You update the hash that is in the script with they key from the spreadsheet you want to download and the title of the spreadsheet. This is a special case because the people from Beijing could not access google drive so we have to download the file manually. The download can be found here:
 
 	GACA-CN: https://wiki.oicr.on.ca/download/attachments/57771379/submission.sheets.xls?version=1&modificationDate=1405331109000&api=v2
 			
@@ -106,7 +106,7 @@ We then have to update the columns by adding <td>0</td> to each row. We must als
     <td>Normal</td><td>0</td> <td>0</td>
     </tr>
  
-We also have to add a tab to the bottom porttion of the page by adding this:
+We also have to add a tab to the bottom portion of the page by adding this:
  
  	<li><a href="#tab10">Kalyani</a></li>
  	<li><a href="#tab12">Beijing</a></li> <!-- ADDED this line -->
@@ -146,10 +146,12 @@ When update_data.pl is run, it appends data to certain csv files. We will update
 
 	quarter,BTCA-SG,LIRI-JP,ORCA-IN,GACA-CN
 
-We also have to go in and put Beijing in the header of up_data_archive.csv and ave_data_archive.csv. Be sure to put it right beofre TCGA-US because order matters in this file. 
+We also have to go in and put Beijing in the header of up_data_archive.csv and ave_data_archive.csv. Be sure to put it right before TCGA-US because order matters in this file. 
 
 	quarter,Heidelberg,Cambridge,Toronto,Barcelona,Singapore,Tokyo,Hinxton,Seoul,Kalyani,Brisbane,Beijing,TCGA-US
 	
 The last file we have to change is location.json . We just have to add this one line to the json file:
 
 	{"name": "Beijing", "latitude": 39.9139, "longitude": 116.3917, "radius": 15, "fillKey": "blue","project": "GACA-CN"},
+
+
