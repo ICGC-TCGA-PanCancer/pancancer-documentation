@@ -19,7 +19,7 @@
   * decider.sh
 
 ## About 
-This page is the main part of the site. It shows the aligned/unaligned amount of specimens for each train. The trains are filtered to only show the specimens that are included in the repspective train. There is also a live table that shows all the ones that are aligned using workflow 2.6 or higher. You can access log files associated with each count by clicking the headers. 
+This page is the main part of the site. It shows the aligned/unaligned amount of specimens for each train. The trains are filtered to only show the specimens that are included in the respective train. There is also a live table that shows all the ones that are aligned using workflow 2.6 or higher. You can access log files associated with each count by clicking the headers. 
 
 ## Collecting the Data 
 The data for this page comes from the log files that are created from the workflow_decider.pl script. With these log files, the script align_count.pl will produce a json file that will show the amount that are aligned, unaligned, and remaining for each repo. You can also choose which train you want to count for. An example for running the script for train 2.0 is :
@@ -58,7 +58,7 @@ This table is changing constantly so it could not be hard coded. There are a cou
   * Workflow version must be 2.6 or higher
   * Specimen must be part of [this](https://docs.google.com/spreadsheets/d/1X3ZO3SIRm7emv3F5jCU116EprDWJnRGNqCB8x5HqOws/edit#gid=1173712136) spreadsheet
 
-When these conditions are met the specimen would be counted towards data train 2.0 aligned. Everything that is unaligned must also be part of the spreasheet or else it would not be counted. 
+When these conditions are met the specimen would be counted towards data train 2.0 aligned. Everything that is unaligned must also be part of the spreadsheet or else it would not be counted. 
 
 ### Workflow 2.6 Live Table
 This table is not being filtered from the spreadsheet and includes everything that is being aligned with workflow 2.6 or higher. The counts should be close to or higher than the numbers from data train 2.0. The only condition that this table has, is that the workflow version is higher than 2.6
@@ -67,7 +67,7 @@ This table is not being filtered from the spreadsheet and includes everything th
 There are maps and tables on this page that were made using d3. You can see more about the maps [here](http://datamaps.github.io/) and see more about tables [here](https://github.com/ICGC-TCGA-PanCancer/pancancer-info/blob/develop/pancan-scripts/docs/how-to-tables.md). I highly recommend looking at these before moving on. 
 
 ## Adding New Train 
-Adding a train invovles changing the scripts and should not be too much of a hassel. For this exmaple you will see how to add data train 2.0
+Adding a train involves changing the scripts and should not be too much of a hassle. For this example you will see how to add data train 2.0
 
 ### First Step - Changing Scripts
 The first thing you need to do go into the script align_count.pl and add a couple of things. You need to add the data train 2.0 file that we will be reading from. Go into the spreadsheet for the report and make a tsv file on the server. The report for data train 2.0 is found here https://docs.google.com/spreadsheets/d/1X3ZO3SIRm7emv3F5jCU116EprDWJnRGNqCB8x5HqOws/edit#gid=1173712136 you can just copy and paste the spreadsheet into a file called train_2.csv
@@ -84,7 +84,7 @@ You then have to read it into the script itself:
     }
     close(FH);
     
-Now we have to change the array that is being read. You want to change it so that it reads from all the repos taht are involved in the train. In this case we want to add this:
+Now we have to change the array that is being read. You want to change it so that it reads from all the repos that are involved in the train. In this case we want to add this:
 
     elsif($train eq "2"){
     @ary = ("gtrepo-bsc","gtrepo-osdc-icgc","gtrepo-osdc-tcga","gtrepo-dkfz","gtrepo-ebi","gtrepo-etri","gtrepo-riken","gtrepo-cghub");}
@@ -266,4 +266,3 @@ To make the map that goes with the table you need to add some more javascript wi
                           });
                   });
      </script>
-
