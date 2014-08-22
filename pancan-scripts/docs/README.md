@@ -1,6 +1,6 @@
 # Preparing the Environment
 
-This documentation will exmplain how to set up the environment needed for Pancancer.info to live on. It will go through all the necessary installs and downloads needed. By following this you should be able to migrate the site to whatever server you would like. Launch an instance on AWS and ssh into that instance. To configure the site onto the instance, you must do the following :
+This documentation will exmplain how to set up the environment needed for Pancancer.info to live on. It will go though all the necessary installs and downloads needed. By following this you should be able to migrate the site to whatever server you would like. Launch an instance on AWS and ssh into that instance. To configure the site onto the instance, you must do the following :
 
 First make a directory under /home/ubuntu :
  
@@ -12,18 +12,25 @@ We then have to make some more directories in /var/www/ :
     $ mkdir bubbles
     $ mkdir up_data
     $ mkdir ave_data
+    $ mkdir log_train
+    $ mkdir qc_files
 
 Clone the branch onto the machine using :
 
     $ git clone https://github.com/SeqWare/pancancer-info.git
     $ cd pancancer-info
 
-Copy uploads.html to /var/www/ :
+Copy all the html to /var/www/ :
 
     $ cd pancan-scripts
     # need one more directory
     $ mkdir results
-    $ cp uploads.html /var/www/
+    $ cp html/uploads.html /var/www/
+    $ cp html/index.html /var/www/
+    $ cp html/qc /var/www/
+    $ cp html/data_freeze /var/www/
+    $ cp html/trajectory /var/www/
+    $ cp map_data/style1.css /var/www/
 
 Before running any scripts you need to check if perl is at least version 5.18.2 using perl -v. From past experience, this version of perl has worked fine with all the perl scripts in the repo. If necessary, update perl to version 5.18.2. To do this, you need to use perlbrew. Perlbrew allows you to manage and use multiple versions perl on the same machine, if there are any problems go to http://perlbrew.pl/ to get some clarification. To use perlbrew do the following :
 
@@ -51,7 +58,7 @@ Now that you have the right version of perl, we can begin to install all the dep
 
     $ sudo apt-get install libxml2-dev libexpat1-dev libcrypt-ssleay-perl libssl-dev
     
-    $ cpanm Net::Google::Spreadsheets XML::DOM WWW::Mechanize Getopt::Long XML::Simple String::Util
+    $ cpanm Net::Google::Spreadsheets XML::DOM WWW::Mechanize Getopt::Long XML::Simple String::Util File::Slurp Carp::Always IPC::System::Simple Time::ParseDate Date::Calc XML::Simple
 
 If you are having trouble installing modules using cpanm you try to install the modules using cpan. For example :
     
@@ -65,18 +72,22 @@ Once everything is installed and ready to use, you can try and run the shell scr
     # make sure you are in /home/ubuntu/gitroot/pancancer-info/pancan-scripts/
     $ ./decider.cron
     $ ./run_get.sh
+    $ ./parse.sh
 
 This should put all the necessary files in the /var/www/ directory and have the site ready for use.
 
-You can setup a cron job running the scripts as frequently as you would like using :
+You can set up a cron job running the scripts as freqeutnly as you would like using :
 
     $ crontab -e
     # 1 * * * * /home/ubuntu/gitroot/pancancer-info/pancan-scripts/decider.cron &> /home/ubuntu/gitroot/pancancer-info/pancan-scripts/decider.cron.log
     # this will run every first minute of every hour
     # * */2 * * * /home/ubuntu/gitroot/pancancer-info/pancan-scripts/run_get.sh > /home/ubuntu/gitroot/pancancer-info/pancan-scripts/run_get.sh.log 2>&1
     # this will run every other hour
+    # * */2 * * * /home/ubuntu/gitroot/pancancer-info/pancan-scripts/parse.sh > /home/ubuntu/gitroot/pancancer-info/pancan-scripts/parse.sh.log 2>&1
+    # this will run every other hour
     
 You can use tail on the log files to see if the cronjobs are being run properly :
 
     $ tail -f /home/ubuntu/gitroot/pancancer-info/pancan-scripts/decider.cron.log
     $ tail -f /home/ubuntu/gitroot/pancancer-info/pancan-scripts/run_get.sh.log
+    $ tail -f /home/ubuntu/gitroot/pancancer-info/pancan-scripts/parse.sh.log
