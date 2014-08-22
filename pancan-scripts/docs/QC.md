@@ -57,9 +57,9 @@ Go into the script cleanup.pl and add an array of the information you want to ad
 After that is made you want to put the calculation into the loop and then push the number to the array. For this calculation we need to see which columns are needed. They turn out to be column 10/ column 29 = total_reads_r2/total_reads:
 
         if ($fields[13] ne "" && $fields[4] ne "" && $fields[4] ne "Primary tumour - solid tissue" && $fields[4] ne "Normal - other" && $fields[0] ne "date"){
-        # ADDING NEW LINES HERE
-        $reads_r2 = ($fields[10]/$fields[29]);
-        push(@percent_reads_r2,$reads_r2);
+        
+        $reads_r2 = ($fields[10]/$fields[29]); # ADDING NEW LINES HERE
+        push(@percent_reads_r2,$reads_r2); # ADDING NEW LINES HERE
         
         # Calculating the total bases per readgroup
         $total = ($fields[10] * $fields[22]) + ($fields[11]*$fields[34]);
@@ -92,8 +92,7 @@ After this you want to add it to the part that actually prints the results:
         
 Now you want to change the output for the per specimen file as well. Here we will add the calculation to the output. Go into the script specimen_bases.pl and add these lines:
 
-        # ADD THIS LINE RIGHT BEFORE LARGE PRINT STATEMENT 
-        my $percent_reads_r2 = ($spec{$key}{"total_reads_r2"}/{$spec}{$key}{"total_reads"});
+        my $percent_reads_r2 = ($spec{$key}{"total_reads_r2"}/{$spec}{$key}{"total_reads"}); # ADD THIS LINE RIGHT BEFORE LARGE PRINT STATEMENT 
         # ADD NUMBER TO PRINT STATEMENT
         print "$date,$ali,$proj,$type,$donor,$sample_id,$key,$lanes,$cntl,$read_id,$total_reads_r2,$read_length_r1,$gc_bases_r1,$platform_unit,$duplicate_reads,$mapped_bases,$mean_insert_size,$library,$mapped_reads_r1,$divergent_bases,$properly_paired,$divergent_bases_r2,$read_length_r2,$mapped_bases_r1,$sample,$platform,$readgroup,$divergent_bases_r1,$mapped_bases_r2,$total_reads,$gc_bases_r2,$median_insert_size,$insert_size_sd,$bam,$total_reads_r1,$mapped_reads_r2,$mapped_reads,$total,$ave,$per_mapped_bases,$per_mapped_reads,$per_diver_bases,$per_proper,$per_dup,$percent_reads_r2\n";
         
