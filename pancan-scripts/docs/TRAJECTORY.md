@@ -1,7 +1,7 @@
 # Trajectory Page (http://pancancer.info/trajectory)
 
 # Table of Contents
-  * [Scritps Needed](#scritps-needed)
+  * [Scripts Needed](#scripts-needed)
   * [About](#about)
   * [Collecting the Data](#collecting-the-data)
   * [Visuals Created](#visuals-created)
