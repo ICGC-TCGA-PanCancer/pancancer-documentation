@@ -7,7 +7,7 @@ Here you have to make sure the url is correct and you make all logs and working 
   
     gtrepo-(REPO NAME)
 
-This is necessary for the scripts that read in the log file. The new decider has different flags so yuo must see which ones will work with the newer version. To do the same command with the new decider would look something like this:
+This is necessary for the scripts that read in the log file. The new decider has different flags so you must see which ones will work with the newer version. It can be found [here](https://github.com/SeqWare/public-workflows/tree/develop/decider-bwa-pancancer/bin) in the develop branch. To do the same command with the new decider would look something like this:
 
     perl bin/workflow_decider.pl --seqware-clusters conf/cluster.json --workflow-version 2.6.0 --workflow-skip-scheduling --gnos-url https://gtrepo-bsc.annailabs.com --working-dir gtrepo-bsc --report gtrepo-bsc.log --use-cached-analysis
   
