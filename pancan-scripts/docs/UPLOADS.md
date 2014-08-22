@@ -18,7 +18,7 @@
 This page shows the specimens uploaded for every project. The first table shows aggregates the ICGC projects by city and puts all the TCGA projects together in one column. It shows the totals and percentages of all sites as well. Below the table are two charts which show the percentage and uploaded specimens each day/week. This is a good way to see the progress of each city. There are also options to view everything by the associated repo for both charts. Finally there is a map with tabs of all the cities included. This map is mainly for looking at the uploads/project and there is also a table showing the GNOS repo that each project is uploading to.
 
 ## Collecting the Data
-This site gets the number of uploads by referencing variuos spreadsheets:
+This site gets the number of uploads by referencing various spreadsheets:
 
 	BTCA-SG: https://docs.google.com/spreadsheet/ccc?key=0ApWzavEDzSJddGhFak1rZEJmUHFjOWR3MTRPVndrVlE&usp=drive_web
   	BOCA-UK: https://docs.google.com/spreadsheet/ccc?key=0AoQ6zq-rG38-dE5ZZVEyaUNadU9mZlpVN1hDU0lDOWc&usp=drive_web
@@ -48,10 +48,10 @@ And this spreadsheet is a quick check of what is uploaded so far by project:
   	
 	Summary: https://docs.google.com/spreadsheet/ccc?key=0AnBqxOn9BY8ldE5RUk5WX09hV1k4MllOVDdBMFFRNWc&usp=drive_web#gid=0
   
-The script get_spreadsheets.pl will download all these spreadsheets except the master ones and will use process them for getting the final numbers. It will turn the spreadsheets into txt files which are tab separated so you acan easily parse them for wanted information.
+The script get_spreadsheets.pl will download all these spreadsheets except the master ones and will use process them for getting the final numbers. It will turn the spreadsheets into txt files which are tab separated so you can easily parse them for wanted information.
 
 ## Counting Logic
-Once all these files are downloaded, the script update_data.pl will parse them and look for what has been uploaded. Using log files from the workflow_decider.pl, the script will check if any of the specimens in the spreadsheets are in the log files and if it is there, it means that the specimen has been uplaoded. For example, if you are looking to see if specimen RK123_B01 has been uploaded, the script will check the log files and see that it is in gtrepo-riken.log:
+Once all these files are downloaded, the script update_data.pl will parse them and look for what has been uploaded. Using log files from the workflow_decider.pl, the script will check if any of the specimens in the spreadsheets are in the log files and if it is there, it means that the specimen has been uploaded. For example, if you are looking to see if specimen RK123_B01 has been uploaded, the script will check the log files and see that it is in gtrepo-riken.log:
 
   	DONOR/PARTICIPANT: RK123
 
@@ -70,7 +70,7 @@ After this happens for all the specimens in every spreadsheet, it will have a to
 If the count for uploads for any project is higher in this spreadsheet, the site will use that number instead. This is possible because the spreadsheets are made by many people and may not be regularly updated. The summary page gets updated weekly from the xml files made from the workflow_decider.pl
 
 ## Visuals Created
-There are many visuals that are included on this page and a majority of them are made through the d3.js library. D3(Data Driven Douments) is a javascript tool that makes great visuals. You can look at examples here http://d3js.org/ . The two charts are made from csv files that look like this:
+There are many visuals that are included on this page and a majority of them are made through the d3.js library. D3(Data Driven Documents) is a javascript tool that makes great visuals. You can look at examples here http://d3js.org/ . The two charts are made from csv files that look like this:
   
     quarter,Heidelberg,Cambridge,Toronto,Barcelona,Singapore,Tokyo,Hinxton,Seoul,Kalyani,Brisbane,Beijing,TCGA-US
     Tue Jul 29 '14 - 13:03,720.000,178.000,154.000,198.000,12.000,529.000,398.000,20.000,26.000,0.000000,25.000000,1874
