@@ -56,7 +56,7 @@ Now that perlbrew is installed, you can download perl 5.18.2 :
 
 Now that you have the right version of perl, we can begin to install all the dependencies. Before installing the modules, you need to install the following packages :
 
-    $ sudo apt-get install libxml2-dev libexpat1-dev libcrypt-ssleay-perl libssl-dev
+    $ sudo apt-get install libxml2-dev libexpat1-dev libcrypt-ssleay-perl libssl-dev s3cmd
     
     $ cpanm Net::Google::Spreadsheets XML::DOM WWW::Mechanize Getopt::Long XML::Simple String::Util File::Slurp Carp::Always IPC::System::Simple Time::ParseDate Date::Calc XML::Simple
 
@@ -67,6 +67,8 @@ If you are having trouble installing modules using cpanm you try to install the 
 
 You have to put in your credentials for the get_spreadsheets.pl and get_uploads.pl scripts. You will put your gmail address which has access to all the spreadsheets for the projects and your gmail password. To include the "@" symbol you need to put "\@gmail.com" into the perl script. 
 
+You also need to setup your s3cmd config file with your AWS keys, see `s3cmd --configure`.
+
 Once everything is installed and ready to use, you can try and run the shell scripts :
 
     # make sure you are in /home/ubuntu/gitroot/pancancer-info/pancan-scripts/
@@ -76,7 +78,7 @@ Once everything is installed and ready to use, you can try and run the shell scr
 
 This should put all the necessary files in the /var/www/ directory and have the site ready for use.
 
-You can set up a cron job running the scripts as freqeutnly as you would like using :
+You can set up a cron job running the scripts as frequently as you would like using :
 
     $ crontab -e
     # 1 * * * * /home/ubuntu/gitroot/pancancer-info/pancan-scripts/decider.cron &> /home/ubuntu/gitroot/pancancer-info/pancan-scripts/decider.cron.log
@@ -85,9 +87,11 @@ You can set up a cron job running the scripts as freqeutnly as you would like us
     # this will run every other hour
     # * */2 * * * /home/ubuntu/gitroot/pancancer-info/pancan-scripts/parse.sh > /home/ubuntu/gitroot/pancancer-info/pancan-scripts/parse.sh.log 2>&1
     # this will run every other hour
+    5 8 * * 7 /home/ubuntu/gitroot/pancancer-info/pancan-scripts/backup.sh > /home/ubuntu/gitroot/pancancer-info/pancan-scripts/backup.sh 2>&1
     
 You can use tail on the log files to see if the cronjobs are being run properly :
 
     $ tail -f /home/ubuntu/gitroot/pancancer-info/pancan-scripts/decider.cron.log
     $ tail -f /home/ubuntu/gitroot/pancancer-info/pancan-scripts/run_get.sh.log
     $ tail -f /home/ubuntu/gitroot/pancancer-info/pancan-scripts/parse.sh.log
+    $ tail -f /home/ubuntu/gitroot/pancancer-info/pancan-scripts/backup.sh
