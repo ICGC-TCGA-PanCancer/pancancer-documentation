@@ -16,7 +16,7 @@ my %spec;
 my $str;
 
 #opens the file containing upload info 
-open(FH,"all_qc.csv") or die("Can't open guestbook.txt: $!");
+open(FH,"all_qc.csv") or die("Can't open all_qc.csv: $!");
 while (my $line = <FH>) {
   chomp $line;
   my @fields = split "," , $line;
