@@ -69,12 +69,12 @@ for computation on controlled access data.  The mechanism for other clouds is
 identical to the example below, however, so the example shown below should be
 extremely helpful in accessing PanCancer clouds.
 
-##### Step - Get an Account
+##### Step 0 - Get an Account
 
 First, sign up for an account on the AWS website, see http://aws.amazon.com for
 directions.
 
-##### Step - Create a Launcher Host
+##### Step 1 - Create a Launcher Host
 
 Next, you can create a "launcher" host. This is your gateway to the system and
 allows you to launch individual computational nodes or clusters of nodes that
@@ -112,7 +112,7 @@ the extensive tutorials online for launching a EC2 host on AWS.  Also, please
 be aware that Amazon charges by the hour, rounded up.  You are responsible for
 any Amazon expenses you incure with your account.
 
-#### Step - Install Bindle, Vagrant, and Other Tools on the Launcher
+#### Step 2 - Install Bindle, Vagrant, and Other Tools on the Launcher
 
 The next step is to configure Vagrant (cloud-agnostic VM launcher),
 Bindle (our tool for wrapping Vagrant and setting up a computational
@@ -131,7 +131,7 @@ SeqWare nodes/clusters for use with various workflows, GridEngine, or Hadoop.
 In the future we will provide pre-configured launcher VMs on the various clouds
 to eliminate the installation tasks above.
 
-#### Step - Configuration
+#### Step 3 - Configuration
 
 Now that you have Bindle and dependencies installed the next step is
 to launch computational nodes or clusters that will run workflows via SeqWare,
@@ -238,7 +238,7 @@ To use a specific cluster block, you need to use the section name of that block 
 are running the launch_cluster perl script. More on this in the next step.
 
 
-#### Step - Launch a SeqWare Node/Cluster
+#### Step 4 - Launch a SeqWare Node/Cluster
 
 Now that you have customized the settings in .cfg file, the next step is to launch a computational node. Note, each cluster gets its own target directory which you can specify the name of in .cfg file when you make a cluster block. Within the target dir you will find a log for each node (simply master.log for a single-node launch) and a directory for each node that is used by the vagrant command line tool (the "master" directory for a single-node launch). The latter is important for controlling your node/cluster once launched. 
 
@@ -273,7 +273,7 @@ administration of the box.
     # or switch user to root (not generally needed!)
     $ sudo su -
 
-#### Step - Verify Node/Cluster with HelloWorld
+#### Step 5 - Verify Node/Cluster with HelloWorld
 
 Now that you have a node or a cluster the next step is to launch a sample
 HelloWorld SeqWare workflow to ensure all the infrastructure on the box is
@@ -281,21 +281,21 @@ functioning correctly.  Depending on the template you used this may or may not
 be already installed under the seqware user account. If not, you can download a
 copy of the workflow and install it yourself following our guides on
 http://seqware.io (see
-https://s3.amazonaws.com/oicr.workflow.bundles/released-bundles/Workflow_Bundle_HelloWorld_1.0-SNAPSHOT_SeqWare_1.0.15.zip).
+https://s3.amazonaws.com/oicr.workflow.bundles/released-bundles/Workflow_Bundle_HelloWorld_1.0-SNAPSHOT_SeqWare_1.1.0-alpha.4.zip).
 The commands below assume the workflow is installed into
-provisioned-bundles/Workflow_Bundle_HelloWorld_1.0-SNAPSHOT_SeqWare_1.0.15.
+provisioned-bundles/Workflow_Bundle_HelloWorld_1.0-SNAPSHOT_SeqWare_1.1.0-alpha.4.
 
     # assumes you have logged into your master node and switched to the seqware user
     $ ls provisioned-bundles/
-    Workflow_Bundle_HelloWorld_1.0-SNAPSHOT_SeqWare_1.0.15
+    Workflow_Bundle_HelloWorld_1.0-SNAPSHOT_SeqWare_1.1.0-alpha.4
     # now run the workflow
-    $ seqware bundle launch --dir provisioned-bundles/Workflow_Bundle_HelloWorld_1.0-SNAPSHOT_SeqWare_1.0.15
+    $ seqware bundle launch --dir provisioned-bundles/Workflow_Bundle_HelloWorld_1.0-SNAPSHOT_SeqWare_1.1.0-alpha.4
 
 This command should finish without errors.  If there are problems please report
 the errors to the SeqWare user group, see http://seqware.io/community/ for
 information about posting to our mailing list.
 
-#### Step - Terminate Node/Cluster
+#### Step 6 - Terminate Node/Cluster
 
 At this point you have successfully ran a workflow.  You can use this node or
 cluster to run real workflows or just as a general GridEngine or Hadoop
@@ -326,7 +326,9 @@ In latter sections of this document you can see more information about:
 ## Additional Configuration Profiles
 
 This section describes some additional profiles we have available for the
-PanCancer project.  First, please see the general documentation above and the
+PanCancer project. These are hosted by [pancancer-bag](https://github.com/ICGC-TCGA-PanCancer/monitoring-bag) 
+
+First, please see the general documentation above and the
 README for Bindle, the tool we use to build these clusters using
 Vagrant. This will walk you through the process of using this software.  This
 tool allows us to create clusters in different cloud environments using a
