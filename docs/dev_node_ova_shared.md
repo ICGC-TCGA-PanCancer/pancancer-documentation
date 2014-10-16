@@ -51,7 +51,7 @@ The following is a detailed example showing you how to setup the workflow develo
 
 These steps will be different depending on whether or not you use a Mac or
 Linux host machine.  Much more information about Bindle can be found
-at our GitHub site https://github.com/SeqWare/vagrant. In particular take a
+at our GitHub site https://github.com/CloudBindle/Bindle. In particular take a
 look at the README.md which goes into great detail about installing and
 configuring these tools.
 
@@ -65,22 +65,8 @@ Note the "$" is the Bash shell prompt in these examples and "#" is a comment:
     $ wget http://download.virtualbox.org/virtualbox/4.3.8/virtualbox-4.3_4.3.8-92456~Ubuntu~precise_amd64.deb
     # sudo dpkg -i virtualbox-4.3_4.3.8-92456~Ubuntu~precise_amd64.deb
 
-    # download SeqWare Vagrant 1.2
-    $ wget http://s3.amazonaws.com/oicr.workflow.bundles/released-bundles/bindle_1.2.tar.gz
-    $ tar zxf bindle_1.2.tar.gz
-    $ cd bindle_1.2
+Next, follow the instructions for installing Bindle available [here](https://github.com/CloudBindle/Bindle#installing)
 
-    # install bindle dependencies, again see README for Bindle
-    $ sudo apt-get update
-    $ sudo apt-get install libjson-perl libtemplate-perl make gcc
-
-    # make sure you have all the dependencies needed for Bindle, this should not produce an error
-    $ perl -c vagrant_cluster_launch.pl
-
-    # now install the Vagrant tool which is used by Bindle
-    $ wget https://dl.bintray.com/mitchellh/vagrant/vagrant_1.4.3_x86_64.deb
-    $ sudo dpkg -i vagrant_1.4.3_x86_64.deb
-    $ vagrant plugin install vagrant-aws
 
 In the future we will provide pre-configured OVA for the development environment
 to eliminate the installation tasks above. All that will be required is
@@ -89,14 +75,19 @@ VirtualBox. For now please move on to the next step.
 ### Step - Configuration
 
 Now that you have Bindle and dependencies installed the next step is
-to launch your local VM that will run workflows via SeqWare, launch cluster
-jobs via GridEngine, or perform MapReduce jobs.
+to download the profiles required for a pancancer host. This consists of an ansible playbook describing a seqware host and a playbook (dependent on the first one) that describes additional dependencies required for the pancancer project.
 
-The steps below assume you are working in the bindle_1.2 directory:
+Checkout the following repositories at the same directory level as bindle.
 
-    # copy the template used to setup a SeqWare single compute node for PanCancer
-    # no modifications are required since you are launching using VirtualBox
-    $ cp templates/sample_configs/vagrant_cluster_launch.pancancer.seqware.install.sge_node.json.template vagrant_cluster_launch.json
+    $ git clone https://github.com/ICGC-TCGA-PanCancer/pancancer-bag.git
+    $ git clone https://github.com/SeqWare/seqware-bag.git
+    $ ls | grep bag
+    pancancer-bag
+    seqware-bag
+    $ ls | grep Bindle
+    Bindle
+
+If provided, also checkout a provided specific version of Bindle, pancancer-bag, and seqware-bag.
 
 ### Step - Launch a SeqWare Dev Node
 
