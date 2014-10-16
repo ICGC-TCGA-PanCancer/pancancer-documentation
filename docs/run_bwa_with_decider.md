@@ -277,7 +277,23 @@ http://seqware.io for more information.
 
 ## Cloud-Specific Notes
 
-This section describes modifications needed on a per PanCancer cloud basis.
+This section describes modifications needed on a per PanCancer cloud basis:
+
+#### EBI
+
+On EBI for the decider we are using the branch: 'brian_experiment_with_old_decider'
+
+The following modifications have been made to workflwo_decider.pl:
+
+Changed 'my $workflow_version = "2.6.0";' to  'my $workflow_version = "2.6.2";'  
+Commented out:   'next if ($match_workflow_version ne "" && $match_workflow_version ne $curr_workflow_version)'  
+     
+We are using Youxia-generator to generate cluster.json file for Amazon. 
+
+The following commands are bing used to run BWA workflow 2.6.2 (from crontab)
+
+50 0,4,8,12,16,20 * * * java -jar youxia-generator/target/youxia-generator-*-jar-with-dependencies.jar --aws --json decider.conf --output /home/vagrant/git/brianDecider/public-workflows/decider-bwa-pancancer/cluster-ebi.json  
+1 1,5,9,13,17,21 * * * bash /home/vagrant/git/brianDecider/public-workflows/decider-bwa-pancancer/runDecider.sh > /home/vagrant/decider.log 2>&1  
 
 ### BioNimbus PDC
 
