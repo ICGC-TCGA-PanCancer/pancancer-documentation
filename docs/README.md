@@ -31,6 +31,7 @@ These guides are geared towards our "Cloud Shepherds".  For each cloud environme
 
 * [Create a New Production Node/Cluster with Bindle](prod_cluster_with_bindle.md): instructions for the cloud shepherd to create virtual clusters of machines with our latest provisioning tool
 * [Automatically Running Workflows in a Cloud with a Decider](run_bwa_with_decider.md): instructions for automating the running of workflows with a decider.
+* [Provision and Maintain Clusters with Youxia](youxia.md): instructions for using youxia to automate the deployment and maintenance of clusters on AWS
 
 # Working Group Researchers
 
