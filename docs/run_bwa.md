@@ -39,12 +39,14 @@ You can choose to build the BWA workflow and this might be extremely nice if 1) 
     # checkout the code
     $ git clone git@github.com:SeqWare/public-workflows.git
     $ cd public-workflows
-    $ git checkout 2.0.4 <CORRECT!?!?>
+    $ git checkout 2.6.2
     # build the workflow
     $ cd workflow-bwa-pancancer
+    # specify the seqware version that you wish to compile against
+    $ vim pom.xml 
     $ mvn clean install
 
-This command checks out the 2.4.0 workflow, a more recent one might be available by the time
+This command checks out the 2.6.2 workflow, a more recent one might be available by the time
 you read this guide.
 
 You should now have a target/Workflow* directory, this is the workflow compiled into runnable form.
@@ -53,14 +55,14 @@ You should now have a target/Workflow* directory, this is the workflow compiled 
 
 You can download a pre-created Zip file, keep in mind it take a long time to process a 4G zip file:
 
-    $ wget https://s3.amazonaws.com/oicr.workflow.bundles/released-bundles/Workflow_Bundle_BWA_2.4.0_SeqWare_1.0.13.zip
-    $ seqware bundle install --zip Workflow_Bundle_BWA_2.4.0_SeqWare_1.0.13.zip
+    $ wget https://s3.amazonaws.com/oicr.workflow.bundles/released-bundles/Workflow_Bundle_BWA_2.6.2_SeqWare_1.1.0-alpha.4.zip
+    $ seqware bundle install --zip Workflow_Bundle_BWA_2.6.2_SeqWare_1.1.0-alpha.4.zip
 
 ## Running the Workflow with Sample Data
 
 You can run the workflow with integrated sample test data.  Before you run it, please locate the GNOS test key and replace it with your own as described above.
 
-    $ seqware bundle launch --dir ~/provisioned_bundles/Workflow_Bundle_BWA_2.4.0_SeqWare_1.0.13
+    $ seqware bundle launch --dir ~/provisioned_bundles/Workflow_Bundle_BWA_2.6.2_SeqWare_1.1.0-alpha.4
 
 ## Running the Workflow with Real Data
 
@@ -133,7 +135,7 @@ You can make your own ini file based on the information above and the sample
 \${workflow_bundle_dir}/Workflow_Bundle_\${workflow-directory-name}/\${version}/config/workflow.ini
 in and feed that to the workflow.
 
-    $ seqware bundle launch --dir ~/provisioned_bundles/Workflow_Bundle_BWA_2.1_SeqWare_1.0.11 --ini-file my_settings.ini
+    $ seqware bundle launch --dir ~/provisioned_bundles/Workflow_Bundle_BWA_2.6.2_SeqWare_1.1.0-alpha.4 --ini-file my_settings.ini
 
 This will launch the workflow with your custom settings.
 
