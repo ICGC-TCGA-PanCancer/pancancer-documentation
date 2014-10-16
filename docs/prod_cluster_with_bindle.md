@@ -122,25 +122,7 @@ has sudo).
 
 Much more information about Bindle can be found at our GitHub site
 https://github.com/CloudBindle/Bindle. In particular take a look at the README.md.
-
-Note the "$" is the Bash shell prompt in these examples and "#" is a comment:
-
-    # download SeqWare Vagrant 1.2
-    $ wget http://s3.amazonaws.com/oicr.workflow.bundles/released-bundles/bindle_1.2.tar.gz
-    $ tar zxf bindle_1.2.tar.gz
-    $ cd bindle_1.2
-
-    # install bindle dependencies, again see README for Bindle
-    $ sudo apt-get update
-    $ sudo apt-get install libjson-perl libtemplate-perl libconfig-simple-perl libcarp-always-perl libipc-system-simple-perl make gcc
-
-    # make sure you have all the dependencies needed for Bindle, this should not produce an error
-    $ perl -c bin/launcher/launch_cluster.pl
-
-    # now install the Vagrant tool which is used by Bindle
-    $ wget https://dl.bintray.com/mitchellh/vagrant/vagrant_1.6.3_x86_64.deb
-    $ sudo dpkg -i vagrant_1.6.3_x86_64.deb
-    $ vagrant plugin install vagrant-aws
+Please to that repository for up-to-date instructions on deploying Bindle.
 
 At this point you should have a launcher with Bindle and associated
 tools installed. This is now the machine from which you can create one or more
