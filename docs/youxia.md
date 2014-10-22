@@ -8,6 +8,7 @@ Here, we will document any specific steps taken for the deployment for pancancer
 ### Ireland ####
 
 0. Create an AMI image. For this step, we used [Bindle](https://github.com/CloudBindle/Bindle#persistance-of-ephemeral-disks---aws) deploying to an instance with a persistent EBS root filesystem. We used version 2.0-alpha.1 of Bindle paired with the 1.0-alpha.1 of [pancancer-bag](https://github.com/ICGC-TCGA-PanCancer/pancancer-bag). Note that some changes were required to seqware-bag subsequent to [1.0-alpha.2](https://github.com/SeqWare/seqware-bag/releases/tag/1.0-alpha.2) and are documented by the following commits.
+  1. The Seqware Webservice was patched with a development build to address an issue with a missing GET interface
 1. While proceeding through the youxia docs 
   1. Configure an integration for a Slack channel. In our case, we created a channel called #youxia-flying-snow and an Incoming WebHook which is specified in the youxia config file.
   2. Deploy an instance on Amazon and use the youxia-setup playbook against it to deploy all youxia components. We deployed youxia 1.1.0-alpha.3 with a slightly patched reaper.
