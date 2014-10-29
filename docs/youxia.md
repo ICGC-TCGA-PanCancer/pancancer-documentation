@@ -40,4 +40,5 @@ You may reach a situation where you will want to update the sensu checks and the
     python host_inventory_form_json.py  --input_file_path output.json output.inventory
 6. Merge the previous inventory file with the new one so that the merged inventory includes the sensu-server and a category of "master" for all other nodes
 7. Re-run
+
     ansible-playbook -i output.inventory  /home/ubuntu/monitoring-bag/site.yml --private-key=<ssk key>
