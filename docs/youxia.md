@@ -26,7 +26,7 @@ You may reach a situation where you will want to update the sensu checks and the
 
 1. Go to the monitoring-bag directory and pull a new copy
 
-       git pull
+        git pull
 2. Either pull the latest inventory used to deploy a node from the status log OR adjust the deployer to deploy one node as a test
 
         grep ansible-playbook ~/logs/status.log | tail -n 1 
