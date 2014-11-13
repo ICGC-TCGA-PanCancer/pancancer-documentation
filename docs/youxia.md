@@ -26,19 +26,19 @@ You may reach a situation where you will want to update the sensu checks and the
 
 1. Go to the monitoring-bag directory and pull a new copy
 
-   git pull
+       git pull
 2. Either pull the latest inventory used to deploy a node from the status log OR adjust the deployer to deploy one node as a test
 
-    grep ansible-playbook ~/logs/status.log | tail -n 1 
-    ansible-playbook -i <found inventory> <path to monitoring-bag> 
+        grep ansible-playbook ~/logs/status.log | tail -n 1 
+        ansible-playbook -i <found inventory> <path to monitoring-bag> 
 3. When you are satisfied with the new checks on that one specific node, you will want to deploy across all of your existing nodes
 4. First, use the generator to list all of your nodes
 
-    java -jar ~/youxia-generator/target/youxia-generator-1.1.0-alpha.3-jar-with-dependencies.jar --aws --output output.json
+        java -jar ~/youxia-generator/target/youxia-generator-1.1.0-alpha.3-jar-with-dependencies.jar --aws --output output.json
 5. Use a converter script to convert from json to ansible playbook 
-    cd ~/seqware-sandbox/ansible-pancancer/
-    python host_inventory_form_json.py  --input_file_path output.json output.inventory
+        cd ~/seqware-sandbox/ansible-pancancer/
+        python host_inventory_form_json.py  --input_file_path output.json output.inventory
 6. Merge the previous inventory file with the new one so that the merged inventory includes the sensu-server and a category of "master" for all other nodes
 7. Re-run
 
-    ansible-playbook -i output.inventory  /home/ubuntu/monitoring-bag/site.yml --private-key=<ssk key>
+        ansible-playbook -i output.inventory  /home/ubuntu/monitoring-bag/site.yml --private-key=<ssk key>
