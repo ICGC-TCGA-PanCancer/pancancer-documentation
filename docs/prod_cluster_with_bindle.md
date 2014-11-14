@@ -283,7 +283,13 @@ This command should finish without errors.  If there are problems please report
 the errors to the SeqWare user group, see http://seqware.io/community/ for
 information about posting to our mailing list.
 
-#### Step 6 - Terminate Node/Cluster
+#### Step 7 - Image the Instance for Future Use
+
+You do not need to run Bindle to create new instances every time. At this juncture, you will probably wish to image your machine in order to quickly deploy new instances in the future. 
+
+For AWS, note that you should create an image with ephemeral drives listed if you wish to use them. In combination with the [youxia deployer](https://github.com/CloudBindle/youxia#deployer), you can deploy instances using the [monitoring-bag](https://github.com/ICGC-TCGA-PanCancer/monitoring-bag) project in order to deploy instances with monitoring and LVM deployed on ephemeral drives. 
+
+#### Step 8 - Terminate Node/Cluster
 
 At this point you have successfully ran a workflow.  You can use this node or
 cluster to run real workflows or just as a general GridEngine or Hadoop
@@ -301,6 +307,7 @@ and Hadoop.
 You should always check in the AWS console (or OpenStack, vCloud, or other
 console for a different cloud) that your nodes have been terminated otherwise
 you will be billed for a machine you think is terminated.
+
 
 #### Next Steps
 
