@@ -269,7 +269,7 @@ functioning correctly.  Depending on the template you used this may or may not
 be already installed under the seqware user account. If not, you can download a
 copy of the workflow and install it yourself following our guides on
 http://seqware.io (see
-https://s3.amazonaws.com/oicr.workflow.bundles/released-bundles/Workflow\_Bundle\_HelloWorld\_1.0-SNAPSHOT\_SeqWare_1.1.0-alpha.4.zip).
+https://s3.amazonaws.com/oicr.workflow.bundles/released-bundles/Workflow_Bundle_HelloWorld_1.0-SNAPSHOT_SeqWare_1.1.0-alpha.4.zip).
 The commands below assume the workflow is installed into
 provisioned-bundles/Workflow\_Bundle\_HelloWorld\_1.0-SNAPSHOT\_SeqWare_1.1.0-alpha.4.
 
