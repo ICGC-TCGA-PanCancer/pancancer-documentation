@@ -6,9 +6,9 @@ The last section focuses on "Phase III", the moment in the project where analysi
 
 # IT-Focused
 
-These IT guides give an overview of our thoughts on the cloud-nature of this project as well as concrete recommendations for how to optimally setup OpenStack, our recommended cloud technology for this project.
+These IT guides give an overview of our thoughts on the cloud-nature of this project as well as concrete recommendations for how to optimally setup AWS and OpenStack, our recommended cloud technologies for this project.
 
-* [VM Infrastructure Overview](https://wiki.oicr.on.ca/display/PANCANCER/PanCancer+VM+Deployment+Guide): Over of the cloud architecture envisioned by the project.
+* [VM Infrastructure Overview](https://wiki.oicr.on.ca/display/PANCANCER/PanCancer+VM+Deployment+Guide): Overview of the cloud architecture envisioned by the project.
 * [OpenStack Installation Guide](openstack_install.md): Specific recommendations on how to install and configure OpenStack for use with PanCancer. TODO
 
 # Developer-Focused
