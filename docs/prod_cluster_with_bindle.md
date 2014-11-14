@@ -42,19 +42,18 @@ larger-scale computation.
 #### Steps
 
 * decide on cloud environment and request an account, when you sign up you should get the Bindle settings you need. Pancancer has 6 cloud environments, a "cloud shepherd" is typically assigned one or two
-* download and install (our use our pre-created "launcher" VM images if available on this cloud):
-    * Bindle
-    * Vagrant
-    * Vagrant plugins and/or VirtualBox
-* copy and customize the Bindle template of your choice with your appropriate cloud settings
-* launch your cluster or node using vagrant_cluster_launch.pl
+* pick an Ubuntu host which you will use to talk to AWS or a cloud environment in order to create instances that can be imaged
+* on this host, run the playbook at [architecture-setup](https://github.com/ICGC-TCGA-PanCancer/architecture-setup)
+* copy and customize the Bindle template (ex: ~/.bindle/aws.cfg) of your choice with your appropriate cloud settings
+* launch your cluster or node using Bindle's launch\_cluster.pl
 * ssh into your cluster
 * launch SeqWare workflow(s) and monitor their results, this can be automated with a decider and is the process we use to automate "Phase II" of the project
 * _or_
 * use the environment for developing, building, or using your own tools (e.g. "Phase III" activities), the following environments are available for your use:
     * GridEngine
-    * SeqWare
-    * Hadoop
+    * SeqWare configured with the Oozie-SGE workflow engine
+    * Hadoop HDFS 
+    * Hadoop Oozie
 
 #### Detailed Example - Amazon Web Services Single Node/Cluster of Nodes with the HelloWorld Workflow
 
@@ -143,9 +142,6 @@ Assuming you are still logged into your launcher node above, you will do the
 following to setup a computational node.  The steps below assume you are
 working in the Bindle directory:
 
-    # copy the path of the json template used to setup a SeqWare single compute node for PanCancer
-    # you will need to paste this path in the .cfg file you will be modifying next: 
-    # templates/sample_configs/vagrant_cluster_launch.pancancer.seqware.install.sge_node.json.template
     # modify the .cfg file to include your settings, for AWS you need to make sure you fill in "aws.cfg"
     # For more help on filling the .cfg file, please refer to the section below
     $ vim config/aws.cfg
@@ -158,16 +154,8 @@ you use IAM to create limited scope credentials.  See the Amazon site for more
 info.
 
 Alternatively, you may want to launch a compute cluster instead of a single
-node.  In that case, use a different template.  You can customize the number of
-worker nodes by increasing the number in the worker array, see the config json
-file.  We typically use between 3 and 6 worker nodes which, depending on the
-cloud, would align a 60x coverage genome in between 10 and 5 hours respectively.
+node.  You can customize the number of worker nodes by increasing the number in the Bindle cfg file.
 
-    # copy the path of json template used to setup a SeqWare compute cluster for PanCancer:
-    # templates/sample_configs/vagrant_cluster_launch.pancancer.seqware.install.sge_cluster.json.template 
-    # modify the .cfg file to include your settings, for AWS you need to make sure you fill in "aws.cfg". 
-    # For more help on filling the .cfg file, please refer to config/sample.cfg  or the readme of Bindle repository
-    $ vim config/aws.cfg
 
 ##### Filling in the config file
 
@@ -212,7 +200,7 @@ defintely have to fill those in to have bindle working properly. The others are 
 ##### Cluster Specific Information
 
 This information exists in small blocks named cluster1, cluster2, etc. These blocks contain essential information such as number of nodes,
-target_directory, the json_template file path, etc.
+target\_directory, the json_template file path, etc.
     
 Please note that you can create a new cluster by copy-pasting the existing cluster1
 block and modifying the configs for it or you can simply modify cluster1 configs and use that.
@@ -242,8 +230,8 @@ are running the launch_cluster perl script. More on this in the next step.
 
 Now that you have customized the settings in .cfg file, the next step is to launch a computational node. Note, each cluster gets its own target directory which you can specify the name of in .cfg file when you make a cluster block. Within the target dir you will find a log for each node (simply master.log for a single-node launch) and a directory for each node that is used by the vagrant command line tool (the "master" directory for a single-node launch). The latter is important for controlling your node/cluster once launched. 
 
-    # now launch the compute node. For --launch-cluster, you specify the name of the cluster block you want to launch from the .cfg file
-    $ perl bin/launcher/launch_cluster.pl --use-aws --use-default-config --launch-cluster cluster1
+    # now launch the compute node. For --cluster, you specify the name of the cluster block you want to launch from the .cfg file
+    $ perl bin/launch_cluster.pl --config aws --cluster cluster1
 
 You can follow the progress of this cluster launch in another terminal with.
 Use multiple terminals to watch logs for multiple-node clusters if you desire:
@@ -281,9 +269,9 @@ functioning correctly.  Depending on the template you used this may or may not
 be already installed under the seqware user account. If not, you can download a
 copy of the workflow and install it yourself following our guides on
 http://seqware.io (see
-https://s3.amazonaws.com/oicr.workflow.bundles/released-bundles/Workflow_Bundle_HelloWorld_1.0-SNAPSHOT_SeqWare_1.1.0-alpha.4.zip).
+https://s3.amazonaws.com/oicr.workflow.bundles/released-bundles/Workflow\_Bundle\_HelloWorld\_1.0-SNAPSHOT\_SeqWare_1.1.0-alpha.4.zip).
 The commands below assume the workflow is installed into
-provisioned-bundles/Workflow_Bundle_HelloWorld_1.0-SNAPSHOT_SeqWare_1.1.0-alpha.4.
+provisioned-bundles/Workflow\_Bundle\_HelloWorld\_1.0-SNAPSHOT\_SeqWare_1.1.0-alpha.4.
 
     # assumes you have logged into your master node and switched to the seqware user
     $ ls provisioned-bundles/
@@ -301,7 +289,7 @@ At this point you have successfully ran a workflow.  You can use this node or
 cluster to run real workflows or just as a general GridEngine or Hadoop
 environment.  Those topics are beyond the scope of this document but are
 covered in other SOPs.  When you finish with a node or cluster you can
-terminate it or, dependening on the environment, you can suspend it for use
+terminate it or, depending on the environment, you can suspend it for use
 later.  Keep in mind suspend works for single nodes but clusters of nodes
 cannot be suspended and then booted up later again on most cloud infrastructure
 because IP addresses typically change and this disrupts things like GridEngine
@@ -341,46 +329,11 @@ workflow(s) pre-installed.
 
 ### Cluster Without Workflows
 
-In this environment we create a cluster of VMs but it does not have any
-PanCancer workflows pre-installed.  This saves provisioning runtime, which can
-be as short as 20 minutes, and gives you flexibility to install
-newer/alternative/custom workflows.
-
-    # copy-paste this json template path in the appropriate .cfg file:
-    # templates/sample_configs/vagrant_cluster_launch.pancancer.seqware.install.sge_cluster.json.template
-    # launch, use the correct command line args for your cloud environment, see docs above and the README for Bindle
-    perl bin/launcher/launch_cluster.pl --use-aws --use-default-config --launch-cluster cluster1
+Simply use Bindle (using the cfg file) at the seqware-bag playbook and omit pancancer-bag. 
 
 ### Cluster With BWA Workflow
 
-In this environment we create a cluster of VMs with the PanCancer BWA Workflow
-2.0 installed. This process can take ~1.5 hours depending on your connection to
-the storage site for the workflow (it is a large workflow).
-
-    # copy-paste this json template path in the appropriate .cfg file:
-    # templates/sample_configs/vagrant_cluster_launch.pancancer.bwa_workflow.seqware.install.sge_cluster.json.template 
-    # launch, use the correct command line args for your cloud environment, see docs above and the README for Bindle
-    perl bin/launcher/launch_cluster.pl --use-aws --use-default-config --launch-cluster cluster1
-
-### Single Instance without Workflows
-
-In this environment we create a single VM but it does not have any PanCancer
-workflows pre-installed.  This saves provisioning runtime which can be as short
-as 20 minutes and gives you flexibility to install newer/alternative workflows.
-
-    # copy-paste this json template path in the appropriate .cfg file:
-    # templates/sample_configs/vagrant_cluster_launch.pancancer.seqware.install.sge_node.json.template 
-    # launch, use the correct command line args for your cloud environment, see docs above and the README for Bindle
-    perl bin/launcher/launch_cluster.pl --use-aws --use-default-config --launch-cluster cluster1
-
-### Single Instance with Workflows
-
-In this environment we create a VM with the PanCancer BWA Workflow 2.0 installed.
-
-    # copy-paste this json template path in the appropriate .cfg file:
-    # templates/sample_configs/vagrant_cluster_launch.pancancer.bwa_workflow.seqware.install.sge_node.json.template 
-    # launch, use the correct command line args for your cloud environment, see docs above and the README for Bindle
-    perl bin/launcher/launch_cluster.pl --use-aws --use-default-config --launch-cluster cluster1
+Simply use Bindle (using the cfg file) at the pancancer-bag playbook. 
 
 ## Cloud-Specific Notes
 
