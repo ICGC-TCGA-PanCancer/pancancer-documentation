@@ -1,4 +1,4 @@
-# TCGA/ICGC PanCancer - Computational Node/Cluster from Scratch with Bindle
+p# TCGA/ICGC PanCancer - Computational Node/Cluster from Scratch with Bindle
 
 This is our SOP for how to launch clusters/nodes using Bindle
 specifically for use by the TCGA/ICGC PanCancer project.  In addition to
@@ -15,12 +15,12 @@ There are really two use cases for this technology by the PanCancer project.
 First, to create a production environment for running analytical workflows for
 PanCancer.  These are employed by "cloud shepherds" in "Phase II" to
 analyze donors with standardized alignment and variant calling workflows.
-This environment could also by "Phase III" researchers that need a virtual
+This environment could also be used by "Phase III" researchers that need a virtual
 cluster running Hadoop or SGE for their research.
 The second use case is to create a workflow development environment for making and testing
 new workflows for the project, especially if scaled-up testing across
 a virtual cluster is required. Regardless, the directions for creating a node or
-cluster with Bindle is the same.
+cluster with Bindle are the same.
 
 ### Build a PanCancer Workflow Running Environment
 
@@ -42,7 +42,7 @@ larger-scale computation.
 #### Steps
 
 * decide on cloud environment and request an account, when you sign up you should get the Bindle settings you need. Pancancer has 6 cloud environments, a "cloud shepherd" is typically assigned one or two
-* pick an Ubuntu host which you will use to talk to AWS or a cloud environment in order to create instances that can be imaged
+* pick an Ubuntu host which you will use to talk to AWS or a cloud environment in order to create instances that can be imaged - this will be your provisioning host 
 * on this host, run the playbook at [architecture-setup](https://github.com/ICGC-TCGA-PanCancer/architecture-setup)
 * copy and customize the Bindle template (ex: ~/.bindle/aws.cfg) of your choice with your appropriate cloud settings
 * launch your cluster or node using Bindle's launch\_cluster.pl
@@ -121,7 +121,7 @@ has sudo).
 
 Much more information about Bindle can be found at our GitHub site
 https://github.com/CloudBindle/Bindle. In particular take a look at the README.md.
-Please to that repository for up-to-date instructions on deploying Bindle.
+Please go to that repository for up-to-date instructions on deploying Bindle.
 
 At this point you should have a launcher with Bindle and associated
 tools installed. This is now the machine from which you can create one or more
