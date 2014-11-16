@@ -355,7 +355,7 @@ functionality and, therefore, only single nodes can be launched there.
 
 ### Notes for BioNimbus PDC 1.1 (OpenStack)
 
-BioNimbus uses OpenStack and the Vagrant OpenStack plugin is quite stable however the PDC2 environment is in flux. You
+BioNimbus uses OpenStack and the Vagrant OpenStack plugin is quite stable however the PDC 1.1 environment is in flux. You
 can launch VM clusters or single nodes.
 
 When you launch the cluster you need to do the following differently from the examples above:
