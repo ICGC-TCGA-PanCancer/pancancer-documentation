@@ -353,7 +353,7 @@ information that is particular to each.
 The Embassy Cloud at EBI uses vCloud.  The Vagrant vCloud plugin has limited
 functionality and, therefore, only single nodes can be launched there.
 
-### Notes for BioNimbus PDC2 (OpenStack)
+### Notes for BioNimbus PDC 1.1 (OpenStack)
 
 BioNimbus uses OpenStack and the Vagrant OpenStack plugin is quite stable however the PDC2 environment is in flux. You
 can launch VM clusters or single nodes.
