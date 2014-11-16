@@ -144,7 +144,7 @@ working in the Bindle directory:
 
     # modify the .cfg file to include your settings, for AWS you need to make sure you fill in "aws.cfg"
     # For more help on filling the .cfg file, please refer to the section below
-    $ vim config/aws.cfg
+    $ vim ~/.bindle/aws.cfg
     # paste your key pem file contents, whatever you call it
     $ vim ~/.ssh/brian-oicr-3.pem
     $ chmod 600 ~/.ssh/brian-oicr-3.pem
@@ -159,14 +159,14 @@ node.  You can customize the number of worker nodes by increasing the number in 
 
 ##### Filling in the config file
 
-The config files are located at "Bindle/configs/". Please open up aws.cfg (vim config/aws.cfg) since we are launching a cluster on aws. 
+The config files are located at "~/.bindle/". Please open up aws.cfg (vim ~/.bindle/aws.cfg) since we are launching a cluster on aws. 
 One thing you must keep in mind before filling in the config files is not to delete any of the default
 parameters you are not going to be needing. Simply, leave them blank if that is the case. 
 
 ##### Platform Specific Information
 
 This section of the config file contains all the information that is required to set up the cloud platform.
-We will need to fill out all the information in config/aws.cfg. For OpenStack, it is os.cfg and for vCloud, it is vcloud.cfg
+We will need to fill out all the information in config/aws.cfg. For OpenStack, it is openstack.cfg and for vCloud, it is vcloud.cfg
 
 Let us go through the parameters that might confuse you when you are filling the config file. I will not be going 
 through the most obvious parameters (ie. key, secret_key, etc):
@@ -175,7 +175,8 @@ through the most obvious parameters (ie. key, secret_key, etc):
     # can be either openstack(os) or aws or vcloud
     type=os/aws/vcloud
     
-    # asks for the name of your pem file. Please make sure you have the pem file under ~/.ssh on your launcher host
+    # asks for the SSH key name you have defined in your cloud. Please make sure you have the pem file for the private key under ~/.ssh on your launcher host. Let's assume you called the key name "ap-oicr-2" when you generated it initially, but you saved the private part on your computer as "ap-oicr-2_private_key.pem". In this case, you should populate the bindle config file with the following "ssh_key_name", while uploading the private key as "~/.ssh/ap-oicr-2_private_key.pem" (600 permissions) on the Bindle VM:
+    
     ssh_key_name=ap-oicr-2
     
     # asks for the type of node you want to launch (m1.small, m1.medium, m1.xlarge, etc)
