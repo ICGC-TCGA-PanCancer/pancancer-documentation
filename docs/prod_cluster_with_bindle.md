@@ -43,7 +43,7 @@ larger-scale computation.
 
 * decide on cloud environment and request an account, when you sign up you should get the Bindle settings you need. Pancancer has 6 cloud environments, a "cloud shepherd" is typically assigned one or two
 * pick an Ubuntu host which you will use to talk to AWS or a cloud environment in order to create instances that can be imaged - this will be your provisioning host 
-* on this host, run the playbook at [architecture-setup](https://github.com/ICGC-TCGA-PanCancer/architecture-setup)
+* on this host, run the playbook at [install](https://github.com/CloudBindle/Bindle/tree/develop/install)
 * copy and customize the Bindle template (ex: ~/.bindle/aws.cfg) of your choice with your appropriate cloud settings
 * launch your cluster or node using Bindle's launch\_cluster.pl
 * ssh into your cluster
