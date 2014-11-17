@@ -388,6 +388,28 @@ There are several items you need to take care of post-provisioning to ensure you
 
 After these changes you should have a working SeqWare environment set to run workflows as your user.
 
+#### More PDC 1.1 Tips
+
+You can snapshot the VM but if you do you need to ensure the hostname is reset on reboot and tomcat is restarted.  Add the following to /etc/rc.local (the exit 0 is already at the end of the script):
+
+    hostname master
+    /etc/init.d/tomcat7 restart
+    exit 0
+
+That will ensure the machine comes back after reboot.
+
+Also, if you are going to snapshot in OpenStack you will want to make sure you setup SGE according to the instance type you will use in the future e.g. the flavor.  Here I'm adjusting for a 16 core, 64G machine:
+
+    sudo qconf -aattr queue slots "[master=16]" main.q
+    sudo qconf -mattr queue load_thresholds "np_load_avg=16" main.q
+    sudo qconf -rattr exechost complex_values h_vmem=63000000000 master
+
+To snapshot see the following command:
+
+    nova image-create ff625cf8-e5c9-46b6-9c08-2c6189eb3f9f Ubuntu-12.04-LTS-v1.5.3-CgpCnIndelSnvStr-1.0-SNAPSHOT-SeqWare-1.1.0a5-v1
+
+Adjust as need be, name your new image as you like.  You can then launch a new copy of this VM image using the standard nova commands.
+
 ### Notes for OICR (OpenStack)
 
 OICR uses OpenStack internally for testing and the Vagrant OpenStack plugin is
