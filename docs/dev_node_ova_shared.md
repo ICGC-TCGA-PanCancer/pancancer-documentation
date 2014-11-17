@@ -45,7 +45,7 @@ in cloud environments.
 
 The following is a detailed example showing you how to setup the workflow development environment:
 
-### Step - Download and Install Components
+### Step 1 - Download and Install Components
 
 These steps will be different depending on whether or not you use a Mac or
 Linux host machine.  Much more information about Bindle can be found
@@ -70,7 +70,7 @@ In the future we will provide pre-configured OVA for the development environment
 to eliminate the installation tasks above. All that will be required is
 VirtualBox. For now please move on to the next step.
 
-### Step - Configuration
+### Step 2 - Configuration
 
 Next setup Bindle with its profiles specific to the pancancer project. 
 
@@ -80,7 +80,7 @@ Checkout the following repositories at the same directory level as bindle.
 
 Follow the instructions in architecture-setup/README.md. 
 
-### Step - Launch a SeqWare Dev Node
+### Step 3 - Launch a SeqWare Dev Node
 
 Now that you have customized the settings in cluster\_launch.json the
 next step is to launch a computational node. Note, each launch of a
@@ -105,7 +105,7 @@ Once this process complete you should see no error messages from
 cluster\_launch.pl. If so, you are ready to use your workflow
 development node.
 
-### Step - Log In To Node/Cluster
+### Step 4 - Log In To Node/Cluster
 
 Vagrant provides a simple way to log into a launched node.  For example:
 
@@ -127,7 +127,7 @@ be thought of in the same way:
     # or switch user to root (not generally needed!)
     $ sudo su -
 
-#### Step - Verify Node/Cluster with HelloWorld
+#### Step 5 - Verify Node/Cluster with HelloWorld
 
 Now that you have a workflow development node the next step is to launch a sample
 HelloWorld SeqWare workflow to ensure all the infrastructure on the box is
