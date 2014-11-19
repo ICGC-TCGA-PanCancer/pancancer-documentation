@@ -29,8 +29,12 @@ These guides are geared towards a developer wanting to create a new workflow for
 
 These guides are geared towards our "Cloud Shepherds".  For each cloud environment we have assigned a cloud shepherd to 1) ensure our provisioning process can build virtual clusters in that environment and 2) setup automated running of core "Phase II" workflows within their respective clouds. They also work closely with workflow authors to ensure new core workflows are deployed smoothly to these environments.
 
-* [Deploy Bindle with all dependencies](architecture-overview.md): instructions for deploying bindle with its dependencies and with all profiles for the pancancer project pre-deployed 
+## Environment Setup
+
 * [Create a New Production Node/Cluster with Bindle](prod_cluster_with_bindle.md): instructions for the cloud shepherd to create virtual clusters of machines with our latest provisioning tool
+
+## Running Workflows in Production
+
 * [Automatically Running Workflows in a Cloud with a Decider](run_bwa_with_decider.md): instructions for automating the running of workflows with a decider.
 * [Provision and Maintain Clusters with Youxia](youxia.md): instructions for using youxia to automate the deployment and maintenance of clusters on AWS
 
