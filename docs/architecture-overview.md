@@ -22,5 +22,13 @@ VirtualBox is supported to allow workflow developers the abililty to spin up a S
 
 Depending on what you are intending on accomplishing you might want to setup the individual parts individually - each sub project can be installed independently. 
 
+## Component Overview
 
- 
+While you will be learning about the various components in more detail as you proceed through the install guide for each role and component, this is a quick overview of most of the components for one pair of clouds. 
+
+A commercial cloud can be paired with an academic cloud, SeqWare single-node instances run in each cloud, while youxia tooling (deployer, reaper) creates and tears down nodes running in AWS. We take advantage of the AWS and Openstack API in order to retrieve information on running instances while Sensu is used to aggregate data from checks collecting information about system status such disk space, running workflows, network IO performance, etc. A single decider queries GNOS and schedules workflows on the various SeqWare clusters. Finally, Bindle is used (in conjunction with the seqware-bag and pancancer-bag which are ansible playbooks) in order to create the original instances which can be imaged. 
+
+Bindle can also be used in academic clouds to create instances (which may be imaged depending on what capabilities are available on each cloud). 
+
+
+![Image of youxia](youxia.png)
