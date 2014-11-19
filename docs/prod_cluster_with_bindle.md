@@ -65,33 +65,29 @@ Typically you would do 1 & 2 for development and 3 then 4 for production
 
 Here I will show you how to create a single compute node running on AWS and
 capable or executing the HelloWorld workflow to ensure your environment is
-working.  Another tutotrial will show you how to install the PanCancer BWA-Mem
-Workflow. I chose AWS for its ease of access however please keep in mind
-the AWS cloud is not a PanCancer participating cloud. This information is
-provided for illustration purposes only. You can use AWS to work with
-synthetic/non-controlled access data but please use a PanCancer approved cloud
-for computation on controlled access data.  The mechanism for other clouds is
+working.  This setup process will also install other PanCancer workflows along the way.  I chose AWS for its ease of access however please keep in mind
+that we run in 6 academic clouds which do have their specific settings, see the section below. The mechanism for other clouds is
 identical to the example below, however, so the example shown below should be
 extremely helpful in accessing PanCancer clouds.
 
 ##### Step 0 - Get an Account
 
 First, sign up for an account on the AWS website, see http://aws.amazon.com for
-directions.
+directions.  Brian O'Connor at OICR manages the accounts for the group.
 
 ##### Step 1 - Create a Launcher Host
 
 Next, you can create a "launcher" host. This is your gateway to the system and
-allows you to launch individual computational nodes or clusters of nodes that
+allows you to launch individual computational nodes (or clusters of nodes) that
 actually do the processing of data.  It also is the location to run the
-"decider" that will schedule the BWA workflow running on your many clusters in
+"decider" that will schedule the BWA (and other) workflows running on your many nodes in
 this cloud.  This latter topic will be discussed in another guide focused on
 workflow launching and automation.
 
 The launcher host also improves the isolation of your computational
 infrastructure.  It should be the only host accessible via SSH, should use SSH
 keys rather than passwords, use a non-standard SSH port, and, ideally, include
-Failtoban or another intrusion deterant.  For AWS, please see the extensive
+Failtoban or another intrusion deterrent.  For AWS, please see the extensive
 documentation on using security groups to isolate instances behind firewalls
 and setup firewall rules at http://aws.amazon.com.
 
@@ -101,8 +97,8 @@ command line, and web GUI tools for starting this launcher host.  For the
 purposes of this tutorial we assume you have successfully started the launcher
 host using the web GUI at http://aws.amazon.com.  
 
-Next, we recommend you use an "t1.micro" instance type as this is inexpensive
-($14/month) to keep running constantly.
+Next, we recommend you use an "m1.large" instance type as this is inexpensive
+ to keep running constantly.
 
 We also assume that you have setup your firewall (security group) and have
 produced a .pem SSH key file for use to login to this host.  In my case my key
@@ -114,8 +110,7 @@ launcher host over SSH using something similar to the following:
 Up to this point the activities we have described are not at all specific to
 the PanCancer project.  If you have any issues following these steps please see
 the extensive tutorials online for launching a EC2 host on AWS.  Also, please
-be aware that Amazon charges by the hour, rounded up.  You are responsible for
-any Amazon expenses you incure with your account.
+be aware that Amazon charges by the hour, rounded up.  We are collectively responsible for the Amazon expenses you incur with your account so don't leave instances running if they aren't used.
 
 #### Step 2 - Install Bindle, Vagrant, and Other Tools on the Launcher
 
@@ -126,8 +121,7 @@ onto your launcher now and perform the following actions as ubuntu (who also
 has sudo).
 
 Much more information about Bindle can be found at our GitHub site
-https://github.com/CloudBindle/Bindle. In particular take a look at the README.md.
-Please go to that repository for up-to-date instructions on deploying Bindle.
+https://github.com/CloudBindle/Bindle. In particular take a look at the README.md. Please go to that repository for up-to-date instructions on deploying Bindle.
 
 At this point you should have a launcher with Bindle and associated
 tools installed. This is now the machine from which you can create one or more
