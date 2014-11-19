@@ -45,15 +45,21 @@ larger-scale computation.
 * launch an Ubuntu 12.04 VM in that cloud you will use this host as a "launcher host" which will launch other VMs that run workflows and/or are snapshotted for later use 
 * ssh to this launcher host and use the instructions detailed below to setup the Bindle provision tool used to launch other VMs
 * customize the Bindle template with your cloud settings (ex: ~/.bindle/aws.cfg), this was created for you by the above mentioned setup process
-* launch your SeqWare node with PanCancer workflows using Bindle's launch\_cluster.pl tool
-* ssh into your node
-* launch SeqWare workflow(s) and monitor their results, this can be automated with a decider and is the process we use to automate "Phase II" of the project
-* _or_
-* use the environment for developing, building, or using your own tools (e.g. "Phase III" activities), the following environments are available for your use:
-    * GridEngine
-    * SeqWare configured with the Oozie-SGE workflow engine
-    * Hadoop HDFS 
-    * Hadoop Oozie
+* launch your SeqWare worker node with PanCancer workflows using Bindle's launch\_cluster.pl tool
+* you can do one of four things with this worker node:
+   * 1) ssh into your SeqWare work node and launch SeqWare workflow(s) and monitor their results, this can be automated with a decider and is the process we use to automate "Phase II" of the project
+    * _or_
+    * 2) use the environment for developing, building, or using your own tools (e.g. "Phase III" activities), the following environments are available for your use:
+       * GridEngine
+       * SeqWare configured with the Oozie-SGE workflow engine
+       * Hadoop HDFS 
+       * Hadoop Oozie
+   * _or_
+   * 3) snapshot the VM to make an image which can then be launched again (potentially over and over again) and do the two above
+   * _or_
+   * 4) you can add the IP address to a workflow decider and have that decider schedule workflows here
+
+Typically you would do 1 & 2 for development and 3 then 4 for production
 
 #### Detailed Example - Amazon Web Services Single Node/Cluster of Nodes with the HelloWorld Workflow
 
