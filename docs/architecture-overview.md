@@ -18,7 +18,7 @@ VirtualBox is supported to allow workflow developers the abililty to spin up a S
 
 #### Provisioning
 
-[Architecture Provisioning Scripts](https://github.com/ICGC-TCGA-PanCancer/architecture-setup) have been created to download, install and configure the environments with the varios parts of the PanCancer Architecture. This system has been broken down into several GitHub projects for the sake of modularity. 
+[Architecture Provisioning Scripts](https://github.com/ICGC-TCGA-PanCancer/architecture-setup) have been created to download, install and configure the environments with the various parts of the PanCancer Architecture. This system has been broken down into several GitHub projects for the sake of modularity. 
 
 Depending on what you are intending on accomplishing you might want to setup the individual parts individually - each sub project can be installed independently. 
 
