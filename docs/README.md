@@ -31,6 +31,7 @@ These guides are geared towards our "Cloud Shepherds".  For each cloud environme
 
 ## Environment Setup
 
+* [Architecture Overview](architecture-overview.md): an overview of our architecutre used for the project.
 * [Create a New Production Node/Cluster with Bindle](prod_cluster_with_bindle.md): instructions for the cloud shepherd to create virtual clusters of machines with our latest provisioning tool
 
 ## Running Workflows in Production
