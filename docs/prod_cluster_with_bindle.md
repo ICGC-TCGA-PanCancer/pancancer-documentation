@@ -83,7 +83,7 @@ actually do the processing of data.  It also is the location to run the
 "decider" that will schedule the BWA (and other) workflows running on your many nodes in
 this cloud.  This latter topic will be discussed in another guide focused on
 workflow launching and automation.
-
+ 
 The launcher host also improves the isolation of your computational
 infrastructure.  It should be the only host accessible via SSH, should use SSH
 keys rather than passwords, use a non-standard SSH port, and, ideally, include
