@@ -117,7 +117,18 @@ be aware that Amazon charges by the hour, rounded up.  We are collectively respo
 The next step is to configure Vagrant (cloud-agnostic VM launcher),
 Bindle (our tool for wrapping Vagrant and setting up a computational
 environment/cluster), and various other dependencies to get these to work.  Log
-onto your launcher now and follow the documents at [architecture2](https://github.com/ICGC-TCGA-PanCancer/architecture-setup) which will install Bindle with all associated code for the pan-cancer profiles. 
+onto your launcher now and download the current release of the architecture-setup project:
+
+    wget https://github.com/ICGC-TCGA-PanCancer/architecture-setup/archive/1.0.0.tar.gz
+    tar zxf 1.0.0.tar.gz
+    cd architecture-setup-1.0.0
+
+Now follow the documents at [architecture2](https://github.com/ICGC-TCGA-PanCancer/architecture-setup) which will install Bindle with all associated code for the pan-cancer profiles. These docs are authoritative here, the example below is just to give you an idea:
+
+    sudo bash setup.sh
+    ansible-playbook -i inventory site.yml
+
+By default the site.yml points to the local host which will work perfectly for us here.
 
 At this point you should have a launcher with Bindle and associated
 tools installed. This is now the machine from which you can create one or more
