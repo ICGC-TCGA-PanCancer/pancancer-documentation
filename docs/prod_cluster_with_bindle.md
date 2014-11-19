@@ -119,9 +119,9 @@ Bindle (our tool for wrapping Vagrant and setting up a computational
 environment/cluster), and various other dependencies to get these to work.  Log
 onto your launcher now and download the current release of the architecture-setup project:
 
-    wget https://github.com/ICGC-TCGA-PanCancer/architecture-setup/archive/1.0.0.tar.gz
-    tar zxf 1.0.0.tar.gz
-    cd architecture-setup-1.0.0
+    wget https://github.com/ICGC-TCGA-PanCancer/architecture-setup/archive/1.0.1.tar.gz
+    tar zxf 1.0.1.tar.gz
+    cd architecture-setup-1.0.1
 
 Now follow the documents at [architecture2](https://github.com/ICGC-TCGA-PanCancer/architecture-setup) which will install Bindle with all associated code for the pan-cancer profiles. These docs are authoritative here, the example below is just to give you an idea:
 
@@ -160,7 +160,6 @@ info.
 
 Alternatively, you may want to launch a compute cluster instead of a single
 node.  You can customize the number of worker nodes by increasing the number in the Bindle cfg file.
-
 
 ##### Filling in the config file
 
