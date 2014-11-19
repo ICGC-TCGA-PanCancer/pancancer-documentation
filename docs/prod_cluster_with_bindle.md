@@ -117,17 +117,12 @@ be aware that Amazon charges by the hour, rounded up.  We are collectively respo
 The next step is to configure Vagrant (cloud-agnostic VM launcher),
 Bindle (our tool for wrapping Vagrant and setting up a computational
 environment/cluster), and various other dependencies to get these to work.  Log
-onto your launcher now and perform the following actions as ubuntu (who also
-has sudo).
-
-Please refer to the [architecture2 documents](https://github.com/ICGC-TCGA-PanCancer/architecture-setup) which will install Bindle with all associated code for the pan-cancer profiles. 
+onto your launcher now and follow the documents at [architecture2](https://github.com/ICGC-TCGA-PanCancer/architecture-setup) which will install Bindle with all associated code for the pan-cancer profiles. 
 
 At this point you should have a launcher with Bindle and associated
 tools installed. This is now the machine from which you can create one or more
 SeqWare nodes/clusters for use with various workflows, GridEngine, or Hadoop.
 
-In the future we will provide pre-configured launcher VMs on the various clouds
-to eliminate the installation tasks above.
 
 #### Step 3 - Configuration
 
