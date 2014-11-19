@@ -39,14 +39,14 @@ This process can be used to create both single compute instances for
 small-scale computation and clusters of compute instances suitable for
 larger-scale computation.
 
-#### Steps
+#### Overview of Steps
 
-* decide on cloud environment and request an account, when you sign up you should get the Bindle settings you need. Pancancer has 6 cloud environments, a "cloud shepherd" is typically assigned one or two
-* pick an Ubuntu host which you will use to talk to AWS or a cloud environment in order to create instances that can be imaged - this will be your provisioning host 
-* on this host, run the playbook at [install](https://github.com/CloudBindle/Bindle/tree/develop/install)
-* copy and customize the Bindle template (ex: ~/.bindle/aws.cfg) of your choice with your appropriate cloud settings
-* launch your cluster or node using Bindle's launch\_cluster.pl
-* ssh into your cluster
+* decide on cloud environment and request an account, when you sign up you should get the cloud credentials you need (more detail below). Pancancer has 6 cloud environments, each with their own credentials, endpoints, settings, etc.
+* launch an Ubuntu 12.04 VM in that cloud you will use this host as a "launcher host" which will launch other VMs that run workflows and/or are snapshotted for later use 
+* ssh to this launcher host and use the instructions detailed below to setup the Bindle provision tool used to launch other VMs
+* customize the Bindle template with your cloud settings (ex: ~/.bindle/aws.cfg), this was created for you by the above mentioned setup process
+* launch your SeqWare node with PanCancer workflows using Bindle's launch\_cluster.pl tool
+* ssh into your node
 * launch SeqWare workflow(s) and monitor their results, this can be automated with a decider and is the process we use to automate "Phase II" of the project
 * _or_
 * use the environment for developing, building, or using your own tools (e.g. "Phase III" activities), the following environments are available for your use:
