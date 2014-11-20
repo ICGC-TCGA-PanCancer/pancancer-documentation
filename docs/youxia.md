@@ -3,22 +3,7 @@
 Pancancer uses the youxia suite of software tools to deploy, monitor, and teardown clusters on (Amazon) AWS.
 Please refer to [Youxia](https://github.com/CloudBindle/youxia) for generic documentation for Youxia.
 
-Here, we will document any specific steps taken for the deployment for pancancer with Ireland as a case study.
-
-### Ireland ####
-
-0. Create an AMI image. For this step, we used [Bindle](https://github.com/CloudBindle/Bindle#persistance-of-ephemeral-disks---aws) deploying to an instance with a persistent EBS root filesystem. We used version 2.0-alpha.1 of Bindle paired with the 1.0-alpha.1 of [pancancer-bag](https://github.com/ICGC-TCGA-PanCancer/pancancer-bag). Note that some changes were required to seqware-bag subsequent to [1.0-alpha.2](https://github.com/SeqWare/seqware-bag/releases/tag/1.0-alpha.2) and are documented by the following commits.
-  1. The Seqware Webservice was patched with a development build to address an issue with a missing GET interface
-  2. This patch was subsequently released as SeqWare 1.1.0-alpha.5 which should be used for all future deployments with Youxia
-1. While proceeding through the youxia docs 
-  1. Configure an integration for a Slack channel. In our case, we created a channel called #youxia-flying-snow and an Incoming WebHook which is specified in the youxia config file.
-  2. Deploy an instance on Amazon and use the youxia-setup playbook against it to deploy all youxia components. We deployed youxia 1.1.0-alpha.3 with a slightly patched reaper.
-  3. Modify the crontab for the ubuntu user as required to specify the number of hosts that should be maintained
-  4. Modify the crontab to disable the mock decider when you are satisfied with the operation of youxia
-2. Hook up a decider from within the paired academic cloud.  
-  1. For this step, ensure that the environment has access to Java 7. Download the jar files from artfiactory as documented in the youxia documentation and configure the generator component only.
-3. Hook up the decider as required.
-4. ???
+After using the [setup Playbook](https://github.com/CloudBindle/youxia/tree/develop/youxia-setup), you will have configured an instance with a deployer, reaper, and example decider running on a crontab. Edit this with the specific settings desired for your cluster. 
 
 ### Monitoring-bag Updates ###
 
@@ -42,3 +27,24 @@ You may reach a situation where you will want to update the sensu checks and the
 7. Re-run
 
         ansible-playbook -i output.inventory  /home/ubuntu/monitoring-bag/site.yml --private-key=<ssk key>
+        
+## Examples
+
+In this section, we will detail our experiences setting up Youxia in particular environments
+
+### Ireland ####
+
+Here, we will document any specific steps taken for the deployment for pancancer with Ireland as a case study.
+
+0. Create an AMI image. For this step, we used [Bindle](https://github.com/CloudBindle/Bindle#persistance-of-ephemeral-disks---aws) deploying to an instance with a persistent EBS root filesystem. We used version 2.0-alpha.1 of Bindle paired with the 1.0-alpha.1 of [pancancer-bag](https://github.com/ICGC-TCGA-PanCancer/pancancer-bag). Note that some changes were required to seqware-bag subsequent to [1.0-alpha.2](https://github.com/SeqWare/seqware-bag/releases/tag/1.0-alpha.2) and are documented by the following commits.
+  1. The Seqware Webservice was patched with a development build to address an issue with a missing GET interface
+  2. This patch was subsequently released as SeqWare 1.1.0-alpha.5 which should be used for all future deployments with Youxia
+1. While proceeding through the youxia docs 
+  1. Configure an integration for a Slack channel. In our case, we created a channel called #youxia-flying-snow and an Incoming WebHook which is specified in the youxia config file.
+  2. Deploy an instance on Amazon and use the youxia-setup playbook against it to deploy all youxia components. We deployed youxia 1.1.0-alpha.3 with a slightly patched reaper.
+  3. Modify the crontab for the ubuntu user as required to specify the number of hosts that should be maintained
+  4. Modify the crontab to disable the mock decider when you are satisfied with the operation of youxia
+2. Hook up a decider from within the paired academic cloud.  
+  1. For this step, ensure that the environment has access to Java 7. Download the jar files from artfiactory as documented in the youxia documentation and configure the generator component only.
+3. Hook up the decider as required.
+4. ???
