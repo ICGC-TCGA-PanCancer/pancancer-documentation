@@ -128,7 +128,7 @@ Now follow the documents at [architecture2](https://github.com/ICGC-TCGA-PanCanc
     sudo bash setup.sh
     ansible-playbook -i inventory site.yml
 
-By default the site.yml points to the local host which will work perfectly for us here.
+By default the inventory file points to the local host which will work perfectly for us here.
 
 At this point you should have a launcher with Bindle and associated
 tools installed. This is now the machine from which you can create one or more
@@ -165,7 +165,7 @@ node.  You can customize the number of worker nodes by increasing the number in 
 
 ##### Filling in the config file
 
-The config files are located at "~/.bindle/". Please open up aws.cfg (vim ~/.bindle/aws.cfg) since we are launching a cluster on aws. 
+The config files are located at "~/.bindle/". Please open up aws.cfg (vim ~/.bindle/aws.cfg) since we are launching a cluster on AWS. 
 One thing you must keep in mind before filling in the config files is not to delete any of the default
 parameters you are not going to be needing. Simply, leave them blank if that is the case. 
 
@@ -224,10 +224,9 @@ An example cluster block will look something like this:
     number_of_nodes=4
    
     # this specifies the output directory where everything will get installed on the launcher
-    target_directory = target-aws-2
+    target_directory = target-aws-1
    
-    #this contains the path to the json template file this cluster needs
-    json_template_file_path = templates/sample_configs/vagrant_cluster_launch.pancancer.seqware.install.sge_cluster.json.template
+   
  
 To use a specific cluster block, you need to use the section name of that block as a parameter to --launch-cluster when you
 are running the launch_cluster perl script. More on this in the next step.
@@ -238,7 +237,7 @@ are running the launch_cluster perl script. More on this in the next step.
 Now that you have customized the settings in .cfg file, the next step is to launch a computational node. Note, each cluster gets its own target directory which you can specify the name of in .cfg file when you make a cluster block. Within the target dir you will find a log for each node (simply master.log for a single-node launch) and a directory for each node that is used by the vagrant command line tool (the "master" directory for a single-node launch). The latter is important for controlling your node/cluster once launched. 
 
     # now launch the compute node. For --cluster, you specify the name of the cluster block you want to launch from the .cfg file
-    $ perl bin/launch_cluster.pl --config aws --cluster cluster1
+    $ perl bin/launch_cluster.pl --config=aws --custom-params=cluster1
 
 You can follow the progress of this cluster launch in another terminal with.
 Use multiple terminals to watch logs for multiple-node clusters if you desire:
