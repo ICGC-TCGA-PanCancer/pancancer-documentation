@@ -1,6 +1,20 @@
 # PanCancer Architecture
 
-## DESCRIPTION
+## PanCancer Phases
+
+### Phase I
+
+Cloud Shepherds at OICR establish logins at each cloud environment and try the BWA alignment workflow on cell lines to ensure the answer is identical across clouds
+
+### Phase II
+
+Cloud Shepherds at OICR work with the community to create the core alignment workflow (BWA) and three core variant calling workflows (Sanger, Broad, and DKFZ/EMBL).  These are then run via automated deciders as data is uploaded to the GNOS repositories with BWA alignment happening first then the three variant calling workflows in parallel.
+
+### Phase III
+
+Researchers get accounts on these cloud systems and are able to login, launch VMs, and perform their own analysis by pulling files back from GNOS.
+
+## Description
 
 The architecture consists of two main parts: the GNOS servers that host all of the data and the clusters that process the data. 
 
