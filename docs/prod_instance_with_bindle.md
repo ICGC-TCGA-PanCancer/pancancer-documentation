@@ -294,7 +294,11 @@ information about posting to our mailing list.
 
 At this point you have successfully ran a workflow.  You can use this node or
 cluster to run real workflows or just as a general GridEngine or Hadoop
-environment.  Those topics are beyond the scope of this document but are
+environment. 
+
+You can also [image the node](image_instance.md) for future use. 
+
+Those topics are beyond the scope of this document but are
 covered in other SOPs.  When you finish with a node or cluster you can
 terminate it or, depending on the environment, you can suspend it for use
 later.  Keep in mind suspend works for single nodes but clusters of nodes
