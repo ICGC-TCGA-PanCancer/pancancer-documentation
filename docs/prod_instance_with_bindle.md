@@ -211,6 +211,8 @@ through the most obvious parameters (ie. key, secret_key, etc):
 Note that all variables above are also passed along into Ansible. The other platform specific parameters are self explanatory. In the config file, there is a "fillmein" value which indicates that you
 defintely have to fill those in to have bindle working properly. The others are default values that you may use unless otherwise stated.
 
+For single nodes, make sure to set "gluster_device_whitelist = '' ".
+
 ##### Cluster Specific Information
 
 This information exists in small blocks named cluster1, singlenode1, etc. These blocks contain essential information such as number of nodes,
