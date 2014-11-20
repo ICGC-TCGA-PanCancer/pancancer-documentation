@@ -31,7 +31,7 @@ These guides are geared towards our "Cloud Shepherds".  For each cloud environme
 
 ## Environment Setup
 
-* [Architecture Overview](architecture-overview.md): an overview of our architecutre used for the project.
+* [Architecture Overview](architecture-overview.md): an overview of our architecture used for the project.
 * [Create an instance on AWS with Bindle](prod_instance_with_bindle.md): instructions for building a running instance with our provisioning tool
 * [Create an image from a running instance](image_instance.md): instructions for creating images from running instances
 * [How to use Bindle to start-up from an image](instance_from_image_with_bindle.md): instructions for creating running instances from a pre-created image
