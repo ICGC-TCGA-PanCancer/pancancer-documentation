@@ -5,6 +5,8 @@ Please refer to [Youxia](https://github.com/CloudBindle/youxia) for generic docu
 
 After using the [setup Playbook](https://github.com/CloudBindle/youxia/tree/develop/youxia-setup), you will have configured an instance with a deployer, reaper, and example decider running on a crontab. Edit this with the specific settings desired for your cluster. 
 
+In particular, you will probably want to swap out the generic playbook included with Youxia with the last release of the pancancer playbook found [here](https://github.com/ICGC-TCGA-PanCancer/monitoring-bag). You will want to check it out and then edit your crontab. 
+
 ### Monitoring-bag Updates ###
 
 You may reach a situation where you will want to update the sensu checks and the sensu-server with new checks and functionality. In order to do this, you will need to take the following steps:
