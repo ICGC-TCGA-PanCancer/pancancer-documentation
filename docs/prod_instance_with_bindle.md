@@ -9,7 +9,7 @@ the Bindle process builds an environment (whether cluster or single node)
 up from a base Ubuntu 12.04 box, installing and configuring software as
 it goes.  Any cloud-specific considerations are documented at the end of this guide.
 
-Finally, single-node instances can be imaged and relaunched using the process detailed in the [following guide](image_instance.md)
+Finally, single-node instances can be imaged and relaunched using the process detailed in the [following guide](image_instance.md).  The reason you would do this rather than just build nodes from scratch each time you need one is speed, a VM from a snapshot takes a couple minutes to launch whereas a VM built from the base image up to a PanCancer worker node takes about 30.  We still need to maintain the latter process, though, since we need to be able to create nodes from scratch from time to time.
 
 ## Use Cases
 
