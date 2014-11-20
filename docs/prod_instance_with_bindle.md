@@ -111,7 +111,7 @@ onto your launcher now and download the current release of the architecture-setu
     tar zxf 1.0.1.tar.gz
     cd architecture-setup-1.0.1
 
-Now follow the documents at [PanCancer Architecture Setup](https://github.com/ICGC-TCGA-PanCancer/architecture-setup) which will install Bindle with all associated code for the PanCancer profiles. These docs are authoritative there, the example below is just to give you an idea, make sure you check the Architecture Setup link in case anything has changed:
+Now follow the documents at [PanCancer Architecture Setup](https://github.com/ICGC-TCGA-PanCancer/architecture-setup) which will install Bindle with all associated code for the PanCancer profiles. These docs are authoritative there, the example below is just to give you an idea, make sure you check the Architecture Setup link in case anything has changed.  In particular, pay attention to the .pem key instructions.
 
     sudo bash setup.sh
     ansible-playbook -i inventory site.yml
