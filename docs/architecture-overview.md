@@ -10,7 +10,23 @@ There are several GNOS servers around the world which host the PanCancer data. T
 
 ### Cloud Environments
 
-The archtecture can be been created on a number of cloud (and non-cloud) environments such as VirtualBox, vCloud, OpenStack and AWS. 
+The archtecture can be created on a number of cloud (and non-cloud) environments such as VirtualBox, vCloud, OpenStack and AWS. 
+
+Bindle is our tool for creating these instances in conjunction with a few Ansible playbooks specific to Pancancer.
+These tools can be used to create clusters of
+virtual machines running in one of several cloud environments used by the
+PanCancer project.  These clusters are used to process approximately 5,000
+whole human genomes using standardized workflows: BWA and variant calling. This
+constitutes "Phase II" of the project. "Phase III" will see the use of this
+technology stack by a variety of researchers across the cloud environments
+employed by the project to answer their specific research questions.
+
+The environments built with Bindle provide both GridEngine and Hadoop
+execution environments along with the full collection of SeqWare tools.
+
+This process can be used to create both single compute instances for
+small-scale computation and clusters of compute instances suitable for
+larger-scale computation.
 
 #### Development
 
