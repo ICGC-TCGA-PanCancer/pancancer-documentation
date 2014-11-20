@@ -25,9 +25,9 @@ new workflows for the project, especially if scaled-up testing across
 a virtual cluster is required. Regardless, the directions for creating a node or
 cluster with Bindle are the same.
 
-### Build a PanCancer Workflow Running Environment
+## Build a PanCancer Workflow Running Environment
 
-#### Overview of Steps
+### Overview of Steps
 
 * decide on cloud environment and request an account, when you sign up you should get the cloud credentials you need (more detail below). Pancancer has 6 cloud environments, each with their own credentials, endpoints, settings, etc.
 * launch an Ubuntu 12.04 VM in that cloud you will use this host as a "launcher host" which will launch other VMs that run workflows and/or are snapshotted for later use 
@@ -49,7 +49,7 @@ cluster with Bindle are the same.
 
 Typically you would do 1 & 2 for development and 3 then 4 for production
 
-#### Detailed Example - Amazon Web Services Single Node/Cluster of Nodes with the HelloWorld Workflow
+### Detailed Example - Amazon Web Services Single Node/Cluster of Nodes with the HelloWorld Workflow
 
 Here I will show you how to create a single compute node running on AWS and
 capable or executing the HelloWorld workflow to ensure your environment is
@@ -58,12 +58,14 @@ that we run in 6 academic clouds which do have their specific settings, see the 
 identical to the example below, however, so the example shown below should be
 extremely helpful in accessing PanCancer clouds.
 
-##### Step 0 - Get an Account
+#### Step 0 - Get an Account
 
 First, sign up for an account on the AWS website, see http://aws.amazon.com for
-directions.  Brian O'Connor at OICR manages the accounts for the group.
+directions.  Brian O'Connor at OICR manages the accounts for the group.  Along the way you will create an SSH pem key for yourself and you will get your Amazon key and secret key.  Keep all three secure.
 
-##### Step 1 - Create a Launcher Host
+You also need a GNOS pem key for reading/writing data to GNOS.  See the [PanCancer Research Guide](https://wiki.oicr.on.ca/display/PANCANCER/PCAWG+Researcher%27s+Guide) which will walk you through the process of getting both an ICGC and TCGA GNOS pem key.  The latter is only used on BioNimbus when working with TCGA data.
+
+#### Step 1 - Create a Launcher Host
 
 Next, you can create a "launcher" host. This is your gateway to the system and
 allows you to launch individual computational nodes (or clusters of nodes) that
@@ -111,10 +113,19 @@ onto your launcher now and download the current release of the architecture-setu
     tar zxf 1.0.1.tar.gz
     cd architecture-setup-1.0.1
 
-Now follow the documents at [PanCancer Architecture Setup](https://github.com/ICGC-TCGA-PanCancer/architecture-setup) which will install Bindle with all associated code for the PanCancer profiles. These docs are authoritative there, the example below is just to give you an idea, make sure you check the Architecture Setup link in case anything has changed.  In particular, pay attention to the GNOS key instructions since each workflow needs this to operate and, for security reasons, it needs to be provided by you the launcher:
+Now follow the documents at [PanCancer Architecture Setup](https://github.com/ICGC-TCGA-PanCancer/architecture-setup) which will install Bindle with all associated code for the PanCancer profiles. These docs are authoritative there, the example below is just to give you an idea, make sure you check the Architecture Setup link in case anything has changed.  In particular, pay attention to the GNOS key instructions since each workflow needs this to operate and, for security reasons, it needs to be provided by you the launcher.  Also, you need to provide your AWS pem key as well, put it in the same place for simplicity. I recommend you keep all your keys in ~/.ssh so you know where they are and it's easier to manage:
 
-    sudo bash setup.sh
-    ansible-playbook -i inventory site.yml
+    # fill in your AWS .pem key on the launcher host, the same you used to login
+    $ vim ~/.ssh/brian-oicr-3.pem
+    $ chmod 600 ~/.ssh/brian-oicr-3.pem
+    # now fill in your ICGC or TCGA .pem key on the launcher host
+    $ vim ~/.ssh/gnostest.pem
+    $ chmod 600 ~/.ssh/gnostest.pem
+
+Now setup the environment:
+
+    $ sudo bash setup.sh
+    $ ansible-playbook -i inventory site.yml
 
 By default the inventory file points to the local host which will work perfectly for us here.
 
@@ -141,20 +152,14 @@ working in the Bindle directory:
     # modify the .cfg file to include your settings, for AWS you need to make sure you fill in "aws.cfg"
     # For more help on filling the .cfg file, please refer to the section below
     $ vim ~/.bindle/aws.cfg
-    # paste your key pem file contents, whatever you call it
-    $ vim ~/.ssh/brian-oicr-3.pem
-    $ chmod 600 ~/.ssh/brian-oicr-3.pem
 
-Make sure you have copied your key to this machine (your pem file). I suggest
+Make sure you have copied your keys to this machine (your GNOS and AWS .pem file, the latter of which is used in the aws.cfg file). I suggest
 you use IAM to create limited scope credentials.  See the Amazon site for more
 info.
 
 Alternatively, you may want to launch a compute cluster instead of a single
-node.  You can customize the number of worker nodes by increasing the number in the Bindle cfg file.
+node.  You can customize the number of worker nodes by increasing the number in the Bindle cfg file.  Again, our focus now is single nodes so clusters are undergoing less validation work currently.
 
-##### Filling in the config file
-
-The config files are located at "~/.bindle/". Please open up aws.cfg (vim ~/.bindle/aws.cfg) since we are launching a cluster on AWS. 
 One thing you must keep in mind before filling in the config files is not to delete any of the default
 parameters you are not going to be needing. Simply, leave them blank if that is the case. 
 
