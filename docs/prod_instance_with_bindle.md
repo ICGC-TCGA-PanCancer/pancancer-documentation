@@ -213,6 +213,12 @@ defintely have to fill those in to have bindle working properly. The others are 
 
 For single nodes, make sure to set "gluster_device_whitelist = '' ".
 
+##### Note About Instance Type
+
+In AWS the instance type controls the resource available on the VM (cores, RAM, disk space, etc).  Similarly, flavors are used in OpenStack. You will want to match the instance type you choose with the requirements of the PanCancer workflow being deployed there.  This information should be documented for your in the README that comes with each workflow, most workflows will explicitly mention the instance type to use.  Another great resource is <http://ec2instances.info> which helps you to see what types are available and their price.
+
+Keep this in mind especially if you intend on snpshotting the VM since you can't just change the instance type later on boot of the snapshot.  If you provision on an 8 core instance type, then snapshot, then launch on a 16 core instance type the additional cores will not be recognized by SGE properly.  You should instead launch and snapshot the same instance type you intend to use going forward. 
+
 ##### Cluster Specific Information
 
 This information exists in small blocks named cluster1, singlenode1, etc. These blocks contain essential information such as number of nodes,
