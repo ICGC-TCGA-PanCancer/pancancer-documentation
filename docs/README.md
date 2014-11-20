@@ -35,7 +35,6 @@ These guides are geared towards our "Cloud Shepherds".  For each cloud environme
 * [Create an instance on AWS with Bindle](prod_instance_with_bindle.md): instructions for building a running instance with our provisioning tool
 * [Create an image from a running instance](image_instance.md): instructions for creating images from running instances
 * [How to use Bindle to start-up from an image](instance_from_image_with_bindle.md): instructions for creating running instances from a pre-created image
-* (To be broken up) [Create a New Production Node/Cluster with Bindle](prod_cluster_with_bindle.md): instructions for the cloud shepherd to create virtual clusters of machines with our latest provisioning tool
 
 ## Running Workflows in Production
 
