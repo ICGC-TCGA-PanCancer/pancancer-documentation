@@ -129,7 +129,7 @@ Now that you have Bindle and dependencies installed the next step is
 to launch computational nodes or clusters that will run workflows via SeqWare,
 launch cluster jobs via GridEngine, or perform MapReduce jobs.  In this step we
 will launch a standalone node and in the next command block I will show you how to
-launch a whole cluster of nodes that are suitable for larger-scale analysis.
+launch a whole cluster of nodes that are suitable for larger-scale analysis. Although keep in mind for Phase II of PanCancer we're shifting focus to single nodes and not clusters to improve robustness and isolation.
 
 Assuming you are still logged into your launcher node above, you will do the
 following to setup a computational node.  The steps below assume you are
