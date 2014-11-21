@@ -456,6 +456,13 @@ To snapshot see the following command:
 
 Adjust as need be, name your new image as you like.  You can then launch a new copy of this VM image using the standard nova commands.
 
+####Architecture 2.0 Tips
+
+Modify the following file to set the username:
+
+    roles/bindle-profiles/vars/main.yml
+
+
 ### Notes for OICR (OpenStack)
 
 OICR uses OpenStack internally for testing and the Vagrant OpenStack plugin is
