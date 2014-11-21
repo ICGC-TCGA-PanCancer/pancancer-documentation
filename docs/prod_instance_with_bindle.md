@@ -146,7 +146,7 @@ Assuming you are still logged into your launcher node above, you will do the
 following to setup a computational node.  The steps below assume you are
 working in the Bindle directory:
 
-    $ cd playbooks/Bindle
+    $ cd ~/architecture2/Bindle
     # run the Bindle launcher without a valid cfg file in order to copy over a template
     $ perl bin/launch_cluster.pl --config aws --custom-params 1
     # modify the .cfg file to include your settings, for AWS you need to make sure you fill in "aws.cfg"
