@@ -464,7 +464,7 @@ Modify the following file to set the username:
 
 Make a symlink since many tools expect /home to be the location of your home dir:
 
-    sudo /glusterfs/netapp/homes1/BOCONNOR /home/
+    sudo ln -s /glusterfs/netapp/homes1/BOCONNOR /home/
 
 ### Notes for OICR (OpenStack)
 
