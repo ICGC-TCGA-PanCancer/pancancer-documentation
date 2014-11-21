@@ -466,6 +466,21 @@ Make a symlink since many tools expect /home to be the location of your home dir
 
     sudo ln -s /glusterfs/netapp/homes1/BOCONNOR /home/
 
+We had to add a group_name, that needs to be changed to root.
+
+Need to comment out this section in sites.yml
+
+    #- hosts: bindle
+    #  sudo: True
+    #  tasks:
+    #  # this seems like the wrong place for this, but not sure what the best place for it is if we cannot redistribute 
+    #  # with the AMI
+    #  - name: Copy over pem key for BWA
+    #    copy: src=/home/ubuntu/.ssh/gnostest.pem dest=/home/ubuntu/.ssh/gnostest.pem mode=600
+    #  # change permissions
+    #  # chamge owner
+
+
 ### Notes for OICR (OpenStack)
 
 OICR uses OpenStack internally for testing and the Vagrant OpenStack plugin is
