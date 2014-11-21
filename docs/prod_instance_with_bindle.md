@@ -148,7 +148,7 @@ working in the Bindle directory:
 
     $ cd ~/architecture2/Bindle
     # run the Bindle launcher without a valid cfg file in order to copy over a template
-    $ perl bin/launch_cluster.pl --config aws --custom-params 1
+    $ perl bin/launch_cluster.pl --config aws --custom-params singlenode1
     # modify the .cfg file to include your settings, for AWS you need to make sure you fill in "aws.cfg"
     # For more help on filling the .cfg file, please refer to the section below
     $ vim ~/.bindle/aws.cfg
@@ -257,7 +257,7 @@ Remember to delete the previous working directory
     $ cd ~/architecture2/Bindle
     $ rm -Rf target*
     # now launch the compute node. For --cluster, you specify the name of the cluster block you want to launch from the .cfg file
-    $ perl bin/launch_cluster.pl --config=aws --custom-params=singlenode1
+    $ perl bin/launch_cluster.pl --config aws --custom-params singlenode1
 
 You can follow the progress of this cluster launch in another terminal with.
 Use multiple terminals to watch logs for multiple-node clusters if you desire:
@@ -400,7 +400,9 @@ You can create a launcher host with nova commands directly:
     # find the flavor of machine
     nova flavor-list
     # now combine this info and boot a launcher
-    nova boot --image 06e01852-489e-4ae5-aba7-d62de3c3cffd --flavor m1.xlarge --key-name brian-pdc-3
+    nova boot --image 06e01852-489e-4ae5-aba7-d62de3c3cffd --flavor m1.xlarge --key-name brian-pdc-3 launcher1
+    # look at the status
+    nova list
 
 When you launch the cluster you need to do the following differently from the examples above:
 
