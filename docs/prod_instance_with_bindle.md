@@ -124,7 +124,7 @@ Now follow the documents at [PanCancer Architecture Setup](https://github.com/IC
 
 Now setup the environment:
 
-    $ sudo bash setup.sh
+    $ bash setup.sh
     $ ansible-playbook -i inventory site.yml
 
 By default the inventory file points to the local host which will work perfectly for us here.
