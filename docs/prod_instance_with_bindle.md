@@ -462,6 +462,9 @@ Modify the following file to set the username:
 
     roles/bindle-profiles/vars/main.yml
 
+Make a symlink since many tools expect /home to be the location of your home dir:
+
+    sudo /glusterfs/netapp/homes1/BOCONNOR /home/
 
 ### Notes for OICR (OpenStack)
 
