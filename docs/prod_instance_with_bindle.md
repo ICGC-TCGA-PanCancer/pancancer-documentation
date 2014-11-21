@@ -180,6 +180,7 @@ through the most obvious parameters (ie. key, secret_key, etc):
     aws_zone = nil 
     aws_image = <fill this in>
     aws_ssh_username = ubuntu
+    # the name of the key e.g. brian-oicr-3, drop the .pem
     aws_ssh_key_name = <fill this in>
     aws_ssh_pem_file = '<fill this in>'
    
