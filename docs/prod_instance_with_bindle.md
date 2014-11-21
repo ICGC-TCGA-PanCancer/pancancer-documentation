@@ -252,13 +252,13 @@ are running the launch_cluster perl script. More on this in the next step.
 Now that you have customized the settings in .cfg file, the next step is to launch a computational node. Note, each cluster gets its own target directory which you can specify the name of in .cfg file when you make a cluster block. Within the target dir you will find a log for each node (simply master.log for a single-node launch) and a directory for each node that is used by the vagrant command line tool (the "master" directory for a single-node launch). The latter is important for controlling your node/cluster once launched. 
 
     # now launch the compute node. For --cluster, you specify the name of the cluster block you want to launch from the .cfg file
-    $ perl bin/launch_cluster.pl --config=aws --custom-params=cluster1
+    $ perl bin/launch_cluster.pl --config=aws --custom-params=singlenode1
 
 You can follow the progress of this cluster launch in another terminal with.
 Use multiple terminals to watch logs for multiple-node clusters if you desire:
 
     # watch the log
-    $ tail -f target-aws-1/master.log
+    $ tail -f target-aws-5/master.log
 
 Once this process finishes, you should see no error messages from
 "bin/launch_cluster.pl". If so, you are ready to use your cluster/node.
