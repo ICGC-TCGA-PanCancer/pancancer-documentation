@@ -393,6 +393,15 @@ functionality and, therefore, only single nodes can be launched there.
 BioNimbus uses OpenStack and the Vagrant OpenStack plugin is quite stable however the PDC 1.1 environment is in flux. You
 can launch VM clusters or single nodes.
 
+You can create a launcher host with nova commands directly:
+
+    # find the image 
+    nova image-list
+    # find the flavor of machine
+    nova flavor-list
+    # now combine this info and boot a launcher
+    nova boot --image 06e01852-489e-4ae5-aba7-d62de3c3cffd --flavor m1.xlarge --key-name brian-pdc-3
+
 When you launch the cluster you need to do the following differently from the examples above:
 
     # install the OpenStack vagrant plugin
