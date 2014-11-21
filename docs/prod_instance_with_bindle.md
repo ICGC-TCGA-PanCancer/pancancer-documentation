@@ -274,7 +274,7 @@ If you want to launch multiple clusters, make sure to specify different target d
 Vagrant provides a simple way to log into a launched node/cluster.  Typically you will only want/need to login to the master node.  For example:
 
     # log into the master node
-    $ cd target-aws-1/master
+    $ cd target-aws-5/master
     $ vagrant ssh
 
 This will log you into the master node.  You can change user to the seqware
