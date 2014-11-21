@@ -361,9 +361,21 @@ workflow(s) pre-installed.
 
 Simply use Bindle (using the cfg file) at the seqware-bag playbook and omit pancancer-bag. 
 
-### Cluster With BWA Workflow
+### Cluster with the BWA Alignment Workflow
 
 Simply use Bindle (using the cfg file) at the pancancer-bag playbook. 
+
+### Cluster with the Sanger Variant Calling Workflow
+
+TBD
+
+### Cluster with the DKFZ/EMBL Variant Calling Workflow
+
+TBD
+
+### Cluster With the Broad Variant Calling Workflow
+
+TBD
 
 ## Cloud-Specific Notes
 
