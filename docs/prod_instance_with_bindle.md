@@ -11,37 +11,6 @@ it goes.  Any cloud-specific considerations are documented at the end of this gu
 
 Finally, single-node instances can be imaged and relaunched using the process detailed in the [following guide](image_instance.md).  The reason you would do this rather than just build nodes from scratch each time you need one is speed, a VM from a snapshot takes a couple minutes to launch whereas a VM built from the base image up to a PanCancer worker node takes about 30.  We still need to maintain the latter process, though, since we need to be able to create nodes from scratch from time to time.
 
-**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
-
-- [TCGA/ICGC PanCancer - Computational Node/Cluster from Scratch with Bindle](#)
-	- [Use Cases](#)
-	- [Build a PanCancer Workflow Running Environment](#)
-		- [Overview of Steps](#)
-		- [Detailed Example - Amazon Web Services Single Node/Cluster of Nodes with the HelloWorld Workflow](#)
-			- [Step 0 - Get an Account](#)
-			- [Step 1 - Create a Launcher Host](#)
-			- [Step 2 - Install Bindle, Vagrant, and Other Tools on the Launcher](#)
-			- [Step 3 - Configuration](#)
-				- [Platform Specific Information](#)
-				- [Note About Instance Type](#)
-				- [Cluster Specific Information](#)
-			- [Step 4 - Launch a SeqWare Node/Cluster](#)
-			- [Step 5 - Log In To Node/Cluster](#)
-			- [Step 6 - Verify Node/Cluster with HelloWorld](#)
-			- [Step 7 - Terminate Node/Cluster](#)
-			- [Next Steps](#)
-	- [Additional Configuration Profiles](#)
-		- [Cluster Without Workflows](#)
-		- [Cluster With BWA Workflow](#)
-	- [Cloud-Specific Notes](#)
-		- [Notes for the EBI Embassy Cloud (vCloud)](#)
-		- [Notes for BioNimbus PDC 1.1 (OpenStack)](#)
-			- [More PDC 1.1 Tips](#)
-		- [Notes for OICR (OpenStack)](#)
-		- [Notes for Annai Systems (BioComputeFarm)](#)
-		- [Notes for Amazon (AWS)](#)
-		- [Notes for Barcelona (VirtualBox)](#)
-
 ## Use Cases
 
 There are really three use cases for this technology by the PanCancer project.
