@@ -484,6 +484,12 @@ Ansible uses a temp dir that needs to be changed, this can't be the default whic
 
     # in /etc/ansible/ansible.cfg
     remote_tmp=/tmp/.ansible/tmp
+    
+There's a username that needs to be changed
+
+   # BOCONNOR@i-000007be:~/architecture2/Bindle$ vim ../pancancer-bag/roles/genetorrent/vars/main.yml 
+   ---
+   user_name: "seqware"
 
 ### Notes for OICR (OpenStack)
 
