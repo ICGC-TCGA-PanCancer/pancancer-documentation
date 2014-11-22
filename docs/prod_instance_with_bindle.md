@@ -491,6 +491,29 @@ There's a username that needs to be changed
    ---
    user_name: "seqware"
 
+Take a look at my bindle config, Denis and I made changes tonight, copy it here from the launcher on PDC.
+
+   seqware bundle launch --dir /home/seqware/provisioned-bundles/Workflow_Bundle_HelloWorld_1.0-SNAPSHOT_SeqWare_1.1.0-alpha.5
+   Workflow job completed ...
+    Application Path   : hdfs://master:8020/user/seqware/seqware_workflow/oozie-0c08a822-f9a4-470c-8787-59198b874936
+    Application Name   : HelloWorld
+    Application Status : SUCCEEDED
+    Application Actions:
+   Name: :start: Type: :START: Status: OK
+   Name: start_0 Type: sge Status: OK
+   Name: provisionFile_file_in_0_1 Type: sge Status: OK
+   Name: bash_mkdir_2 Type: sge Status: OK
+   Name: fork_2 Type: :FORK: Status: OK
+   Name: bash_cp_3 Type: sge Status: OK
+   Name: bash_cp_4 Type: sge Status: OK
+   Name: join_2 Type: :JOIN: Status: OK
+   Name: provisionFile_out_5 Type: sge Status: OK
+   Name: done Type: fs Status: OK
+   Name: end Type: :END: Status: OK
+
+
+
+
 ### Notes for OICR (OpenStack)
 
 OICR uses OpenStack internally for testing and the Vagrant OpenStack plugin is
