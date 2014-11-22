@@ -480,6 +480,10 @@ Need to comment out this section in sites.yml
     #  # change permissions
     #  # chamge owner
 
+Ansible uses a temp dir that needs to be changed, this can't be the default which points to the home dir on gluster.
+
+    # in /etc/ansible/ansible.cfg
+    remote_tmp=/tmp/.ansible/tmp
 
 ### Notes for OICR (OpenStack)
 
