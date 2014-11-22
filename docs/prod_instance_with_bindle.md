@@ -511,7 +511,25 @@ Take a look at my bindle config, Denis and I made changes tonight, copy it here 
    Name: done Type: fs Status: OK
    Name: end Type: :END: Status: OK
 
+LEFT OFF WITH: Denis and I got the launcher to bring up a worker host all the way through to workflow install then it was skipped (BWA).  Need to figure this out but at least I can manually install:
 
+    GATHERING FACTS *************************************************************** 
+    ok: [master]
+    
+    TASK: [workflow | Detect workflows installed] ********************************* 
+    skipping: [master]
+    
+    TASK: [workflow | Download workflows] ***************************************** 
+    skipping: [master] => (item=workflows)
+    
+    TASK: [workflow | Setup bundle permissions] *********************************** 
+    skipping: [master] => (item=workflows)
+    
+    TASK: [workflow | Install workflow bundles] *********************************** 
+    skipping: [master] => (item=workflows)
+    
+    TASK: [workflow | Remove workflow bundles] ************************************ 
+    skipping: [master] => (item=workflows)
 
 
 ### Notes for OICR (OpenStack)
