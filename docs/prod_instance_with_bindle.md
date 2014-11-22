@@ -440,6 +440,9 @@ You can snapshot the VM but if you do you need to ensure the hostname is reset o
 
     hostname master
     /etc/init.d/tomcat7 restart
+    qconf -aattr queue slots "[master=`nproc`]" main.q
+    qconf -mattr queue load_thresholds "np_load_avg=`nproc`" main.q
+    qconf -rattr exechost complex_values h_vmem=`free -b |grep Mem | cut -d" " -f5` master
     exit 0
 
 That will ensure the machine comes back after reboot.
