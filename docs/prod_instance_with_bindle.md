@@ -542,6 +542,9 @@ LEFT OFF WITH: Denis and I got the launcher to bring up a worker host all the wa
 
 Note: on BioNimbus I ran into an issue with r-cran-rcolorbrewer not being up to date with R 3.x.  See http://stackoverflow.com/questions/16503554/r-3-0-0-update-has-left-loads-of-2-x-packages-incompatible
 
+    sudo R
+    update.packages(ask=FALSE, checkBuilt=TRUE)
+
 ### Notes for OICR (OpenStack)
 
 OICR uses OpenStack internally for testing and the Vagrant OpenStack plugin is
