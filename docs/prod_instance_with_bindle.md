@@ -457,6 +457,10 @@ To snapshot see the following command:
 
     nova image-create ff625cf8-e5c9-46b6-9c08-2c6189eb3f9f Ubuntu-12.04-LTS-v1.5.3-CgpCnIndelSnvStr-1.0-SNAPSHOT-SeqWare-1.1.0a5-v1
 
+To launch from an image:
+
+    nova boot --image 0c24790a-9813-41b7-bafa-4006ae8cc215 --flavor m2.xxlarge --key-name brian-pdc-3 fleet_sanger_master_1
+
 Adjust as need be, name your new image as you like.  You can then launch a new copy of this VM image using the standard nova commands.
 
 ####Architecture 2.0 Tips
