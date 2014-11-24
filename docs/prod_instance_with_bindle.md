@@ -552,6 +552,20 @@ You need to deactivate the drop permission on iptables to ensure the server can 
 
     iptables -D EGRESS -j DROP
 
+#### Retry Settings
+
+See https://seqware.github.io/docs/6-pipeline/user-configuration/ for details on how to configure Oozie to auto-retry failed jobs.  For PDC I'm setting this to 3 retries for production environments and hopefully this will prevent any transient issues from killing a workflow (but will make failures more of a problem since the workflows will take longer to fail).
+
+By default it looks like this is already setup but I expanded the error codes for PDC 1.1 to include SGE 1 and 2 in addition to the ones we already have:
+
+    <property><name>oozie.service.ActionCheckerService.action.check.interval</name><value>5</value></property>
+    <property><name>oozie.service.ActionCheckerService.action.check.delay</name><value>10</value></property>
+    <property><name>oozie.service.LiteWorkflowStoreService.user.retry.max</name><value>30</value></property>
+    <property><name>oozie.action.retries.max</name><value>30</value></property>
+    <property><name>oozie.service.WorkflowAppService.WorkflowDefinitionMaxLength</name><value>10000000</value></property>
+    <property><name>oozie.service.LiteWorkflowStoreService.user.retry.error.code.ext</name><value>SGE1,SGE2,SGE82,SGE137</value></property>
+    <property><name>oozie.validate.ForkJoin</name><value>false</value></property>
+
 ### Notes for OICR (OpenStack)
 
 OICR uses OpenStack internally for testing and the Vagrant OpenStack plugin is
