@@ -438,6 +438,7 @@ After these changes you should have a working SeqWare environment set to run wor
 
 You can snapshot the VM but if you do you need to ensure the hostname is reset on reboot and tomcat is restarted.  Add the following to /etc/rc.local (the exit 0 is already at the end of the script):
 
+    iptables -D EGRESS -j DROP
     hostname master
     /etc/init.d/tomcat7 restart
     qconf -aattr queue slots "[master=`nproc`]" main.q
@@ -544,6 +545,12 @@ Note: on BioNimbus I ran into an issue with r-cran-rcolorbrewer not being up to 
 
     sudo R
     update.packages(ask=FALSE, checkBuilt=TRUE)
+
+#### Routing Problem
+
+You need to deactivate the drop permission on iptables to ensure the server can reach the GNOS repositories.  The following should be added to the /etc/rc.local
+
+    iptables -D EGRESS -j DROP
 
 ### Notes for OICR (OpenStack)
 
