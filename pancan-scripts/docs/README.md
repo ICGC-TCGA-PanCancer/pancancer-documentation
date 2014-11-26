@@ -25,12 +25,10 @@ Copy all the html to /var/www/ :
     $ cd pancan-scripts
     # need one more directory
     $ mkdir results
-    $ cp html/uploads.html /var/www/
-    $ cp html/index.html /var/www/
-    $ cp html/qc /var/www/
-    $ cp html/data_freeze /var/www/
-    $ cp html/trajectory /var/www/
-    $ cp map_data/style1.css /var/www/
+    $ cd html
+    $ cp uploads.html index.html qc data_freeze trajectory /var/www/
+    $ cd ../map_data/
+    $ cp style1.css /var/www/
 
 Before running any scripts you need to check if perl is at least version 5.18.2 using perl -v. From past experience, this version of perl has worked fine with all the perl scripts in the repo. If necessary, update perl to version 5.18.2. To do this, you need to use perlbrew. Perlbrew allows you to manage and use multiple versions perl on the same machine, if there are any problems go to http://perlbrew.pl/ to get some clarification. To use perlbrew do the following :
 
