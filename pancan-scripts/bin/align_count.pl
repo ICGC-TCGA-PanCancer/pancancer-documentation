@@ -30,7 +30,7 @@ my @spec_marc2;
 
 # train_1.csv is the data freeze 1.0 spresheet found here:
 # https://docs.google.com/spreadsheets/d/14NItsHKJUevHZIuFkFTwNF-C12WbXTrFe0oM0Xq6b4M/edit#gid=111470950
-open(FH,"train_1.tsv") or die("Can't open guestbook.txt: $!");
+open(FH,"/home/ubuntu/gitroot/pancancer-info/pancan-scripts/train_1.tsv") or die("Can't open train_1.tsv $!");
 while (my $line = <FH>) {
   chomp $line;
   my @cols = split "\t" , $line;
@@ -39,7 +39,7 @@ while (my $line = <FH>) {
 }
 close(FH);
 
-open(FH,"train_2.tsv") or die("Can't open guestbook.txt: $!");
+open(FH,"/home/ubuntu/gitroot/pancancer-info/pancan-scripts/train_2.tsv") or die("Can't open train_2.tsv $!");
 while (my $line = <FH>) {
   chomp $line;
   my @cols = split "\t" , $line;  #print "$cols[4],";
@@ -77,7 +77,7 @@ my $check_all = 0;
 my $line_num = 0;
 my $spec;
 my $bool;
-open(FH,"$elem.log") or die("Can't open $elem.log: $!");
+open(FH,"$elem.log") or die("Can't open ../$elem.log: $!");
 while (my $line = <FH>) {
         $line_num += 1;
 # reset the check
@@ -192,7 +192,7 @@ print "]";}
 
 my $date = strftime "%B %d %Y %R", localtime;
 
-open(my $file1,'>>', "align_archive.csv");
+open(my $file1,'>>', "/home/ubuntu/gitroot/pancancer-info/pancan-scripts/align_archive.csv");
 if($train eq "2"){
 print $file1 "$date,$align_total_archive\n";}
 close $file1;

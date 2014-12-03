@@ -6,9 +6,9 @@ The last section focuses on "Phase III", the moment in the project where analysi
 
 # IT-Focused
 
-These IT guides give an overview of our thoughts on the cloud-nature of this project as well as concrete recommendations for how to optimally setup OpenStack, our recommended cloud technology for this project.
+These IT guides give an overview of our thoughts on the cloud-nature of this project as well as concrete recommendations for how to optimally setup AWS and OpenStack, our recommended cloud technologies for this project.
 
-* [VM Infrastructure Overview](https://wiki.oicr.on.ca/display/PANCANCER/PanCancer+VM+Deployment+Guide): Over of the cloud architecture envisioned by the project.
+* [VM Infrastructure Overview](https://wiki.oicr.on.ca/display/PANCANCER/PanCancer+VM+Deployment+Guide): Overview of the cloud architecture envisioned by the project. Privately hosted at OICR, requires permissions. 
 * [OpenStack Installation Guide](openstack_install.md): Specific recommendations on how to install and configure OpenStack for use with PanCancer. TODO
 
 # Developer-Focused
@@ -29,8 +29,17 @@ These guides are geared towards a developer wanting to create a new workflow for
 
 These guides are geared towards our "Cloud Shepherds".  For each cloud environment we have assigned a cloud shepherd to 1) ensure our provisioning process can build virtual clusters in that environment and 2) setup automated running of core "Phase II" workflows within their respective clouds. They also work closely with workflow authors to ensure new core workflows are deployed smoothly to these environments.
 
-* [Create a New Production Node/Cluster with Bindle](prod_cluster_with_bindle.md): instructions for the cloud shepherd to create virtual clusters of machines with our latest provisioning tool
+## Environment Setup
+
+* [Architecture Overview](architecture-overview.md): an overview of our architecture used for the project.
+* [Create an instance on AWS with Bindle](prod_instance_with_bindle.md): instructions for building a running instance with our provisioning tool
+* [Create an image from a running instance](image_instance.md): instructions for creating images from running instances
+* [How to use Bindle to start-up from an image](instance_from_image_with_bindle.md): instructions for creating running instances from a pre-created image
+
+## Running Workflows in Production
+
 * [Automatically Running Workflows in a Cloud with a Decider](run_bwa_with_decider.md): instructions for automating the running of workflows with a decider.
+* [Provision and Maintain Clusters with Youxia](youxia.md): instructions for using youxia to automate the deployment and maintenance of clusters on AWS
 
 # Working Group Researchers
 

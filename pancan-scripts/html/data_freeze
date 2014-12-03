@@ -95,6 +95,7 @@ fill:steelblue;
                                 <li><a href="uploads.html">Uploads</a></li>
 				<li><a href="qc">QC Metrics</a></li>
                                 <li><a href="data_freeze">Data Freeze</a></li>
+                                <li><a href="trajectory">Trajectory</a></li>
                  </ul>
                  </div></center>
                  </div>

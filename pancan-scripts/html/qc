@@ -135,10 +135,11 @@ height:570px;
                 <h1 style="float:left;margin-left:10px;font-size:25px;">PANCANCER.INFO</h1>
                 <center><div id="inside">
                  <ul class="tab-links">
-                                <li><a href="http://pancancer.info/">Sites</a></li>
-                                <li><a href="http://pancancer.info/uploads.html">Uploads</a></li>
-				<li><a href="http://pancancer.info/qc">QC Metrics</a></li>
-				<li><a href="http://pancancer.info/data_freeze">Data Freeze</a></li>
+                                <li><a href="index.html">Sites</a></li>
+                                <li><a href="uploads.html">Uploads</a></li>
+				<li><a href="qc">QC Metrics</a></li>
+				<li><a href="data_freeze">Data Freeze</a></li>
+                                <li><a href="trajectory">Trajectory</a></li>
                  </ul>
                  </div></center>
                  </div>
@@ -364,7 +365,7 @@ svg.append("g")
 
 });
 };
-chart("qc_read.csv","#_total_reads","All","both");
+chart("qc_files/qc_read.csv","#_total_reads","All","both");
 
 function run1(){
 	var e = document.getElementById("x-axis");
@@ -377,10 +378,10 @@ function run1(){
         var strUser3 = e3.options[e3.selectedIndex].value;
 	if (strUser3 == "specimen"){
         $('#graph').empty();
-        chart("qc_spec.csv",strUser,strUser1,strUser2);}
+        chart("qc_files/qc_spec.csv",strUser,strUser1,strUser2);}
         else {
         $('#graph').empty();
-        chart("qc_read.csv",strUser,strUser1,strUser2);}
+        chart("qc_files/qc_read.csv",strUser,strUser1,strUser2);}
 	}
 
 </script>

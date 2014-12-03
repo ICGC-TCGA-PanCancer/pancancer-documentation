@@ -38,6 +38,9 @@ You need to signup on AWS's website, which requies a credit card.  Please take t
 
 Since we are building SeqWare workflows we will simply use the stock SeqWare AMI.  It is periodically updated, you can find the most recent AMI release on the SeqWare site: http://seqware.io
 
+You can also find pre-release versions at https://seqware.github.io/unstable.seqware.io/docs/2-installation/
+In particular, we are now testing newer versions of SeqWare deployed to AWS.
+
 ### Step - Launch the AMI
 
 The details here are beyond the scope of this document since the AWS documents provide a much better explanation than I could.  A few tips, though.  First, we use AWS Virginia, if you use another location you will not be able to find the AMI.  Second, the AMI will automatically mount 1TB of workflow working directory space automatically. When you terminate your instance realize that everything is lost so be aware and keep your code checked in and valuable data uploaded to S3 or an equivalent destination.  You can read more about S3 on the AWS site.

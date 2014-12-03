@@ -48,6 +48,7 @@
                                 <li><a href="uploads.html">Uploads</a></li>
 				<li><a href="qc">QC Metrics</a></li>
 				<li><a href="data_freeze">Data Freeze</a></li>
+				<li><a href="trajectory">Trajectory</a></li>
                  </ul>
                  </div>
                  </div>
@@ -64,7 +65,7 @@
 <p>
 <table name ="x3" id="rounded-corner" summary="">
 <thead>
-<tr><th></th><th><a target="_blank" href="log_train/1gtrepo-bsc.log">Barcelona</a></th><th><a target="_blank" href="log_train/1gtrepo-osdc-icgc.log">Chicago(ICGC)</a></th><th><a target="_blank" href="log_train/1gtrepo-osdc-tcga.log">Chicago(TCGA)</a></th><th><a target="_blank" href="log_train/1gtrepo-dkfz.log">Heidelberg</a></th><th><a target="_blank" href="log_train/1gtrepo-ebi.log">London</a></th><th><a target="_blank" href="log_train/1gtrepo-etri.log">Seoul</a></th><th><a target="_blank" href="log_train/1gtrepo-riken.log">Tokyo</a></th><th><a target="_blank" href="log_train/1gtrepo-cghub-all.log">Santa Cruz</a></th><th>Total</th><th>% of 5000</th></tr>
+<tr><th></th><th><a target="_blank" href="log_train/gtrepo-bsc.log">Barcelona</a></th><th><a target="_blank" href="log_train/gtrepo-osdc-icgc.log">Chicago(ICGC)</a></th><th><a target="_blank" href="log_train/gtrepo-osdc-tcga.log">Chicago(TCGA)</a></th><th><a target="_blank" href="log_train/gtrepo-dkfz.log">Heidelberg</a></th><th><a target="_blank" href="log_train/gtrepo-ebi.log">London</a></th><th><a target="_blank" href="log_train/gtrepo-etri.log">Seoul</a></th><th><a target="_blank" href="log_train/gtrepo-riken.log">Tokyo</a></th><th><a target="_blank" href="log_train/gtrepo-cghub-all.log">Santa Cruz</a></th><th>Total</th><th>% of 5000</th></tr>
 </thead>
 <tbody>
 <tr><td><b>Aligned Specimens</b></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
@@ -88,7 +89,7 @@
 <p>
 <table name ="x1" id="rounded-corner" summary="">
 <thead>
-<tr><th></th><th><a target="_blank" href="log_train/1gtrepo-bsc.log">Barcelona</a></th><th><a target="_blank" href="log_train/1gtrepo-osdc-icgc.log">Chicago(ICGC)</a></th><th><a target="_blank" href="log_train/1gtrepo-osdc-tcga.log">Chicago(TCGA)</a></th><th><a target="_blank" href="log_train/1gtrepo-dkfz.log">Heidelberg</a></th><th><a target="_blank" href="log_train/1gtrepo-ebi.log">London</a></th><th><a target="_blank" href="log_train/1gtrepo-etri.log">Seoul</a></th><th><a target="_blank" href="log_train/1gtrepo-riken.log">Tokyo</a></th><th><a target="_blank" href="log_train/1gtrepo-cghub.log">Santa Cruz</a></th><th>Total</th><th>% of 4150</th></tr>
+<tr><th></th><th><a target="_blank" href="log_train/gtrepo-bsc.log">Barcelona</a></th><th><a target="_blank" href="log_train/gtrepo-osdc-icgc.log">Chicago(ICGC)</a></th><th><a target="_blank" href="log_train/gtrepo-osdc-tcga.log">Chicago(TCGA)</a></th><th><a target="_blank" href="log_train/gtrepo-dkfz.log">Heidelberg</a></th><th><a target="_blank" href="log_train/gtrepo-ebi.log">London</a></th><th><a target="_blank" href="log_train/gtrepo-etri.log">Seoul</a></th><th><a target="_blank" href="log_train/gtrepo-riken.log">Tokyo</a></th><th><a target="_blank" href="log_train/gtrepo-cghub.log">Santa Cruz</a></th><th>Total</th><th>% of 4150</th></tr>
 </thead>
 <tbody>
 <tr><td><b>Aligned Specimens</b></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
@@ -319,7 +320,7 @@
 <p>
 <table name ="x" id="rounded-corner" summary="">
 <thead>
-<tr><th></th><th><a target="_blank" href="log_train/1gtrepo-bsc.log">Barcelona</a></th><th><a target="_blank" href="log_train/1gtrepo-osdc.log">Chicago</a></th><th><a target="_blank" href="log_train/1gtrepo-dkfz.log">Heidelberg</a></th><th><a target="_blank" href="log_train/1gtrepo-ebi.log">London</a></th><th><a target="_blank" href="log_train/1gtrepo-etri.log">Seoul</a></th><th><a target="_blank" href="log_train/1gtrepo-riken.log">Tokyo</a></th><th><a target="_blank" href="log_train/1gtrepo-cghub_data1.log">Santa Cruz</a></th><th>Total</th><th>% of 823</th></tr>
+<tr><th></th><th><a target="_blank" href="log_train/gtrepo-bsc.log">Barcelona</a></th><th><a target="_blank" href="log_train/gtrepo-osdc.log">Chicago</a></th><th><a target="_blank" href="log_train/gtrepo-dkfz.log">Heidelberg</a></th><th><a target="_blank" href="log_train/gtrepo-ebi.log">London</a></th><th><a target="_blank" href="log_train/gtrepo-etri.log">Seoul</a></th><th><a target="_blank" href="log_train/gtrepo-riken.log">Tokyo</a></th><th><a target="_blank" href="log_train/gtrepo-cghub_data1.log">Santa Cruz</a></th><th>Total</th><th>% of 823</th></tr>
 </thead>
 <tbody>
 <tr><td><b>Aligned Specimens</b></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>

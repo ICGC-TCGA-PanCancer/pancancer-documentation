@@ -30,12 +30,10 @@ in cloud environments.
 ## Steps
 
 * you will be working locally using VirtualBox, make sure you have a Linux or Mac available to work on with 16G of RAM
-* download and install:
-    * Bindle
-    * Vagrant
-    * VirtualBox
+* download and install VirtualBox
+* install Bindle and its dependencies for the pancancer project using [architecture-setup](https://github.com/ICGC-TCGA-PanCancer/architecture-setup)
 * copy and customize the Bindle template of your choice (a single node only, do not use a cluster profile)
-* launch your development node using vagrant_cluster_launch.pl, select "--use-virtualbox"
+* launch your development node using cluster\_launch.pl, select "--platform virtualbox"
 * ssh into your node
 * Vagrant will automatically create a vagrant directory ("/vagrant" on the VM and within your "working_dir/master" dir) that is shared between your host and the VM
 * create new SeqWare workflows in this "working_dir/master" directory, please see the Developer Getting Started Guide at http://seqware.io
@@ -47,11 +45,11 @@ in cloud environments.
 
 The following is a detailed example showing you how to setup the workflow development environment:
 
-### Step - Download and Install Components
+### Step 1 - Download and Install Components
 
 These steps will be different depending on whether or not you use a Mac or
 Linux host machine.  Much more information about Bindle can be found
-at our GitHub site https://github.com/SeqWare/vagrant. In particular take a
+at our GitHub site https://github.com/CloudBindle/Bindle. In particular take a
 look at the README.md which goes into great detail about installing and
 configuring these tools.
 
@@ -65,44 +63,28 @@ Note the "$" is the Bash shell prompt in these examples and "#" is a comment:
     $ wget http://download.virtualbox.org/virtualbox/4.3.8/virtualbox-4.3_4.3.8-92456~Ubuntu~precise_amd64.deb
     # sudo dpkg -i virtualbox-4.3_4.3.8-92456~Ubuntu~precise_amd64.deb
 
-    # download SeqWare Vagrant 1.2
-    $ wget http://s3.amazonaws.com/oicr.workflow.bundles/released-bundles/bindle_1.2.tar.gz
-    $ tar zxf bindle_1.2.tar.gz
-    $ cd bindle_1.2
+Next, follow the instructions for installing Bindle available [here](https://github.com/CloudBindle/Bindle#installing)
 
-    # install bindle dependencies, again see README for Bindle
-    $ sudo apt-get update
-    $ sudo apt-get install libjson-perl libtemplate-perl make gcc
-
-    # make sure you have all the dependencies needed for Bindle, this should not produce an error
-    $ perl -c vagrant_cluster_launch.pl
-
-    # now install the Vagrant tool which is used by Bindle
-    $ wget https://dl.bintray.com/mitchellh/vagrant/vagrant_1.4.3_x86_64.deb
-    $ sudo dpkg -i vagrant_1.4.3_x86_64.deb
-    $ vagrant plugin install vagrant-aws
 
 In the future we will provide pre-configured OVA for the development environment
 to eliminate the installation tasks above. All that will be required is
 VirtualBox. For now please move on to the next step.
 
-### Step - Configuration
+### Step 2 - Configuration
 
-Now that you have Bindle and dependencies installed the next step is
-to launch your local VM that will run workflows via SeqWare, launch cluster
-jobs via GridEngine, or perform MapReduce jobs.
+Next setup Bindle with its profiles specific to the pancancer project. 
 
-The steps below assume you are working in the bindle_1.2 directory:
+Checkout the following repositories at the same directory level as bindle.
 
-    # copy the template used to setup a SeqWare single compute node for PanCancer
-    # no modifications are required since you are launching using VirtualBox
-    $ cp templates/sample_configs/vagrant_cluster_launch.pancancer.seqware.install.sge_node.json.template vagrant_cluster_launch.json
+    $ git clone https://github.com/ICGC-TCGA-PanCancer/architecture-setup.git
 
-### Step - Launch a SeqWare Dev Node
+Follow the instructions in architecture-setup/README.md. 
 
-Now that you have customized the settings in vagrant_cluster_launch.json the
+### Step 3 - Launch a SeqWare Dev Node
+
+Now that you have customized the settings in cluster\_launch.json the
 next step is to launch a computational node. Note, each launch of a
-node/cluster gets its own "--working-dir", you cannot resuse these.  Within the
+node/cluster gets its own working dir, you cannot resuse these.  Within the
 working dir you will find a log for each node (simply master.log for a
 single-node launch) and a directory for each node that is used by the vagrant
 command line tool (the "master" directory for a single-node launch). The latter
@@ -111,10 +93,7 @@ is important for controlling your node/cluster once launched.
 For VirtualBox there are two optional parameters that control memory and CPUs
 used.  We recommend 12G for the RAM and 2 or more CPUs depending on what is
 availble on your machine. Do not attempt to use more RAM/CPU than you have
-available.
-
-    # now launch the compute node, 12G RAM, 2 CPU cores
-    $ perl vagrant_cluster_launch.pl --use-virtualbox --working-dir target-vb-1 --vb-ram 12000 --vb-cores 2 --config-file vagrant_cluster_launch.json
+available. Specify them in your ~/.bindle/virtualbox.cfg
 
 You can follow the progress of this cluster launch in another terminal with.
 Use multiple terminals to watch logs for multiple-node clusters if you desire:
@@ -123,10 +102,10 @@ Use multiple terminals to watch logs for multiple-node clusters if you desire:
     $ tail -f target-vb-1/master.log
 
 Once this process complete you should see no error messages from
-"vagrant_cluster_launch.pl". If so, you are ready to use your workflow
+cluster\_launch.pl. If so, you are ready to use your workflow
 development node.
 
-### Step - Log In To Node/Cluster
+### Step 4 - Log In To Node/Cluster
 
 Vagrant provides a simple way to log into a launched node.  For example:
 
@@ -148,7 +127,7 @@ be thought of in the same way:
     # or switch user to root (not generally needed!)
     $ sudo su -
 
-#### Step - Verify Node/Cluster with HelloWorld
+#### Step 5 - Verify Node/Cluster with HelloWorld
 
 Now that you have a workflow development node the next step is to launch a sample
 HelloWorld SeqWare workflow to ensure all the infrastructure on the box is
@@ -156,15 +135,15 @@ functioning correctly.  Depending on the template you used this may or may not
 be already installed under the seqware user account. If not, you can download a
 copy of the workflow and install it yourself following our guides on
 http://seqware.io (see
-https://s3.amazonaws.com/oicr.workflow.bundles/released-bundles/Workflow_Bundle_HelloWorld_1.0-SNAPSHOT_SeqWare_1.0.13.zip).
+https://s3.amazonaws.com/oicr.workflow.bundles/released-bundles/Workflow_Bundle_HelloWorld_1.0-SNAPSHOT_SeqWare_1.1.0-alpha.5.zip).
 
     # assumes you have logged into your master node and switched to the vagrant user
     # download the sample HelloWorld workflow
-    $ wget https://s3.amazonaws.com/oicr.workflow.bundles/released-bundles/Workflow_Bundle_HelloWorld_1.0-SNAPSHOT_SeqWare_1.0.13.zip
+    $ wget https://s3.amazonaws.com/oicr.workflow.bundles/released-bundles/Workflow_Bundle_HelloWorld_1.0-SNAPSHOT_SeqWare_1.1.0-alpha.5.zip
     # install the workflow
-    $ seqware bundle install --zip Workflow_Bundle_HelloWorld_1.0-SNAPSHOT_SeqWare_1.0.13.zip
+    $ seqware bundle install --zip Workflow_Bundle_HelloWorld_1.0-SNAPSHOT_SeqWare_1.1.0-alpha.5.zip
     # now run the workflow with default test settings
-    $ seqware bundle launch --dir provisioned-bundles/Workflow_Bundle_HelloWorld_1.0-SNAPSHOT_SeqWare_1.0.13
+    $ seqware bundle launch --dir provisioned-bundles/Workflow_Bundle_HelloWorld_1.0-SNAPSHOT_SeqWare_1.1.0-alpha.5
 
 This command should finish without errors.  If there are problems please report
 the errors to the SeqWare user group, see http://seqware.io/community/ for

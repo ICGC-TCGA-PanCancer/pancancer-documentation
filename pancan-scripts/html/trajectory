@@ -1,0 +1,303 @@
+
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<title>ICGC PanCancer Status</title>
+<head>
+    <link rel="shortcut icon" href="https://icgc.org/files/org_sys/pan.png">
+    <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script type="text/javascript" src="http://d3js.org/topojson.v1.min.js"></script>
+    <script type="text/javascript" src="http://datamaps.github.io/scripts/datamaps.all.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style2.css">
+    <link rel="stylesheet" type="text/css" href="http://bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+</head>
+<style>
+        #header1{
+        background-color: #7FB5DA;
+        }
+        #inside{
+                line-height: 50px;
+                font-size:12px;
+        }
+        #city{
+                border-color:#0000ff;
+        }
+        #gnos{
+                border-color:#0000ff;
+        }
+</style>
+<body>
+         <div id="header1">
+                <h1 style="float:left;margin-left:10px;font-size:25px;">PANCANCER.INFO</h1>
+                <center><div id="inside">
+                 <ul class="tab-links">
+                                <li><a href="http://pancancer.info/">Sites</a></li>
+                                <li><a href="http://pancancer.info/uploads.html">Uploads</a></li>
+                                <li><a href="http://pancancer.info/qc">QC Metrics</a></li>
+                                <li><a href="http://pancancer.info/data_freeze">Data Freeze</a></li>
+                 </ul>
+                 </div></center>
+                 </div>
+                <div id="chartdiv">
+		<center>
+                                <div id ="chartbottom">
+                                        <h3>Estimate Date of Completed Alignments</h3>
+                                </div><!--chartbottom-->
+		</center>
+                </div><!--chartdiv-->
+<script type="text/javascript">
+                        function charts(data,label,popup,spot,maxnum,num){
+                        //creates the line chart
+                          var margin = {top: 20, right: 55, bottom: 128, left: 40},
+                                  width  = 800,
+                                  height = 250;
+
+                          var x = d3.scale.ordinal()
+                                  .rangeRoundBands([0, width], .1);
+
+                          var y = d3.scale.linear()
+                                  .rangeRound([height, 0]);
+
+                          var xAxis = d3.svg.axis()
+                                  .scale(x)
+				  .ticks(20)
+                                  .orient("bottom");
+
+                          var yAxis = d3.svg.axis()
+                                  .scale(y)
+                                  .orient("left");
+
+                          var line = d3.svg.line()
+                                  .interpolate("linear")
+                                  .x(function (d) { return x(d.label) + x.rangeBand() / 2; })
+                                  .y(function (d) { return y(d.value); });
+
+                          var color = d3.scale.ordinal()
+                                  .range(["#001c9c","#7F5217","#475003","#9c8305","#d3c47c","#800000","#6C007D","#63AFD0","#FF0000","#FF00F7","#FAF569","#00FF66","#009891"]);
+
+                          var svg = d3.select("#chart"+spot).append("svg")
+                                  .attr("id","svg"+num)
+                                  .attr("width",  width  + margin.left + margin.right)
+                                  .attr("height", height + margin.top  + margin.bottom)
+                                  .append("g")
+                                  .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+                          //reading in the data
+                          d3.csv(""+data, function (error, data) {
+
+                                var labelVar = 'quarter';
+                                var varNames = d3.keys(data[0]).filter(function (key) { return key !== labelVar;});
+                                color.domain(varNames);
+
+                                var seriesData = varNames.map(function (name) {
+                                  return {
+                                        name: name,
+                                        values: data.map(function (d) {
+                                          return {name: name, label: d[labelVar], value: +d[name]};
+                                        })
+                                  };
+                                });
+
+                                x.domain(data.map(function (d) { return d.quarter; }));
+                                
+                                //if (maxnum == 1){
+                                //      y.domain([0,100]);
+                                //      }
+                                //else {
+                                //y.domain([0,d3.max(seriesData, function (c) { 
+                                //      return d3.max(c.values, function (d) { return d.value; });
+                                //      })
+                                //  ]);
+                                //}
+                                y.domain([0,
+                                   
+                                    d3.max(seriesData, function (c) { 
+                                      return d3.max(c.values, function (d) { return d.value; });
+                                    })
+				]);
+
+				var threshold = 4150;
+
+				var target = svg.append("line")
+                     			.attr("x1", 0)
+                     			.attr("y1", y(threshold))
+                     			.attr("x2", width)
+                     			.attr("y2", y(threshold))
+                     			.attr("stroke-width", 2)
+					.style("stroke-dasharray", ("3, 3"))
+                     			.attr("stroke", "red");
+
+                                svg.append("g")
+                                        .attr("class", "x axis")
+                                        .attr("transform", "translate(0," + height + ")")
+                                        .call(xAxis)
+                                        .selectAll("text")  
+                                //.call(wrap, x.rangeBand())
+                                        .style("text-anchor", "end")
+                                        .attr("dx", "-.8em")
+                                        .attr("dy", ".15em")
+                                        .attr("transform", function(d) {
+                                                return "rotate(-70)" 
+                                                });
+
+                                svg.append("g")
+                                        .attr("class", "y axis")
+                                        .call(yAxis)
+                                        .append("text")
+                                        .attr("transform", "rotate(-90)")
+                                        .attr("y", 6)
+                                       .attr("dy", ".71em")
+                                        .style("text-anchor", "end")
+                                        .text(""+label);
+
+                                var series = svg.selectAll(".series")
+                                        .data(seriesData)
+                                        .enter().append("g")
+                                        .attr("class", "series");
+
+                                series.append("path")
+                                  .attr("class", "line")
+                                  .attr("d", function (d) { return line(d.values); })
+                                  .style("stroke", function (d) { return color(d.name); })
+                                  .style("stroke-width", "4px")
+                                  .style("fill", "none")
+
+                                series.selectAll(".point")
+                                  .data(function (d) { return d.values; })
+                                  .enter().append("circle")
+                                   .attr("class", "point")
+                                   .attr("cx", function (d) { return x(d.label) + x.rangeBand()/2; })
+                                   .attr("cy", function (d) { return y(d.value); })
+                                   .attr("r", "5px")
+                                   .style("fill", function (d) { return color(d.name); })
+                                   .style("stroke", "grey")
+                                   .style("stroke-width", "2px")
+                                   .on("mouseover", function (d) { showPopover.call(this, d); })
+                                   .on("mouseout",  function (d) { removePopovers(); })
+
+                                var legend = svg.selectAll(".legend")
+                                        .data(varNames.slice().reverse())
+                                  .enter().append("g")
+                                        .attr("class", "legend")
+                                        .attr("transform", function (d, i) { return "translate(55," + i * 20 + ")"; });
+
+                                legend.append("rect")
+                                        .attr("x", width - 10)
+                                        .attr("width", 10)
+                                        .attr("height", 10)
+                                        .style("fill", color)
+                                        .style("stroke", "grey");
+
+                                legend.append("text")
+                                        .attr("x", width - 12)
+                                        .attr("y", 6)
+                                        .attr("dy", ".35em")
+                                        .style("text-anchor", "end")
+                                        .text(function (d) { return d; });
+
+                                //handles the hover aspect
+                                function removePopovers () {
+                                  $('.popover').each(function() {
+                                        $(this).remove();
+                                  }); 
+                                }
+
+                                function showPopover (d) {
+                                  $(this).popover({
+                                        title: d.name,
+                                        placement: 'auto top',
+                                        container: 'body',
+                                        trigger: 'manual',
+                                        html : true,
+                                        content: function() { 
+                                          return "Date: " + d.label + 
+                                                         "<br/>"+popup+ ": " + d3.format(",")(d.value ? d.value: d.y1 - d.y0); }
+                                  });
+                                  $(this).popover('show')
+                                }
+                                
+                                //rotates the x-axis label
+                                function wrap(text, width) {
+                                  text.each(function() {
+                                        var text = d3.select(this),
+                                                words = text.text().split(/\s+/).reverse(),
+                                                word,
+                                                line = [],
+                                                lineNumber = 0,
+                                                lineHeight = 1.1, // ems
+                                                y = text.attr("y"),
+                                                dy = parseFloat(text.attr("dy")),
+                                                tspan = text.text(null).append("tspan").attr("x", 0).attr("y", y).attr("dy", dy + "em");
+while (word = words.pop()) {
+                                          line.push(word);
+                                          tspan.text(line.join(" "));
+                                          if (tspan.node().getComputedTextLength() > width) {
+                                                line.pop();
+                                                tspan.text(line.join(" "));
+                                                line = [word];
+                                                tspan = text.append("tspan").attr("x", 0).attr("y", y).attr("dy", ++lineNumber * lineHeight + dy + "em").text(word);
+                                  }
+                                 }
+                                });
+                           }
+                          });
+                  }
+charts("est.csv","Specimens Aligned","Aligned","bottom",1,1);
+</script>
+<!--<center>
+<h2>Weekly Dates</h2>
+<div id="#data" style="width:911px;">
+<p>
+<table name ="x" id="rounded-corner" summary="">
+<thead>
+<tr><th>Date</th><th>Estimate</th></tr>
+</thead>
+<tbody>
+<tr><td>0</td><td>0</td></tr>
+<tr><td>0</td><td>0</td></tr>
+<tr><td>0</td><td>0</td></tr>
+<tr><td>0</td><td>0</td></tr>
+</tbody>
+<tfoot>
+                                        <tr>
+                                                <td colspan="19">*Historic Estimates</td>
+                                        </tr>
+                                </tfoot>
+
+</table>
+</p>
+</div>
+</center>
+
+<script>
+var table = document.getElementsByName("x");
+var json_data;
+var cell_1 = [];
+var cell_2 = [];
+var cell_3 = [];
+var cell_4 = [];
+var val_1 = [];
+        var val_2 = [];
+        var val_3 = [];
+        var val_4 = [];
+
+d3.json("dates.json", function(error, json) {
+                json_data = json;
+                //for (var i = 1,j = 0; i < json_data.length/2 + 2, j < json_data.length; i++, j+=2){
+                for (var i = 0; i < json_data.length; i++){
+                
+                cell_1[i] = table[0].rows[i+1].cells[0];
+                val_1[i] = cell_1[i].firstChild.data;
+                cell_1[i].firstChild.data = ''+json_data[i].dates;
+                
+                cell_2[i] = table[0].rows[i+1].cells[1];
+                val_2[i] = cell_2[i].firstChild.data;
+                cell_2[i].firstChild.data = ''+json_data[i].est;
+                }
+});
+</script>-->
+</body>
+</html>

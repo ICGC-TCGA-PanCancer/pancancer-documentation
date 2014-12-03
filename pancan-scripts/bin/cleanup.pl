@@ -55,7 +55,7 @@ while (my $line = <FH>) {
 }
 close(FH);
 
-open(my $file, '>',"/home/ubuntu/gitroot/public-workflows/decider-bwa-pancancer/all_qc1.csv") or die ("Can't open all_qc.csv: $!");
+open(my $file, '>',"/home/ubuntu/gitroot/public-workflows/decider-bwa-pancancer/all_qc1.csv") or die ("Can't open all_qc1.csv: $!");
 for (my $i = 0; $i < scalar @lines;$i++){
         if ($i == 0){print $file "$lines[0]\n";}
         else{print $file "$lines[$i],$total_bases[$i],$average[$i],$mapb[$i],$mapr[$i],$diver[$i],$prop[$i],$dupli[$i]\n";}
@@ -63,7 +63,7 @@ for (my $i = 0; $i < scalar @lines;$i++){
 close $file;
 
 # Getting rid of all the duplicates
-open(FH,"/home/ubuntu/gitroot/public-workflows/decider-bwa-pancancer/all_qc1.csv") or die("Can't open all_qc.csv: $!");
+open(FH,"/home/ubuntu/gitroot/public-workflows/decider-bwa-pancancer/all_qc1.csv") or die("Can't open all_qc1.csv: $!");
 while (my $line = <FH>) {
   chomp $line;
   my @fields = split "," , $line;

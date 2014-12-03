@@ -13,7 +13,7 @@ my @thing;
 my %hsh;
 my @dates;
 my @final;
-my $filename = 'train2.json';
+my $filename = '/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map_data/train2.json';
 
 my $json_text = do {
    open(my $json_fh, "<:encoding(UTF-8)", $filename)
@@ -33,7 +33,7 @@ for (my $i=0;$i < 8;$i++){
 
 #print $add;
 
-open(FH,"align_archive.csv") or die("Can't open guestbook.txt: $!");
+open(FH,"/home/ubuntu/gitroot/pancancer-info/pancan-scripts/align_archive.csv") or die("Can't open guestbook.txt: $!");
 while (my $line = <FH>) {
   chomp $line;
   @fields = split "," , $line;
@@ -46,7 +46,7 @@ my $day = 0;
 my $two = 0;
 my $week = 0;
 
-if (scalar @days > 7){
+if (scalar @days >= 7){
         $day = sprintf("%.2f",$count[-1] - $count[-2]);
         push(@thing,$day);
         $two = sprintf("%.2f",($count[-1] - $count[-3])/2);
@@ -55,7 +55,7 @@ if (scalar @days > 7){
         push(@thing,$week);
 }
 
-elsif(scalar @days <= 7){
+elsif(scalar @days < 7){
   $day = sprintf("%.2f",$count[-1] - $count[-2]);
   push(@thing,$day);
   $two = sprintf("%.2f",($count[-1] - $count[-3])/2);
@@ -128,7 +128,7 @@ for (my $u = 0;$u < scalar @dates;$u+=7){
         print $dates[$u];
 }
 
-open(my $file,'>>', "dates_archive.csv");
+open(my $file,'>>', "/home/ubuntu/gitroot/pancancer-info/pancan-scripts/dates_archive.csv");
 for my $keys (keys %shh){
         for my $item (keys $shh{$keys}){
                 print $file "$keys,$item,$shh{$keys}{$item}\n";

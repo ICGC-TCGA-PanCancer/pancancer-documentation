@@ -7,7 +7,7 @@ Note that this guide does not explain you how to set up bindle for the
 particular environment you are going to be testing. For that, please 
 refer to CloudBindle/Bindle repository.
 
-## The Template files to test with:
+## The Template files to test with (from [pancancer-bag[(https://github.com/ICGC-TCGA-PanCancer/pancancer-bag)) :
 
 * vagrant_cluster_launch.pancancer.bwa_workflow.seqware.install.sge_cluster.json.template
 * vagrant_cluster_launch.pancancer.bwa_workflow.seqware.install.sge_node.json.template
@@ -35,6 +35,17 @@ This checks for gluster. It should be set up for a multi-node cluster but should
 
 This simply checks if the seqware environment is set up correctly on the cluster.
 
+#### For SeqWare 1.1.X
+
+    # switch to the seqware user
+    $ sudo su - seqware
+    $ seqware check --help
+    $ seqware check --master
+    # Check to see if it passed (0 is a pass and fail otherwise)
+    $ echo $?
+
+#### For SeqWare 1.0.X
+
     # switch to the seqware user
     $ sudo su - seqware
     # get the jar for seqware sanity check if you do not have it already
@@ -46,19 +57,19 @@ This simply checks if the seqware environment is set up correctly on the cluster
 
 ### Step - Run the HelloWorld Workflow
 
-This step assumes that the workflow is installed already on the cluster.  If not, you can download a copy of the workflow and install it yourself following our guides on http://seqware.io (see https://s3.amazonaws.com/oicr.workflow.bundles/released-bundles/Workflow_Bundle_HelloWorld_1.0-SNAPSHOT_SeqWare_1.0.13.zip). 
+This step assumes that the workflow is installed already on the cluster.  If not, you can download a copy of the workflow and install it yourself following our guides on http://seqware.io (see https://s3.amazonaws.com/oicr.workflow.bundles/released-bundles/Workflow_Bundle_HelloWorld_1.0-SNAPSHOT_SeqWare_1.1.0-alpha.4.zip). 
 
     # assumes you have logged into your master node and switched to the seqware user
-    $ ls provisioned-bundles/Workflow_Bundle_HelloWorld_1.0-SNAPSHOT_SeqWare_1.0.13
+    $ ls provisioned-bundles/Workflow_Bundle_HelloWorld_1.0-SNAPSHOT_SeqWare_1.1.0-alpha.4
     # now run the workflow
-    $ seqware bundle launch --dir provisioned-bundles/Workflow_Bundle_HelloWorld_1.0-SNAPSHOT_SeqWare_1.0.13 
+    $ seqware bundle launch --dir provisioned-bundles/Workflow_Bundle_HelloWorld_1.0-SNAPSHOT_SeqWare_1.1.0-alpha.4 
 
 ### Step - Run the BWA Workflow in local test mode if you have installed bindle using the BWA template
 
     # assumes you have logged into your master node and switched to the seqware user
-    $ ls provisioned-bundles/Workflow_Bundle_BWA_2.5.0_SeqWare_1.0.13
+    $ ls provisioned-bundles/Workflow_Bundle_BWA_2.6.2_SeqWare_1.1.0-alpha.4
     # now run the workflow
-    $ seqware bundle launch --dir provisioned-bundles/Workflow_Bundle_BWA_2.5.0_SeqWare_1.0.13/
+    $ seqware bundle launch --dir provisioned-bundles/Workflow_Bundle_BWA_2.6.2_SeqWare_1.1.0-alpha.4/
 
 ## Next Steps
 
