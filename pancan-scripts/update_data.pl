@@ -5,6 +5,20 @@ use warnings;
 
 use JSON 2;
 use IO::Handle;
+use JSON qw( decode_json );
+
+my $filename = 'config.json';
+
+my $json_text = do {
+   open(my $json_fh, "<:encoding(UTF-8)", $filename)
+      or die("Can't open \$filename\": $!\n");
+   local $/;
+   <$json_fh>
+};
+
+my $json = JSON->new;
+my $data = $json->decode($json_text);
+my $path = $data->{"main_path"};
 
 my ($Study, $dcc_project_code, $Accession_Identifier, $submitter_donor_id, $submitter_specimen_id, $submitter_sample_id, $Readgroup, $dcc_specimen_type, $Normal_Tumor_Designation,$ICGC_Sample_Identifier,$Sequencing_Strategy,$Number_of_BAM,$Target,$Actual);
 
@@ -28,6 +42,7 @@ my @totals;
 my $totals_match;
 my $total_icgc;
 my @up;
+my @uplo;
 my @matches_up;
 my $missing;
 my $bar_count;
@@ -41,7 +56,7 @@ my $brca_count;
 
 # reading from text file containing summary of all the projects
 # individual project text files created from get_uplaods.pl
-open (FILE, "/home/ubuntu/gitroot/pancancer-info/pancan-scripts/results/summary.txt") or die ("Could not open summary.txt");
+open (FILE, "$path/results/summary.txt") or die ("Could not open summary.txt");
 while (<FILE>) {
 chomp;
 ($projectcode,$leadjurisdiction,$tumourtype,$gnos,$pledgednumberofwgstnpairs,$numberofwgstnpairstheyaretracking,$numberofspecimens,$numberofspecimensuploaded,$percentuploaded,$pairuploaded,$alignedspecimens,$alignedpair) = split("\t");
@@ -50,14 +65,14 @@ if ($projectcode ne 'Project Code' && $projectcode ne ''){
 		if (substr($projectcode,5,6) eq 'SG'){
 		        $total_icgc += $numberofspecimens;
                         $totals_match += $pledgednumberofwgstnpairs;
-                        $up[4] = $numberofspecimensuploaded;
+                        $uplo[4] = $numberofspecimensuploaded;
                         $matches_up[4] = $pairuploaded;
                         $totals[4] += $numberofspecimens;}
                 elsif (substr($projectcode,5,6) eq 'ES'){
                         $bar_count = $numberofspecimensuploaded;
                         $total_icgc += $numberofspecimens;
                         $totals_match += $pledgednumberofwgstnpairs;
-                        $up[3] = $numberofspecimensuploaded;
+                        $uplo[3] = $numberofspecimensuploaded;
                         $matches_up[3] = $pairuploaded;
                         $totals[3] += $numberofspecimens;}
                 elsif ($projectcode eq 'LIRI-JP'){
@@ -252,10 +267,10 @@ my $uploaded = 0;
 
 # Finding what is uplaoded from the GNOS log files
 foreach my $a ("defiles.txt","camfiles.txt","cafiles.txt","esfiles.txt","sgfiles.txt","jpfiles.txt","hinfiles.txt","krfiles.txt","pbcadefiles.txt","malydefiles.txt","eopcdefiles.txt","brcaeufiles.txt","pradukfiles.txt","esadukfiles.txt","brcaukfiles.txt","cmdiukfiles.txt","bocaukfiles.txt","lirijpfiles.txt","pacacafiles.txt","orcainfiles.txt",,"aufiles.txt","pacaaufiles.txt","paenaufiles.txt","ovaufiles.txt","gacacnfiles.txt"){
-foreach my $i ("gtrepo-bsc", "gtrepo-dkfz", "gtrepo-osdc", "gtrepo-etri", "gtrepo-ebi", "gtrepo-riken") {
+foreach my $i ("gtrepo-bsc", "gtrepo-dkfz", "gtrepo-osdc-icgc", "gtrepo-etri", "gtrepo-ebi", "gtrepo-riken") {
 
                 @id = [];
-                my $url = "http://pancancer.info/${i}.log";
+                my $url = "http://pancancer.info/log_train/1${i}.log";
                 # Associate the mechanize object with a URL
                 $mech->get($url);
                 
@@ -278,7 +293,7 @@ foreach my $i ("gtrepo-bsc", "gtrepo-dkfz", "gtrepo-osdc", "gtrepo-etri", "gtrep
                 }
 
                 # reads the log files and finds the specimen_id
-                open(FH,"$/home/ubuntu/brian/public-workflows/decider-bwa-pancancer/1${i}.log") or die ("Could not open ${i}.log");
+                open(FH,"/home/ubuntu/brian/public-workflows/decider-bwa-pancancer/1${i}.log") or die ("Could not open ${i}.log");
                 while (my $line = <FH>) {
                  my $result = index($line, "SPECIMEN/SAMPLE:");
                  if ($result == 1){
@@ -287,7 +302,7 @@ foreach my $i ("gtrepo-bsc", "gtrepo-dkfz", "gtrepo-osdc", "gtrepo-etri", "gtrep
                 }
                 my $total_files = 0;
                 # checks if the specimen_id's are in any repo
-                open (FILE, "/home/ubuntu/gitroot/pancancer-info/pancan-scripts/results/${a}") or die ("Could not open ${a}");
+                open (FILE, "$path/results/${a}") or die ("Could not open ${a}");
                 while (<FILE>) {
                         chomp;
                         ($Study, $dcc_project_code, $Accession_Identifier, $submitter_donor_id, $submitter_specimen_id, $submitter_sample_id, $Readgroup, $dcc_specimen_type, $Normal_Tumor_Designation,$ICGC_Sample_Identifier,$Sequencing_Strategy,$Number_of_BAM,$Target,$Actual) = split("\t");
@@ -332,6 +347,7 @@ if ($totals[24] < $totals2[24]){$totals[24] = $totals2[24];}
 
 $totals[0] = $totals[8] + $totals[9] + $totals[10];
 $totals[1] = $totals[11] + $totals[13];
+$uploads[1] = $uploads[11] + $uploads[13];
 $totals[2] = $totals[18] + $totals[26];
 $totals[5] = $totals[17] + $totals[25];
 $totals[6] = $totals[12] + $totals[14] + $totals[15] + $totals[16];
@@ -364,8 +380,8 @@ my @match_pair;
 # finding the matched tumour/normal pairs
 
 # gets an array of all the specimen ids that are uplaoded
-foreach my $i ("gtrepo-bsc","gtrepo-dkfz", "gtrepo-osdc", "gtrepo-etri", "gtrepo-ebi", "gtrepo-riken") {
-  my $url = "http://pancancer.info/${i}.log";
+foreach my $i ("gtrepo-bsc","gtrepo-dkfz", "gtrepo-osdc-icgc", "gtrepo-etri", "gtrepo-ebi", "gtrepo-riken") {
+  my $url = "http://pancancer.info/log_train/1${i}.log";
   # Associate the mechanize object with a URL
   $mech->get($url);
   # Print the content of the URL
@@ -386,7 +402,7 @@ foreach my $i ("gtrepo-bsc","gtrepo-dkfz", "gtrepo-osdc", "gtrepo-etri", "gtrepo
   }
 
   # reads the log files and finds the specimen_id
-  open(FH,"$/home/ubuntu/brian/public-workflows/decider-bwa-pancancer/1${i}.log") or die ("Could not open ${i}.log");
+  open(FH,"/home/ubuntu/brian/public-workflows/decider-bwa-pancancer/1${i}.log") or die ("Could not open ${i}.log");
   while (my $line = <FH>) {
    my $result = index($line, "SPECIMEN/SAMPLE:");
    if ($result == 1){
@@ -409,7 +425,7 @@ foreach my $a ("defiles.txt","camfiles.txt","cafiles.txt","esfiles.txt","sgfiles
     {
         delete $match{$_};
     }
- open (FILE, "/home/ubuntu/gitroot/pancancer-info/pancan-scripts/results/${a}") or die ("Could not open ${a}");
+ open (FILE, "$path/results/${a}") or die ("Could not open ${a}");
  while (<FILE>) {
  chomp;
  ($Study, $dcc_project_code, $Accession_Identifier, $submitter_donor_id, $submitter_specimen_id, $submitter_sample_id, $Readgroup, $dcc_specimen_type, $Normal_Tumor_Designation,$ICGC_Sample_Identifier,$Sequencing_Strategy,$Number_of_BAM,$Target,$Actual) = split("\t");
@@ -448,7 +464,7 @@ for ($z = 0;$z < scalar @matches_up;$z++){
 $match_pair[1] = $match_pair[11] + $match_pair[13];
 
 # writes to bubble_data.json 
-open(my $file,'>', "/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/bubble_data.json") or die ("Could not open bubble_data.json");
+open(my $file,'>', "$path/map-data/bubble_data.json") or die ("Could not open bubble_data.json");
 print $file qq([
           {"total_icgc": $total_icgc, "name": "Heidelberg", "total": $totals[0], "uploaded": $uploads[0], "latitude": 49.403159, "longitude": 8.676061, "radius": $rad[0], "fillKey": "orange","match_total": $totals_match, "match": $match_pair[0], "tumour": $tumour[0], "normal": $normal[0]},
           {"name": "Heidelberg", "total": $totals[0], "uploaded": $uploads[0], "latitude": 49.403159, "longitude": 8.676061, "radius": $size[0], "fillKey": "$col[0]"},       
@@ -487,7 +503,7 @@ print $file qq([
 close $file;
 
 # writes to bubble_data1.json
-open(my $file_add,'>', "/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/bubble_data1.json") or die ("Could not open bubble_data.json");
+open(my $file_add,'>', "$path/map-data/bubble_data1.json") or die ("Could not open bubble_data.json");
 print $file_add qq([
         {"name": "Heidelberg", "total": $totals[8], "uploaded": $uploads[8], "latitude": 49.403159, "longitude": 8.676061, "radius": $rad[8], "fillKey": "orange","match": $match_pair[8], "tumour": $tumour[8], "normal": $normal[8], "project": "PBCA-DE"},
         {"name": "Heidelberg", "total": $totals[8], "uploaded": $uploads[8], "latitude": 49.403159, "longitude": 8.676061, "radius": $size[8], "fillKey": "$col[8]", "project": "PBCA-DE"},
@@ -542,7 +558,7 @@ my $date = strftime "%a %b %d '%y - %R", localtime;
 
 # updates the average data for the chart
 # appending to file with all average data
-open(my $f, '>>', "/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/ave_data_archive.csv") or die ("Could not open ave_data_archive.csv");
+open(my $f, '>>', "$path/map-data/ave_data_archive.csv") or die ("Could not open ave_data_archive.csv");
 print $f "$date,";
 my $k = 0;
 my $count1 = 0;
@@ -559,7 +575,7 @@ close $f;
 
 # updates the total uploads for the chart
 # appending to file with all upload data
-open(my $f1, '>>', "/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/up_data_archive.csv") or die ("Could not open up_data_archive.csv");
+open(my $f1, '>>', "$path/map-data/up_data_archive.csv") or die ("Could not open up_data_archive.csv");
 print $f1 "$date,";
 my $r = 0;
 my $count2 = 0;
@@ -585,7 +601,7 @@ my @day_ary2 = [];
 my $count_day2 = 0;
 
 # finding number of rows in the archived data
-open(FH,"/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/ave_data_archive.csv") or die("Can't open ave_data_archive.csv");
+open(FH,"$path/map-data/ave_data_archive.csv") or die("Can't open ave_data_archive.csv");
 while (my $line = <FH>) {
     $count_ave += 1;
     push (@ary,"$line");
@@ -599,7 +615,7 @@ while (my $line = <FH>) {
 close(FH);
 
 # only displaying 20 lines on the chart for hourly
-open(my $file_ave, '>',"/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/ave_data.csv") or die("Can't open ave_data.csv");
+open(my $file_ave, '>',"$path/map-data/ave_data.csv") or die("Can't open ave_data.csv");
 if ($count_ave > 21){
         my $h = 0;
         print $file_ave $ary[1];
@@ -616,7 +632,7 @@ else {
 close $file_ave;
 
 # only displaying 20 lines for daily
-open(my $file_ave2, '>',"/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/ave_daily.csv") or die("Can't open ave_daily.csv");
+open(my $file_ave2, '>',"$path/map-data/ave_daily.csv") or die("Can't open ave_daily.csv");
 if ($count_day1 > 20){
         my $h = 0;
         print $file_ave2 $day_ary1[1];
@@ -639,7 +655,7 @@ else {
 close $file_ave2;
 
 # finding number of rows in the archived data
-open(FH,"/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/up_data_archive.csv") or die("Can't open up_data_archive.csv");
+open(FH,"$path/map-data/up_data_archive.csv") or die("Can't open up_data_archive.csv");
 while (my $line = <FH>) {
     $count_up += 1;
     push (@ary1,"$line");
@@ -653,7 +669,7 @@ while (my $line = <FH>) {
 close(FH);
 
 # only displaying 20 lines on the chart for hourly 
-open(my $file_up, '>',"/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/up_data.csv") or die("Can't open up_data.csv");
+open(my $file_up, '>',"$path/map-data/up_data.csv") or die("Can't open up_data.csv");
 if ($count_up > 21){
         my $h = 0;
         print $file_up $ary1[1];
@@ -670,7 +686,7 @@ else {
 close $file_up;
 
 # only displaying 20 lines for daily
-open(my $file_up2, '>',"/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/up_daily.csv") or die("Can't open ave_daily.csv");
+open(my $file_up2, '>',"$path/map-data/up_daily.csv") or die("Can't open ave_daily.csv");
 if ($count_day2 > 21){
         my $h = 0;
         print $file_up2 $day_ary2[1];
@@ -694,8 +710,8 @@ close $file_up2;
 
 # writing to the data needed for the individual repo line graphs
 foreach my $thing ('DKFZ','EBI','BSC','RIKEN','OSDC','ETRI'){
-        open(my $file, '>>', "/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/${thing}_up_archive.csv") or die ("Can't open ${thing}_up_archive.csv") ;
-        open(my $filea, '>>', "/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/${thing}_ave_archive.csv") or die ("Can't open ${thing}_ave_archive.csv");
+        open(my $file, '>>', "$path/map-data/${thing}_up_archive.csv") or die ("Can't open ${thing}_up_archive.csv") ;
+        open(my $filea, '>>', "$path/map-data/${thing}_ave_archive.csv") or die ("Can't open ${thing}_ave_archive.csv");
         if ($thing eq 'DKFZ'){
                 #print $file "quarter,PBCA-DE,MALY-DE,EOPC-DE\n";
                 #print $filea "quarter,PBCA-DE,MALY-DE,EOPC-DE\n";
@@ -741,7 +757,7 @@ my @day_ary2re = [];
 my $count_day2re = 0;
 
 # finding number of rows in the archived data
-open(FH,"/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/${elems}_ave_archive.csv") or die ("Can't open ${elems}_ave_archive.csv");
+open(FH,"$path/map-data/${elems}_ave_archive.csv") or die ("Can't open ${elems}_ave_archive.csv");
 while (my $line = <FH>) {
     $count_avere += 1;
     push (@aryre,"$line");
@@ -755,7 +771,7 @@ while (my $line = <FH>) {
 close(FH);
 
 # only displaying 20 lines on the chart for hourly
-open(my $file_ave, '>',"/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/${elems}_ave_data.csv") or die ("Can't open ${elems}_ave_data.csv");
+open(my $file_ave, '>',"$path/map-data/${elems}_ave_data.csv") or die ("Can't open ${elems}_ave_data.csv");
 if ($count_avere > 21){
         my $h = 0;
         print $file_ave $aryre[1];
@@ -771,7 +787,7 @@ else {
 };
 close $file_ave;
 
-open(FH,"/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/${elems}_up_archive.csv") or die ("Can't open ${elems}_up_archive.csv");
+open(FH,"$path/map-data/${elems}_up_archive.csv") or die ("Can't open ${elems}_up_archive.csv");
 while (my $line = <FH>) {
     $count_upre += 1;
     push (@ary1re,"$line");
@@ -784,7 +800,7 @@ while (my $line = <FH>) {
 }
 close(FH);
 # only displaying 20 lines on the chart for hourly 
-open(my $file_up, '>',"/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/${elems}_up_data.csv") or die ("Can't open ${elems}_up_data.csv");
+open(my $file_up, '>',"$path/map-data/${elems}_up_data.csv") or die ("Can't open ${elems}_up_data.csv");
 if ($count_upre > 21){
         my $h = 0;
         print $file_up $ary1re[1];

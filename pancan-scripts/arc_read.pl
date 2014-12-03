@@ -5,6 +5,20 @@ use warnings;
 
 use JSON 2;
 use IO::Handle;
+use JSON qw( decode_json );
+
+my $filename = 'config.json';
+
+my $json_text = do {
+   open(my $json_fh, "<:encoding(UTF-8)", $filename)
+      or die("Can't open \$filename\": $!\n");
+   local $/;
+   <$json_fh>
+};
+
+my $json = JSON->new;
+my $data = $json->decode($json_text);
+my $path = $data->{"main_path"};
 
 my @origins;
 my @origins1;
@@ -41,7 +55,7 @@ my %data = ( 'Heidelberg' => { 'latitude' => 49.403159,
                             'longitude' => 116.3917,},);
 			    
 #opens the file containing upload info
-open(FH,"/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/out.csv") or die ("Can't open out.csv");
+open(FH,"$path/map-data/out.csv") or die ("Can't open out.csv");
 while (my $line = <FH>) {
   chomp $line;
   my $count = 0;
@@ -55,7 +69,7 @@ while (my $line = <FH>) {
 }
 
 #reading from the bubble json data to find the totals for each location and puts it in @totals
-open(FH,"/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/bubble_data.json") or die ("Can't open bubble_data.json");
+open(FH,"$path/map-data/bubble_data.json") or die ("Can't open bubble_data.json");
 while (my $line = <FH>) {
 	chomp $line;
 	my @fields2 = split "," , $line;
@@ -107,14 +121,14 @@ foreach my $elem (@dest){
 		elsif ($elem eq 'gtrepo-ebi'){push (@dest1, 'Hinxton');}
 		elsif ($elem eq 'gtrepo-bsc'){push (@dest1, 'Barcelona');}
 		elsif ($elem eq 'gtrepo-riken'){push (@dest1, 'Tokyo');}
-		elsif ($elem eq 'gtrepo-osdc'){push (@dest1, 'Chicago');}
+		elsif ($elem eq 'gtrepo-osdc-icgc'){push (@dest1, 'Chicago');}
 		elsif ($elem eq 'gtrepo-etri'){push (@dest1, 'Seoul');}
 		else {push (@dest1, '');};
 	}
 
 #creating the json files for the arc data for every location
 foreach my $thing ('Heidelberg','PBCA-DE','MALY-DE','EOPC-DE','BRCA-UK','CMDI-UK','BOCA-UK','PRAD-UK','ESAD-UK','BRCA-EU','PACA-CA','Barcelona','Singapore','LIRI-JP','Seoul','ORCA-IN','Brisbane','PACA-AU','PAEN-AU','OV-AU','GACA-CN'){
-               open(my $file, '>', "/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/${thing}.json") or die ("Can't open ${thing}.json");
+               open(my $file, '>', "$path/map-data/${thing}.json") or die ("Can't open ${thing}.json");
 	       my @elems;
 	       my $l = 0;
 	       my $count_elem = 0;

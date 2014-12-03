@@ -68,7 +68,7 @@ rm all_qc.csv
 cp temp.csv all_qc.csv
 perl cleanup.pl >> all_qc.csv
 echo "done cleanup"
-perl specimen_bases.pl > bases.csv
+perl per_specimen.pl > bases.csv
 
 cp all_qc.csv all_qc.txt
 cp all_qc.csv /var/www/qc_read.csv

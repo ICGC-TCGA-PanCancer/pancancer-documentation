@@ -14,12 +14,25 @@ use DateTime::Duration;
 use Getopt::Long;
 use Data::Dumper;
 use Carp qw( verbose );
+use JSON qw( decode_json );
+
+my $filename = 'config.json';
+
+my $json_text = do {
+   open(my $json_fh, "<:encoding(UTF-8)", $filename)
+      or die("Can't open \$filename\": $!\n");
+   local $/;
+   <$json_fh>
+};
+
+my $json = JSON->new;
+my $data = $json->decode($json_text);
 
 # globally overriding calls to die, and sending them to Carp.
 $SIG{__DIE__} = sub { &Carp::confess };
 
-my $username = q{};
-my $password = q{};
+my $username = $data->{"user_name"};
+my $password = $data->{"password"};
 
 # The actual column header fields in the first row of all of these spreadsheets:
 my @real_header;
@@ -29,7 +42,7 @@ my @header;
 my %projects = ( 'BOCA-UK' => { key => '0AoQ6zq-rG38-dE5ZZVEyaUNadU9mZlpVN1hDU0lDOWc',
                              title => 'Sheet1',
                               },
-              'BRCA-EU' => { key => '0AoQ6zq-rG38-dDhvU0VZNk4wMGpDUk1NaWZHMG5LLWc',
+              'BRCA-EU' => { key => '0AoQ6zq-rG38-dGxmTXM0bVdrYWxKUFpSaHFHWFJOaEE',
                              title => 'Sheet1',
                            },
               'BRCA-UK' => { key => '0ApWzavEDzSJddDAzdjVPbVVubHV6UDgxSEcxa0F3bEE',
@@ -106,8 +119,8 @@ my $timestamp = sprintf("%04d_%02d_%02d_%02d%02d", $now[5]+1900, $now[4]+1, $now
 
 # Create a new Net::Google::Spreadsheets object:
 my $service = Net::Google::Spreadsheets->new(
-    username => "<GMAIL ADDRESS>",
-    password => "<GMAIL PASSWORD>",
+    username => $username, 
+    password => $password,
 );
 
 # iterate over the project codes in the %projects hash

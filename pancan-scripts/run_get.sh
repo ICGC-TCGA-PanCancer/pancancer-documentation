@@ -11,7 +11,7 @@ cd results
 
 # getting all the updated spreadsheets
 perl `find /home/ubuntu/gitroot/pancancer-info/ -name get_spreadsheets.pl`
-perl `find /home/ubuntu/gitroot/pancancer-info/ -name get_uploads.pl`
+#perl `find /home/ubuntu/gitroot/pancancer-info/ -name get_uploads.pl`
 
 # making all the necessary files
 cat *.txt > all_files.txt

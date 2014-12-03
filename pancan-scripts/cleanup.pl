@@ -34,32 +34,23 @@ while (my $line = <FH>) {
   # Making sure that the line has all the necessary fields
   # LIHC-US does not parse properly so we must take it out for now
   if ($fields[13] ne "" && $fields[4] ne "" && $fields[4] ne "Primary tumour - solid tissue" && $fields[4] ne "Normal - other" && $fields[0] ne "date"){
-    # Calculating the total bases per readgroup
-    $total = ($fields[10] * $fields[22]) + ($fields[11]*$fields[34]);
-    # Calculating the average coverage per readgroup
-    $ave = $total/3000000000;
+    	# Calculating the total bases per readgroup
+    	$total = ($fields[10] * $fields[22]) + ($fields[11]*$fields[34]);
+    	# Calculating the average coverage per readgroup
+    	$ave = $total/3000000000;
         $map_base = ($fields[15]/$total)*100;
         $diver_bases = ($fields[19]/$total)*100;
         $map_reads = ($fields[36]/$fields[29])*100;
         $proper = ($fields[20]/$fields[29])*100;
         $dup = ($fields[14]/$fields[29])*100;
-#       if ($total == 0){
-#               print "$line\n";
-#               $map_base = 0;
-#               $diver_bases = 0;}
-#       elsif ($fields[29] == 0){
-#               print "$line\n";
-#               $map_reads = 0;
-#               $proper = 0;
-#               $dup = 0;}
-    push(@mapb,$map_base);
-    push(@mapr,$map_reads);
-    push(@diver,$diver_bases);
-    push(@prop,$proper);
-    push(@dupli,$dup);
-    push(@average,$ave);
-    push(@total_bases,$total);
-    push (@lines,$line);
+    	push(@mapb,$map_base);
+	push(@mapr,$map_reads);
+    	push(@diver,$diver_bases);
+    	push(@prop,$proper);
+    	push(@dupli,$dup);
+   	push(@average,$ave);
+    	push(@total_bases,$total);
+    	push (@lines,$line);
   }
 }
 close(FH);

@@ -1,6 +1,21 @@
 
 use strict;
 use warnings;
+use JSON qw( decode_json );
+
+my $filename = 'config.json';
+
+my $json_text = do {
+   open(my $json_fh, "<:encoding(UTF-8)", $filename)
+      or die("Can't open \$filename\": $!\n");
+   local $/;
+   <$json_fh>
+};
+
+my $json = JSON->new;
+my $data = $json->decode($json_text);
+my $path = $data->{"main_path"};
+
 
 use WWW::Mechanize;
 # Create a new mechanize object.
@@ -21,7 +36,7 @@ foreach my $a ("defiles.txt","pbcadefiles.txt","malydefiles.txt","eopcdefiles.tx
   # Print the content of the URL
   # gets the content of the webpage which is the GNOS repo
   my @content = [];
-  open(my $fh, '>', "/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/${i}.log") or die "Can't open ${i}.log";
+  open(my $fh, '>', "$path/map-data/${i}.log") or die "Can't open ${i}.log";
   print $fh $mech->content;
   close $fh;
   my @line;
@@ -34,7 +49,7 @@ foreach my $a ("defiles.txt","pbcadefiles.txt","malydefiles.txt","eopcdefiles.tx
   }
 
   # creates log files for the GNOS repos to read from later
-  open(FH,"/home/ubuntu//gitroot/pancancer-info/pancan-scripts/map-data/${i}.log") or die ("Can't open ${i}.log");
+  open(FH,"$path/map-data/${i}.log") or die ("Can't open ${i}.log");
   while (my $line = <FH>) {
    my $result = index($line, "SPECIMEN/SAMPLE:");
    if ($result == 1){
@@ -50,7 +65,7 @@ foreach my $a ("defiles.txt","pbcadefiles.txt","malydefiles.txt","eopcdefiles.tx
   my $tumour = 0;
   my $normal = 0;
   # checking if specimen_id is in any GNOS repo log file
-  open (FILE, "/home/ubuntu/gitroot/pancancer-info/pancan-scripts/results/${a}") or die ("Can't open ${a}");
+  open (FILE, "$path/results/${a}") or die ("Can't open ${a}");
   while (<FILE>) {
   chomp;
   ($Study, $dcc_project_code, $Accession_Identifier, $submitter_donor_id, $submitter_specimen_id, $submitter_sample_id, $Readgroup, $dcc_specimen_type, $Normal_Tumor_Designation,$ICGC_Sample_Identifier,$Sequencing_Strategy,$Number_of_BAM,$Target,$Actual) = split("\t");
