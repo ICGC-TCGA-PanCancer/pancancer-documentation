@@ -616,3 +616,111 @@ Cloud are not available for both of these environments.  Instead, please use
 VirtualBox to launch a single node and then use the "Export Appliance..."
 command to create an OVA file.  This OVA can be converted into a KVM/Xen VM and
 deployed as many times as needed to process production data.
+
+### Notes for DKFZ (OpenStack)
+
+DKFZ uses OpenStack and the Vagrant OpenStack plugin can be used to launch VM clusters or single nodes.
+
+
+#### Step 1 - Create a Launcher instance
+
+Log in the DKFZ's console and create a new instance that will be your "Launcher" host. This instance will allow you to launch individual computational nodes (or clusters of nodes) that actually do the processing of data. 
+When creating the instance, use the image name "Ubuntu 12.04-Cloud-2014-04-10" and your pre-defined key-pair.
+
+#### Step 2 - Install Bindle on the Launcher instance
+
+SSH into the DKFZ jumpserver using your unique account credentials (username and pem key should be unique for each user in DKFZ). Copy over the private key used to start the instance in Step 1. From the jumpserver, SSH into the new launcher instance using user "ubuntu" , your private key and the private IP of that instance (visible in the console).
+
+Once logged in the new instance, follow the instructions available at https://github.com/ICGC-TCGA-PanCancer/architecture-setup to setup Architecture 2.0 to install the Bindle provisioning tools:
+
+   $ sudo apt-get install git
+   $ git clone https://github.com/ICGC-TCGA-PanCancer/architecture-setup.git
+   $ cd architecture-setup 
+   $ bash setup.sh
+
+Edit site.yml and replace "bindle_config: aws.cfg" with "bindle_config: openstack.cfg".
+
+Run the Ansible playbook that will install Bindle 2.0 (the provisioning tool):
+   $ ansible-playbook -i inventory site.yml
+
+#### Step 3 - Configure Bindle on the Launcher instance
+
+Because you changed the site.yml in the previous step to mention "openstack.cfg", there should be a template configuration already copied in "~/.bindle/openstack.cfg". In case you forgot to do that, you can create a new template by following these steps:
+
+   $ cd ~/architecture2/Bindle
+Run the Bindle launcher without a valid cfg file in order to copy over a template
+   $ perl bin/launch_cluster.pl --config openstack --custom-params singlenode1
+
+Modify the "~/.bindle/openstack.cfg" file to include your Openstack settings, an example being provided below:
+
+    [defaults]
+    platform =openstack 
+    os_user= OICR_user    #add the correct Console username we share in DKFZ, it's the same for everybody
+    os_api_key= OICR_user #add the correct Console password we share in DKFZ, it's the same for everybody
+    os_instance_type= pc.sn.large    #change if needed
+    os_image=Ubuntu12.04-Cloud-DKFZ
+    os_endpoint='http://192.168.252.12:5000/v2.0/tokens'
+    ansible_playbook = ../pancancer-bag/pancancer.yml
+    seqware_provider=artifactory
+    seqware_version='1.1.0-alpha.5'
+    install_bwa=true
+    os_ssh_pem_file=/home/ubuntu/.ssh/launch_key.pem       #the path to where you uploaded the private key file that is     paired with the public key in the console
+    install_workflow = True
+    workflow_name = BWA
+    workflows=Workflow_Bundle_BWA_2.6.3_SeqWare_1.1.0-alpha.5,Workflow_Bundle_HelloWorld_1.0-SNAPSHOT_SeqWare_1.1.0-alpha.5
+    bwa_workflow_version = 2.6.3
+    os_ssh_key_name=key_name   #the name of the SSH key as defined in the Openstack console
+    os_ssh_username=ubuntu
+    os_tenant="Pancancer Project"
+    os_network="Pancancer-Net"
+    gluster_device_whitelist=''
+    gluster_directory_path='--directorypath /mnt/volumes/gluster1'
+    box = dummy
+    box_url = 'https://github.com/cloudbau/vagrant-openstack-plugin/raw/master/dummy.box'
+    number_of_clusters = 1
+    number_of_single_node_clusters = 1
+    env= Openstack DKFZ new
+    
+    [cluster1]
+    number_of_nodes=2
+    os_floating_ip=
+    target_directory=target-os-dkfz-cluster-1
+    
+    [singlenode1]
+    number_of_nodes=1
+    os_floating_ip=
+    target_directory=target-os-dkfz-singlenode-1
+    
+
+Create a file containing your GNOS pem file that will be injected by Bindle in the new instances, so they can download GNOS data.
+
+    vim ~/.ssh/gnostest.pem
+    chmod 600 ~/.ssh/gnostest.pem
+
+
+#### Step 4 - Other DKFZ specific changes
+
+In order for the Launcher to be able to reach the Openstack API, please run the following commands:
+
+    sudo iptables -t nat -A OUTPUT -d 192.168.252.11/32 -j DNAT --to-destination 193.174.55.66
+    sudo iptables -t nat -A OUTPUT -d 192.168.252.12/32 -j DNAT --to-destination 193.174.55.78
+
+Also, add these lines in "/etc/rc.local" before the "exit 0" line, so the changes survive a reboot:
+
+   iptables -t nat -A OUTPUT -d 192.168.252.11/32 -j DNAT --to-destination 193.174.55.66
+   iptables -t nat -A OUTPUT -d 192.168.252.12/32 -j DNAT --to-destination 193.174.55.78
+
+#### Step 5 - Launch a SeqWare Node/Cluster
+
+Now that you have customized the settings in "~/bindle/opensyack.cfg" file, the next step is to launch a computational node. Note, each cluster gets its own target directory as specified in the [singlenode1] block.  Within the target dir you will find a log for each node (simply master.log for a single-node launch) and a directory for each node that is used by the vagrant command line tool (the "master" directory for a single-node launch). The latter is important for controlling your node/cluster once launched.
+
+   $ cd ~/architecture2/Bindle
+   $ rm -Rf target*
+   
+Now launch the compute node:
+
+   $ perl bin/launch_cluster.pl --config openstack --custom-params singlenode1
+
+Follow the rest of the instructions provided in this document (https://github.com/ICGC-TCGA-PanCancer/pancancer-info/blob/develop/docs/prod_instance_with_bindle.md#step-5---log-in-to-nodecluster) to SSH into the new instance provisioned by Bindle and run the HelloWorld test workflow.
+
+
