@@ -6,8 +6,22 @@ use strict;
 use CGI;
 use JSON 2;
 use IO::Handle;
-my $count = 0;
+use JSON qw( decode_json );
 
+my $filename = 'config.json';
+
+my $json_text = do {
+   open(my $json_fh, "<:encoding(UTF-8)", $filename)
+      or die("Can't open \$filename\": $!\n");
+   local $/;
+   <$json_fh>
+};
+
+my $json = JSON->new;
+my $data = $json->decode($json_text);
+my $path = $data->{"main_path"};
+
+my $count = 0;
 my @origins;
 my @project;
 my @origins1;
@@ -18,7 +32,7 @@ my @dest1;
 my @dest2;
 
 #opens the file containing upload info 
-open(FH,"/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/out.csv") or die("Can't open guestbook.txt: $!");
+open(FH,"$path/map-data/out.csv") or die("Can't open guestbook.txt: $!");
 while (my $line = <FH>) {
   chomp $line;
   my $count = 0;
@@ -65,7 +79,7 @@ foreach my $elem (@dest){
                 elsif ($elem eq 'gtrepo-ebi'){push (@dest1, 'Hinxton');}
                 elsif ($elem eq 'gtrepo-bsc'){push (@dest1, 'Barcelona');}
                 elsif ($elem eq 'gtrepo-riken'){push (@dest1, 'Tokyo');}
-                elsif ($elem eq 'gtrepo-osdc'){push (@dest1, 'Chicago');}
+                elsif ($elem eq 'gtrepo-osdc-icgc'){push (@dest1, 'Chicago');}
                 elsif ($elem eq 'gtrepo-etri'){push (@dest1, 'Seoul');}
                 else {push (@dest1, '');};
         }
@@ -82,7 +96,7 @@ foreach my $thing (@dest1){
         }
 
 #creating the file that conatins the origins and destinations in a json file
-open(my $file1, '>', "/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/table2.json");
+open(my $file1, '>', "$path/map-data/table2.json");
 my $p = 0;
 print $file1 "[";
 for ($p=1;$p < scalar @dest2;$p++){
@@ -97,7 +111,7 @@ close $file1;
 #creating bubble json files for every location 
 #appends all the output to different files for each location
 foreach my $thing ('Heidelberg','PBCA-DE','MALY-DE','EOPC-DE','Hinxton','BRCA-UK','CMDI-UK','BOCA-UK','PRAD-UK','Cambridge','ESAD-UK','BRCA-EU','PACA-CA','Barcelona','Singapore','LIRI-JP','Seoul','ORCA-IN','Brisbane','PACA-AU','PAEN-AU','OV-AU','GACA-CN'){
-               open(my $file, '>', "/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/${thing}_bub.json");
+               open(my $file, '>', "$path/map-data/${thing}_bub.json");
                my $l = 0;
                my @elems;
                my $count_elem;
@@ -114,7 +128,7 @@ foreach my $thing ('Heidelberg','PBCA-DE','MALY-DE','EOPC-DE','Hinxton','BRCA-UK
                print $file "[\n";
 
                #gathers the destination json data
-              open(FH,"/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/location.json") or die("Can't open guestbook.txt: $!");
+              open(FH,"$path/map-data/location.json") or die("Can't open guestbook.txt: $!");
                while (my $line = <FH>) {
                               foreach my $items (@elems){
                                              my $result = index($line, $thing);
@@ -126,7 +140,7 @@ foreach my $thing ('Heidelberg','PBCA-DE','MALY-DE','EOPC-DE','Hinxton','BRCA-UK
                close(FH);
 
                my $count_bub = 0;
-               open(FH,"/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/bubble_data.json") or die("Can't open guestbook.txt: $!");
+               open(FH,"$path/map-data/bubble_data.json") or die("Can't open guestbook.txt: $!");
                while (my $line = <FH>) {
                               my $result = index($line, $thing);
                               if ($result != -1){
@@ -139,7 +153,7 @@ foreach my $thing ('Heidelberg','PBCA-DE','MALY-DE','EOPC-DE','Hinxton','BRCA-UK
                close(FH);
 
                my $count_bub1 = 0;
-               open(FH,"/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/bubble_data1.json") or die("Can't open guestbook.txt: $!");
+               open(FH,"$path/map-data/bubble_data1.json") or die("Can't open guestbook.txt: $!");
                while (my $linea = <FH>){
                               my $res = index($linea, $thing);
                               if ($res != -1){
@@ -158,7 +172,7 @@ my $count_front = 0;
 my @front = [];
 
 #making json for zoomed map, for cambridge and hinxton
-open(FH,"/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/bubble_data.json") or die("Can't open guestbook.txt: $!");
+open(FH,"$path/map-data/bubble_data.json") or die("Can't open guestbook.txt: $!");
 while (my $line = <FH>) {
 my $result_cam = index($line, "Cambridge");
 my $result_hinx = index($line, "Hinxton");
@@ -172,7 +186,7 @@ if ($result_cam != -1 || $result_hinx != -1){
 }
 close(FH);
 
-  open(my $fh, '>', "/home/ubuntu/gitroot/pancancer-info/pancan-scripts/map-data/front_uk.json") or die ("cant open");
+  open(my $fh, '>', "$path/map-data/front_uk.json") or die ("cant open");
   print $fh "[\n";
   my $h = 0;
   for($h=1; $h < scalar @front; $h++){
