@@ -29,6 +29,15 @@ perl bin/time.pl > est.csv
 cat gtrepo-cghub.log > 1gtrepo-cghub-all.log
 cat gtrepo-cghub_data1.log >> 1gtrepo-cghub-all.log
 
+wget -O  transfer_timing.json https://s3.amazonaws.com/pancancer-site-data/transfer_timing.json
+perl bin/transfers_speeds.pl --spot ireland --metric MB/s > ireland_mbs.csv
+perl bin/transfers_speeds.pl --spot tokyo --metric MB/s > tokyo_mbs.csv
+perl bin/transfers_speeds.pl --spot virginia --metric MB/s > virginia_mbs.csv
+
+cp ireland_mbs.csv /var/www/
+cp tokyo_mbs.csv /var/www/
+cp virginia_mbs.csv /var/www/
+
 cp gtrepo*.log /var/www/log_train/
 cp train2.json /var/www/
 cp traindata2.json /var/www/bubbles/
