@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <meta charset="utf-8">
@@ -91,11 +90,12 @@ fill:steelblue;
                 <h1 style="float:left;margin-left:10px;font-size:25px;">PANCANCER.INFO</h1>
                 <center><div id="inside">
                  <ul class="tab-links">
-                                <li><a href="index.html">Sites</a></li>
-                                <li><a href="uploads.html">Uploads</a></li>
-				<li><a href="qc">QC Metrics</a></li>
                                 <li><a href="data_freeze">Data Freeze</a></li>
+                                <li><a href="uploads.html">Uploads</a></li>
+                                <li><a href="index.html">Alignments</a></li>
+                                <li><a href="qc">QC Metrics</a></li>
                                 <li><a href="trajectory">Trajectory</a></li>
+<li><a href="transfers.html">Transfers</a></li>
                  </ul>
                  </div></center>
                  </div>
@@ -322,7 +322,7 @@ charts("data.tsv",140,"#bar1");
 			
 	});
 	
-	d3.json("data_train1_totals.json", function(error, json) {
+	d3.json("/bubbles/bubble_data2.json", function(error, json) {
 		json_data3 = json;
 		for (var i = 1; i < json_data3.length+1; i++){
 			

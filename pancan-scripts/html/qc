@@ -135,11 +135,12 @@ height:570px;
                 <h1 style="float:left;margin-left:10px;font-size:25px;">PANCANCER.INFO</h1>
                 <center><div id="inside">
                  <ul class="tab-links">
-                                <li><a href="index.html">Sites</a></li>
+                                <li><a href="data_freeze">Data Freeze</a></li>
                                 <li><a href="uploads.html">Uploads</a></li>
-				<li><a href="qc">QC Metrics</a></li>
-				<li><a href="data_freeze">Data Freeze</a></li>
+                                <li><a href="index.html">Alignments</a></li>
+                                <li><a href="qc">QC Metrics</a></li>
                                 <li><a href="trajectory">Trajectory</a></li>
+				<li><a href="transfers.html">Transfers</a></li>
                  </ul>
                  </div></center>
                  </div>
@@ -365,7 +366,7 @@ svg.append("g")
 
 });
 };
-chart("qc_files/qc_read.csv","#_total_reads","All","both");
+chart("/qc_files/qc_read.csv","#_total_reads","All","both");
 
 function run1(){
 	var e = document.getElementById("x-axis");
@@ -378,16 +379,17 @@ function run1(){
         var strUser3 = e3.options[e3.selectedIndex].value;
 	if (strUser3 == "specimen"){
         $('#graph').empty();
-        chart("qc_files/qc_spec.csv",strUser,strUser1,strUser2);}
+        chart("/qc_spec.csv",strUser,strUser1,strUser2);}
         else {
         $('#graph').empty();
-        chart("qc_files/qc_read.csv",strUser,strUser1,strUser2);}
+        chart("/qc_files/qc_read.csv",strUser,strUser1,strUser2);}
 	}
 
 </script>
-</div></center>
+</div>
+<p>May take a while to load...</p></center>
 </body>
 <center>
-<p style="font-size:14px;">Download the per readgroup csv file <a href="http://pancancer.info/qc_read.csv" style="font-size:14px;">here</a> and preview the file <a target="_blank" href="http://pancancer.info/qc_read.txt" style="font-size:14px;">here.</a></p>
+<p style="font-size:14px;">Download the per readgroup csv file <a href="http://pancancer.info/qc_files/qc_read.csv" style="font-size:14px;">here</a> and preview the file <a target="_blank" href="http://pancancer.info/qc_read.txt" style="font-size:14px;">here.</a></p>
 <p>Download the per specimen csv file <a target="_blank" href="http://pancancer.info/qc_files/qc_spec.csv" style="font-size:14px;">here</a> and preview the file <a target="_blank" href="http://pancancer.info/qc_spec.txt" style="font-size:14px;">here.</a></p></center>
 </html>

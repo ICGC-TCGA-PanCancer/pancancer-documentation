@@ -10,7 +10,7 @@
     <script type="text/javascript" src="http://datamaps.github.io/scripts/datamaps.all.min.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script type="text/javascript" src="http://bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="style1.css">
+    <link rel="stylesheet" type="text/css" href="style2.css">
     <link rel="stylesheet" type="text/css" href="http://bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
     <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -22,26 +22,40 @@
   ga('create', 'UA-52348443-1', 'auto', {'name': 'newTracker'});
   ga('send', 'pageview');
   ga('newTracker.send', 'pageview');
-
 </script>
-
 </head>
+<style>
+	#header1{
+	background-color: #7FB5DA;		
+	}
+	#inside{
+		line-height: 50px;
+		font-size:12px;
+	}
+	#city{
+                border-color:#0000ff;
+        }
+        #gnos{
+                border-color:#0000ff;
+        }
+</style>
 <body>
 	 <div id="header1">
                 <h1 style="float:left;margin-left:10px;font-size:25px;">PANCANCER.INFO</h1>
                 <center><div id="inside">
                  <ul class="tab-links">
-                                <li><a href="index.html">Sites</a></li>
-                                <li><a href="uploads.html">Uploads</a></li>
-                                <li><a href="qc">QC Metrics</a></li>
                                 <li><a href="data_freeze">Data Freeze</a></li>
+                                <li><a href="uploads.html">Uploads</a></li>
+                                <li><a href="index.html">Alignments</a></li>
+                                <li><a href="qc">QC Metrics</a></li>
                                 <li><a href="trajectory">Trajectory</a></li>
+<li><a href="transfers.html">Transfers</a></li>
                  </ul>
                  </div></center>
                  </div>
                  <center><h2>Upload/ Download Progress via GNOS</h2>
-                <p style="font-size:12px;width:900px;">Projects that are in the <b><i>Pending</i></b> column are LICA-FR and BRCA-KR. These projects are in this column because nothing has been uploaded and there is insufficient data on the spreadsheets that the data is based on.</p>
-                <p style="font-size:12px;"><i>*This is still a work in progres, final numbers should be in soon!</i></p>
+		<p style="font-size:12px;width:900px;">Projects that are in the <b><i>Pending</i></b> column are LICA-FR and BRCA-KR. These projects are in this column because nothing has been uploaded and there is insufficient data on the spreadsheets that the data is based on.</p>
+		<p style="font-size:12px;"><i>*This is still a work in progres, final numbers should be in soon!</i></p>
                 </center>
 <div id="fullcontain">
         <div id="center1">
@@ -58,47 +72,45 @@
                                         <th scope="col"><a target="_blank" href="esfiles.txt" title="CLLE-ES">Barcelona</a></th>
                                         <th scope="col"><a target="_blank" href="sgfiles.txt" title="BTCA-SG">Singapore</a></th>
                                         <th scope="col"><a target="_blank" href="krfiles.txt" title="LAML-KR">Seoul</a></th>
-                                        <th scope="col"><a target="_blank" href="orcainfiles.txt" title="ORCA-IN">Kalyani</a></th>
-                                        <th scope="col"><a target="_blank" href="aufiles.txt" title="PACA-AU, PAEN-AU, OV-AU">Brisbane</a></th>
-                                        <th scope="col"><a target="_blank" href="gacacnfiles.txt" title="GACA-CN">Beijing</a></th>
+					<th scope="col"><a target="_blank" href="orcainfiles.txt" title="ORCA-IN">Kalyani</a></th>
+					<th scope="col"><a target="_blank" href="aufiles.txt" title="PACA-AU, PAEN-AU, OV-AU">Brisbane</a></th>
+					<th scope="col"><a target="_blank" href="gacacnfiles.txt" title="GACA-CN">Beijing</a></th>
                                         <th scope="col"><a target="_blank" href="jpfiles.txt" title="LIRI-JP, LINC-JP">Tokyo</a></th>
                                         <th scope="col"><a title="This column is for the following projects (LICA-FR, BRCA-KR) which have not yet submitted sample level data."</a>Pending</th>
-                                        <th scope="col"><a target="_blank" href="all_files.txt" title="This column shows the totals of all the ICGC projects.">ICGC Total</a></th>
+					<th scope="col"><a target="_blank" href="all_files.txt" title="This column shows the totals of all the ICGC projects.">ICGC Total</a></th>
                                         <th scope="col">ICGC Percentage</a></th>
-                                        <th scope="col"><a title="This column shows the totals of all the TCGA projects.">TCGA Total</a></th>
-                                        <th scope="col">TCGA Percentage</th>
-                                        <th scope="col"><a title="This column shows the totals of both the ICGC and TCGA projects.">Cumluative Total</a></th>
-                                        <th scope="col">Cumulative Percentage</th>
+					<th scope="col"><a title="This column shows the totals of all the TCGA projects.">TCGA Total</a></th>
+					<th scope="col">TCGA Percentage</th>
+					<th scope="col"><a title="This column shows the totals of both the ICGC and TCGA projects.">Cumluative Total</a></th>				
+					<th scope="col">Cumulative Percentage</th>
                                         </tr>
-                                </thead>
-				 <tbody>
-                                 <tr>
-                                                <td><b>Specimens Uploaded</b></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
-                                        </tr>
-                                        <tr>
-                                                <td><b>Specimens Left</b></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
-                                        </tr>
-                                        <tr>
-                                                <td><b>Total Number of Specimens</b></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td></td><td>0</td><td></td><td>0</td><td></td>
-                                        </tr>
-                                        <tr>
-                                                <td><b>Matched Tumour/Normal Pairs</b></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
-                                        </tr>
-                                 </tbody>
-
+					</thead>
+				<tbody>
+					<tr>
+						<td><b>Total Number of Specimens</b></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td></td><td>0</td><td></td><td>0</td><td></td>
+					</tr>
+					<tr>
+						<td><b>Specimens Uploaded</b></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+					</tr>
+					<tr>
+						<td><b>Specimens Left</b></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+					</tr>
+					<tr>
+						<td><b>Matched Tumour/Normal Pairs</b></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+					</tr>
+				</tbody>
 				<tfoot>
-                                        <tr>
+					<tr>
                                                 <td colspan="19">*Updates every day at 13:00 GMT, hover over the column headers to see more information.</td>
                                         </tr>
                                 </tfoot>
-
 				</table>
 			</div><!--table-->
 		</div><!--tablediv-->
 		<div id="chartdiv">
 				<div id="charttop">
-                                        <h3 style="margin: 90px;">Percentage of Specimens Uploaded</h3>
-                                        <div id="radio" style="margin-right:140px;">
+                                        <h3 style="margin-left: 100px;">Percentage of Specimens Uploaded</h3>
+                                        <div id="radio" style="margin-right:200px;">
                                                 <div id="city" style="float:left;">
                                                 <b><p style="margin-left:5px;font-size:12px;width:130px;">Project Cities</p></b>
                                                 <input style="margin-left:5px;" type="radio" name="time" id="hr1" onchange="checkr1()">Daily
@@ -113,11 +125,11 @@
                                                 <input style="margin-left:5px;" type="radio" name="time" id="osdc1" onchange="checkr1()">OSDC
                                                 <input style="margin-left:5px;" type="radio" name="time" id="riken1" onchange="checkr1()">RIKEN
                                                 </div><!--gnos-->
-                                        </div><!--radio-->
+					</div><!--radio-->
                                 </div><!--charttop-->
                                 <div id ="chartbottom">
-                                        <h3 style="margin: 90px;">Number of Specimens Uploaded</h3>
-                                        <div id="radio" style="margin-right:140px;">
+                                        <h3 style="margin-left: 100px;">Number of Specimens Uploaded</h3>
+                                        <div id="radio" style="margin-right:200px;">
                                         <div id="city" style="float:left;">
                                                 <b><p style="margin-left:5px;font-size:12px;width:130px;">Project Cities</p></b>
                                                 <input style="margin-left:5px;" type="radio" name="time" id="hr2" onchange="checkr2()">Daily
@@ -132,7 +144,7 @@
                                                 <input style="margin-left:5px;" type="radio" name="time" id="osdc2" onchange="checkr2()">OSDC
                                                 <input style="margin-left:5px;" type="radio" name="time" id="riken2" onchange="checkr2()">RIKEN
                                                 </div><!--gnos-->
-                                        </div><!--radio-->
+					</div><!--radio-->
                                 </div><!--chartbottom-->
 		</div><!--chartdiv-->
 		<script type="text/javascript">
@@ -140,7 +152,7 @@
 			//creates the line chart
 			  var margin = {top: 20, right: 55, bottom: 115, left: 40},
 				  width  = 800,
-                                  height = 250;
+				  height = 250;
 
 			  var x = d3.scale.ordinal()
 				  .rangeRoundBands([0, width], .1);
@@ -162,9 +174,8 @@
 				  .y(function (d) { return y(d.value); });
 
 			  var color = d3.scale.ordinal()
-				   .range(["#001c9c","#7F5217","#475003","#9c8305","#d3c47c","#800000","#6C007D","#63AFD0","#FF0000","#FF00F7","#FAF569"]);
+				  .range(["#001c9c","#7F5217","#475003","#9c8305","#d3c47c","#800000","#6C007D","#63AFD0","#FF0000","#FF00F7","#FAF569","#00FF66","#009891"]);
 
-			  //selecting div to place chart in 
 			  var svg = d3.select("#chart"+spot).append("svg")
 				  .attr("id","svg"+num)
 				  .attr("width",  width  + margin.left + margin.right)
@@ -190,11 +201,21 @@
 
 				x.domain(data.map(function (d) { return d.quarter; }));
 				
+				//if (maxnum == 1){
+				//	y.domain([0,100]);
+				//	}
+				//else {
+				//y.domain([0,d3.max(seriesData, function (c) { 
+				//	return d3.max(c.values, function (d) { return d.value; });
+				//	})
+				//  ]);
+				//}
 				y.domain([0,
-                                   
-                                    d3.max(seriesData, function (c) { 
-                                      return d3.max(c.values, function (d) { return d.value; });
-                                    })]);
+				   
+				    d3.max(seriesData, function (c) { 
+				      return d3.max(c.values, function (d) { return d.value; });
+				    })
+  ]);
 
 				svg.append("g")
 					.attr("class", "x axis")
@@ -312,7 +333,7 @@
 			  });
 		  }
 		 
-	//checks which data to graph for the proportion chart
+	// checks which data to graph for the proportion chart
         function checkr1(){
         if (document.getElementById("hr1").checked == true){
         d3.select("#svg1").remove();
@@ -350,7 +371,7 @@
         ;
 }
 
-	//checks which data to graph for the upload number chart
+	// checks which data to graph for the upload number chart
         function checkr2(){
         if (document.getElementById("hr2").checked == true){
         d3.select("#svg2").remove();
@@ -467,7 +488,7 @@
 			fills: {
 				defaultFill: "#ABDDA4",
 				red: "#FF0000",
-                		blue: "#63AFD0",
+                blue: "#63AFD0",
 				yellow: "#FFFF00",
 				green: "#00FF00",
 				orange: "90FFFA"}
@@ -516,7 +537,7 @@
         var total_3 = 0;
         var total_6 = 0;
         
-        d3.json("table2.json", function(error, json) {
+        d3.json("table3.json", function(error, json) {
                 json_data2 = json;
                 for (var i = 1; i < json_data2.length+1; i++){
                         
@@ -556,122 +577,120 @@
 	d3.json("bubbles/bubble_data.json", function(error, json) {
                 json_data = json;
                 for (var i = 1,j = 0; i < json_data.length/2 + 2, j < json_data.length; i++, j+=2){
-                cell_1[i] = table[0].rows[1].cells[i];
-                val_1[i] = cell_1[i].firstChild.data;
-                cell_1[i].firstChild.data = ''+json_data[j].uploaded;
-                total_1 += json_data[j].uploaded;
                 
-                cell_3[i] = table[0].rows[3].cells[i];
-                val_3[i] = cell_3[i].firstChild.data;
-                cell_3[i].firstChild.data = ''+json_data[j].total;
-                total_3 += json_data[j].total;
-
-                cell_6[i] = table[0].rows[4].cells[i];
-                val_6[i] = cell_6[i].firstChild.data;
-                cell_6[i].firstChild.data = ''+json_data[j].match;
-                total_6 += json_data[j].match;
-                
-                cell_2[i] = table[0].rows[2].cells[i];
-                val_2[i] = cell_2[i].firstChild.data;
-                var left = json_data[j].total - json_data[j].uploaded;
-                cell_2[i].firstChild.data = ''+left;
-                total_2 += left;
-                }
-
+		cell_1[i] = table[0].rows[2].cells[i];
+		val_1[i] = cell_1[i].firstChild.data;
+		cell_1[i].firstChild.data = ''+json_data[j].uploaded;
+		total_1 += json_data[j].uploaded;
 		
-		//getting totals and percentages
+		cell_3[i] = table[0].rows[1].cells[i];
+		val_3[i] = cell_3[i].firstChild.data;
+		cell_3[i].firstChild.data = ''+json_data[j].total;
+		total_3 += json_data[j].total;
+		
+		cell_6[i] = table[0].rows[4].cells[i];
+		val_6[i] = cell_6[i].firstChild.data;
+		cell_6[i].firstChild.data = ''+json_data[j].match;
+		total_6 += json_data[j].match;
+		
+		cell_2[i] = table[0].rows[3].cells[i];
+		val_2[i] = cell_2[i].firstChild.data;
+		var left = json_data[j].total - json_data[j].uploaded;
+	        if (left < 0){left = 0;};
+		cell_2[i].firstChild.data = ''+left;
+		total_2 += left;
+		}
+		
 		cell_1[13] = table[0].rows[1].cells[13];
-                cell_2[13] = table[0].rows[2].cells[13];
-                cell_1[15] = table[0].rows[1].cells[15];
-                cell_2[15] = table[0].rows[2].cells[15];
-                cell_1[14] = table[0].rows[1].cells[14];
-                cell_2[14] = table[0].rows[2].cells[14];
-                cell_3[13] = table[0].rows[3].cells[13];
-                cell_3[14] = table[0].rows[3].cells[14];
-                cell_3[15] = table[0].rows[3].cells[15];
-                cell_6[13] = table[0].rows[4].cells[13];
-                cell_6[15] = table[0].rows[4].cells[15];
-                cell_6[14] = table[0].rows[4].cells[14];
-                
-                cell_1[12] = table[0].rows[1].cells[12];
-                cell_2[12] = table[0].rows[2].cells[12];
-                cell_3[12] = table[0].rows[3].cells[12];
-                cell_6[12] = table[0].rows[4].cells[12];
-                
-                cell_1[16] = table[0].rows[1].cells[16];
-                cell_2[16] = table[0].rows[2].cells[16];
-                cell_3[16] = table[0].rows[3].cells[16];
-                cell_6[16] = table[0].rows[4].cells[16];
-                
-                cell_1[17] = table[0].rows[1].cells[17];
-                cell_2[17] = table[0].rows[2].cells[17];
-                cell_3[17] = table[0].rows[3].cells[17];
-                cell_6[17] = table[0].rows[4].cells[17];
-                
-                cell_1[18] = table[0].rows[1].cells[18];
-                cell_2[18] = table[0].rows[2].cells[18];
-                cell_3[18] = table[0].rows[3].cells[18];
-                cell_6[18] = table[0].rows[4].cells[18];   
-                
-                // PENDING
-                var icgctotal = json_data[0].total_icgc;
-                var missing = json_data[0].missing;
-                
-                cell_1[12].firstChild.data = 0;
-                cell_3[12].firstChild.data = missing;
-                cell_2[12].firstChild.data = missing;
-                cell_6[12].firstChild.data = 0;
-                
-                // ICGC TOTAL
-                var icgc_ave1 = 100*(total_1/(icgctotal));
-                var icgc_ave2 = 100*((total_2+diff)/(icgctotal));
+		cell_2[13] = table[0].rows[2].cells[13];
+		cell_1[15] = table[0].rows[1].cells[15];
+		cell_2[15] = table[0].rows[2].cells[15];
+		cell_1[14] = table[0].rows[1].cells[14];
+		cell_2[14] = table[0].rows[2].cells[14];
+		cell_3[13] = table[0].rows[3].cells[13];
+		cell_3[14] = table[0].rows[3].cells[14];
+		cell_3[15] = table[0].rows[3].cells[15];
+		cell_6[13] = table[0].rows[4].cells[13];
+		cell_6[15] = table[0].rows[4].cells[15];
+		cell_6[14] = table[0].rows[4].cells[14];
+		
+		cell_1[12] = table[0].rows[1].cells[12];
+		cell_2[12] = table[0].rows[2].cells[12];
+		cell_3[12] = table[0].rows[3].cells[12];
+		cell_6[12] = table[0].rows[4].cells[12];
+		
+		cell_1[16] = table[0].rows[1].cells[16];
+		cell_2[16] = table[0].rows[2].cells[16];
+		cell_3[16] = table[0].rows[3].cells[16];
+		cell_6[16] = table[0].rows[4].cells[16];
+		
+		cell_1[17] = table[0].rows[1].cells[17];
+		cell_2[17] = table[0].rows[2].cells[17];
+		cell_3[17] = table[0].rows[3].cells[17];
+		cell_6[17] = table[0].rows[4].cells[17];
+		
+		cell_1[18] = table[0].rows[1].cells[18];
+		cell_2[18] = table[0].rows[2].cells[18];
+		cell_3[18] = table[0].rows[3].cells[18];
+		cell_6[18] = table[0].rows[4].cells[18];
+				
+		var icgctotal = json_data[0].total_icgc;
+		var missing = json_data[0].missing;
+		var diff = icgctotal - total_3;
+		//var tcgatotal = json_data[0].tcga_total;
+		//var tcgamatch = json_data[0].tcga_match;
+		//var tcgaup = json_data[0].tcga_up;
+		//var tcgatotalmatches = json_data[0].tcga_matches;
+		var tcgatotal = 1874;
+		var tcgamatch = 912;
+		var tcgaup = 1874;
+		var tcgatotalmatches = 912;
+	
+		cell_1[12].firstChild.data = 60;
+		cell_3[12].firstChild.data = 60;
+		cell_2[12].firstChild.data = 0;
+		cell_6[12].firstChild.data = 0;
+		
+		cell_2[13].firstChild.data = total_1;
+		cell_1[13].firstChild.data = icgctotal;
+		cell_3[13].firstChild.data = icgctotal - total_1;
+		cell_6[13].firstChild.data = total_6;
+		
+		var icgc_ave1 = 100*(total_1/(icgctotal));
+		var icgc_ave2 = 100*((total_2+diff)/(icgctotal));
                 var icgc_ave3 = 100*(total_6/(json_data[0].match_total));
-                
-                cell_1[13].firstChild.data = total_1;
-                cell_3[13].firstChild.data = icgctotal;
-                cell_2[13].firstChild.data = icgctotal - total_1;
-                cell_6[13].firstChild.data = total_6;   
-                
-                // ICGC PERCENTAGE
-                cell_1[14].firstChild.data = ''+total_1+'/'+icgctotal+' ('+icgc_ave1.toFixed(2)+')';
-                cell_2[14].firstChild.data = ''+(total_2+diff)+'/'+icgctotal+' ('+icgc_ave2.toFixed(2)+')';
-                cell_6[14].firstChild.data = ''+total_6+'/'+json_data[0].match_total+' ('+icgc_ave3.toFixed(2)+')';
-                
-                // TCGA TOTAL
-                var tcgatotal = 1874;
-                var tcgamatch = 912;
-                var tcgaup = 1874;
-                var tcgatotalmatches = 912;
-                
-                cell_1[15].firstChild.data = ''+tcgaup;
-                cell_2[15].firstChild.data = ''+(tcgatotal-tcgaup);
-                cell_3[15].firstChild.data = ''+(tcgatotal);
-                cell_6[15].firstChild.data = ''+(tcgamatch);    
-        	
-        	//TCGA PERCENTAGE
-                var tcga_ave1 = 100*(tcgaup/tcgatotal);
-                var tcga_ave2 = 100*((tcgatotal - tcgaup)/tcgatotal);
-                var tcga_ave3 = 100*(tcgamatch/tcgatotalmatches);
-                
-                cell_1[16].firstChild.data = ''+tcgaup+'/'+tcgatotal+' ('+tcga_ave1.toFixed(2)+')';
-                cell_2[16].firstChild.data = ''+tcgatotal - tcgaup+'/'+tcgatotal+' ('+tcga_ave2.toFixed(2)+')';
-                cell_6[16].firstChild.data = ''+tcgamatch+'/'+tcgatotalmatches+' ('+tcga_ave3.toFixed(2)+')';   
+		
+		cell_2[14].firstChild.data = ''+total_1+'/'+icgctotal+' ('+icgc_ave1.toFixed(2)+')';
+		cell_3[14].firstChild.data = ''+(total_2+diff)+'/'+icgctotal+' ('+icgc_ave2.toFixed(2)+')';
+		cell_6[14].firstChild.data = ''+total_6+'/'+json_data[0].match_total+' ('+icgc_ave3.toFixed(2)+')';
 
-		// CUMULATIVE TOTAL
-                cell_1[17].firstChild.data = tcgaup + total_1;
-                cell_2[17].firstChild.data = (tcgatotal - tcgaup) + (icgctotal - total_1);
-                cell_3[17].firstChild.data = tcgatotal + icgctotal;
-                cell_6[17].firstChild.data = tcgamatch + total_6;
-        
-        	// CUMULATIVE PERCENTAGE
-                var all_ave1 = 100*((tcgaup + total_1)/(tcgatotal + icgctotal));
-                var all_ave2 = 100*(((tcgatotal - tcgaup) + (icgctotal - total_1))/(tcgatotal + icgctotal));
-                var all_ave3 = 100*((tcgamatch + total_6)/(tcgatotalmatches+json_data[0].match_total));
-                
-                cell_1[18].firstChild.data = ''+(tcgaup + total_1)+'/'+(tcgatotal + icgctotal)+' ('+all_ave1.toFixed(2)+') ';
-                cell_2[18].firstChild.data = ''+((tcgatotal - tcgaup) + (icgctotal - total_1))+'/'+(tcgatotal + icgctotal)+' ('+all_ave2.toFixed(2)+') ';
-                cell_6[18].firstChild.data = ''+(tcgamatch + total_6)+'/'+(tcgatotalmatches+json_data[0].match_total)+' ('+all_ave3.toFixed(2)+') ';    
-        });
+		cell_2[15].firstChild.data = ''+tcgaup;
+		cell_3[15].firstChild.data = ''+(tcgatotal-tcgaup);
+		cell_1[15].firstChild.data = ''+(tcgatotal);
+		cell_6[15].firstChild.data = ''+(tcgamatch);	
+		
+		var tcga_ave1 = 100*(tcgaup/tcgatotal);
+		var tcga_ave2 = 100*((tcgatotal - tcgaup)/tcgatotal);
+		var tcga_ave3 = 100*(tcgamatch/tcgatotalmatches);
+				
+		cell_2[16].firstChild.data = ''+tcgaup+'/'+tcgatotal+' ('+tcga_ave1.toFixed(2)+')';
+		cell_3[16].firstChild.data = ''+tcgatotal - tcgaup+'/'+tcgatotal+' ('+tcga_ave2.toFixed(2)+')';
+		cell_6[16].firstChild.data = ''+tcgamatch+'/'+tcgatotalmatches+' ('+tcga_ave3.toFixed(2)+')';
+		
+		cell_2[17].firstChild.data = tcgaup + total_1;
+		cell_3[17].firstChild.data = (tcgatotal - tcgaup) + (icgctotal - total_1);
+		cell_1[17].firstChild.data = tcgatotal + icgctotal;
+		cell_6[17].firstChild.data = tcgamatch + total_6;	
+	
+		var all_ave1 = 100*((tcgaup + total_1)/(tcgatotal + icgctotal));
+		var all_ave2 = 100*(((tcgatotal - tcgaup) + (icgctotal - total_1))/(tcgatotal + icgctotal));
+		var all_ave3 = 100*((tcgamatch + total_6)/(tcgatotalmatches+json_data[0].match_total));
+		
+		cell_2[18].firstChild.data = ''+(tcgaup + total_1)+'/'+(tcgatotal + icgctotal)+' ('+all_ave1.toFixed(2)+') ';
+		cell_3[18].firstChild.data = ''+((tcgatotal - tcgaup) + (icgctotal - total_1))+'/'+(tcgatotal + icgctotal)+' ('+all_ave2.toFixed(2)+') ';
+		cell_6[18].firstChild.data = ''+(tcgamatch + total_6)+'/'+(tcgatotalmatches+json_data[0].match_total)+' ('+all_ave3.toFixed(2)+') ';	
+		
+	});
 
 </script>
 	<div id="center2">
@@ -679,8 +698,8 @@
         <thead>
                                         <tr>
                                         <th scope="col">Origins</th>
-                                        <th scope="col">Projects</th>
-                                        <th scope="col">Destinations</th>
+                                        <th scope="col">ICGC Project Code</th>
+                                        <th scope="col">GNOS Repo</th>
                                         </tr>
                                 </thead>
                                 <tbody>
@@ -726,21 +745,21 @@
                                         <tr>
                                                 <td>Normal</td><td>0</td> <td>0</td>
                                         </tr>
-                                        <tr>
+					<tr>
+						<td>Normal</td><td>0</td> <td>0</td>
+					</tr>
+					<tr>
                                                 <td>Normal</td><td>0</td> <td>0</td>
                                         </tr>
-                                        <tr>
+					<tr>
                                                 <td>Normal</td><td>0</td> <td>0</td>
                                         </tr>
-                                        <tr>
+					<tr>
                                                 <td>Normal</td><td>0</td> <td>0</td>
                                         </tr>
-                                        <tr>
-                                                <td>Normal</td><td>0</td> <td>0</td>
-                                        </tr>
-                                        <tr>
-                                                <td>Normal</td><td>0</td> <td>0</td>
-                                        </tr>
+					<tr>
+						<td>Normal</td><td>0</td> <td>0</td>
+					</tr>
 
                                 </tbody>
 
@@ -757,9 +776,9 @@
                                 <li><a href="#tab7">Singapore</a></li>
                                 <li><a href="#tab8">Tokyo</a></li>
                                 <li><a href="#tab9">Seoul</a></li>
-                                <li><a href="#tab10">Kalyani</a></li>
-                                <li><a href="#tab11">Brisbane</a></li>
-                                <li><a href="#tab12">Beijing</a></li>
+				<li><a href="#tab10">Kalyani</a></li>
+				<li><a href="#tab11">Brisbane</a></li>
+				<li><a href="#tab12">Beijing</a></li>
 			</ul>   
 			<div class="tab-content">
 				<div id="tab1" style="margin: 0px auto;position: relative; max-width: 800px;height: 900px;" class="tab active">
@@ -880,12 +899,12 @@ d3.json("front_uk.json", function(error, json) {
 
                                 <div id="tab9" style="margin:0px auto;position:relative; width: 800px; height: 500px;"class="tab">
                                 </div>
-                                
-                                <div id="tab10" style="margin:0px auto;position:relative; width: 800px; height: 500px;"class="tab">
-                                </div>
-                                
-                                <div id="tab11" style="margin:0px auto;position:relative; width: 800px; height: 500px;"class="tab">
-                                        <!--drop down menu-->
+
+				<div id="tab10" style="margin:0px auto;position:relative; width: 800px; height: 500px;"class="tab">
+				</div>
+
+				<div id="tab11" style="margin:0px auto;position:relative; width: 800px; height: 500px;"class="tab">
+				        <!--drop down menu-->
                                         <select id="AU" onchange="run4()">
                                           <option value="1"selected="selected">PACA-AU</option>
                                           <option value="2">PAEN-AU</option>
@@ -894,8 +913,9 @@ d3.json("front_uk.json", function(error, json) {
                                 <div id="tab11a" style="margin:0px auto;position:relative; width: 800px; height: 500px;">
                                 </div></div>
 
-                                <div id="tab12" style="margin:0px auto;position:relative; width: 800px; height: 500px;"class="tab">
-                                </div>
+				<div id="tab12" style="margin:0px auto;position:relative; width: 800px; height: 500px;"class="tab">
+				</div>
+
 
 			</div><!--tab-content-->
 		</div><!--tabs-->
@@ -903,8 +923,8 @@ d3.json("front_uk.json", function(error, json) {
 </div><!--fullcontain-->
 <script>
 
-    //checks what data to show for Heidelberg from drop down menu
-    function run1() {
+	//checks what data to show for Heidelberg
+	function run1() {
     var e = document.getElementById("HEID");
     var strUser = e.options[e.selectedIndex].value;
     if (strUser == "1"){
@@ -921,8 +941,8 @@ d3.json("front_uk.json", function(error, json) {
     }
         }
 
-    //checks what data to show for Cambridge from drop down menu
-    function run2() {
+	 //checks what data to show for Cambridge
+         function run2() {
     var e = document.getElementById("CAM");
     var strUser = e.options[e.selectedIndex].value;
     if (strUser == "1"){
@@ -935,8 +955,8 @@ d3.json("front_uk.json", function(error, json) {
     }
         }
         
-    //checks what data to show for Hinxton from drop down menu
-    function run3() {
+        //checks what data to show for Hinxton
+        function run3() {
     var e = document.getElementById("HIN");
     var strUser = e.options[e.selectedIndex].value;
     if (strUser == "1"){
@@ -956,8 +976,8 @@ d3.json("front_uk.json", function(error, json) {
     whole_world("tab4a","bubbles/PRAD-UK_bub.json","PRAD-UK.json");
     }
         }
-        
-    function run4() {
+
+       function run4() {
     var e = document.getElementById("AU");
     var strUser = e.options[e.selectedIndex].value;
     if (strUser == "1"){
@@ -976,8 +996,8 @@ d3.json("front_uk.json", function(error, json) {
 	
 	$(document).ready(function() {
 		$('.tabs .tab-links a').on('click', function(e)  {
-        		var currentAttrValue = $(this).attr('href');
- 	
+        var currentAttrValue = $(this).attr('href');
+ 
         // Show/Hide Tabs
         $('.tabs ' + currentAttrValue).show().siblings().hide();
 
@@ -1006,17 +1026,17 @@ d3.json("front_uk.json", function(error, json) {
                 else if (currentAttrValue.slice(1) == 'tab9'){
                 $('#tab9').empty();
                 whole_world(currentAttrValue.slice(1),"bubbles/Seoul_bub.json","Seoul.json");}
-                else if (currentAttrValue.slice(1) == 'tab10'){
+		else if (currentAttrValue.slice(1) == 'tab10'){
                 $('#tab10').empty();
                 whole_world(currentAttrValue.slice(1),"bubbles/ORCA-IN_bub.json","ORCA-IN.json");}
-                else if (currentAttrValue.slice(1) == 'tab11'){
+		else if (currentAttrValue.slice(1) == 'tab11'){
                 $('#tab11a').empty();
                 whole_world(currentAttrValue.slice(1)+'a',"bubbles/PACA-AU_bub.json","PACA-AU.json");}
-                else if(currentAttrValue.slice(1) == 'tab12'){
-                $('#tab12').empty();
-                whole_world(currentAttrValue.slice(1),"bubbles/GACA-CN_bub.json","GACA-CN.json");}
+		else if(currentAttrValue.slice(1) == 'tab12'){
+		$('#tab12').empty();
+		whole_world(currentAttrValue.slice(1),"bubbles/GACA-CN_bub.json","GACA-CN.json");}
 
-
+		
 
         // Change/remove current tab to active
         $(this).parent('li').addClass('active').siblings().removeClass('active');
@@ -1025,6 +1045,6 @@ d3.json("front_uk.json", function(error, json) {
    });
 });
 </script>
-<img src="http://marsinnovation.com/wp-content/uploads/2012/06/OICR-logo-1024x742.jpeg" class="ribbon" width="200" height="150"/>
+<!--<img src="http://marsinnovation.com/wp-content/uploads/2012/06/OICR-logo-1024x742.jpeg" class="ribbon" width="200" height="150"/>-->
 </body>
 </html>
