@@ -23,7 +23,7 @@ my $cghub;
 my $count=0;
 
 if (scalar(@ARGV) < 2) {
-die qq(USAGE: perl align_count.pl --spot <GNOS REPO> --metric <METRIC>); }
+die qq(USAGE: perl transfer_speeds.pl --spot <GNOS REPO> --metric <METRIC>); }
 GetOptions ("spot=s" => \$spot, "metric=s" => \$metric);
 
 my $filename = 'transfer_timing.json';
