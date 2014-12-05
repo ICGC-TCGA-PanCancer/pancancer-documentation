@@ -22,8 +22,8 @@ img{
 }
 
 #center1{
-        width: 1294px;
-        margin: 0px auto;
+	width: 1294px;
+	margin: 0px auto;
 }
 
 #tablediv{
@@ -59,7 +59,7 @@ margin: 0px auto;
 }
 	
 #center2{
-        width: 1550px;
+	width: 1400px;
 
         max-height: 1200px;
 
@@ -72,27 +72,13 @@ margin: 0px auto;
 	font-size: 12px
 }
 #svg1 {
-	display: block;
-	margin: 0px auto;
-	}
+    display: block;
+    margin: 0px auto;
+}
 #svg2 {
-	display: block;
-	margin: 0px auto;
+    display: block;
+    margin: 0px auto;
 }
-#header1{
-    	background-color: #7FB5DA;
-}
-#inside{
-	line-height: 50px;
-	font-size:12px;
-}
-#city{
-	border-color:#0000ff;
-}
-#gnos{
-    	border-color:#0000ff;
-}
-
 /* ------------------
  styling for the tables 
    ------------------   */
@@ -129,7 +115,7 @@ body
 }
 #rounded-corner td
 {
-	padding: 8px;
+	padding: 3px;
 	background: #e8edff;
 	border-top: 1px solid #fff;
 	color: #669;
@@ -163,7 +149,7 @@ body
     }
  
     .tab-links li {
-        margin:0px 5px;
+        margin:0px 2px;
         float:left;
         list-style:none;
     }
