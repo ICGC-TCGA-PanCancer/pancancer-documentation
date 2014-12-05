@@ -124,7 +124,7 @@ height:570px;
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<link rel="stylesheet" type="text/css" href="style2.css">
+<link rel="stylesheet" type="text/css" href="/map-data/style2.css">
 <link rel="stylesheet" type="text/css" href="http://bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script type="text/javascript" src="http://datamaps.github.io/scripts/datamaps.all.min.js"></script>
@@ -366,7 +366,7 @@ svg.append("g")
 
 });
 };
-chart("/qc_files/qc_read.csv","#_total_reads","All","both");
+chart("/map-data/qc_read.csv","#_total_reads","All","both");
 
 function run1(){
 	var e = document.getElementById("x-axis");
@@ -379,10 +379,10 @@ function run1(){
         var strUser3 = e3.options[e3.selectedIndex].value;
 	if (strUser3 == "specimen"){
         $('#graph').empty();
-        chart("/qc_spec.csv",strUser,strUser1,strUser2);}
+        chart("/map-data/qc_spec.csv",strUser,strUser1,strUser2);}
         else {
         $('#graph').empty();
-        chart("/qc_files/qc_read.csv",strUser,strUser1,strUser2);}
+        chart("/map-data/qc_read.csv",strUser,strUser1,strUser2);}
 	}
 
 </script>
@@ -390,6 +390,6 @@ function run1(){
 <p>May take a while to load...</p></center>
 </body>
 <center>
-<p style="font-size:14px;">Download the per readgroup csv file <a href="http://pancancer.info/qc_files/qc_read.csv" style="font-size:14px;">here</a> and preview the file <a target="_blank" href="http://pancancer.info/qc_read.txt" style="font-size:14px;">here.</a></p>
-<p>Download the per specimen csv file <a target="_blank" href="http://pancancer.info/qc_files/qc_spec.csv" style="font-size:14px;">here</a> and preview the file <a target="_blank" href="http://pancancer.info/qc_spec.txt" style="font-size:14px;">here.</a></p></center>
+<p style="font-size:14px;">Download the per readgroup csv file <a href="http://pancancer.info/map-data/qc_read.csv" style="font-size:14px;">here</a> and preview the file <a target="_blank" href="http://pancancer.info/map-data/qc_read.txt" style="font-size:14px;">here.</a></p>
+<p>Download the per specimen csv file <a target="_blank" href="http://pancancer.info/map-data/qc_spec.csv" style="font-size:14px;">here</a> and preview the file <a target="_blank" href="http://pancancer.info/map-data/qc_spec.txt" style="font-size:14px;">here.</a></p></center>
 </html>

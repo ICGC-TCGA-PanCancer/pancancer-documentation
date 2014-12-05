@@ -1,0 +1,8 @@
+[
+	{"name": "ICGC Total", "total": "NA", "uploaded": 145, "left": "NA", "matched": 61},
+
+	{"name": "TCGA Total", "total": "NA", "uploaded": 677, "left": "NA", "matched": "281"},
+
+	{"name": "Cumulative Total", "total": "NA", "uploaded": 822, "left": "NA", "matched": "342"}
+
+]

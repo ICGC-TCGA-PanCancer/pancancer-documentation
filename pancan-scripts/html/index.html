@@ -9,7 +9,7 @@
         <meta charset="utf-8" http-equiv="refresh" content="600">
         <script src="http://d3js.org/d3.v3.min.js"></script>
         <script src="http://d3js.org/topojson.v1.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="style1.css">
+        <link rel="stylesheet" type="text/css" href="/map-data/style1.css">
         <!-- I recommend you host this file on your own, since this will change without warning -->
         <script src="http://datamaps.github.io/scripts/datamaps.world.min.js?v=1"></script>
         <link rel="stylesheet" type="text/css" href="http://bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
@@ -190,7 +190,7 @@
         var total_8 = 0;
         var total_9 = 0;
 
-	d3.json("train1.json", function(error, json) {
+	d3.json("/map-data/train1.json", function(error, json) {
                 json_data = json;
 		var arr =[];
                 //for (var i = 1,j = 0; i < json_data.length/2 + 2, j < json_data.length; i++, j+=2){
