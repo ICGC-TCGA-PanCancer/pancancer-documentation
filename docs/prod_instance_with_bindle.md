@@ -220,6 +220,10 @@ defintely have to fill those in to have bindle working properly. The others are 
 
 For single nodes, make sure to set "gluster_device_whitelist = '' ".
 
+For AWS, you will probably want to expand your root partition if you are spinning up a node with the intention of imaging it. For example, you would set the variable
+
+    aws_ebs_vols = "aws.block_device_mapping = [{ 'DeviceName' => '/dev/sda1', 'Ebs.VolumeSize' => 1000 },{'DeviceName' => '/dev/sdb', 'NoDevice' => '' }]"
+
 ##### Note About Instance Type
 
 In AWS the instance type controls the resource available on the VM (cores, RAM, disk space, etc).  Similarly, flavors are used in OpenStack. You will want to match the instance type you choose with the requirements of the PanCancer workflow being deployed there.  This information should be documented for your in the README that comes with each workflow, most workflows will explicitly mention the instance type to use.  Another great resource is <http://ec2instances.info> which helps you to see what types are available and their price.
