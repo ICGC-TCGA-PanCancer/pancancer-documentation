@@ -702,8 +702,8 @@ In order for the Launcher to be able to reach the Openstack API, please run the 
 
 Also, add these lines in "/etc/rc.local" before the "exit 0" line, so the changes survive a reboot:
 
-   iptables -t nat -A OUTPUT -d 192.168.252.11/32 -j DNAT --to-destination 193.174.55.66
-   iptables -t nat -A OUTPUT -d 192.168.252.12/32 -j DNAT --to-destination 193.174.55.78
+    iptables -t nat -A OUTPUT -d 192.168.252.11/32 -j DNAT --to-destination 193.174.55.66
+    iptables -t nat -A OUTPUT -d 192.168.252.12/32 -j DNAT --to-destination 193.174.55.78
 
 #### Step 5 - Launch a SeqWare Node/Cluster
 
