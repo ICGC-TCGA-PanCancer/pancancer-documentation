@@ -640,10 +640,10 @@ Once logged in the new instance, follow the instructions in the generic section 
 
 #### Step 3 - Configure Bindle on the Launcher instance
 
-Because you changed the site.yml in the previous step to mention "openstack.cfg", there should be a template configuration already copied in "~/.bindle/openstack.cfg". In case you forgot to do that, you can create a new template by following these steps:
+Next step is to get the config generated, you need to use "openstack" not "aws" as used in the generic instructions above.
 
    $ cd ~/architecture2/Bindle
-Run the Bindle launcher without a valid cfg file in order to copy over a template
+   # Run the Bindle launcher without a valid cfg file in order to copy over a template
    $ perl bin/launch_cluster.pl --config openstack --custom-params singlenode1
 
 Modify the "~/.bindle/openstack.cfg" file to include your Openstack settings, an example being provided below:
