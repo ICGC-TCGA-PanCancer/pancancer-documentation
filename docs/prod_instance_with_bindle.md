@@ -577,6 +577,10 @@ By default it looks like this is already setup but I expanded the error codes fo
 OICR uses OpenStack internally for testing and the Vagrant OpenStack plugin is
 quite stable.  The cluster is not available to the general PanCancer group.
 
+See https://wiki.oicr.on.ca/display/SOFTENG/Cloud+Environments
+
+General steps:
+
 * generate your keypair using the web conole
 
 Here are some difference from the docs above:
@@ -585,13 +589,15 @@ Here are some difference from the docs above:
     $ vagrant plugin install vagrant-openstack-plugin
 
     # example launching a host
-    $ perl bin/launcher/launch_cluster.pl --use-openstack --use-default-config --launch-cluster cluster1
+    $ perl bin/launch_cluster.pl --config openstack --custom-params singlenode1
+    # you'll then edit this
+    $ vim /home/ubuntu/.bindle/openstack.cfg
+
+You need to create a float IP address (or use one that's not in use) and include in the config, see https://sweng.os.oicr.on.ca/horizon/project/access_and_security/
 
 Also note, here are the additional things I had to do to get this to work:
 
 * I absolutely had to use float IP addresses for all nodes. Without the float IPs addresses the nodes could not reach the Internet and provisioning failed.
-* I used the "seqware" network
-* I used the "SoftEng" tennant
 * see our internal wiki for more settings
 
 ### Notes for Annai Systems (BioComputeFarm)
