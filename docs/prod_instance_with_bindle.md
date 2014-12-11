@@ -627,7 +627,6 @@ deployed as many times as needed to process production data.
 
 DKFZ uses OpenStack and the Vagrant OpenStack plugin can be used to launch VM clusters or single nodes.
 
-
 #### Step 1 - Create a Launcher instance
 
 Log in the DKFZ's console and create a new instance that will be your "Launcher" host. This instance will allow you to launch individual computational nodes (or clusters of nodes) that actually do the processing of data. 
@@ -637,17 +636,7 @@ When creating the instance, use the image name "Ubuntu 12.04-Cloud-2014-04-10" a
 
 SSH into the DKFZ jumpserver using your unique account credentials (username and pem key should be unique for each user in DKFZ). Copy over the private key used to start the instance in Step 1. From the jumpserver, SSH into the new launcher instance using user "ubuntu" , your private key and the private IP of that instance (visible in the console).
 
-Once logged in the new instance, follow the instructions available at https://github.com/ICGC-TCGA-PanCancer/architecture-setup to setup Architecture 2.0 to install the Bindle provisioning tools:
-
-   $ sudo apt-get install git
-   $ git clone https://github.com/ICGC-TCGA-PanCancer/architecture-setup.git
-   $ cd architecture-setup 
-   $ bash setup.sh
-
-Edit site.yml and replace "bindle_config: aws.cfg" with "bindle_config: openstack.cfg".
-
-Run the Ansible playbook that will install Bindle 2.0 (the provisioning tool):
-   $ ansible-playbook -i inventory site.yml
+Once logged in the new instance, follow the instructions in the generic section to setup Ansible on this box.
 
 #### Step 3 - Configure Bindle on the Launcher instance
 
