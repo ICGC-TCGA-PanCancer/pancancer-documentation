@@ -211,8 +211,8 @@ through the most obvious parameters (ie. key, secret_key, etc):
 For the pancancer project, you will also need to specify which workflows you wish to have installed. Currently, the variables required are:
 
     install_workflow = True
-    workflow_name = BWA
-    workflows=Workflow_Bundle_BWA_2.6.3_SeqWare_1.1.0-alpha.5,Workflow_Bundle_HelloWorld_1.0-SNAPSHOT_SeqWare_1.1.0-alpha.5
+    workflow_name = BWA,Sanger
+    workflows=Workflow_Bundle_HelloWorld_1.0-SNAPSHOT_SeqWare_1.1.0-alpha.5,Workflow_Bundle_SangerPancancerCgpCnIndelSnvStr_1.0.1_SeqWare_1.1.0-alpha.5,Workflow_Bundle_BWA_2.6.3_SeqWare_1.1.0-alpha.5
 
 
 Note that all variables above are also passed along into Ansible. The other platform specific parameters are self explanatory. In the config file, there is a "fillmein" value which indicates that you
