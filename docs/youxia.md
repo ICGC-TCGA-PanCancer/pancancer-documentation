@@ -45,11 +45,31 @@ In this section, we will detail our experiences setting up Youxia in particular 
 
 Here, we will document any specific steps taken for the deployment for pancancer with Ireland as a case study.
 
-0. Create an AMI image. 
-  1. The Seqware Webservice was patched with a development build to address an issue with a missing GET interface
+0. Create an AMI image with Bindle.
 1. While proceeding through the youxia docs 
   1. Configure an integration for a Slack channel. In our case, we created a channel called #youxia-flying-snow and an Incoming WebHook which is specified in the youxia config file.
   2. Deploy an instance on Amazon and use the youxia-setup playbook against it to deploy all youxia components. We deployed youxia 1.1.0-beta.0
+
+The following additions were required due to hook up the current monitoring-bag 
+
+        --- a/youxia-setup/site.yml
+        +++ b/youxia-setup/site.yml
+        @@ -14,6 +14,17 @@
+             lineinfile: dest=/etc/hosts line="{{ hostvars[item].ansible_ssh_host }} {{item}}" state=present
+             when: hostvars[item].ansible_default_ipv4.address is defined
+             with_items: groups['infra']
+        +- hosts: infra
+        +  tasks:
+        +  - name: Checkout the monitoring-bag git repo
+        +    git: repo=https://github.com/ICGC-TCGA-PanCancer/monitoring-bag.git
+        +         dest=/home/ubuntu/architecture2/monitoring-bag
+        +         version=1.0-alpha.1
+        +  - name: Generate SSL certificates
+        +    shell: bash script.sh chdir=/home/ubuntu/architecture2/monitoring-bag/ssl creates=ssl_certs
+        +  - name: Generate dummy bwa key (hardcoded in monitoring-bag)
+        +    shell: touch /home/ubuntu/.ssh/gnostest.pem
+        +
+
   3. Modify the crontab for the ubuntu user as required to specify the number of hosts that should be maintained
   4. Modify the crontab to disable the mock decider when you are satisfied with the operation of youxia
 2. Hook up a decider from within the paired academic cloud.  
