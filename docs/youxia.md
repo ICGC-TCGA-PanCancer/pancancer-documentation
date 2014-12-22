@@ -60,6 +60,9 @@ The following additions were required due to hook up the current monitoring-bag
              with_items: groups['infra']
         +- hosts: infra
         +  tasks:
+        +  - name: Install git
+        +    sudo: True
+        +    apt: name=git
         +  - name: Checkout the monitoring-bag git repo
         +    git: repo=https://github.com/ICGC-TCGA-PanCancer/monitoring-bag.git
         +         dest=/home/ubuntu/architecture2/monitoring-bag
