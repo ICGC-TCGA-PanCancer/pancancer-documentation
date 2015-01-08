@@ -45,8 +45,8 @@ In this section, we will detail our experiences setting up Youxia in particular 
 
 In certain OpenStack environments (OICR, Bionimbus) it is not possible to create image snapshots of images past a certain size (say 1TB). One workaround is to run all the various pancancer scripts from one integrated launch of the youxia deployer. These are the steps that you will need to take that differ from a typical youxia install. 
 
-0. Use the regular architecture-setup procedure in order to setup bindle. Launch an instance after configuring the appropriate config file in ~/.bindle
-1. Ensure that the created note is functioning correctly. 
+0. Use the regular architecture-setup procedure in order to setup bindle. Launch an instance after configuring the appropriate config file in ~/.bindle. Ensure that you are using a release of seqware-bag that includes the following commit https://github.com/SeqWare/seqware-bag/commit/300090a686581a6fa3e4c4ce07e862bb9caf6ec8
+1. Ensure that the created instance is functioning correctly. 
 2. You will need to harvest a json variable file from the bindle working directory corresponding to the node you just launched. 
 
         $ ls
