@@ -109,9 +109,9 @@ Bindle (our tool for wrapping Vagrant and setting up a computational
 environment/cluster), and various other dependencies to get these to work.  Log
 onto your launcher now and download the current release of the architecture-setup project:
 
-    wget https://github.com/ICGC-TCGA-PanCancer/architecture-setup/archive/1.0.2.tar.gz
-    tar zxf 1.0.2.tar.gz
-    cd architecture-setup-1.0.2
+    wget https://github.com/ICGC-TCGA-PanCancer/architecture-setup/archive/1.0.3.tar.gz
+    tar zxf 1.0.3.tar.gz
+    cd architecture-setup-1.0.3
 
 Now follow the documents at [PanCancer Architecture Setup](https://github.com/ICGC-TCGA-PanCancer/architecture-setup) which will install Bindle with all associated code for the PanCancer profiles. These docs are authoritative there, the example below is just to give you an idea, make sure you check the Architecture Setup link in case anything has changed.  In particular, pay attention to the GNOS key instructions since each workflow needs this to operate and, for security reasons, it needs to be provided by you the launcher.  Also, you need to provide your AWS pem key as well, put it in the same place for simplicity. I recommend you keep all your keys in ~/.ssh so you know where they are and it's easier to manage:
 
