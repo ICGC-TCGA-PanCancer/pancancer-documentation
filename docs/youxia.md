@@ -45,8 +45,9 @@ In this section, we will detail our experiences setting up Youxia in particular 
 
 In certain OpenStack environments (OICR, Bionimbus) it is not possible to create image snapshots of images past a certain size (say 1TB). One workaround is to run all the various pancancer scripts from one integrated launch of the youxia deployer. These are the steps that you will need to take that differ from a typical youxia install. 
 
-1. Use the regular architecture-setup procedure in order to setup bindle. Launch an instance after configuring the appropriate config file in ~/.bindle
-2. You will need to harvest a json variable file from a working instance of bindle. These should reside in the working directories of Bindle. 
+0. Use the regular architecture-setup procedure in order to setup bindle. Launch an instance after configuring the appropriate config file in ~/.bindle
+1. Ensure that the created note is functioning correctly. 
+2. You will need to harvest a json variable file from the bindle working directory corresponding to the node you just launched. 
 
         $ ls
         ansible_run.1419384012.649983876.log  master      variables.1419384012.649983876.json
@@ -55,7 +56,12 @@ In certain OpenStack environments (OICR, Bionimbus) it is not possible to create
         variables.1419384012.649983876.json
 
 3. Setup youxia on the same host with the ansible-playbook/instructions in https://github.com/CloudBindle/youxia/tree/develop/youxia-setup
-4. Install ansible 1.6.10 from https://seqwaremaven.oicr.on.ca/artifactory/simple/seqware-dependencies/ansible/ansible/1.6.10-precise/ansible-1.6.10-precise.deb
+4. Install ansible 1.6.10 using wget and dpkg from https://seqwaremaven.oicr.on.ca/artifactory/simple/seqware-dependencies/ansible/ansible/1.6.10-precise/ansible-1.6.10-precise.deb (This is required for compatibility with seqware-bag)
+
+        wget https://seqwaremaven.oicr.on.ca/artifactory/simple/seqware-dependencies/ansible/ansible/1.6.10-precise/ansible-1.6.10-precise.deb
+        dpkg -i https://seqwaremaven.oicr.on.ca/artifactory/simple/seqware-dependencies/ansible/ansible/1.6.10-precise/ansible-1.6.10-precise.deb
+        # (dpkg may inform you that a particular prereq is missing, install those with apt-get)
+
 5. Configure youxia with an appropriate delay in your ~/.youxia/config . Modify deployer\_openstack.arbitrary_wait in miliiseconds. For example, it takes OpenStack at OICR roughly thirty minutes to spin up an instance successfully with a 1TB root disk. 
 6. Make sure monitoring-bag has a properly setup ssl directory and disable the pem key distribution task if not using BWA. See the instructions at https://github.com/ICGC-TCGA-PanCancer/monitoring-bag
 7. Launch the deployer and pass in the variable json file and the one-shot.yml from pancancer-bag. For example  
