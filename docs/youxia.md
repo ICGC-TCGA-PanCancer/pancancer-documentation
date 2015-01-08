@@ -56,7 +56,7 @@ In certain OpenStack environments (OICR, Bionimbus) it is not possible to create
 
 3. Setup youxia on the same host with the ansible-playbook/instructions in https://github.com/CloudBindle/youxia/tree/develop/youxia-setup
 4. Install ansible 1.6.10 from https://seqwaremaven.oicr.on.ca/artifactory/simple/seqware-dependencies/ansible/ansible/1.6.10-precise/ansible-1.6.10-precise.deb
-5. Configure youxia with an appropriate deplay in your ~/.youxia/config . Modify deployer\_openstack.arbitrary_wait in miliiseconds. For example, it takes OpenStack at OICR roughly thirty minutes to spin up an instance successfully with a 1TB root disk. 
+5. Configure youxia with an appropriate delay in your ~/.youxia/config . Modify deployer\_openstack.arbitrary_wait in miliiseconds. For example, it takes OpenStack at OICR roughly thirty minutes to spin up an instance successfully with a 1TB root disk. 
 6. Make sure monitoring-bag has a properly setup ssl directory and disable the pem key distribution task if not using BWA. See the instructions at https://github.com/ICGC-TCGA-PanCancer/monitoring-bag
 7. Launch the deployer and pass in the variable json file and the one-shot.yml from pancancer-bag. For example  
 
