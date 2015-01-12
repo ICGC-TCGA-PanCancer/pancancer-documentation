@@ -47,25 +47,6 @@ These guides focus on researchers in "Phase III" who are accessing the cloud env
 
 * [Accessing Clouds for Phase III](researchers_accessing_clouds.md)
 
-# Testing Matrix
-
-## Architecture 2
-This table describes all environments and what our strategy is for each. This determines which set of documentation you should follow.
-
-|           | 1TB root disk | Large ephemeral disks | Large Volumes | Large snapshots | Youxia with snapshots | Youxia from scratch | Current Strategy | Long term strategy | 
-| --------- | --------------|-----------------------|---------------|-----------------|-----------------------|---------------------|------------------|--------------------|
-| AWS       | ✔             | ✔                     | ✔             | ✔               | ✔                     | ✔                   | Youxia with snapshots, deploy new version for Frankfurt | Write SOP for youxia with lvm support |                    |
-| OICR      | ✔             | ✖                     | ✖             | ✖               | ✔                     | ✔                   | Use Bindle to deploy from scratch |  Use youxia to deploy from scratch                  |
-| ETRI      | ✖             | ✔                     | ?             | ?               | ✔                     | ✔                   | Use Bindle, follow-up with LVM    |                    |
-| EBI       | ✖             | ✔                     | ✔             | ✔               | ✖                     | ✖                   | Use Bindle, follow-up with LVM    |                    |
-| DKFZ      | ✔             | ?                     | ✖             | ✖               | ?                     | ✔                   | Use Bindle to deploy from scratch |                    |
-| PDC1      | ✖             | ✖                     | ✖             | ✖               | ?                     | ?                   | Use Bindle with gluster hacks     |  n/a after February|
-| PDC2      | ✖             | ✖                     | ✖             | ✖               | ?                     | ?                   | Use Bindle, follow-up with LVM    |  Develop youxia with volume support                  |
-| Barcelona | ?             | ?                     | ?             | ?               | ?                     | ?                   |  |                   |
-| Tokyo     | ?             | ?                     | ?             | ?               | ?                     | ?                   |  |                   |
-
-
-
 ## What profiles from Bindle 1.2 have been tested in which cloud environments.
 
 | *Configuration name*  | VirtualBox | AWS      | vCloud (London) | OpenStack (Toronto)  | OpenStack (Icehouse-Toronto) | OpenStack (Chicago) | OpenStack (Heidelberg) | OpenStack (Seoul) | Tokyo | Barcelona |
