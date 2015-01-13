@@ -121,8 +121,8 @@ Now we will follow the documents from [PanCancer Architecture Setup](https://git
     $ vim ~/.ssh/brian-oicr-3.pem
     $ chmod 600 ~/.ssh/brian-oicr-3.pem
     # now fill in your ICGC or TCGA .pem key on the launcher host
-    $ vim ~/.ssh/gnostest.pem
-    $ chmod 600 ~/.ssh/gnostest.pem
+    $ vim ~/.ssh/gnos.pem
+    $ chmod 600 ~/.ssh/gnos.pem
 
 Now setup the environment:
 
@@ -496,7 +496,7 @@ Need to comment out this section in sites.yml
     #  # this seems like the wrong place for this, but not sure what the best place for it is if we cannot redistribute 
     #  # with the AMI
     #  - name: Copy over pem key for BWA
-    #    copy: src=/home/ubuntu/.ssh/gnostest.pem dest=/home/ubuntu/.ssh/gnostest.pem mode=600
+    #    copy: src=/home/ubuntu/.ssh/gnos.pem dest=/home/ubuntu/.ssh/gnos.pem mode=600
     #  # change permissions
     #  # chamge owner
 
@@ -695,8 +695,8 @@ Modify the "~/.bindle/openstack.cfg" file to include your Openstack settings, an
 
 Create a file containing your GNOS pem file that will be injected by Bindle in the new instances, so they can download GNOS data.
 
-    vim ~/.ssh/gnostest.pem
-    chmod 600 ~/.ssh/gnostest.pem
+    vim ~/.ssh/gnos.pem
+    chmod 600 ~/.ssh/gnos.pem
 
 
 #### Step 4 - Other DKFZ specific changes
