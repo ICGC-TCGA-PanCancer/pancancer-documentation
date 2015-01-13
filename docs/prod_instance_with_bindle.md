@@ -1,7 +1,7 @@
 # TCGA/ICGC PanCancer - Computational Node/Cluster from Scratch with Bindle
 
 This is our SOP for how to launch clusters/nodes using Bindle
-specifically for use by the TCGA/ICGC PanCancer project.  In addition to
+specifically for running alignment and variant calling workflows for the TCGA/ICGC PanCancer project.  In addition to
 providing production cluster environments for analyzing samples on the clouds
 used by the PanCancer project, the Bindle process can also be used to
 create workflow development environments.  Unlike AMI or OVA VM snapshots
