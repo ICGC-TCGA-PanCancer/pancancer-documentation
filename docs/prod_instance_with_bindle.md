@@ -102,7 +102,7 @@ launcher host over SSH using something similar to the following:
 Up to this point the activities we have described are not at all specific to
 the PanCancer project.  If you have any issues following these steps please see
 the extensive tutorials online for launching a EC2 host on AWS.  Also, please
-be aware that Amazon charges by the hour, rounded up.  We are collectively responsible for the Amazon expenses you incur with your account so don't leave instances running if they aren't used.
+be aware that Amazon charges by the hour, rounded up.  Don't leave instances running if they aren't used.
 
 #### Step 2 - Install Bindle, Vagrant, and Other Tools on the Launcher
 
