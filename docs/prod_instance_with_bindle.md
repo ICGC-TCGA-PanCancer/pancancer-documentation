@@ -698,6 +698,12 @@ Create a file containing your GNOS pem file that will be injected by Bindle in t
     vim ~/.ssh/gnos.pem
     chmod 600 ~/.ssh/gnos.pem
 
+##### Note About Network
+
+Amazon uses "Security Groups" to control access between VMs and the world.  You need to make sure:
+
+* the security group used by your launcher allows for ssh (otherwise you wouldn't have gotten this far) 
+* the security group used by your launcher allows for all ports between itself and the "default" security group since that's what Bindle uses
 
 #### Step 4 - Other DKFZ specific changes
 
