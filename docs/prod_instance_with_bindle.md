@@ -89,8 +89,8 @@ command line, and web GUI tools for starting this launcher host.  For the
 purposes of this tutorial we assume you have successfully started the launcher
 host using the web GUI at http://aws.amazon.com.  
 
-Next, we recommend you use an "m1.large" instance type as this is inexpensive
- to keep running constantly.
+Next, we recommend you use an "m3.xlarge" instance type as this is inexpensive
+ to keep running constantly (about $200/month).  You can use a smaller instance type if you want to save money but "m3.xlarge" is what we've standardized on.
 
 We also assume that you have setup your firewall (security group) and have
 produced a .pem SSH key file for use to login to this host.  In my case my key
