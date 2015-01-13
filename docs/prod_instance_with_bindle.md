@@ -35,7 +35,7 @@ cluster with Bindle are the same.
 * customize the Bindle template with your cloud settings (ex: ~/.bindle/aws.cfg), this was created for you by the above mentioned setup process
 * launch your SeqWare worker node with PanCancer workflows using Bindle's launch\_cluster.pl tool
 * you can do one of four things with this worker node:
-   * 1) ssh into your SeqWare work node and launch SeqWare workflow(s) and monitor their results, this can be automated with a decider and is the process we use to automate "Phase II" of the project
+   * 1) ssh into your SeqWare work node, develop, then launch SeqWare workflow(s) and monitor their results
     * _or_
     * 2) use the environment for developing, building, or using your own tools (e.g. "Phase III" activities), the following environments are available for your use:
        * GridEngine
