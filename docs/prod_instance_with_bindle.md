@@ -58,10 +58,12 @@ that we run in 6 academic clouds which do have their specific settings, see the 
 identical to the example below, however, so the example shown below should be
 extremely helpful in accessing PanCancer clouds.
 
+*Again, Amazon is documented here as an example, if you are following this process in an Academic cloud there will be details that differ.  You are not required to use Amazon to use our infrastructure, it is simply a working example of setting up our architecture in a given cloud environment.*
+
 #### Step 0 - Get an Account
 
 First, sign up for an account on the AWS website, see http://aws.amazon.com for
-directions.  Brian O'Connor at OICR manages the accounts for the group.  Along the way you will create an SSH pem key for yourself and you will get your Amazon key and secret key.  Keep all three secure.
+directions.  Brian O'Connor manages the account for the OICR group so see him if you are in that group.  For users following this guide outside of the OICR group, you will need to establish your own AWS account.  Along the way you will create an SSH pem key for yourself and you will get your Amazon key and secret key.  Keep all three secure.
 
 You also need a GNOS pem key for reading/writing data to GNOS.  See the [PanCancer Research Guide](https://wiki.oicr.on.ca/display/PANCANCER/PCAWG+Researcher%27s+Guide) which will walk you through the process of getting both an ICGC and TCGA GNOS pem key.  The latter is only used on BioNimbus when working with TCGA data.
 
