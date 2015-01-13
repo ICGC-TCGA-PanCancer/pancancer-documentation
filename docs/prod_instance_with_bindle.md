@@ -58,7 +58,7 @@ that we run in 6 academic clouds which do have their specific settings, see the 
 identical to the example below, however, so the example shown below should be
 extremely helpful in accessing PanCancer clouds.
 
-*Again, Amazon is documented here as an example, if you are following this process in an Academic cloud there will be details that differ.  You are not required to use Amazon to use our infrastructure, it is simply a working example of setting up our architecture in a given cloud environment.*
+**Again, Amazon is documented here as an example, if you are following this process in an Academic cloud there will be details that differ.  You are not required to use Amazon to use our infrastructure, it is simply a working example of setting up our architecture in a cloud environment that we know works.**
 
 #### Step 0 - Get an Account
 
