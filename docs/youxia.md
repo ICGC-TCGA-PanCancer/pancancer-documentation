@@ -106,3 +106,7 @@ The following additions were required due to hook up the current monitoring-bag
   1. For this step, ensure that the environment has access to Java 7. Download the jar files from artfiactory as documented in the youxia documentation and configure the generator component only.
 3. Hook up the decider as required.
 4. ???
+
+## Tips
+
+* the launcher host's public IP needs to be added to the security group for SSH access. For some reason Youxia/Ansible use the public IPs.
