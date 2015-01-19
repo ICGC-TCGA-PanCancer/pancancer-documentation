@@ -111,3 +111,4 @@ The following additions were required due to hook up the current monitoring-bag
 
 * the launcher host's public IP needs to be added to the security group for SSH access. For some reason Youxia/Ansible use the public IPs.
 * missing cert for rabbit MQ... I though this was created as part of the launcher setup: /home/ubuntu/architecture2/monitoring-bag/roles/server-dependencies/files/cacert.pem or /home/ubuntu/architecture2/monitoring-bag/cacert.pem. This is mentioned in the Ireland section, needing to run the script /home/ubuntu/architecture2/monitoring-bag/ssl/script.sh to setup the certs
+* bindle setup doesn't include "SW_CONTROL_NODE_MEMORY=4000"... needed to make a new AMI that had this
