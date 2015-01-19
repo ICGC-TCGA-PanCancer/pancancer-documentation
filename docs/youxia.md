@@ -110,3 +110,4 @@ The following additions were required due to hook up the current monitoring-bag
 ## Tips
 
 * the launcher host's public IP needs to be added to the security group for SSH access. For some reason Youxia/Ansible use the public IPs.
+* missing cert for rabbit MQ... I though this was created as part of the launcher setup: /home/ubuntu/architecture2/monitoring-bag/roles/server-dependencies/files/cacert.pem or /home/ubuntu/architecture2/monitoring-bag/cacert.pem
