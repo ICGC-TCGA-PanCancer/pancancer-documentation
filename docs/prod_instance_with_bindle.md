@@ -621,6 +621,7 @@ Some issues I had to address on Amazon:
 
 * some AMIs will automount the first ephemeral disk on /mnt, others will not. This causes issues with the provisioning process. We need to improve our support of these various configurations. With the current code, any device on /dev/sdf or above will automatically be formated, mounted, and added to gluster
 * the network security group you launch master and workers in must allow incoming connections from itself otherwise the nodes will not be able to communicate with each other
+* need to add "SW_CONTROL_NODE_MEMORY=4000" to AMI... need to add to SeqWare bag.
 
 ### Notes for Barcelona (VirtualBox)
 
