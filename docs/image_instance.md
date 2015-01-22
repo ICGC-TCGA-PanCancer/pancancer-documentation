@@ -14,7 +14,11 @@ TBD
 
 ## Image the Instance for Future Use on vCloud
 
-TBD
+In order to image a VM that has been provisioned by Bindle for future use you will need to "catalogue" the image. In order to do this go to the web console (for EBI https://extcloud01.ebi.uk/cloud/org/oicr/). On the home screen right click on the vAapp that you would like to catalog and select "Add to Cataloge". For EBI select the catalog "phase2". Select "OK" after customizeing options. 
+
+At this point you can point Bindle to spin up the new image. It will be the exact same as the machine that was use to make the cataloged image other than the drive not being mounted. 
+
+At this point we do not have youxia to deploy VM's. Untill this is ready VM's are being spun up using Bindle itself. 
 
 ## Next Steps
 
