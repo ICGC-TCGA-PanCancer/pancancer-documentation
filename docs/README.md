@@ -40,6 +40,7 @@ These guides are geared towards our "Cloud Shepherds".  For each cloud environme
 
 * [Automatically Running Workflows in a Cloud with a Decider](run_bwa_with_decider.md): instructions for automating the running of workflows with a decider.
 * [Provision and Maintain Clusters with Youxia](youxia.md): instructions for using youxia to automate the deployment and maintenance of clusters on AWS
+* [Debug and Harvest Data from Completed Workflows](working_directory.md): instructions for debugging workflows and using data from completed workflows
 
 # Working Group Researchers
 
