@@ -6,7 +6,7 @@ At various times, you may need to examine the SeqWare working directory for a pa
 
 There are a number of ways to locate the SeqWare working directory for a particular workflow.
 
-First, you will need to locate your oozie working directory. Look at your ~/.seqware/settings file for the key of OOZIE\_WORK_\DIR. All workflow runs will create a randomly generated directory within this directory.
+First, you will need to locate your oozie working directory. Look at your ~/.seqware/settings file for the key of OOZIE\_WORK\_DIR. All workflow runs will create a randomly generated directory within this directory.
 
 To locate the precise one that you are interested in:
 * SeqWare reports the working directory when launching. When launching with either `seqware bundle launch` or 'seqware workflow-run launch-scheduled` look for a line that reads like the following 
