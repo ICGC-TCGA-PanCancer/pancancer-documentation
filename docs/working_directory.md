@@ -14,3 +14,7 @@ To locate the precise one that you are interested in:
         Using working directory: /usr/tmp/oozie/oozie-71c52ee1-ab47-455e-b7f6-18d0b9a40af3
 * If you are working with an install of SeqWare using the oozie-sge workflow engine, you can use the `oozie jobs` command to obtain a list of workflow runs. Then follow up with the `oozie job -info <Job ID>`. The suffix of the Oozie app path can then be appended to your Oozie working directory to get the working directory. 
 * If you are running with a install of SeqWare that includes the webservice, you can ask SeqWare. Use the command 'seqware workflow list' to locate the SeqWare accession of the workflow that you launched. Use the command `seqware workflow report --accession <accession>`, you're looking for the entry "Workflow Run Working Dir". Alternatively, if you know the accession for the workflow run, you can use `seqware workflow-run report --accession <accession>`
+
+### Understanding it ###
+
+You can find a brief description of the working directory structure in the general SeqWare documentation [here](https://seqware.github.io/docs/3-getting-started/developer-tutorial/#testing-the-workflow).
