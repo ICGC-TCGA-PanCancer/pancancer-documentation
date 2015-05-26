@@ -3,9 +3,9 @@ pancancer-documentation
 
 This repository contains all of the necessary documents for working with the pancancer tools.
 
-Please see docs/production for all documents related to running these tools in a production environment.
+If you are running the pancancer tools in a production environment, you will probably be primarily interested in the [Production pages](production/prodution.md#production)
 
-Please see docs/development if you are a developer and need more detailed technical documents about how to build and set up these tools.
+If you are a developer who is developing new workflows, or if you are a developer who needs to make changes to parts of the Pancancer infrastructure such as Bindle, pancancer-bag, seqware-bag, or container-host-bag, you will want to read more in the [Developer pages](development/development.md)
 
 TODO: Finish this!
 
