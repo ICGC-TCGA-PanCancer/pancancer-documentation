@@ -21,3 +21,5 @@ Documents:
       - Sanger
       - DKFZ/EMBL
       - BWA
+
+also, somewhere we need to add a high-leve architecture document
