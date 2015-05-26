@@ -10,6 +10,7 @@ Please see docs/development if you are a developer and need more detailed techni
 TODO: Finish this!
 
 Documents:
+  - Overview (architecture, system diagrams, etc...)
   - Dev
     - standards for creating dockerized workflows
     - All about: Bindle, pancancer-bag, seqware-bag, container-host-bag and how they all interact.
@@ -22,4 +23,3 @@ Documents:
       - DKFZ/EMBL
       - BWA
 
-also, somewhere we need to add a high-leve architecture document
