@@ -16,7 +16,7 @@ Documents:
     - All about: Bindle, pancancer-bag, seqware-bag, container-host-bag and how they all interact.
   - Prod
     - setup env
-    - get whitelist
+    - central decider client
     - pancancer.info
     - fleet maintenance/management
       - Sanger
