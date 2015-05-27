@@ -15,9 +15,11 @@ Documents:
     - standards for creating dockerized workflows
     - All about: Bindle, pancancer-bag, seqware-bag, container-host-bag and how they all interact.
   - Prod
-    - setup env
-    - central decider client
-    - pancancer.info
+    - quick start guide
+      - setup env
+      - central decider client
+      - checking pancancer.info
+    - cloud specific info
     - fleet maintenance/management
       - Sanger
       - DKFZ/EMBL
