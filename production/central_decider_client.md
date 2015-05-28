@@ -15,8 +15,9 @@ To use an INI file from the Central Decider Client on your worker node, follow t
 Example: 
 ```
 perl generate_ini_files.pl --workflow-name=Workflow_Bundle_BWA --gnos-repo=https://gtrepo-etri.annailabs.com/ \
-  --cloud-env=etri --template-file=templates/bwa_template.ini --password=<central-decider-password> \
-  --vm-location-code=etri
+  --cloud-env=etri --template-file=templates/bwa_template.ini --vm-location-code=etri \
+  --password=<central-decider-password>
+  
 ```
 The client will print to screen the files that were just generated. All generated ini files will be located in the ini folder.
 
