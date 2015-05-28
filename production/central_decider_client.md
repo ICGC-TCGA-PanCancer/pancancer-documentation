@@ -22,7 +22,9 @@ To use an INI file from the Central Decider Client on your worker node, follow t
     a.  log into worker node
     b.  docker run --rm -h master -t -v /var/run/docker.sock:/var/run/docker.sock \
         -v /datastore:/datastore \
-        -v /workflows/Workflow_Bundle_BWA_2.6.1_SeqWare_1.1.0-alpha.5:/workflow \
+        -v /home/ubuntu/.ssh/gnos.pem:/home/ubuntu/.ssh/gnos.pem \
+        -v `pwd`/workflow.ini:/workflow.ini \
+        -v /workflows/:/workflows \
         -i pancancer/seqware_whitestar_pancancer:1.1.1 \
-    c.   seqware workflow schedule --host master --ini <ini-filepath>
+         bash -c 'seqware bundle launch --host master --ini /workflow.ini --dir /workflows/Workflow_Bundle_BWA_2.6.1_SeqWare_1.1.0-alpha.5 --no-metadata --engine whitestar'
 
