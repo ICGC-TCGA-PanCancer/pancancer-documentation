@@ -13,11 +13,10 @@ To use an INI file from the Central Decider Client on your worker node, follow t
 
 2. Navigate to `~/architecture-setup/central-decider-client`.
 3. Run the `generate_ini_files.pl` script to generate an INI file. The client will print to screen the files that were just generated. All generated ini files will be located in the ini folder. 
-4. 
 
 ## Scheduling INI files
 1. Copy INI files onto worker nodes that you would like them to run on 
-    - scp -i <pem-key> <ini-filepath>  <seqware-hostname>:/tmp
+    - scp -i <pem-key> <ini-filepath> <seqware-hostname>:/tmp
 
 2. Schedule ini file on worker node
     -  log into worker node
@@ -27,7 +26,7 @@ To use an INI file from the Central Decider Client on your worker node, follow t
        docker run --rm -h master -t -v /var/run/docker.sock:/var/run/docker.sock \
         -v /datastore:/datastore \
         -v /home/ubuntu/.ssh/gnos.pem:/home/ubuntu/.ssh/gnos.pem \
-        -v `pwd`/workflow.ini:/workflow.ini \
+        -v <ini-filepath>:/workflow.ini \
         -v /workflows/:/workflows \
         -i pancancer/seqware_whitestar_pancancer:1.1.1 \
         bash -c 'seqware bundle launch --host master --ini /workflow.ini --dir /workflows/Workflow_Bundle_BWA_2.6.1_SeqWare_1.1.0-alpha.5 --no-metadata --engine whitestar'
