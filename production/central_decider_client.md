@@ -36,7 +36,7 @@ To execute a workflow using the INI files that you generated, you will need to m
 
    Example:
 
-    `scp -i ~/.ssh/MyKey.pem New-Generated-INI-file.ini ubuntu@worker-node-ip-address.amazonaws.com:/tmp/New-Generated-INI-file.ini`
+    `scp -i ~/.ssh/MyKey.pem ini/New-Generated-INI-file.ini ubuntu@worker-node-ip-address.amazonaws.com:/tmp/New-Generated-INI-file.ini`
 2. Run a workflow using the INI file.
     - Log into worker node.
     - Execute the command:
