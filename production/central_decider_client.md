@@ -13,8 +13,11 @@ To use an INI file from the Central Decider Client on your worker node, follow t
 3. Generate the INI's by running the client as descibed in the [central decider client documentation](https://github.com/ICGC-TCGA-PanCancer/central-decider-client/blob/develop/README.md#central-decider-client) . 
 
 Example: 
-    `perl generate_ini_files.pl --workflow-name=Workflow_Bundle_BWA --gnos-repo=https://gtrepo-etri.annailabs.com/ --cloud-env=etri --template-file=templates/bwa_template.ini --password=<central-decider-password --vm-location-code=etri`
-
+```
+perl generate_ini_files.pl --workflow-name=Workflow_Bundle_BWA --gnos-repo=https://gtrepo-etri.annailabs.com/ \ 
+  --cloud-env=etri --template-file=templates/bwa_template.ini --password=<central-decider-password> \ 
+  --vm-location-code=etri
+```
 The client will print to screen the files that were just generated. All generated ini files will be located in the ini folder.
 
 Example output: 
@@ -37,11 +40,11 @@ Example:
     - Execute the command:
 
 ```
-       docker run --rm -h master -t -v /var/run/docker.sock:/var/run/docker.sock \
-        -v /datastore:/datastore \
-        -v /home/ubuntu/.ssh/gnos.pem:/home/ubuntu/.ssh/gnos.pem \
-        -v <ini-filepath>:/workflow.ini \
-        -v /workflows/:/workflows \
-        -i pancancer/seqware_whitestar_pancancer:1.1.1 \
-        bash -c 'seqware bundle launch --host master --ini /workflow.ini --dir /workflows/Workflow_Bundle_BWA_2.6.1_SeqWare_1.1.0-alpha.5 --no-metadata --engine whitestar'
+docker run --rm -h master -t -v /var/run/docker.sock:/var/run/docker.sock \
+  -v /datastore:/datastore \
+  -v /home/ubuntu/.ssh/gnos.pem:/home/ubuntu/.ssh/gnos.pem \
+  -v <ini-filepath>:/workflow.ini \
+  -v /workflows/:/workflows \
+  -i pancancer/seqware_whitestar_pancancer:1.1.1 \
+  bash -c 'seqware bundle launch --host master --ini /workflow.ini --dir /workflows/Workflow_Bundle_BWA_2.6.1_SeqWare_1.1.0-alpha.5 --no-metadata --engine whitestar'
 ```
