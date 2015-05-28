@@ -16,7 +16,12 @@ To use an INI file from the Central Decider Client on your worker node, follow t
 
 ## Scheduling INI files
 1. Copy INI files onto worker nodes that you would like them to run on 
-    - scp -i <pem-key> <ini-filepath> <seqware-hostname>:/tmp
+    
+    `scp -i <pem-key> <ini-filepath> <user>@<worker hostname or IP address>:/tmp`
+
+Example:
+
+    `scp -i ~/.ssh/MyKey.pem Some-INI-file.ini ubuntu@worker-ip-address.amazonaws.com:/tmp/Some-INI-file.ini`
 
 2. Schedule ini file on worker node
     -  log into worker node
