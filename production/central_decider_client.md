@@ -33,7 +33,7 @@ Example output:
 
 Example:
 
-    `scp -i ~/.ssh/MyKey.pem Some-INI-file.ini ubuntu@worker-ip-address.amazonaws.com:/tmp/Some-INI-file.ini`
+    scp -i ~/.ssh/MyKey.pem Some-INI-file.ini ubuntu@worker-ip-address.amazonaws.com:/tmp/Some-INI-file.ini
 
 2. Schedule ini file on worker node
     -  log into worker node
