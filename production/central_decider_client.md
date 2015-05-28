@@ -28,16 +28,17 @@ Example output:
     Generating: ini/CPCG_0185-PRAD-CA-CPCG_0185_Ly_R-normal.ini
 
 ## Scheduling INI files
+To execute a workflow using the INI files that you generated, you will need to move them to your worker node, and then run the workflow.
+
 1. Copy INI files onto worker nodes that you would like them to run on using scp:
 
     `scp -i <pem-key> <ini-filepath> <user>@<worker hostname or IP address>:/tmp`
 
-Example:
+   Example:
 
-    scp -i ~/.ssh/MyKey.pem Some-INI-file.ini ubuntu@worker-ip-address.amazonaws.com:/tmp/Some-INI-file.ini
-
-2. Schedule ini file on worker node
-    -  log into worker node
+    `scp -i ~/.ssh/MyKey.pem New-Generated-INI-file.ini ubuntu@worker-node-ip-address.amazonaws.com:/tmp/New-Generated-INI-file.ini`
+2. Run a workflow using the INI file.
+    - Log into worker node.
     - Execute the command:
 
 ```
@@ -49,3 +50,8 @@ docker run --rm -h master -t -v /var/run/docker.sock:/var/run/docker.sock \
   -i pancancer/seqware_whitestar_pancancer:1.1.1 \
   bash -c 'seqware bundle launch --host master --ini /workflow.ini --dir /workflows/Workflow_Bundle_BWA_2.6.1_SeqWare_1.1.0-alpha.5 --no-metadata --engine whitestar'
 ```
+The above command will run the docker image "pancancer/seqware_whitestar_pancancer" in a new container. The container will have access to `/workflows`, `/datastore`, your generated INI file (`<ini-filepath>`, which is the path you copy your INI file to in the previous step, such as : `/tmp/New-Generated-INI-file.ini`), and your gnos pem key. The command that docker executes once the container starts is 
+
+    seqware bundle launch --host master --ini /workflow.ini --dir /workflows/Workflow_Bundle_BWA_2.6.1_SeqWare_1.1.0-alpha.5 --no-metadata --engine whitestar
+
+This command illustrates executing the BWA workflow with a generated INI file. 
