@@ -10,5 +10,5 @@ To use an INI file from the Central Decider Client on your worker node, follow t
     ```docker attach pancancer_launcher```
 
 2. Navigate to `~/architecture-setup/central-decider-client`.
-3. Run the `generate_ini_files.pl` script to generate an INI file. *(Adam : Where will the file be generated to?)*
-4. Use the INI file *(Adam: any tips on how to fill in this step?)*
+3. Run the `generate_ini_files.pl` script to generate an INI file. The client will print to screen what files were generated. All generated ini files will be located in the ini folder. 
+4. Use the INI file *(Adam: any tips on how to fill in this step? Solomon: I know the procedure for this without docker but we will have to develop a process with docker.)*
