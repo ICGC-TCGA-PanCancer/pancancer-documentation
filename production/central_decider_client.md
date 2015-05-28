@@ -2,8 +2,6 @@
 
 The Central Decider Client is a client component that communicates with a Central Decider application. It makes requests to the Central Decider and recieves responses that is uses to generate INI files that should be scheduled to be run. 
 
-You can read more about the Central Decider Client [here](https://github.com/ICGC-TCGA-PanCancer/central-decider-client/blob/develop/README.md#central-decider-client).
-
 ## Generating INI files with the Central Decider Client
 To use an INI file from the Central Decider Client on your worker node, follow these steps.
 
@@ -12,7 +10,18 @@ To use an INI file from the Central Decider Client on your worker node, follow t
     ```docker attach pancancer_launcher```
 
 2. Navigate to `~/architecture-setup/central-decider-client`.
-3. Run the `generate_ini_files.pl` script to generate an INI file. The client will print to screen the files that were just generated. All generated ini files will be located in the ini folder. 
+3. Generate the INI's by running the client as descibed in the [central decider client documentation](https://github.com/ICGC-TCGA-PanCancer/central-decider-client/blob/develop/README.md#central-decider-client) . 
+
+Example: 
+    `perl generate_ini_files.pl --workflow-name=Workflow_Bundle_BWA --gnos-repo=https://gtrepo-etri.annailabs.com/ --cloud-env=etri --template-file=templates/bwa_template.ini --password=<central-decider-password --vm-location-code=etri`
+
+The client will print to screen the files that were just generated. All generated ini files will be located in the ini folder.
+
+Example output: 
+
+    Generating: ini/CPCG_0203-PRAD-CA-CPCG_0203_Ly_R-normal.ini
+    Generating: ini/CPCG_0203-PRAD-CA-CPCG_0203_Pr_P-tumour.ini
+    Generating: ini/CPCG_0185-PRAD-CA-CPCG_0185_Ly_R-normal.ini
 
 ## Scheduling INI files
 1. Copy INI files onto worker nodes that you would like them to run on 
