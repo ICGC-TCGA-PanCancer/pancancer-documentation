@@ -27,8 +27,8 @@ Example output:
     Generating: ini/CPCG_0185-PRAD-CA-CPCG_0185_Ly_R-normal.ini
 
 ## Scheduling INI files
-1. Copy INI files onto worker nodes that you would like them to run on 
-    
+1. Copy INI files onto worker nodes that you would like them to run on using scp:
+
     `scp -i <pem-key> <ini-filepath> <user>@<worker hostname or IP address>:/tmp`
 
 Example:
