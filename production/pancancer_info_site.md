@@ -1,3 +1,3 @@
 ## The pancancer.info website
 
-PLACEHOLDER TEXT
+Coming soon: more information on how to make use of http://pancancer.info
