@@ -47,6 +47,22 @@ to this:
 
 to install the Sanger workflow on a node that already has BWA and HelloWorld.
 
+### Connecting to a worker node
+There are a couple of ways to connect to your worker node:
+
+1. Look at your environment management console (such as the AWS console or OpenStack dashboard), find the IP address worker node you want, and connect to it via SSH from the terminal of your choice. It's usually best to do this from your own workstation.
+2. Directly from your launcher host (not recommended, except for making quick diagnostics):
+    - Navigate to the the directory for the worker node:
+
+            cd ~/architecture-setup/Bindle/singlenode_vagrant_1/master
+        
+    - Connect using vagrant:
+    
+            vagrant ssh
+
+This will directly connect you from the launcher to the worker node.
+
+
 ### To terminate a node
 If you have a node that you don't need or want anymore, you can shut it down like this:
 
