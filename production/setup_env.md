@@ -1,6 +1,6 @@
 ## Setting up a Pancancer Environment
 
-A Pancancer production environment consists of one or more "launcher" nodes, and a number of "worker" nodes controlled by a launcher.
+A Pancancer production environment consists of one or more "launcher" nodes, and a number of "worker" nodes controlled by a launcher. The launcher is responsible for provisioning the worker nodes, and the worker nodes execute workflows.
 
 [ Diagram here ?]
 
