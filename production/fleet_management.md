@@ -1,6 +1,6 @@
 ## Managing an existing Pancancer environment
 
-### To launch a node
+### Launching a node
 To launch a node, the command is fairly simple:
 
     cd ~/architecture-setup/Bindle/
@@ -14,7 +14,7 @@ This assumes that your `~/.bindle/aws.cfg` (or `~/.bindle/openstack.cfg`) has th
 
 The result of this will be a directory in Bindle named "singlenode_vagrant_1", containing files related to the launched node.
 
-### Troubleshooting a node launch.
+### Troubleshooting a node launch
 If a node runs in to problems when launching, you might be able to find out more information about what happened in the vagrant logs. Navigate to the nodes directory, and inspect `master.log`.
 
     cd ~/architecture-setup/Bindle/singlenode_vagrant_1
@@ -63,7 +63,7 @@ There are a couple of ways to connect to your worker node:
 This will directly connect you from the launcher to the worker node.
 
 
-### To terminate a node
+### Terminating a node
 If you have a node that you don't need or want anymore, you can shut it down like this:
 
 1. Make sure you are attached to your running pancancer_launcher container 
