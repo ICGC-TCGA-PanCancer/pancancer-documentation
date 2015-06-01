@@ -1,9 +1,0 @@
-[
-{"repo": "gtrepo-bsc", "train_1_align": 2, "total_unalign": 2, "remaining": 0},
-{"repo": "gtrepo-osdc-icgc", "train_1_align": 0, "total_unalign": 0, "remaining": 0},
-{"repo": "gtrepo-dkfz", "train_1_align": 0, "total_unalign": 0, "remaining": 0},
-{"repo": "gtrepo-ebi", "train_1_align": 144, "total_unalign": 144, "remaining": 0},
-{"repo": "gtrepo-etri", "train_1_align": 0, "total_unalign": 0, "remaining": 0},
-{"repo": "gtrepo-riken", "train_1_align": 0, "total_unalign": 0, "remaining": 0},
-{"repo": "gtrepo-cghub_data1", "train_1_align": 670, "total_unalign": 670, "remaining": 0}
-]
