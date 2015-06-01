@@ -10,9 +10,8 @@ To use an INI file from the Central Decider Client on your worker node, follow t
     ```docker attach pancancer_launcher```
 
 2. Navigate to `~/architecture-setup/central-decider-client`.
-3. Generate the INI's by running the client as descibed in the [central decider client documentation](https://github.com/ICGC-TCGA-PanCancer/central-decider-client/blob/develop/README.md#central-decider-client) . 
-
-* Email Christina Yung cyung@oicr.on.ca and Adam Wright awright@oicr.on.ca for the central decider password
+3. Generate the INI's by running the client as descibed in the [central decider client documentation](https://github.com/ICGC-TCGA-PanCancer/central-decider-client/blob/develop/README.md#central-decider-client).
+4. Email Christina Yung cyung@oicr.on.ca and Adam Wright awright@oicr.on.ca for the central decider password
 
 Example: 
 ```
