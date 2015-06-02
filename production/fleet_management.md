@@ -84,10 +84,12 @@ The actual command you would execute is:
     perl bin/destroy-cluster.pl --cluster-name singlenode_vagrant_1
 
 ### Creating inventory file for monitoring-bag
+To run the monitoring tools, you will need to generate an inventory file of your clients. To do this, run the following commands:
 
-    perl bin/launcher/generate_master_inventory_file_for_ansible.pl <ansible-ssh-host> > inventory
+    cd ~/architecture-setup/Bindle
+    perl bin/generate_master_inventory_file_for_ansible.pl <ansible-ssh-host> > inventory
     
-After provisioning the node the monitoring should be setup on each node. The "ansible-ssh-host" in this comman is the launcher hosts ip addresss. This will be used on each of the worker nodes and let them know where the sentral sensu server is for reporting their status.  
+After provisioning the node the monitoring should be setup on each node. The "ansible-ssh-host" in this command is the launcher hosts ip addresss. This will be used on each of the worker nodes and let them know where the sentral sensu server is for reporting their status.
 
 <!-- 
 Some ideas:
