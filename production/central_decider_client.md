@@ -27,7 +27,7 @@ If you want to run a test for the BWA workflow, you must specify that the *test*
 
 to
 
-    study-refname-override=CGTEST
+    study-refname-override=icgc_pancancer_test
 
 The client will print to screen the files that were just generated. All generated ini files will be located in the ini folder.
 
