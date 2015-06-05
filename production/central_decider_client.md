@@ -21,13 +21,15 @@ perl generate_ini_files.pl --workflow-name=Workflow_Bundle_BWA --gnos-repo=https
   
 ```
 
+See this file for `--cloud-env` and `--vm-location-code`: https://github.com/ICGC-TCGA-PanCancer/pcawg-operations/blob/develop/scripts/site_location.txt
+
 If you want to run a test for the BWA workflow, you must specify that the *test* repo be used. You can do this by editing `templates/bwa_template.ini`, and change this line:
 
     study-refname-override=icgc_pancancer
 
 to
 
-    study-refname-override=CGTEST
+    study-refname-override=icgc_pancancer_test
 
 The client will print to screen the files that were just generated. All generated ini files will be located in the ini folder.
 
