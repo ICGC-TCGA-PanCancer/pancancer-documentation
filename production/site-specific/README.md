@@ -32,7 +32,7 @@ We are currently testing a solution to bake this workaround into later versions 
 ### ETRI with Arch3
 
 1. ETRI seems to have no networking setup for openstack. Simply blank this value in your masterConfig.json
-2. Use the same workaround as above to direct the deployer to point at a different sensu-server. Since the new version of the monitoring-bag has this value hard-coded to lookup from an environment variable, disable this and put in the ip address for the external sensu server. 
+2. ~~ Use the same workaround as above to direct the deployer to point at a different sensu-server. Since the new version of the monitoring-bag has this value hard-coded to lookup from an environment variable, disable this and put in the ip address for the external sensu server. ~~ Newer versions of youxia allow you to simply not deploy the server component via youxia
 3. Note that the ~/.ssh/gnos.pem location has changed. It is now ~/.gnos/gnos.pem. Change this in your bwa template. 
 4. To kick things off, use the following commands:
 
