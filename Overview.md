@@ -5,7 +5,7 @@ The Pancancer tools are designed to be run among a fleet of virtual machines in 
 
 The diagram below illustrates how they fit together:
 
-![architecture overview](architecture-overview.svg)
+![architecture overview](architecture-overview.png)
 
 In this diagram, and launcher host is used to control other worker nodes. The launcher node is a VM instance that is started up manually. It will have the ability to start up worker nodes.
 
