@@ -2,7 +2,7 @@
 <!-- TODO: Update/rewrite this to use Youxia instead of Bindle -->
 ### Launching a node
 
-Worker nodes can be launched using [Youxia](https://github.com/CloudBindle/youxia) [Deployer](https://github.com/CloudBindle/youxia#deployer).
+Worker nodes can be launched using Youxia [Deployer](https://github.com/CloudBindle/youxia#deployer).
 
 To launch a single node, you can use Youxia like this:
 
@@ -14,7 +14,13 @@ The above command assumes you are running in an Architecture3 pancancer\_launche
  - The path to the ansible playbook
  - The path to the Youxia parameters file.
 
-You may want to read the section on [Youxia configuration](https://github.com/CloudBindle/youxia#configuration) for details about how to write `params.json` and `~/.youxia/config`.
+The above command will launch one new node in AWS, with a maximum spot price of $1.00. To launch in OpenStack, append "--openstack" to the command. It is also possible to launch an on-demand node in AWS, like this:
+
+    java -cp pancancer.jar io.cloudbindle.youxia.deployer.Deployer  --ansible-playbook ~/architecture-setup/container-host-bag/install.yml --max-spot-price 0.0001 --min-on-demand 1 --batch-size 1 --total-nodes-num 1 -e ~/params.json
+
+This tells the Deployer that you want a minimum of 1 on-demand node. The spot price is still required for this setting, so you can just set it very low.
+
+You may want to read the section on [Youxia configuration](https://github.com/CloudBindle/youxia#configuration) for more details about how to write `params.json` and `~/.youxia/config`.
 
 ### Troubleshooting a node launch
 
