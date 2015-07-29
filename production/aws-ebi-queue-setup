@@ -1,0 +1,27 @@
+In order to get the launcher on AWS to provision and schedule jobs to an academic cloud, such as EBI, you will
+have to setup a launcher on AWS that you will use for deploying and reaping of nodes and for scheduling work to them.
+
+Because the nodes on the academic clouds do not have public IP address' you will have to create a launcher with in 
+the cloud. With this launcher you will spin up one node to create a fully provisioned workflow. 
+
+Academic Launcher
+1) on either of the launchers deploy a single node without running ansible
+2) Disable the line in the container_host_bag/roles/arch3/tasks/main.yml to not run the worker (so we don't need to do cleanup)
+3) From the launcher on the academic cloud provision the machine by running the anble playbook
+4) Run ansible from the academic launcher launcher
+5) Modify the params.json, on the academic launcher, to reflect a Launcher on Amazon (queue host and sensu host)
+6) 
+6) Create the snapshot through the OpenStack Dashboard
+
+After the Snapshot has been created create the AWS Launcher:
+1) Change security settings on AWS to allow Sensu communication and communication from where you are:
+  Inbound
+  Port Range      Protocol  IP
+  5671-5672       tcp   193.62.54.0/24 (Sensu ports and academic IP range)
+  
+  
+2) Modify  ~/.youxia/config by removing the parameters pertaining to running playbooks fo look like this:
+    youxia_deployer_parameters=--max-spot-price 0.001 --batch-size 3 --openstack
+    youxia_reaper_parameters=--openstack
+    
+The rest should be the same as spinning up an internal launcher with queueing abilities
