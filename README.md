@@ -1,11 +1,11 @@
-Pancancer Documentation
+PanCancer Documentation
 =======================
 
-This repository contains all of the necessary documents for working with the pancancer tools.
+This repository contains all of the necessary documents for working with the PanCancer tools.
 
 For an overview of how the different pieces fit together, see the [Overview page](Overview.md).
 
-If you are running the pancancer tools in a production environment, you will probably be primarily interested in the [Production pages](production/README.md#production)
+If you are running the PanCancer tools in a production environment, you will probably be primarily interested in the [Production pages](production/README.md#production)
 
 
 <!--
