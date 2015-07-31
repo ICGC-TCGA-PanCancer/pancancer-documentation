@@ -39,7 +39,6 @@ From the metadata.xml file copy the following section into a new file experiment
 ###run.xml
 From the metadata.xml file copy the following section into a new file run.xml inside of the <analysisUUID> folder.
 ```
-<run_xml>
 <RUN_SET xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.ncbi.nlm.nih.gov/viewvc/v1/trunk/sra/doc/SRA_1-5/SRA.run.xsd?view=co">
 <RUN center_name="CNG" alias="CNG:C0LVJACXX">
 <EXPERIMENT_REF refcenter="CNG" refname="CNG:C0LVJACXX:B00FS9W" />
