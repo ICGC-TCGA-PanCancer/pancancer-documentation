@@ -65,6 +65,8 @@ provide you with and manifext.xml file and then do a cgsubmit with the following
 
 </SUBMISSION>
 ```
+##Adhyst Manifest file
+For moving aligned BAMs there will be extra files added to the manifest file taht are not in your upload directory. Lines in the manifest.xml file will be removed for these files before uploading. 
 
 ##Upload bam file
   gtupload -v -c <yourpath>/gnostest.pem -u <analysisUUID>/manifest.xml >> <analysisUUID>/gtupload.log 2>&1
