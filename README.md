@@ -1,18 +1,18 @@
-Pancancer Documentation
-=======================
+#PanCancer Documentation
 
-This repository contains all of the necessary documents for working with the pancancer tools.
+This repository contains all of the necessary documents for working with the PanCancer tools.
 
 For an overview of how the different pieces fit together, see the [Overview page](Overview.md).
 
-If you are running the pancancer tools in a production environment, you will probably be primarily interested in the [Production pages](production/README.md#production)
+##Production
 
+If you are running the PanCancer tools in a production environment, you will probably be primarily interested in the [Production pages](production/README.md#production)
 
-<!--
-Uncomment when the developer page has content
+##Development
 
 If you are a developer who is developing new workflows, or if you are a developer who needs to make changes to parts of the Pancancer infrastructure such as Youxia, pancancer-bag, seqware-bag, or container-host-bag, you will want to read more in the [Developer pages](development/README.md)
 
+<!--
 Documents:
   - Overview (architecture, system diagrams, etc...)
   - Dev
