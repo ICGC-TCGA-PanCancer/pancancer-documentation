@@ -8,4 +8,4 @@ Most of the software on a launcher node is installed as a docker container.
 
 To install this docker container, you can use the Quick Start guide for the [PancancerCLI](https://github.com/ICGC-TCGA-PanCancer/cli/blob/0.0.1/QuickStart.md). **This is the recommended process for most users.**
 
-Developers may find it useful to read the [detailed pancancer launcher guide](https://github.com/ICGC-TCGA-PanCancer/pancancer_launcher/blob/3.1.3/README.md#pancancer-launcher).
+Developers may find it useful to read the [detailed pancancer launcher guide](https://github.com/ICGC-TCGA-PanCancer/pancancer_launcher/blob/3.1.4/README.md#pancancer-launcher).
